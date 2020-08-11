@@ -1,0 +1,229 @@
+# -*- coding: utf-8 -*-
+# Copyright 2020 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
+from openerp import fields, models, api, _
+from openerp.exceptions import Warning as UserError
+
+
+class AccountAssetCategory(models.Model):
+    _name = "account.asset.category"
+    _description = "Asset Category"
+    _order = "name"
+
+    @api.model
+    def _get_method(self):
+        result = [
+            ("linear", _("Linear")),
+            ("degressive", _("Degressive")),
+            ("degr-linear", _("Degressive-Linear"))
+        ]
+        return result
+
+    @api.model
+    def _get_method_time(self):
+        result = [
+            ("year", _("Number of Years")),
+        ]
+        return result
+
+    @api.model
+    def _get_company(self):
+        obj_res_company = self.env["res.company"]
+        return obj_res_company._company_default_get("account.asset.category")
+
+    name = fields.Char(
+        string="Name",
+        size=64,
+        required=True,
+        select=1,
+    )
+    company_id = fields.Many2one(
+        string="Company",
+        comodel_name="res.company",
+        required=True,
+        default=lambda self: self._get_company(),
+    )
+    parent_id = fields.Many2one(
+        string="Parent Asset",
+        comodel_name="account.asset.asset",
+        domain=[
+            ("type", "=", "view")
+        ],
+    )
+    account_analytic_id = fields.Many2one(
+        string="Analytic account",
+        comodel_name="account.analytic.account",
+        domain=[
+            ("type", "!=", "view"),
+            ("state", "not in", ["close", "cancelled"])
+        ],
+    )
+    account_asset_id = fields.Many2one(
+        string="Asset Account",
+        comodel_name="account.account",
+        required=True,
+        domain=[
+            ("type", "=", "other")
+        ],
+    )
+    account_depreciation_id = fields.Many2one(
+        string="Depreciation Account",
+        comodel_name="account.account",
+        required=True,
+        domain=[
+            ("type", "=", "other")
+        ],
+    )
+    account_expense_depreciation_id = fields.Many2one(
+        string="Depr. Expense Account",
+        comodel_name="account.account",
+        required=True,
+        domain=[
+            ("type", "=", "other")
+        ],
+    )
+    account_plus_value_id = fields.Many2one(
+        string="Plus-Value Account",
+        comodel_name="account.account",
+        domain=[
+            ("type", "=", "other")
+        ],
+    )
+    account_min_value_id = fields.Many2one(
+        string="Min-Value Account",
+        comodel_name="account.account",
+        domain=[
+            ("type", "=", "other")
+        ],
+    )
+    account_residual_value_id = fields.Many2one(
+        string="Residual Value Account",
+        comodel_name="account.account",
+        domain=[
+            ("type", "=", "other")
+        ],
+    )
+    journal_id = fields.Many2one(
+        string="Journal",
+        comodel_name="account.journal",
+        required=True,
+    )
+    method = fields.Selection(
+        string="Computation Method",
+        selection=lambda self: self._get_method(),
+        required=True,
+        help="Choose the method to use to compute "
+             "the amount of depreciation lines.\n"
+             "  * Linear: Calculated on basis of: "
+             "Gross Value / Number of Depreciations\n"
+             "  * Degressive: Calculated on basis of: "
+             "Residual Value * Degressive Factor"
+             "  * Degressive-Linear (only for Time Method = Year): "
+             "Degressive becomes linear when the annual linear "
+             "depreciation exceeds the annual degressive depreciation",
+         default="linear",
+     )
+    method_number = fields.Integer(
+        string="Number of Years",
+        help="The number of years needed to depreciate your asset",
+        default=5,
+    )
+    method_period = fields.Selection(
+        string="Period Length",
+        selection=[
+            ("month", "Month"),
+            ("quarter", "Quarter"),
+            ("year", "Year"),
+        ],
+        required=True,
+        help="Period length for the depreciation accounting entries",
+        default="year",
+    )
+    method_progress_factor = fields.Float(
+        string="Degressive Factor",
+        default=0.3,
+    )
+    method_time = fields.Selection(
+        string="Time Method",
+        selection=lambda self: self._get_method_time(),
+        required=True,
+        help="Choose the method to use to compute the dates and "
+             "number of depreciation lines.\n"
+             "  * Number of Years: Specify the number of years "
+             "for the depreciation.\n",
+         default="year",
+    )
+    prorata = fields.Boolean(
+        string="Prorata Temporis",
+        help="Indicates that the first depreciation entry for this asset "
+             "has to be done from the depreciation start date instead of "
+             "the first day of the fiscal year.",
+    )
+    open_asset = fields.Boolean(
+        string="Skip Draft State",
+        help="Check this if you want to automatically confirm the assets "
+        "of this category when created by invoices.",
+    )
+    active = fields.Boolean(
+        string="Active",
+        default=True,
+    )
+    note = fields.Text(
+        string="Note"
+    )
+
+    @api.constrains(
+        "method",
+        "method_time",
+    )
+    def _check_method(self):
+        str_error =\
+            _("Degressive-Linear is only supported for Time Method = Year.")
+        if self.method == "degr-linear" and self.method_time != "year":
+            raise UserError(str_error)
+
+    @api.onchange(
+        "method_time",
+    )
+    def onchange_prorata(self):
+        self.prorata = False
+        if self.method_time != "year":
+            self.prorata = True
+
+    @api.model
+    def create(self, values):
+        _super = super(AccountAssetCategory, self)
+
+        if values.get("method_time") != "year" and not values.get("prorata"):
+            values["prorata"] = True
+        result = _super.create(values)
+
+        obj_account_account = self.env["account.account"]
+        account_asset_id = values.get("account_asset_id")
+
+        if account_asset_id:
+            account = obj_account_account.browse(account_asset_id)
+            if not account.asset_category_id:
+                account.write({"asset_category_id": result.id})
+        return result
+
+    @api.multi
+    def write(self, values):
+        _super = super(AccountAssetCategory, self)
+
+        if values.get("method_time"):
+            if values["method_time"] != "year" and not values.get("prorata"):
+                values["prorata"] = True
+        result = _super.write(values)
+
+        obj_account_account = self.env["account.account"]
+
+        for rec in self:
+            account_asset_id = values.get("account_asset_id")
+            if account_asset_id:
+                account = obj_account_account.browse(account_asset_id)
+                if not account.asset_category_id:
+                    account.write({"asset_category_id": rec.id})
+        return result
