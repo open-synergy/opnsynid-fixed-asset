@@ -21,6 +21,7 @@
     "data": [
         "security/account_asset_security.xml",
         "security/ir.model.access.csv",
+        "menu.xml",
         "wizards/account_asset_remove_view.xml",
         "wizards/account_asset_change_duration_view.xml",
         "wizards/wizard_asset_compute_view.xml",
@@ -32,6 +33,5 @@
         "views/account_asset_asset.xml",
         "views/account_asset_history.xml",
         "views/account_invoice_view.xml",
-        "menu.xml",
     ],
 }

@@ -77,5 +77,11 @@
               <field name="view_mode">tree,form</field>
         </record>
 
+        <menuitem
+            id="menu_account_asset_category"
+            parent="fixed_asset.menu_finance_config_assets"
+            action="account_asset_category_action"
+            />
+
     </data>
 </openerp>

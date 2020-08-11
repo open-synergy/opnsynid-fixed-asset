@@ -343,5 +343,16 @@
             <field name="search_view_id" ref="account_asset_asset_view_search"/>
         </record>
 
+        <menuitem
+            id="menu_account_asset_asset"
+            parent="fixed_asset.menu_finance_assets"
+            action="account_asset_asset_action"/>
+
+        <menuitem
+            id="menu_account_asset_hierarchy"
+            parent="fixed_asset.menu_finance_assets"
+            sequence="100"
+            action="account_asset_asset_hierarchy_action"/>
+
     </data>
 </openerp>

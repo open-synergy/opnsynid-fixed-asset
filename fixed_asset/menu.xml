@@ -14,27 +14,10 @@
               />
 
           <menuitem
-              id="menu_account_asset_asset"
-              parent="menu_finance_assets"
-              action="account_asset_asset_action"/>
-
-          <menuitem
-              id="menu_account_asset_hierarchy"
-              parent="menu_finance_assets"
-              sequence="100"
-              action="account_asset_asset_hierarchy_action"/>
-
-          <menuitem
               id="menu_finance_config_assets"
               name="Assets"
               parent="account.menu_finance_configuration"
               sequence="25"
-              />
-
-          <menuitem
-              id="menu_account_asset_category"
-              parent="menu_finance_config_assets"
-              action="account_asset_category_action"
               />
 
 
