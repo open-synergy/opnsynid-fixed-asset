@@ -122,7 +122,7 @@ class AccountAssetDepreciationLine(models.Model):
     @api.multi
     def unlink(self):
         obj_depreciation_line =\
-            self.env["account_asset_depreciation_line"]
+            self.env["account.asset.depreciation.line"]
 
         for document in self:
             if document.type == "create":

@@ -45,13 +45,6 @@ class AccountAssetCategory(models.Model):
         required=True,
         default=lambda self: self._get_company(),
     )
-    parent_id = fields.Many2one(
-        string="Parent Asset",
-        comodel_name="account.asset.asset",
-        domain=[
-            ("type", "=", "view")
-        ],
-    )
     account_analytic_id = fields.Many2one(
         string="Analytic account",
         comodel_name="account.analytic.account",
@@ -165,6 +158,11 @@ class AccountAssetCategory(models.Model):
         string="Skip Draft State",
         help="Check this if you want to automatically confirm the assets "
         "of this category when created by invoices.",
+    )
+    sequence_id = fields.Many2one(
+        string="Sequence",
+        comodel_name="ir.sequence",
+        company_dependent=True,
     )
     active = fields.Boolean(
         string="Active",

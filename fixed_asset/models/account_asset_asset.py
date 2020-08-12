@@ -18,6 +18,12 @@ except (ImportError, IOError) as err:
     _logger.debug(err)
 
 
+class DummyFy(object):
+    def __init__(self, *args, **argv):
+        for key, arg in argv.items():
+            setattr(self, key, arg)
+
+
 class AccountAssetAsset(models.Model):
     _name = "account.asset.asset"
     _description = "Asset"
@@ -75,6 +81,7 @@ class AccountAssetAsset(models.Model):
                 ("readonly", False)
             ]
         },
+        default="/"
     )
     purchase_value = fields.Float(
         string="Purchase Value",
@@ -883,9 +890,13 @@ class AccountAssetAsset(models.Model):
             asset_line = asset_line_obj.create(asset_line_vals)
             if self._context.get("create_asset_from_move_line"):
                 asset_line.move_id = self._context["move_id"]
+        sequence = asset._create_sequence()
+        asset.write({
+            "code": sequence,
+        })
         return asset
 
-    @api.model
+    @api.multi
     def write(self, vals):
         _super = super(AccountAssetAsset, self)
         res = _super.write(vals)
@@ -894,7 +905,7 @@ class AccountAssetAsset(models.Model):
         if vals.get("method_time"):
             if vals["method_time"] != "year" and not vals.get("prorata"):
                 vals["prorata"] = True
-        for asset in self.browse():
+        for asset in self:
             asset_type = vals.get("type") or asset.type
 
             if asset_type == "view" or \
@@ -1636,7 +1647,6 @@ class AccountAssetAsset(models.Model):
         obj_asset_category = self.env["account.asset.category"]
         if self.category_id:
             category = obj_asset_category.browse(self.category_id.id)
-            self.parent_id = category.parent_id.id
             self.method = category.method
             self.method_number = category.method_number
             self.method_time = category.method_time
@@ -1645,24 +1655,37 @@ class AccountAssetAsset(models.Model):
             self.prorata = category.prorata
             self.account_analytic_id = category.account_analytic_id.id
 
-    # @api.onchange(
-    #     "salvage_value",
-    #     "purchase_value",
-    #     "date_start",
-    # )
-    # def onchange_purchase_salvage_value(self):
-    #     purchase_value = self.purchase_value or 0.0
-    #     salvage_value = self.salvage_value or 0.0
-    #     if purchase_value or salvage_value:
-    #         self.asset_value = purchase_value - salvage_value
-    #     if ids:
-    #         aadl_obj = self.pool.get('account.asset.depreciation.line')
-    #         dl_create_ids = aadl_obj.search(
-    #             cr, uid, [('type', '=', 'create'), ('asset_id', 'in', ids)])
-    #         aadl_obj.write(
-    #             cr, uid, dl_create_ids,
-    #             {'amount': val['asset_value'], 'line_date': date_start})
-    #     return {'value': val}
+    @api.onchange(
+        "purchase_value",
+    )
+    def onchange_purchase_value_amount_depreciation_line(self):
+        self.asset_value = self._asset_value_compute()
+
+    @api.onchange(
+        "salvage_value",
+    )
+    def onchange_salvage_value_amount_depreciation_line(self):
+        self.asset_value = self._asset_value_compute()
+
+    @api.onchange(
+        "asset_value",
+    )
+    def onchange_amount_depreciation_line(self):
+        dl_ids = \
+            self.depreciation_line_ids.filtered(lambda x: x.type == "create")
+        if dl_ids:
+            for document in dl_ids:
+                document.amount = self.asset_value
+
+    @api.onchange(
+        "date_start",
+    )
+    def onchange_line_date_depreciation_line(self):
+        dl_ids = \
+            self.depreciation_line_ids.filtered(lambda x: x.type == "create")
+        if dl_ids:
+            for document in dl_ids:
+                document.line_date = self.date_start
 
     @api.onchange(
         "method_time",
