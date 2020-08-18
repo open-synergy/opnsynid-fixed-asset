@@ -31,12 +31,19 @@ and welcomed feedback.
 
 Credits
 =======
+Inspired
 
 Contributors
 ------------
-
+* Luc De Meyer (Noviat)
+* Frédéric Clementi (camptocamp)
+* Florian Dacosta (Akretion)
+* Stéphane Bidoul (Acsone)
 * Michael Viriyananda <viriyananda.michael@gmail.com>
 * Andhitia Rama <andhitia.r@gmail.com>
+
+Inspired By:
+- account_asset_managemenet <https://github.com/OCA/account-financial-tools/tree/8.0/account_asset_management>
 
 Maintainer
 ----------

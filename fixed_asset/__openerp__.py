@@ -12,11 +12,12 @@
     "application": False,
     "installable": True,
     "depends": [
+        "account_accountant",
         "base_sequence_configurator",
         "base_workflow_policy",
         "base_print_policy",
         "base_multiple_approval",
-        "account_accountant",
+        "base_cancel_reason",
     ],
     "data": [
         "security/account_asset_security.xml",
@@ -24,6 +25,8 @@
         "menu.xml",
         "data/ir_sequence_data.xml",
         "data/base_sequence_configurator_data.xml",
+        "data/base_cancel_reason_configurator_data.xml",
+        "data/base_workflow_policy_data.xml",
         "wizards/account_asset_remove_view.xml",
         "wizards/account_asset_change_duration_view.xml",
         "wizards/wizard_asset_compute_view.xml",

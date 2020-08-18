@@ -10,17 +10,41 @@
               <field name="arch" type="xml">
                       <form string="Asset">
                             <header>
-                                  <button name="action_confirm" states="draft" string="Confirm Asset" type="object" class="oe_highlight"/>
-                                  <button name="request_validation"
+                                  <button
+                                      name="%(base_print_policy.base_print_document_action)d"
+                                      string="Print"
+                                      type="action"
+                                      icon="gtk-print"/>
+                                  <button
+                                      string="Confirm Asset"
+                                      name="action_confirm"
+                                      attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"
+                                      type="object"
+                                      class="oe_highlight"/>
+                                  <button
                                       string="Request Validation"
+                                      name="request_validation"
                                       attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
                                       class="oe_highlight"
                                       type="object"/>
-                                  <button name="restart_validation"
+                                  <button
+                                      name="restart_validation"
                                       string="Restart Validation"
-                                      attrs="{'invisible': ['|','|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm'])]}"
+                                      attrs="{'invisible': ['|','|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm']),('restart_approval_ok','=',False)]}"
                                       type="object"/>
-                                  <button name="action_restart" states="confirm,open,close" string="Set to Draft" type="object" groups="account.group_account_manager"/>
+                                  <button
+                                      string="Cancel"
+                                      name="%(base_cancel_reason.base_cancel_reason_wizard_action)d"
+                                      type="action"
+                                      attrs="{'invisible':['|',('state','=','cancel'),('cancel_ok','=',False)]}"
+                                      confirm="Cancel Asset. Are you sure?"/>
+                                  <button
+                                      string="Set to Draft"
+                                      name="action_restart"
+                                      attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"
+                                      confirm="Restart Asset. Are you sure?"
+                                      type="object"
+                                      groups="account.group_account_manager"/>
                                   <button
                                       name="remove"
                                       invisible="1"
@@ -29,7 +53,7 @@
                                       groups="account.group_account_manager"
                                       attrs="{'invisible':['|', ('method_time', '!=', 'year'),('state', 'not in', ['open', 'close'])]}"
                                       help="Asset removal."/>
-                                  <field name="state" widget="statusbar" statusbar_visible="draft,confirm,open,close,removed"/>
+                                  <field name="state" widget="statusbar" statusbar_visible="draft,confirm,open,close"/>
                             </header>
                             <field name="need_validation" invisible="1"/>
                             <field name="validated" invisible="1"/>
@@ -75,6 +99,10 @@
                                         -
                                         <field name="name" class="oe_inline" placeholder="Name of Asset..." default_focus="1"/>
                                     </h1>
+                                    <h2 attrs="{'invisible': [('state', '!=', 'cancel')]}">
+                                        <label for="cancel_reason_id" string="Cancellation reason:"/>
+                                        <field name="cancel_reason_id" class="oe_inline"/>
+                                    </h2>
                               </div>
                               <group name="grp_1" colspan="4" col="4">
                                     <field name="parent_id"/>
@@ -91,21 +119,12 @@
                                     <page name="page_general" string="General">
                                           <group name="grp_general_1" colspan="4" col="4">
                                                 <group name="grp_general_1_1">
-                                                    <!-- <field name="purchase_value" widget="monetary" options="{'currency_field': 'currency_id'}"
-                                                             attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"
-                                                             on_change="onchange_purchase_salvage_value(purchase_value, salvage_value, date_start)"/>
-                                                    <field name="date_start"
-                                                             attrs="{'readonly':[('state','!=','draft')],'required':[('type','=','normal')]}"
-                                                             on_change="onchange_purchase_salvage_value(purchase_value, salvage_value, date_start)"/> -->
                                                      <field name="purchase_value" widget="monetary" options="{'currency_field': 'currency_id'}"
                                                               attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"/>
                                                      <field name="date_start"
                                                               attrs="{'readonly':[('state','!=','draft')],'required':[('type','=','normal')]}"/>
                                                 </group>
                                                 <group name="grp_general_1_2">
-                                                    <!-- <field name="salvage_value" widget="monetary" options="{'currency_field': 'company_currency_id'}"
-                                                         attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"
-                                                         on_change="onchange_purchase_salvage_value(purchase_value, salvage_value, date_start)"/> -->
                                                      <field name="salvage_value" widget="monetary" options="{'currency_field': 'company_currency_id'}"
                                                           attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"/>
                                                      <field name="date_remove"/>
@@ -259,6 +278,15 @@
                                             <field name="review_ids" readonly="1"/>
                                         </group>
                                     </page>
+                                    <page name="policy" string="Policies"  groups="base.group_system">
+                                        <group name="policy_1" colspan="4" col="2">
+                                            <field name="confirm_ok"/>
+                                            <field name="close_ok"/>
+                                            <field name="cancel_ok"/>
+                                            <field name="restart_ok"/>
+                                            <field name="restart_approval_ok"/>
+                                        </group>
+                                    </page>
                                     <page name="page_log" string="Logs">
                                         <group name="grp_log_1" colspan="4" col="3">
                                             <group name="grp_log_2" colspan="4" col="3">
@@ -268,6 +296,8 @@
                                                 <field name="open_user_id" nolabel="1"/>
                                                 <field name="close_date" string="Closing On"/>
                                                 <field name="close_user_id" nolabel="1"/>
+                                                <field name="cancel_date" string="Cancel"/>
+                                                <field name="cancel_user_id" nolabel="1"/>
                                             </group>
                                         </group>
                                     </page>

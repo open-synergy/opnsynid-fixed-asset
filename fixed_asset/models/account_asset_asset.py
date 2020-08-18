@@ -2,7 +2,7 @@
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-
+import calendar
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
 from openerp import fields, models, api, _
@@ -32,6 +32,7 @@ class AccountAssetAsset(models.Model):
         "tier.validation",
         "base.sequence_document",
         "base.workflow_policy_object",
+        "base.cancel.reason_common",
     ]
     _order = "date_start desc, name"
     _parent_store = True
@@ -311,8 +312,11 @@ class AccountAssetAsset(models.Model):
             ("open", "Running"),
             ("close", "Close"),
             ("removed", "Removed"),
+            ("cancel", "Cancelled"),
         ],
         required=True,
+        readonly=True,
+        copy=False,
         default="draft",
         help="When an asset is created, the status is 'Draft'.\n"
              "If the asset is confirmed, the status goes in 'Running' "
@@ -864,6 +868,43 @@ class AccountAssetAsset(models.Model):
         comodel_name="res.users",
         readonly=True,
         copy=False,
+    )
+    cancel_date = fields.Datetime(
+        string="Cancel Date",
+        readonly=True,
+    )
+    cancel_user_id = fields.Many2one(
+        string="Cancelled By",
+        comodel_name="res.users",
+        readonly=True,
+    )
+
+    @api.multi
+    def _compute_policy(self):
+        _super = super(AccountAssetAsset, self)
+        _super._compute_policy()
+
+    # Policy Field
+    confirm_ok = fields.Boolean(
+        string="Can Confirm",
+        compute="_compute_policy",
+    )
+    close_ok = fields.Boolean(
+        string="Can Close",
+        compute="_compute_policy",
+    )
+    cancel_ok = fields.Boolean(
+        string="Can Cancel",
+        compute="_compute_policy",
+    )
+    restart_ok = fields.Boolean(
+        string="Can Restart",
+        compute="_compute_policy",
+    )
+    restart_approval_ok = fields.Boolean(
+        string="Can Restart Approval",
+        compute="_compute_policy",
+        store=False,
     )
 
     # -- ORM Methods --
@@ -1656,18 +1697,6 @@ class AccountAssetAsset(models.Model):
             self.account_analytic_id = category.account_analytic_id.id
 
     @api.onchange(
-        "purchase_value",
-    )
-    def onchange_purchase_value_amount_depreciation_line(self):
-        self.asset_value = self._asset_value_compute()
-
-    @api.onchange(
-        "salvage_value",
-    )
-    def onchange_salvage_value_amount_depreciation_line(self):
-        self.asset_value = self._asset_value_compute()
-
-    @api.onchange(
         "asset_value",
     )
     def onchange_amount_depreciation_line(self):
@@ -1801,6 +1830,25 @@ class AccountAssetAsset(models.Model):
     def action_restart(self):
         for document in self:
             document.write(document._prepare_restart_data())
+
+    @api.multi
+    def _prepare_cancel_data(self):
+        self.ensure_one()
+        return {
+            "state": "cancel",
+            "cancel_date": fields.Datetime.now(),
+            "cancel_user_id": self.env.user.id,
+        }
+
+    @api.multi
+    def action_cancel(self):
+        for document in self:
+            dl_ids = document.depreciation_line_ids.filtered(
+                lambda x: x.type != "create"
+            )
+            if dl_ids:
+                dl_ids.unlink()
+            document.write(document._prepare_cancel_data())
 
     @api.multi
     def remove(self):

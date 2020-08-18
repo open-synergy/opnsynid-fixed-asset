@@ -171,6 +171,41 @@ class AccountAssetCategory(models.Model):
     note = fields.Text(
         string="Note"
     )
+    asset_confim_group_ids = fields.Many2many(
+        string="Allowed to Confirm",
+        comodel_name="res.groups",
+        relation="rel_asset_confirm_groups",
+        column1="journal_id",
+        column2="group_id",
+    )
+    asset_close_group_ids = fields.Many2many(
+        string="Allowed to Closing",
+        comodel_name="res.groups",
+        relation="rel_asset_close_groups",
+        column1="journal_id",
+        column2="group_id",
+    )
+    asset_cancel_group_ids = fields.Many2many(
+        string="Allowed to Cancel",
+        comodel_name="res.groups",
+        relation="rel_asset_cancel_groups",
+        column1="journal_id",
+        column2="group_id",
+    )
+    asset_restart_group_ids = fields.Many2many(
+        string="Allowed to Restart",
+        comodel_name="res.groups",
+        relation="rel_asset_restart_groups",
+        column1="journal_id",
+        column2="group_id",
+    )
+    asset_restart_approval_group_ids = fields.Many2many(
+        string="Allowed to Restart Approval",
+        comodel_name="res.groups",
+        relation="rel_asset_restart_approval_groups",
+        column1="journal_id",
+        column2="group_id",
+    )
 
     @api.constrains(
         "method",
