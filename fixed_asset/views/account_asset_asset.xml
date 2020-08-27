@@ -341,16 +341,18 @@
     <field name="model">account.asset.asset</field>
     <field name="arch" type="xml">
         <search string="Account Asset">
-            <filter icon="terp-document-new" string="Draft" name="draft" domain="[('state','=','draft')]" help="Draft Assets"/>
-            <filter icon="terp-check" string="Running" domain="[('state','=', 'open')]" help="Assets in Running State"/>
-            <filter icon="terp-check" string="Close" domain="[('state','=', 'close')]" help="Assets in Close State"/>
-            <filter icon="terp-dialog-close" string="Removed" domain="[('state','=', 'removed')]" help="Assets which have been removed"/>
-            <separator orientation="vertical"/>
             <field name="name" string="Asset"/>
             <field name="code"/>
             <field name="date_start"/>
             <field name="category_id"/>
-            <field name="partner_id" filter_domain="[('partner_id','child_of',self)]"/>
+            <group name="dom_state" string="State">
+                <field name="partner_id" filter_domain="[('partner_id','child_of',self)]"/>
+                <filter string="Draft" name="draft" domain="[('state','=','draft')]" help="Draft Assets"/>
+                <filter string="Waiting for Approval" name="confirm" domain="[('state','=','confirm')]" help="Assets waiting to be confirmed"/>
+                <filter string="Running" domain="[('state','=', 'open')]" help="Assets in Running State"/>
+                <filter string="Close" domain="[('state','=', 'close')]" help="Assets in Close State"/>
+                <filter string="Removed" domain="[('state','=', 'removed')]" help="Assets which have been removed"/>
+            </group>
             <group expand="0" string="Group By...">
                 <filter string="Type" icon="terp-stock_symbol-selection" domain="" context="{'group_by':'type'}"/>
                 <filter string="Category" icon="terp-stock_symbol-selection" domain="" context="{'group_by':'category_id'}"/>
