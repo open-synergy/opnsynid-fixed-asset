@@ -102,6 +102,9 @@ class AccountAssetCategory(models.Model):
         string="Journal",
         comodel_name="account.journal",
         required=True,
+        domain=[
+            ("type", "=", "general"),
+        ]
     )
     method = fields.Selection(
         string="Computation Method",
