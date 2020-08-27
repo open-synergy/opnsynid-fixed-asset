@@ -18,7 +18,7 @@ class AccountMoveLine(models.Model):
     asset_category_id = fields.Many2one(
         string="Asset Category",
         comodel_name="account.asset.category",
-     )
+    )
 
     @api.multi
     def onchange_account_id(self, account_id=False, partner_id=False):

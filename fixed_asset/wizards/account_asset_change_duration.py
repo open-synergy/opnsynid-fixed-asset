@@ -35,7 +35,7 @@ class AssetModify(models.TransientModel):
     )
     method_period = fields.Selection(
         string="Period Length",
-        selection = [
+        selection=[
             ("month", "Month"),
             ("quarter", "Quarter"),
             ("year", "Year"),

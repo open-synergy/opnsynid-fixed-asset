@@ -4,10 +4,11 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 import calendar
 from dateutil.relativedelta import relativedelta
-from datetime import datetime
+from datetime import datetime, time
 from openerp import fields, models, api, _
 from openerp.exceptions import Warning as UserError
 from openerp.addons.decimal_precision import decimal_precision as dp
+from openerp import tools
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -192,16 +193,16 @@ class AccountAssetAsset(models.Model):
     @api.multi
     @api.depends(
         "asset_value",
-         "depreciation_line_ids",
-         "depreciation_line_ids.amount",
-         "depreciation_line_ids.previous_id",
-         "depreciation_line_ids.init_entry",
-         "depreciation_line_ids.move_id",
-         "child_ids",
-         "child_ids.value_residual",
-         "child_ids.value_depreciated",
-         "child_ids.parent_id",
-     )
+        "depreciation_line_ids",
+        "depreciation_line_ids.amount",
+        "depreciation_line_ids.previous_id",
+        "depreciation_line_ids.init_entry",
+        "depreciation_line_ids.move_id",
+        "child_ids",
+        "child_ids.value_residual",
+        "child_ids.value_depreciated",
+        "child_ids.parent_id",
+    )
     def _compute_depreciation(self):
         for asset in self:
             if asset.type == "normal":
@@ -246,7 +247,7 @@ class AccountAssetAsset(models.Model):
         help="The estimated value that an asset will realize upon "
              "its sale at the end of its useful life.\n"
              "This value is used to determine the depreciation amounts.",
-     )
+    )
     note = fields.Text(
         string="Note",
     )
@@ -380,7 +381,7 @@ class AccountAssetAsset(models.Model):
     )
     method_period = fields.Selection(
         string="Period Length",
-        selection = [
+        selection=[
             ("month", "Month"),
             ("quarter", "Quarter"),
             ("year", "Year"),
@@ -1026,9 +1027,10 @@ class AccountAssetAsset(models.Model):
         filter_dl_ids =\
             self.depreciation_line_ids.filtered(
                 lambda x: x.type in ["depreciate", "remove"] and
-                        (x.init_entry or x.move_id))
+                (x.init_entry or x.move_id))
         for dl in filter_dl_ids:
             res = []
+
             def _parent_get(record):
                 res.append(record.id)
                 if record.parent_id:
@@ -1204,7 +1206,6 @@ class AccountAssetAsset(models.Model):
                 fy_date_start.year, fy_date_start.month, 1)
         return depreciation_start_date
 
-
     @api.multi
     def _get_depreciation_stop_date(self, depreciation_start_date):
         self.ensure_one()
@@ -1368,7 +1369,8 @@ class AccountAssetAsset(models.Model):
     def _compute_depreciation_table_lines(self, table, depreciation_start_date,
                                           depreciation_stop_date, line_dates):
 
-        digits = self.env["decimal.precision"].precision_get("Asset Depreciation")
+        digits = self.env["decimal.precision"].precision_get(
+            "Asset Depreciation")
         asset_sign = self._get_asset_value() >= 0 and 1 or -1
         i_max = len(table) - 1
         remaining_value = self._get_amount_to_depreciate()
@@ -1648,7 +1650,7 @@ class AccountAssetAsset(models.Model):
             result += depreciation.with_context(context).create_move()
 
         if check_triggers and recompute_ids:
-            asset_company_ids = set([x.company_id.id for x in assets])
+            asset_company_ids = set([x.company_id.id for x in self])
             triggers = filter(
                 lambda x: x["company_id"][0] in asset_company_ids,
                 recompute_triggers)

@@ -31,7 +31,7 @@ class AssetDepreciationConfirmationWizard(models.TransientModel):
         default=lambda self: self._default_period_id(),
         help="Choose the period for which you want to automatically "
              "post the depreciation lines of running assets",
-     )
+    )
 
     @api.multi
     def asset_compute(self):

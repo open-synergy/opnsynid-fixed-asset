@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import models, api
 
 
 class AccountInvoice(models.Model):
@@ -13,8 +13,6 @@ class AccountInvoice(models.Model):
     def action_number(self):
         _super = super(AccountInvoice, self)
         res = _super.action_number()
-        obj_account_asset = self.env["account.asset.asset"]
-        obj_depreciation_line = self.env["account.asset.depreciation.line"]
         for inv in self:
             move = inv.move_id
             assets = [aml.asset_id for aml in

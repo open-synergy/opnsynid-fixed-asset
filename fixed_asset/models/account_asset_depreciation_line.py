@@ -5,6 +5,7 @@
 
 from openerp import fields, models, api, _
 from openerp.exceptions import Warning as UserError
+from datetime import time
 
 
 class AccountAssetDepreciationLine(models.Model):
@@ -117,7 +118,7 @@ class AccountAssetDepreciationLine(models.Model):
         string="Initial Balance Entry",
         help="Set this flag for entries of previous fiscal years "
              "for which OpenERP has not generated accounting entries.",
-     )
+    )
 
     @api.multi
     def unlink(self):
@@ -167,7 +168,7 @@ class AccountAssetDepreciationLine(models.Model):
     )
     def onchange_amount(self):
         if self.type == "depreciate":
-            aset_value = self.asset_value
+            asset_value = self.asset_value
             depreciated_value = self.depreciated_value
             amount = self.amount
             self.remaining_value = asset_value - depreciated_value - amount
@@ -218,7 +219,7 @@ class AccountAssetDepreciationLine(models.Model):
         return move_data
 
     @api.multi
-    def _setup_move_line_data(self, depreciation_date,period_id, account_id,
+    def _setup_move_line_data(self, depreciation_date, period_id, account_id,
                               type, move_id):
         self.ensure_one()
         asset = self.asset_id
@@ -276,8 +277,12 @@ class AccountAssetDepreciationLine(models.Model):
         exp_acc_id = asset.category_id.account_expense_depreciation_id.id
         ctx = dict(context, allow_asset=True)
         obj_account_move_line.with_context(ctx).create(
-            self._setup_move_line_data(depreciation_date, period_id.id,
-                                       depr_acc_id, "depreciation", move_id.id))
+            self._setup_move_line_data(
+                depreciation_date,
+                period_id.id,
+                depr_acc_id,
+                "depreciation",
+                move_id.id))
         obj_account_move_line.with_context(ctx).create(
             self._setup_move_line_data(depreciation_date, period_id.id,
                                        exp_acc_id, "expense", move_id.id))
@@ -314,7 +319,6 @@ class AccountAssetDepreciationLine(models.Model):
 
     @api.multi
     def unlink_move(self):
-        move_obj = self.pool.get('account.move')
         ctx = {"unlink_from_asset": True}
 
         move = self.move_id

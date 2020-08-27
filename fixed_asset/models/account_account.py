@@ -3,8 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, _
-from openerp.exceptions import Warning as UserError
+from openerp import models, fields
 
 
 class AccountAccount(models.Model):
@@ -15,4 +14,4 @@ class AccountAccount(models.Model):
         comodel_name="account.asset.category",
         help="Default Asset Category when creating invoice lines "
              "with this account.",
-     )
+    )

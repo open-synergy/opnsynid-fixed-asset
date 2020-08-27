@@ -306,7 +306,7 @@ class AccountAssetRemove(orm.TransientModel):
             'period_id': period_id,
             'journal_id': journal_id,
             'narration': wiz_data.note,
-            }
+        }
         move_id = move_obj.create(cr, uid, move_vals, context=context)
 
         # create asset line

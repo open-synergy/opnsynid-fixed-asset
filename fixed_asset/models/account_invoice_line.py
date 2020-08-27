@@ -31,7 +31,7 @@ class AccountInvoiceLine(models.Model):
                             fposition_id, account_id):
         _super = super(AccountInvoiceLine, self)
         res = _super.onchange_account_id(product_id, partner_id, inv_type,
-                                  fposition_id, account_id)
+                                         fposition_id, account_id)
         obj_account_account = self.env["account.account"]
         if account_id:
             asset_category =\

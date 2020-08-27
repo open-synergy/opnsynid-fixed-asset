@@ -119,8 +119,8 @@ class AccountAssetCategory(models.Model):
              "  * Degressive-Linear (only for Time Method = Year): "
              "Degressive becomes linear when the annual linear "
              "depreciation exceeds the annual degressive depreciation",
-         default="linear",
-     )
+        default="linear",
+    )
     method_number = fields.Integer(
         string="Number of Years",
         help="The number of years needed to depreciate your asset",
@@ -149,7 +149,7 @@ class AccountAssetCategory(models.Model):
              "number of depreciation lines.\n"
              "  * Number of Years: Specify the number of years "
              "for the depreciation.\n",
-         default="year",
+        default="year",
     )
     prorata = fields.Boolean(
         string="Prorata Temporis",

@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, _
+from openerp import models, api, _
 from openerp.exceptions import Warning as UserError
 
 
