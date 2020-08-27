@@ -831,10 +831,22 @@ class AccountAssetAsset(models.Model):
     prorate_by_month = fields.Boolean(
         string="Prorate by Month",
         default=True,
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False)
+            ]
+        },
     )
     date_min_prorate = fields.Integer(
         string="Date Min. to Prorate",
         default=15,
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False)
+            ]
+        },
     )
     # Log Fields
     confirm_date = fields.Datetime(
