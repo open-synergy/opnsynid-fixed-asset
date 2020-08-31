@@ -13,3 +13,4 @@
 #
 # To provide both the URL and a branch, use:
 opnsynid-server-tools https://github.com/open-synergy/opnsynid-server-tools 8.0
+opnsynid-server-tools https://github.com/open-synergy/opnsynid-server-tools 8.0
