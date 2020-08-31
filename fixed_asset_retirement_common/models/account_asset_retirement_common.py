@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 OpenSynergy Indonesia
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-
+# Copyright 2020 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from openerp import models, fields, api
 
 
@@ -12,7 +12,10 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         "mail.thread",
         "base.sequence_document",
         "base.workflow_policy_object",
+        "tier.validation",
     ]
+    _state_from = ["draft", "confirm"]
+    _state_to = ["open"]
 
     @api.model
     def _default_company_id(self):
@@ -392,12 +395,6 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         store=False,
         readonly=True,
     )
-    open_ok = fields.Boolean(
-        string="Can Open",
-        compute="_compute_policy",
-        store=False,
-        readonly=True,
-    )
     valid_ok = fields.Boolean(
         string="Can Validate",
         compute="_compute_policy",
@@ -416,11 +413,31 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         store=False,
         readonly=True,
     )
+    restart_validation_ok = fields.Boolean(
+        string="Can Restart Validation",
+        compute="_compute_policy",
+    )
+
+    @api.multi
+    def validate_tier(self):
+        _super = super(FixedAssetRetirementCommon, self)
+        _super.validate_tier()
+        for document in self:
+            if document.validated:
+                document.action_open()
+
+    @api.multi
+    def restart_validation(self):
+        _super = super(FixedAssetRetirementCommon, self)
+        _super.restart_validation()
+        for document in self:
+            document.request_validation()
 
     @api.multi
     def action_confirm(self):
         for retirement in self:
             retirement.write(self._prepare_confirm_data())
+            retirement.request_validation()
 
     @api.multi
     def action_open(self):
@@ -448,6 +465,7 @@ class FixedAssetRetirementCommon(models.AbstractModel):
             retirement.asset_id.write({
                 "state": "open",
             })
+            retirement.restart_validation()
 
     @api.multi
     def action_restart(self):

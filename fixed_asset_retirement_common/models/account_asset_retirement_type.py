@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 OpenSynergy Indonesia
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-
+# Copyright 2020 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from openerp import models, fields
 
 
@@ -95,6 +95,13 @@ class FixedAssetRetirementType(models.Model):
         string="Allowed To Restart Asset Retirement",
         comodel_name="res.groups",
         relation="rel_type_asset_retirement_allowed_restart_groups",
+        column1="type_id",
+        column2="group_id",
+    )
+    asset_retirement_restart_validation_grp_ids = fields.Many2many(
+        string="Allowed To Restart Validation Asset Retirement",
+        comodel_name="res.groups",
+        relation="rel_type_asset_retirement_allowed_restart_validation_groups",
         column1="type_id",
         column2="group_id",
     )
