@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<!-- Copyright 2018 OpenSynergy Indonesia
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
 <data>
@@ -7,7 +8,7 @@
     <field name="name">account.asset_retirement_donation form</field>
     <field name="model">account.asset_retirement_donation</field>
     <field name="mode">primary</field>
-    <field name="inherit_id" ref="account_asset_management_retirement_common.account_asset_retirement_common_view_form"/>
+    <field name="inherit_id" ref="fixed_asset_retirement_common.account_asset_retirement_common_view_form"/>
     <field name="arch" type="xml">
         <data/>
     </field>
@@ -17,7 +18,7 @@
     <field name="name">account.asset_retirement_donation tree</field>
     <field name="model">account.asset_retirement_donation</field>
     <field name="mode">primary</field>
-    <field name="inherit_id" ref="account_asset_management_retirement_common.account_asset_retirement_common_view_tree"/>
+    <field name="inherit_id" ref="fixed_asset_retirement_common.account_asset_retirement_common_view_tree"/>
     <field name="arch" type="xml">
         <data/>
     </field>
@@ -27,7 +28,7 @@
     <field name="name">account.asset_retirement_donation search</field>
     <field name="model">account.asset_retirement_donation</field>
     <field name="mode">primary</field>
-    <field name="inherit_id" ref="account_asset_management_retirement_common.account_asset_retirement_common_view_search"/>
+    <field name="inherit_id" ref="fixed_asset_retirement_common.account_asset_retirement_common_view_search"/>
     <field name="arch" type="xml">
         <data/>
     </field>
@@ -59,7 +60,7 @@
 <menuitem
     id="account_asset_retirement_donation_menu"
     name="Retirement by Donation"
-    parent="account_asset_management_retirement_common.account_asset_retirement_root_menu"
+    parent="fixed_asset_retirement_common.account_asset_retirement_root_menu"
     action="account_asset_retirement_donation_action"
     sequence="2"/>
 

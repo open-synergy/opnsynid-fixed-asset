@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 OpenSynergy Indonesia
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-
+# Copyright 2020 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from openerp import models, api
 
 
@@ -14,7 +14,7 @@ class FixedAssetRetirementDonation(models.Model):
     @api.model
     def _default_type_id(self):
         return self.env.ref(
-            "account_asset_management_retirement_by_donation."
+            "fixed_asset_retirement_donation."
             "retirement_type_donation").id
 
     @api.model
@@ -22,9 +22,9 @@ class FixedAssetRetirementDonation(models.Model):
         asset_retirement_type =\
             self.env["account.asset_retirement_type"]
         type_id = self.env.ref(
-            "account_asset_management_retirement_by_donation."
+            "fixed_asset_retirement_donation."
             "retirement_type_donation", False) and self.env.ref(
-                "account_asset_management_retirement_by_donation."
+                "fixed_asset_retirement_donation."
                 "retirement_type_donation") or asset_retirement_type
         args.append(("type_id", "=", type_id.id))
         return super(FixedAssetRetirementDonation, self).search(
