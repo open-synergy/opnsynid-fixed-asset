@@ -14,15 +14,15 @@ class FixedAssetRetirementSale(models.Model):
     @api.model
     def _default_type_id(self):
         return self.env.ref(
-            "account_asset_management_retirement_sale."
+            "fixed_asset_retirement_sale."
             "retirement_type_sale").id
 
     @api.model
     def search(self, args, offset=0, limit=None, order=None, count=False):
         type_id = self.env.ref(
-            "account_asset_management_retirement_sale."
+            "fixed_asset_retirement_sale."
             "retirement_type_sale", False) and self.env.ref(
-                "account_asset_management_retirement_sale."
+                "fixed_asset_retirement_sale."
                 "retirement_type_sale") or self.env["account."
                                                     "asset_retirement_type"]
         args.append(("type_id", "=", type_id.id))
