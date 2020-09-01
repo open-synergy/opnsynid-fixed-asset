@@ -20,12 +20,6 @@ class ResConfig(models.TransientModel):
         related="company_id.asset_useful_life_confirm_grp_ids",
         store=False,
     )
-    asset_useful_life_open_grp_ids = fields.Many2many(
-        string="Allowed To Start Fixed Asset Useful Life Estimation Change",
-        comodel_name="res.groups",
-        related="company_id.asset_useful_life_open_grp_ids",
-        store=False,
-    )
     asset_useful_life_valid_grp_ids = fields.Many2many(
         string="Allowed To Validate Fixed Asset Useful Life Estimation Change",
         comodel_name="res.groups",
@@ -44,6 +38,12 @@ class ResConfig(models.TransientModel):
         related="company_id.asset_useful_life_restart_grp_ids",
         store=False,
     )
+    asset_useful_life_restart_validation_grp_ids = fields.Many2many(
+        string="Allowed To Restart Validation Asset Useful Life Estimation Change",
+        comodel_name="res.groups",
+        related="company_id.asset_useful_life_restart_validation_grp_ids",
+        store=False,
+    )
     asset_salvage_sequence_id = fields.Many2one(
         string="Fixed Asset Salvage Value Estimation Change Sequence",
         comodel_name="ir.sequence",
@@ -55,12 +55,6 @@ class ResConfig(models.TransientModel):
                "Estimation Change",
         comodel_name="res.groups",
         related="company_id.asset_salvage_confirm_grp_ids",
-        store=False,
-    )
-    asset_salvage_open_grp_ids = fields.Many2many(
-        string="Allowed To Start Fixed Asset Salvage Value Estimation Change",
-        comodel_name="res.groups",
-        related="company_id.asset_salvage_open_grp_ids",
         store=False,
     )
     asset_salvage_valid_grp_ids = fields.Many2many(
@@ -81,5 +75,12 @@ class ResConfig(models.TransientModel):
                "Estimation Change",
         comodel_name="res.groups",
         related="company_id.asset_salvage_restart_grp_ids",
+        store=False,
+    )
+    asset_salvage_restart_validation_grp_ids = fields.Many2many(
+        string="Allowed To Restart Validation Asset Salvage Value "
+               "Estimation Change",
+        comodel_name="res.groups",
+        related="company_id.asset_salvage_restart_validation_grp_ids",
         store=False,
     )

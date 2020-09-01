@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018-2019 OpenSynergy Indonesia
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-
+# Copyright 2020 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from datetime import datetime
 from openerp import models, fields, api
 from dateutil.relativedelta import relativedelta
@@ -14,7 +14,10 @@ class FixedAssetSalvageEstimationChange(models.Model):
         "mail.thread",
         "base.sequence_document",
         "base.workflow_policy_object",
+        "tier.validation",
     ]
+    _state_from = ["draft", "confirm"]
+    _state_to = ["open"]
 
     @api.model
     def _default_company_id(self):
@@ -191,12 +194,6 @@ class FixedAssetSalvageEstimationChange(models.Model):
         store=False,
         readonly=True,
     )
-    open_ok = fields.Boolean(
-        string="Can Open",
-        compute="_compute_policy",
-        store=False,
-        readonly=True,
-    )
     valid_ok = fields.Boolean(
         string="Can Validate",
         compute="_compute_policy",
@@ -215,11 +212,31 @@ class FixedAssetSalvageEstimationChange(models.Model):
         store=False,
         readonly=True,
     )
+    restart_validation_ok = fields.Boolean(
+        string="Can Restart Validation",
+        compute="_compute_policy",
+    )
+
+    @api.multi
+    def validate_tier(self):
+        _super = super(FixedAssetSalvageEstimationChange, self)
+        _super.validate_tier()
+        for document in self:
+            if document.validated:
+                document.action_open()
+
+    @api.multi
+    def restart_validation(self):
+        _super = super(FixedAssetSalvageEstimationChange, self)
+        _super.restart_validation()
+        for document in self:
+            document.request_validation()
 
     @api.multi
     def action_confirm(self):
         for change in self:
             change.write(self._prepare_confirm_data())
+            change.request_validation()
 
     @api.multi
     def action_open(self):
@@ -239,6 +256,7 @@ class FixedAssetSalvageEstimationChange(models.Model):
     def action_cancel(self):
         for change in self:
             change.write(self._prepare_cancel_data())
+            change.restart_validation()
 
     @api.multi
     def action_restart(self):
@@ -256,7 +274,7 @@ class FixedAssetSalvageEstimationChange(models.Model):
     def _prepare_asset_value(self):
         self.ensure_one()
         subtype = self.env.ref(
-            "account_asset_management_estimation_change."
+            "fixed_asset_estimation_change."
             "depr_line_subtype_salvage_value")
         return {
             "name": self._get_asset_value_name(),
@@ -310,7 +328,7 @@ class FixedAssetSalvageEstimationChange(models.Model):
     def _prepare_depreciation(self):
         self.ensure_one()
         subtype = self.env.ref(
-            "account_asset_management_estimation_change."
+            "fixed_asset_estimation_change."
             "depr_line_subtype_salvage_value")
         return {
             "name": self._get_depreciation_name(),
