@@ -29,6 +29,11 @@ class AccountAssetDepreciationLine(models.Model):
         comodel_name="account.asset.depreciation.line",
         readonly=True,
     )
+    subtype_id = fields.Many2one(
+        string="Subtype",
+        comodel_name="account.asset_depreciation_line_subtype",
+        ondelete="restrict",
+    )
     parent_state = fields.Selection(
         string="State of Asset",
         related="asset_id.state",

@@ -167,6 +167,7 @@
                         <field name="depreciation_line_ids" mode="tree" options="{'reload_on_button': true}">
                         <tree string="Asset Lines" colors="blue:(move_check == False) and (init_entry == False)" create="false">
                             <field name="type"/>
+                            <field name="subtype_id"/>
                             <field name="line_date"/>
                             <field name="depreciated_value" readonly="1"/>
                             <field name="amount"/>
@@ -187,6 +188,7 @@
                                     <field name="parent_state" invisible="1"/>
                                     <field name="asset_value" invisible="1"/>
                                     <field name="type"/>
+                                    <field name="subtype_id"/>
                                     <field name="name"/>
                                     <field name="amount" attrs="{'readonly':[('move_check','=',True)]}"/>
                                     <field name="init_entry" attrs="{'readonly':['|', ('move_check', '=', True), ('type', '=', 'create')]}"/>

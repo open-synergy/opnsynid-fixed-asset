@@ -8,6 +8,7 @@ from . import (
     account_account,
     account_asset_recompute_trigger,
     account_asset_asset,
+    account_asset_depreciation_line_subtype,
     account_asset_depreciation_line,
     account_move,
     account_move_line,
