@@ -662,11 +662,14 @@ class AccountAssetAsset(models.Model):
         return [
             "&",
             "&",
-            "|", ("move_check", "=", True),
+            "&",
+            "|",
+            ("move_check", "=", True),
             ("init_entry", "=", True),
             ("asset_id", "=", self.id),
             ("type", "=", "depreciate"),
-            ("line_date", ">=", date)
+            ("line_date", ">=", date),
+            ("subtype_id", "=", False)
         ]
 
     @api.multi
