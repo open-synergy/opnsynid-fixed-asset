@@ -39,7 +39,7 @@ class ResConfig(models.TransientModel):
         store=False,
     )
     asset_improvement_restart_validation_grp_ids = fields.Many2many(
-        string="Allowed To Restart Fixed Asset Improvement",
+        string="Allowed To Restart Validation Fixed Asset Improvement",
         comodel_name="res.groups",
         related="company_id.asset_improvement_restart_validation_grp_ids",
         store=False,
