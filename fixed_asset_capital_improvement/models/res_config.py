@@ -20,12 +20,6 @@ class ResConfig(models.TransientModel):
         related="company_id.asset_improvement_confirm_grp_ids",
         store=False,
     )
-    asset_improvement_open_grp_ids = fields.Many2many(
-        string="Allowed To Start Fixed Asset Improvement",
-        comodel_name="res.groups",
-        related="company_id.asset_improvement_open_grp_ids",
-        store=False,
-    )
     asset_improvement_valid_grp_ids = fields.Many2many(
         string="Allowed To Validate Fixed Asset Improvement",
         comodel_name="res.groups",
@@ -42,5 +36,11 @@ class ResConfig(models.TransientModel):
         string="Allowed To Restart Fixed Asset Improvement",
         comodel_name="res.groups",
         related="company_id.asset_improvement_restart_grp_ids",
+        store=False,
+    )
+    asset_improvement_restart_validation_grp_ids = fields.Many2many(
+        string="Allowed To Restart Fixed Asset Improvement",
+        comodel_name="res.groups",
+        related="company_id.asset_improvement_restart_validation_grp_ids",
         store=False,
     )

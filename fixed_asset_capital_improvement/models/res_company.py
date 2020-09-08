@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 OpenSynergy Indonesia
+# Copyright 2020 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 from openerp import models, fields
 
 
@@ -16,13 +16,6 @@ class ResCompany(models.Model):
         string="Allowed To Confirm Fixed Asset Improvement",
         comodel_name="res.groups",
         relation="rel_company_asset_improvement_allowed_confirm",
-        column1="company_id",
-        column2="group_id",
-    )
-    asset_improvement_open_grp_ids = fields.Many2many(
-        string="Allowed To Start Fixed Asset Improvement",
-        comodel_name="res.groups",
-        relation="rel_company_asset_improvement_allowed_open",
         column1="company_id",
         column2="group_id",
     )
@@ -44,6 +37,13 @@ class ResCompany(models.Model):
         string="Allowed To Restart Fixed Asset Improvement",
         comodel_name="res.groups",
         relation="rel_company_asset_improvement_allowed_restart",
+        column1="company_id",
+        column2="group_id",
+    )
+    asset_improvement_restart_validation_grp_ids = fields.Many2many(
+        string="Allowed To Restart Validation Fixed Asset Improvement",
+        comodel_name="res.groups",
+        relation="rel_company_asset_improvement_allowed_restart_validation",
         column1="company_id",
         column2="group_id",
     )
