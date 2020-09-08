@@ -77,7 +77,7 @@
                         <field name="asset_salvage_restart_grp_ids" widget="many2many_tags" class="oe_inline"/>
                     </div>
                     <div>
-                        <label for="id" string="To Restart" class="oe_inline"/>
+                        <label for="id" string="To Restart Validation" class="oe_inline"/>
                         <field name="asset_salvage_restart_validation_grp_ids" widget="many2many_tags" class="oe_inline"/>
                     </div>
                 </div>
