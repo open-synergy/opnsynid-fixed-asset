@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 OpenSynergy Indonesia
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-
+# Copyright 2020 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from openerp import models, fields, api, _
 from openerp.exceptions import Warning as UserError
 
@@ -13,7 +13,10 @@ class ComplexAssetMovementCommon(models.AbstractModel):
         "mail.thread",
         "base.sequence_document",
         "base.workflow_policy_object",
+        "tier.validation",
     ]
+    _state_from = ["draft", "confirm"]
+    _state_to = ["open"]
 
     @api.model
     def _default_company_id(self):
@@ -119,6 +122,7 @@ class ComplexAssetMovementCommon(models.AbstractModel):
         selection=[
             ("draft", "Draft"),
             ("confirm", "Waiting for Approval"),
+            ("open", "On Progress"),
             ("valid", "Valid"),
             ("cancel", "Cancel"),
         ],
@@ -149,6 +153,10 @@ class ComplexAssetMovementCommon(models.AbstractModel):
         store=False,
         readonly=True,
     )
+    restart_validation_ok = fields.Boolean(
+        string="Can Restart Validation",
+        compute="_compute_policy",
+    )
     confirmed_date = fields.Datetime(
         string="Confirmation Date",
         readonly=True,
@@ -156,6 +164,17 @@ class ComplexAssetMovementCommon(models.AbstractModel):
     )
     confirmed_user_id = fields.Many2one(
         string="Confirmation By",
+        comodel_name="res.users",
+        readonly=True,
+        copy=False,
+    )
+    opened_date = fields.Datetime(
+        string="Opened Date",
+        readonly=True,
+        copy=False,
+    )
+    opened_user_id = fields.Many2one(
+        string="Open By",
         comodel_name="res.users",
         readonly=True,
         copy=False,
@@ -184,9 +203,30 @@ class ComplexAssetMovementCommon(models.AbstractModel):
     )
 
     @api.multi
+    def validate_tier(self):
+        _super = super(ComplexAssetMovementCommon, self)
+        _super.validate_tier()
+        for document in self:
+            if document.validated:
+                document.action_open()
+
+    @api.multi
+    def restart_validation(self):
+        _super = super(ComplexAssetMovementCommon, self)
+        _super.restart_validation()
+        for document in self:
+            document.request_validation()
+
+    @api.multi
     def action_confirm(self):
         for rec in self:
             rec.write(self._prepare_confirm_data())
+            rec.request_validation()
+
+    @api.multi
+    def action_open(self):
+        for rec in self:
+            rec.write(self._prepare_open_data())
 
     @api.multi
     def action_valid(self):
@@ -197,6 +237,7 @@ class ComplexAssetMovementCommon(models.AbstractModel):
     def action_cancel(self):
         for rec in self:
             rec.write(self._prepare_cancel_data())
+            rec.restart_validation()
 
     @api.multi
     def action_restart(self):
@@ -210,6 +251,16 @@ class ComplexAssetMovementCommon(models.AbstractModel):
             "state": "confirm",
             "confirmed_user_id": self.env.user.id,
             "confirmed_date": fields.Datetime.now(),
+        }
+        return result
+
+    @api.multi
+    def _prepare_open_data(self):
+        self.ensure_one()
+        result = {
+            "state": "open",
+            "opened_user_id": self.env.user.id,
+            "opened_date": fields.Datetime.now(),
         }
         return result
 
@@ -240,6 +291,8 @@ class ComplexAssetMovementCommon(models.AbstractModel):
             "state": "draft",
             "confirmed_user_id": False,
             "confirmed_date": False,
+            "opened_user_id": False,
+            "opened_date": False,
             "validated_user_id": False,
             "validated_date": False,
             "cancelled_user_id": False,
