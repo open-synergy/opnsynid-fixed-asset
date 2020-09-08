@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<!-- Copyright 2018-2019 OpenSynergy Indonesia
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
 <data>
@@ -15,11 +16,11 @@
             </xpath>
 
             <xpath expr="//group[@name='group_1_2']" position="attributes">
-                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+                <attribute name="groups">fixed_asset_impairment.group_technical_impairment_accounting</attribute>
             </xpath>
 
             <xpath expr="//page[@name='accounting']" position="attributes">
-                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+                <attribute name="groups">fixed_asset_impairment.group_technical_impairment_accounting</attribute>
             </xpath>
         </data>
     </field>
@@ -50,22 +51,22 @@
                 <attribute name="string">Fixed Asset Impairment</attribute>
             </xpath>
             <xpath expr="//field[@name='account_impairment_id']" position="attributes">
-                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+                <attribute name="groups">fixed_asset_impairment.group_technical_impairment_accounting</attribute>
             </xpath>
             <xpath expr="//field[@name='account_contra_id']" position="attributes">
-                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+                <attribute name="groups">fixed_asset_impairment.group_technical_impairment_accounting</attribute>
             </xpath>
             <xpath expr="//field[@name='journal_id']" position="attributes">
-                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+                <attribute name="groups">fixed_asset_impairment.group_technical_impairment_accounting</attribute>
             </xpath>
             <xpath expr="//filter[@name='grp_account_impairment']" position="attributes">
-                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+                <attribute name="groups">fixed_asset_impairment.group_technical_impairment_accounting</attribute>
             </xpath>
             <xpath expr="//filter[@name='grp_account_contra']" position="attributes">
-                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+                <attribute name="groups">fixed_asset_impairment.group_technical_impairment_accounting</attribute>
             </xpath>
             <xpath expr="//filter[@name='grp_journal']" position="attributes">
-                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+                <attribute name="groups">fixed_asset_impairment.group_technical_impairment_accounting</attribute>
             </xpath>
         </data>
     </field>

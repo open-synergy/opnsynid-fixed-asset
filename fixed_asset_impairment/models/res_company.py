@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 OpenSynergy Indonesia
+# Copyright 2020 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields
@@ -34,9 +35,16 @@ class ResCompany(models.Model):
         column2="group_id",
     )
     fixed_asset_impairment_restart_grp_ids = fields.Many2many(
-        string="Allowed To Restart Fixed Asset Impairment",
+        string="Allowed To Restart Validation Fixed Asset Impairment",
         comodel_name="res.groups",
         relation="rel_company_fixed_asset_impairment_allowed_restart_groups",
+        column1="company_id",
+        column2="group_id",
+    )
+    fixed_asset_impairment_restart_val_grp_ids = fields.Many2many(
+        string="Allowed To Restart Fixed Asset Impairment",
+        comodel_name="res.groups",
+        relation="rel_company_asset_impairment_allowed_restart_val_groups",
         column1="company_id",
         column2="group_id",
     )
@@ -69,6 +77,13 @@ class ResCompany(models.Model):
         string="Allowed To Restart Fixed Asset Impairment Reversal",
         comodel_name="res.groups",
         relation="rel_company_fixed_asset_imp_rev_allowed_restart_groups",
+        column1="company_id",
+        column2="group_id",
+    )
+    fixed_impairment_reversal_restart_val_grp_ids = fields.Many2many(
+        string="Allowed To Restart Validation Fixed Asset Impairment Reversal",
+        comodel_name="res.groups",
+        relation="rel_company_fixed_asset_imp_rev_allowed_restart_val_groups",
         column1="company_id",
         column2="group_id",
     )

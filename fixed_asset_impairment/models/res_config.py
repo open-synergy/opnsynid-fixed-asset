@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 OpenSynergy Indonesia
+# Copyright 2020 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields
@@ -38,6 +39,12 @@ class ResConfig(models.TransientModel):
         related="company_id.fixed_asset_impairment_restart_grp_ids",
         store=False,
     )
+    fixed_asset_impairment_restart_val_grp_ids = fields.Many2many(
+        string="Allowed To Restart Fixed Asset Impairment",
+        comodel_name="res.groups",
+        related="company_id.fixed_asset_impairment_restart_val_grp_ids",
+        store=False,
+    )
     fixed_asset_impairment_reversal_sequence_id = fields.Many2one(
         string="Fixed Asset Impairment Reversal Sequence",
         comodel_name="ir.sequence",
@@ -66,5 +73,11 @@ class ResConfig(models.TransientModel):
         string="Allowed To Restart Fixed Asset Impairment Reversal",
         comodel_name="res.groups",
         related="company_id.fixed_asset_impairment_reversal_restart_grp_ids",
+        store=False,
+    )
+    fixed_impairment_reversal_restart_val_grp_ids = fields.Many2many(
+        string="Allowed To Restart Fixed Asset Impairment Reversal",
+        comodel_name="res.groups",
+        related="company_id.fixed_impairment_reversal_restart_val_grp_ids",
         store=False,
     )
