@@ -80,8 +80,8 @@
                         <field name="prev_method_period"/>
                         <field name="method_number"/>
                         <field name="method_period"/>
-                        <field name="asset_value_history_id" groups="account_asset_management_estimation_change.group_technical_useful_life_helper"/>
-                        <field name="depreciation_history_id" groups="account_asset_management_estimation_change.group_technical_useful_life_helper"/>
+                        <field name="asset_value_history_id" groups="fixed_asset_estimation_change.group_technical_useful_life_helper"/>
+                        <field name="depreciation_history_id" groups="fixed_asset_estimation_change.group_technical_useful_life_helper"/>
                     </group>
                 </group>
                 <notebook>
