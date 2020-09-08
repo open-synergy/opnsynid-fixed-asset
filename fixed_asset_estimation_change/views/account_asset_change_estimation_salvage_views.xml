@@ -79,8 +79,8 @@
                             <field name="currency_id" invisible="0"/>
                             <field name="prev_salvage_value" widget="monetary" options="{'currency_field':'currency_id'}"/>
                             <field name="salvage_value" widget="monetary" options="{'currency_field':'currency_id'}"/>
-                            <field name="asset_value_history_id" groups="account_asset_management_estimation_change.group_technical_salvage_helper"/>
-                            <field name="depreciation_history_id" groups="account_asset_management_estimation_change.group_technical_salvage_helper"/>
+                            <field name="asset_value_history_id" groups="fixed_asset_estimation_change.group_technical_salvage_helper"/>
+                            <field name="depreciation_history_id" groups="fixed_asset_estimation_change.group_technical_salvage_helper"/>
                     </group>
                 </group>
                 <notebook>

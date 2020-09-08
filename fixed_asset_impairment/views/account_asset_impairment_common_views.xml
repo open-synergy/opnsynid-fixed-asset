@@ -4,9 +4,9 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
 <data>
-<record id="account_asset_change_estimation_useful_life_view_form" model="ir.ui.view">
-    <field name="name">account.asset_change_estimation_useful_life form</field>
-    <field name="model">account.asset_change_estimation_useful_life</field>
+<record id="account_asset_impairment_common_view_form" model="ir.ui.view">
+    <field name="name">account.asset.impairment_common form</field>
+    <field name="model">account.asset.impairment_common</field>
     <field name="arch" type="xml">
         <form>
             <header>
@@ -71,22 +71,28 @@
                 <group name="group_1" colspan="4" col="2">
                     <group name="group_1_1" colspan="1" col="2">
                         <field name="company_id" groups="base.group_multi_company"/>
-                        <field name="date_change"/>
-                    </group>
-                    <group name="group_1_2" colspan="1" col="2">
+                        <field name="date"/>
+                        <field name="period_id"/>
+                        <field name="type" invisible="1"/>
                         <field name="asset_id"
                             domain="[('company_id','=',company_id),('type','=','normal')]"/>
-                        <field name="prev_method_number"/>
-                        <field name="prev_method_period"/>
-                        <field name="method_number"/>
-                        <field name="method_period"/>
-                        <field name="asset_value_history_id" groups="fixed_asset_estimation_change.group_technical_useful_life_helper"/>
-                        <field name="depreciation_history_id" groups="fixed_asset_estimation_change.group_technical_useful_life_helper"/>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="impairment_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                    </group>
+                    <group name="group_1_2" colspan="1" col="2">
+                        <field name="account_impairment_id"/>
+                        <field name="account_contra_id"/>
+                        <field name="journal_id"/>
                     </group>
                 </group>
                 <notebook>
                     <page name="note" string="Note">
                         <field name="note" colspan="4" nolabel="1"/>
+                    </page>
+                    <page name="accounting" string="Accounting Entry">
+                        <group name="accounting_1" colspan="4" col="2">
+                            <field name="account_move_id"/>
+                        </group>
                     </page>
                     <page name="policy" string="Policy" groups="base.group_system">
                         <group name="group_policy_1" colspan="4" col="2">
@@ -124,81 +130,53 @@
     </field>
 </record>
 
-<record id="account_asset_change_estimation_useful_life_view_tree" model="ir.ui.view">
-    <field name="name">account.asset_change_estimation_useful_life tree</field>
-    <field name="model">account.asset_change_estimation_useful_life</field>
+<record id="account_asset_impairment_common_view_tree" model="ir.ui.view">
+    <field name="name">account.asset.impairment_common tree</field>
+    <field name="model">account.asset.impairment_common</field>
     <field name="arch" type="xml">
         <tree>
             <field name="name"/>
             <field name="company_id" groups="base.group_multi_company"/>
-            <field name="date_change"/>
+            <field name="date"/>
             <field name="asset_id"/>
-            <field name="prev_method_number"/>
-            <field name="prev_method_period"/>
-            <field name="method_number"/>
-            <field name="method_period"/>
+            <field name="impairment_amount"/>
             <field name="state"/>
         </tree>
     </field>
 </record>
 
-<record id="account_asset_change_estimation_useful_life_view_search" model="ir.ui.view">
-    <field name="name">account.asset_change_estimation_useful_life search</field>
-    <field name="model">account.asset_change_estimation_useful_life</field>
+<record id="account_asset_impairment_common_view_search" model="ir.ui.view">
+    <field name="name">account.asset.impairment_common search</field>
+    <field name="model">account.asset.impairment_common</field>
     <field name="arch" type="xml">
         <search>
             <field name="name"/>
-            <field name="company_id" groups="base.group_multi_company"/>
             <field name="asset_id"/>
+            <field name="account_impairment_id"/>
+            <field name="account_contra_id"/>
+            <field name="journal_id"/>
+            <field name="company_id" groups="base.group_multi_company"/>
             <field name="state"/>
             <group name="group_state" string="State">
                 <filter name="filter_draft" string="Draft" domain="[('state','=','draft')]"/>
                 <filter name="filter_confirm" string="Waiting for Approval" domain="[('state','=','confirm')]"/>
-                <filter name="filter_open" string="On Progress" domain="[('state','=','open')]"/>
                 <filter name="filter_valid" string="Valid" domain="[('state','=','valid')]"/>
                 <filter name="filter_cancel" string="Cancel" domain="[('state','=','cancel')]"/>
             </group>
             <group name="group_by" string="Group By..">
                 <filter name="grp_asset" string="Asset" context="{'group_by':'asset_id'}"/>
-                <filter name="grp_date_year" string="Date by Year" context="{'group_by':'date_change:year'}"/>
-                <filter name="grp_date_month" string="Date by Month" context="{'group_by':'date_change:month'}"/>
-                <filter name="grp_date_week" string="Date by Week" context="{'group_by':'date_change:week'}"/>
-                <filter name="grp_date_day" string="Date by Day" context="{'group_by':'date_change:day'}"/>
+                <filter name="grp_account_impairment" string="Impairment Account" context="{'group_by':'account_impairment_id'}"/>
+                <filter name="grp_account_contra" string="Contra-Impairment Account" context="{'group_by':'account_contra_id'}"/>
+                <filter name="grp_journal" string="Journal" context="{'group_by':'journal_id'}"/>
+                <filter name="grp_date_year" string="Date by Year" context="{'group_by':'date:year'}"/>
+                <filter name="grp_date_month" string="Date by Month" context="{'group_by':'date:month'}"/>
+                <filter name="grp_date_week" string="Date by Week" context="{'group_by':'date:week'}"/>
+                <filter name="grp_date_day" string="Date by Day" context="{'group_by':'date:day'}"/>
                 <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
             </group>
         </search>
     </field>
 </record>
-
-<record id="account_asset_change_estimation_useful_life_action" model="ir.actions.act_window">
-    <field name="name">Asset Useful Life Estimation Change</field>
-    <field name="res_model">account.asset_change_estimation_useful_life</field>
-    <field name="view_type">form</field>
-    <field name="view_mode">tree,form</field>
-    <field name="context">{'search_default_filter_draft':1, 'search_default_filter_confirm':1, 'search_default_filter_open':1, 'readonly_by_pass': True}</field>
-    <field name="search_view_id" ref="account_asset_change_estimation_useful_life_view_search"/>
-</record>
-
-<record id="account_asset_change_estimation_useful_life_window_tree" model="ir.actions.act_window.view">
-    <field eval="1" name="sequence"/>
-    <field name="view_mode">tree</field>
-    <field name="view_id" ref="account_asset_change_estimation_useful_life_view_tree"/>
-    <field name="act_window_id" ref="account_asset_change_estimation_useful_life_action"/>
-</record>
-
-<record id="account_asset_change_estimation_useful_life_window_form" model="ir.actions.act_window.view">
-    <field eval="2" name="sequence"/>
-    <field name="view_mode">form</field>
-    <field name="view_id" ref="account_asset_change_estimation_useful_life_view_form"/>
-    <field name="act_window_id" ref="account_asset_change_estimation_useful_life_action"/>
-</record>
-
-<menuitem
-    id="account_asset_change_estimation_useful_life_menu"
-    name="Useful of Life"
-    parent="account_asset_management_estimation_change_root"
-    action="account_asset_change_estimation_useful_life_action"
-    sequence="20"/>
 
 </data>
 </openerp>
