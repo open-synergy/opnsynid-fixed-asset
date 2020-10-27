@@ -26,9 +26,9 @@ class AccountMove(models.Model):
         return fields
 
     @api.multi
-    def unlink(self, context=None, check=True):
+    def unlink(self):
         _super = super(AccountMove, self)
-        res = _super.unlink(context=context, check=check)
+        res = _super.unlink()
         context = self.env.context
         obj_depreciation_line = self.env["account.asset.depreciation.line"]
         for move_id in self:
