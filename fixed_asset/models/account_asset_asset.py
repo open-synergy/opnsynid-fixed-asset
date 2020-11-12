@@ -1695,13 +1695,14 @@ class AccountAssetAsset(models.Model):
         "category_id",
     )
     def onchange_category_id(self):
-        if self.depreciation_line_ids:
-            for line in self.depreciation_line_ids:
-                if line.move_id:
-                    raise UserError(
-                        _('Error!'),
-                        _("You cannot change the category of an asset "
-                          "with accounting entries."))
+        if not self._context.get("create_asset_from_move_line"):
+            if self.depreciation_line_ids:
+                for line in self.depreciation_line_ids:
+                    if line.move_id:
+                        raise UserError(
+                            _('Error!'),
+                            _("You cannot change the category of an asset "
+                              "with accounting entries."))
         obj_asset_category = self.env["account.asset.category"]
         if self.category_id:
             category = obj_asset_category.browse(self.category_id.id)
