@@ -162,7 +162,7 @@
                     </page>
                     <page name="page_depreciation" string="Depreciation Board">
                         <header>
-                            <button type="object" name="compute_depreciation_board" string="Compute" icon="terp-stock_format-scientific" colspan="2" attrs="{'invisible':[('state','in',['close','removed'])]}"/>
+                            <button type="object" name="compute_depreciation_board" string="Compute" icon="terp-stock_format-scientific" colspan="2" attrs="{'invisible':[('state','!=','draft')]}"/>
                         </header>
                         <field name="depreciation_line_ids" mode="tree" options="{'reload_on_button': true}">
                         <tree string="Asset Lines" colors="blue:(move_check == False) and (init_entry == False)" create="false">
