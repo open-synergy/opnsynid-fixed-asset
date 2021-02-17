@@ -38,7 +38,7 @@ class AccountAssetAsset(models.Model):
     _order = "date_start desc, name"
     _parent_store = True
     _state_from = ["draft", "confirm"]
-    _state_to = ["open"]
+    _state_to = ["open", "close"]
 
     account_move_line_ids = fields.One2many(
         string="Entries",
