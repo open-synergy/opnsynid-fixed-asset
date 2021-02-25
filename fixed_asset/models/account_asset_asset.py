@@ -923,9 +923,7 @@ class AccountAssetAsset(models.Model):
         store=False,
     )
 
-    # -- ORM Methods --
     @api.model
-    @api.returns("self")
     def create(self, vals):
         if vals.get("method_time") != "year" and not vals.get("prorata"):
             vals["prorata"] = True
