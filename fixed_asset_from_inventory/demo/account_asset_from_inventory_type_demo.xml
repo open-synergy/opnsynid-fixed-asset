@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data noupdate="1">
+
+<record id="asset_inventory_type_ipad" model="account.asset_from_inventory_type">
+    <field name="name">Ipad</field>
+    <field name="code">t01</field>
+    <field name="journal_id" ref="account.miscellaneous_journal"/>
+    <field name="allowed_product_categ_ids" eval="[(6,0,[ref('product.ipad')])]"/>
+</record>
+
+<record id="asset_inventory_type_ipod" model="account.asset_from_inventory_type">
+    <field name="name">Ipod</field>
+    <field name="code">t02</field>
+    <field name="journal_id" ref="account.miscellaneous_journal"/>
+    <field name="allowed_product_categ_ids" eval="[(6,0,[ref('product.ipod')])]"/>
+</record>
+
+</data>
+</openerp>
