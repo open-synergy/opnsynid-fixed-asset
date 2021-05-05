@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="account_asset_from_inventory_type_view_search" model="ir.ui.view">
+    <field name="name">account.asset_from_inventory_type form</field>
+    <field name="model">account.asset_from_inventory_type</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <field name="code"/>
+        </search>
+    </field>
+</record>
+
+<record id="account_asset_from_inventory_type_view_tree" model="ir.ui.view">
+    <field name="name">account.asset_from_inventory_type tree</field>
+    <field name="model">account.asset_from_inventory_type</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="code"/>
+        </tree>
+    </field>
+</record>
+
+<record id="account_asset_from_inventory_type_view_form" model="ir.ui.view">
+    <field name="name">account.asset_from_inventory_type form</field>
+    <field name="model">account.asset_from_inventory_type</field>
+    <field name="arch" type="xml">
+        <form>
+            <header/>
+            <sheet>
+                <div class="oe_right oe_button_box" style="width: 300px;" name="buttons"/>
+                <group name="group_1" colspan="4" col="2">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="active"/>
+                    <field name="sequence_id" domain="[('code','=','exp.accc')]"/>
+                    <field name="journal_id"/>
+                </group>
+                <notebook>
+                    <page name="product" string="Allowed Products">
+                        <group name="product_1" string="Allowed Product Categories" colspan="4" col="2">
+                            <field name="allowed_product_categ_ids" nolabel="1"/>
+                        </group>
+                        <group name="product_2" string="Allowed Products" colspan="4" col="2">
+                            <field name="allowed_product_ids" nolabel="1"/>
+                        </group>
+                    </page>
+                    <page name="workflow_policy" string="Workflow Policy">
+                        <group name="workflow_policy_1" colspan="4" col="2">
+                            <field name="asset_inventory_confirm_grp_ids" widget="many2many_tags"/>
+                            <field name="asset_inventory_restart_approval_grp_ids" widget="many2many_tags"/>
+                            <field name="asset_inventory_cancel_grp_ids" widget="many2many_tags"/>
+                            <field name="asset_inventory_restart_grp_ids" widget="many2many_tags"/>
+                        </group>
+                    </page>
+                    <page name="note" string="Note">
+                        <field name="note"/>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="account_asset_from_inventory_type_action" model="ir.actions.act_window">
+    <field name="name">Inventory to Fixed Asset Conversion Types</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">account.asset_from_inventory_type</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+    id="account_asset_from_inventory_type_menu"
+    name="Inventory to Fixed Asset Conversion Types"
+    parent="fixed_asset.menu_finance_config_assets"
+    action="account_asset_from_inventory_type_action"
+    sequence="1"
+    />
+</data>
+</openerp>

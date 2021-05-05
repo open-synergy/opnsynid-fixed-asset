@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+account_asset_from_inventory_type_employee,account.asset_from_inventory_type - Employee,model_account_asset_from_inventory_type,base.group_user,1,1,1,1
+account.asset_from_inventory_type_all,account.asset_from_inventory_type - All,model_account_asset_from_inventory_type,,1,0,0,0
+account_asset_from_inventory_employee,account.asset_from_inventory - Employee,model_account_asset_from_inventory,base.group_user,1,1,1,1
+account.asset_from_inventory_all,account.asset_from_inventory - All,model_account_asset_from_inventory,,1,0,0,0
