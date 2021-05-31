@@ -324,7 +324,8 @@ class AccountAssetFromInventory(models.Model):
     def onchange_asset_account_id(self):
         self.asset_account_id = False
         if self.product_id and self.product_id.asset_category_id:
-            self.asset_account_id = self.product_id.asset_category_id.account_asset_id
+            self.asset_account_id = \
+                self.product_id.asset_category_id.account_asset_id
 
     @api.onchange(
         "product_id",
@@ -332,9 +333,8 @@ class AccountAssetFromInventory(models.Model):
     def onchange_inventory_account_id(self):
         self.inventory_account_id = False
         if self.product_id:
-            self.inventory_account_id = self.product_id.categ_id.property_stock_valuation_account_id
-
-
+            self.inventory_account_id = \
+                self.product_id.categ_id.property_stock_valuation_account_id
 
     @api.multi
     def unlink(self):
