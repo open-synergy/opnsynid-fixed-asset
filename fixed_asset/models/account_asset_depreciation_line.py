@@ -338,3 +338,23 @@ class AccountAssetDepreciationLine(models.Model):
             self.asset_id.write({"state": "close"})
             self.unlink()
         return True
+
+    @api.multi
+    def _mark_as_init(self):
+        self.ensure_one()
+        self.write({"init_entry": True})
+
+    @api.multi
+    def action_mark_as_init(self):
+        for document in self:
+            document._mark_as_init()
+
+    @api.multi
+    def _unmark_as_init(self):
+        self.ensure_one()
+        self.write({"init_entry": False})
+
+    @api.multi
+    def action_unmark_as_init(self):
+        for document in self:
+            document._unmark_as_init()
