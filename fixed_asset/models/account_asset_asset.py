@@ -1713,6 +1713,14 @@ class AccountAssetAsset(models.Model):
             self.account_analytic_id = category.account_analytic_id.id
 
     @api.onchange(
+        "category_id",
+    )
+    def onchange_date_min_prorate(self):
+        self.date_min_prorate = False
+        if self.category_id:
+            self.date_min_prorate = self.category_id.date_min_prorate
+
+    @api.onchange(
         "asset_value",
     )
     def onchange_amount_depreciation_line(self):

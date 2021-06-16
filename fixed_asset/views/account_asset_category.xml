@@ -47,6 +47,7 @@
                                     <field name="method"/>
                                     <field name="method_progress_factor" digits="(14, 4)" attrs="{'invisible':[('method','=','linear')], 'required':[('method','in',['degressive','degr-linear'])]}"/>
                                     <field name="prorata" attrs="{'readonly':[('method_time','!=','year')]}"/>
+                                    <field name="date_min_prorate"/>
                                     <field name="open_asset"/>
                                 </group>
                             </page>
