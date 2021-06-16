@@ -162,6 +162,10 @@ class AccountAssetCategory(models.Model):
         help="Check this if you want to automatically confirm the assets "
         "of this category when created by invoices.",
     )
+    date_min_prorate = fields.Integer(
+        string="Date Min. to Prorate",
+        default=15,
+    )
     sequence_id = fields.Many2one(
         string="Sequence",
         comodel_name="ir.sequence",
