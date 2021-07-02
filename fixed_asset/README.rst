@@ -41,6 +41,7 @@ Contributors
 * Stéphane Bidoul (Acsone)
 * Michael Viriyananda <viriyananda.michael@gmail.com>
 * Andhitia Rama <andhitia.r@gmail.com>
+* Nur Azmi <azmimr67@gmail.com>
 
 Inspired By:
 - account_asset_managemenet <https://github.com/OCA/account-financial-tools/tree/8.0/account_asset_management>
