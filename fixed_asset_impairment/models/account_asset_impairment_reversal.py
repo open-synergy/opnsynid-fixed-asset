@@ -36,6 +36,6 @@ class FixedAssetImpairmentReversal(models.Model):
             result = company.fixed_asset_impairment_reversal_sequence_id
         else:
             result = self.env.ref(
-                "account_asset_management_impairment.sequence_"
+                "fixed_asset_impairment.sequence_"
                 "fixed_asset_impairment_reversal")
         return result

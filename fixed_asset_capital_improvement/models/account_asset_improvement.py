@@ -344,7 +344,7 @@ class FixedAssetImprovement(models.Model):
     def _prepare_asset_value(self):
         self.ensure_one()
         subtype_id = self.env.ref(
-            "account_asset_management_capital_improvement."
+            "fixed_asset_capital_improvement."
             "depr_line_subtype_improvement")
         return {
             "name": self._get_asset_value_name(),
@@ -398,7 +398,7 @@ class FixedAssetImprovement(models.Model):
     def _prepare_depreciation(self):
         self.ensure_one()
         subtype_id = self.env.ref(
-            "account_asset_management_capital_improvement."
+            "fixed_asset_capital_improvement."
             "depr_line_subtype_improvement")
         return {
             "name": self._get_depreciation_name(),
@@ -597,7 +597,7 @@ class FixedAssetImprovement(models.Model):
     def _prepare_depreciation_line(self, acc_move):
         self.ensure_one()
         subtype = self.env.ref(
-            "account_asset_management_capital_improvement."
+            "fixed_asset_capital_improvement."
             "depr_line_subtype_improvement")
         return {
             "name": self.name,
