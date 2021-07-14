@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class FixedAssetRetirementCommon(models.AbstractModel):
@@ -49,8 +48,11 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     )
     def _compute_gain_loss(self):
         for retirement in self:
-            retirement.gain_loss_amount = retirement.disposition_price - \
-                retirement.acquisition_price + retirement.depreciated_amount
+            retirement.gain_loss_amount = (
+                retirement.disposition_price
+                - retirement.acquisition_price
+                + retirement.depreciated_amount
+            )
 
     name = fields.Char(
         string="# Document",
@@ -110,10 +112,7 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         string="Asset",
         comodel_name="account.asset.asset",
         required=True,
-        domain=[
-            ("type", "=", "normal"),
-            ("state", "=", "open")
-        ],
+        domain=[("type", "=", "normal"), ("state", "=", "open")],
         readonly=True,
         states={
             "draft": [
@@ -240,9 +239,7 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         readonly=True,
         required=True,
         states={
-            "draft": [
-                ("readonly", False)
-            ],
+            "draft": [("readonly", False)],
         },
     )
     disposal_journal_id = fields.Many2one(
@@ -251,9 +248,7 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         readonly=True,
         required=True,
         states={
-            "draft": [
-                ("readonly", False)
-            ],
+            "draft": [("readonly", False)],
         },
     )
     gain_journal_id = fields.Many2one(
@@ -262,9 +257,7 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         readonly=True,
         required=True,
         states={
-            "draft": [
-                ("readonly", False)
-            ],
+            "draft": [("readonly", False)],
         },
     )
     asset_account_id = fields.Many2one(
@@ -448,9 +441,11 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     def action_valid(self):
         for retirement in self:
             retirement.write(self._prepare_valid_data())
-            retirement.asset_id.write({
-                "state": "removed",
-            })
+            retirement.asset_id.write(
+                {
+                    "state": "removed",
+                }
+            )
 
     @api.multi
     def action_cancel(self):
@@ -462,9 +457,11 @@ class FixedAssetRetirementCommon(models.AbstractModel):
             exchange_acc_move.unlink()
             disposal_acc_move.unlink()
             gain_acc_move.unlink()
-            retirement.asset_id.write({
-                "state": "open",
-            })
+            retirement.asset_id.write(
+                {
+                    "state": "open",
+                }
+            )
             retirement.restart_validation()
 
     @api.multi
@@ -537,8 +534,7 @@ class FixedAssetRetirementCommon(models.AbstractModel):
 
     @api.onchange("date_disposition")
     def onchange_period_id(self):
-        self.period_id = self.env[
-            "account.period"].find(self.date_disposition).id
+        self.period_id = self.env["account.period"].find(self.date_disposition).id
 
     @api.onchange("asset_id")
     def onchange_acquisition_price(self):
@@ -568,28 +564,25 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     def onchange_accumulated_depreciation_account(self):
         self.accumulated_depreciation_account_id = False
         if self.asset_id:
-            self.accumulated_depreciation_account_id = \
+            self.accumulated_depreciation_account_id = (
                 self.asset_id.category_id.account_depreciation_id
+            )
 
     @api.onchange("asset_id", "type_id")
     def onchange_gain_account(self):
         self.gain_account_id = False
         if self.asset_id and self.asset_id.category_id.account_plus_value_id:
-            self.gain_account_id = \
-                self.asset_id.category_id.account_plus_value_id
+            self.gain_account_id = self.asset_id.category_id.account_plus_value_id
         elif self.type_id and self.type_id.gain_account_id:
-            self.gain_account_id = \
-                self.type_id.gain_account_id
+            self.gain_account_id = self.type_id.gain_account_id
 
     @api.onchange("asset_id", "type_id")
     def onchange_loss_account(self):
         self.loss_account_id = False
         if self.asset_id and self.asset_id.category_id.account_min_value_id:
-            self.loss_account_id = \
-                self.asset_id.category_id.account_min_value_id
+            self.loss_account_id = self.asset_id.category_id.account_min_value_id
         elif self.type_id and self.type_id.loss_account_id:
-            self.loss_account_id = \
-                self.type_id.loss_account_id
+            self.loss_account_id = self.type_id.loss_account_id
 
     @api.onchange("asset_id", "type_id")
     def onchange_exchange_journal_id(self):
@@ -613,9 +606,18 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     def create(self, values):
         _super = super(FixedAssetRetirementCommon, self)
         result = _super.create(values)
-        result.write({
-            "name": result._create_sequence(),
-        })
+        ctx = self.env.context.copy()
+        ctx.update(
+            {
+                "ir_sequence_date": result.date_disposition,
+            }
+        )
+        sequence = result.with_context(ctx)._create_sequence()
+        result.write(
+            {
+                "name": sequence,
+            }
+        )
         return result
 
     @api.multi
@@ -633,57 +635,62 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     def _prepare_exchange_acc_move(self):
         self.ensure_one()
         journal = self.exchange_journal_id
-        move_lines = self._prepare_exchange_debit_move_line() + \
-            self._prepare_exchange_credit_move_line()
+        move_lines = (
+            self._prepare_exchange_debit_move_line()
+            + self._prepare_exchange_credit_move_line()
+        )
         return self._prepare_acc_move(journal, move_lines)
 
     @api.multi
     def _prepare_disposal_acc_move(self):
         self.ensure_one()
         journal = self.disposal_journal_id
-        move_lines = self._prepare_disposal_debit_move_line() + \
-            self._prepare_disposal_credit_move_line()
+        move_lines = (
+            self._prepare_disposal_debit_move_line()
+            + self._prepare_disposal_credit_move_line()
+        )
         return self._prepare_acc_move(journal, move_lines)
 
     @api.multi
     def _prepare_gain_acc_move(self):
         self.ensure_one()
         journal = self.gain_journal_id
-        move_lines = self._prepare_gain_debit_move_line() + \
-            self._prepare_gain_credit_move_line()
+        move_lines = (
+            self._prepare_gain_debit_move_line() + self._prepare_gain_credit_move_line()
+        )
         return self._prepare_acc_move(journal, move_lines)
 
     @api.multi
     def _create_exchange_acc_move(self):
         self.ensure_one()
-        return self.env["account.move"].create(
-            self._prepare_exchange_acc_move()
-        )
+        return self.env["account.move"].create(self._prepare_exchange_acc_move())
 
     @api.multi
     def _create_disposal_acc_move(self):
         self.ensure_one()
-        return self.env["account.move"].create(
-            self._prepare_disposal_acc_move()
-        )
+        return self.env["account.move"].create(self._prepare_disposal_acc_move())
 
     @api.multi
     def _create_gain_acc_move(self):
         self.ensure_one()
-        return self.env["account.move"].create(
-            self._prepare_gain_acc_move()
-        )
+        return self.env["account.move"].create(self._prepare_gain_acc_move())
 
     @api.multi
     def _prepare_exchange_move_line(self, description, account, debit, credit):
         self.ensure_one()
-        return [(0, 0, {
-            "name": description,
-            "account_id": account,
-            "debit": debit,
-            "credit": credit,
-            "analytic_account_id": False,
-        })]
+        return [
+            (
+                0,
+                0,
+                {
+                    "name": description,
+                    "account_id": account,
+                    "debit": debit,
+                    "credit": credit,
+                    "analytic_account_id": False,
+                },
+            )
+        ]
 
     @api.multi
     def _prepare_exchange_debit_move_line(self):
