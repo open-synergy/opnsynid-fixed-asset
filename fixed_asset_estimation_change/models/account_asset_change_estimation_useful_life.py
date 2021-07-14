@@ -1,10 +1,10 @@
-# -*- coding: utf-8 -*-
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from datetime import datetime
-from openerp import models, fields, api
+
 from dateutil.relativedelta import relativedelta
+from openerp import api, fields, models
 
 
 class FixedAssetUsefulLifeEstimationChange(models.Model):
@@ -72,10 +72,7 @@ class FixedAssetUsefulLifeEstimationChange(models.Model):
         string="Asset",
         comodel_name="account.asset.asset",
         required=True,
-        domain=[
-            ("type", "=", "normal"),
-            ("state", "=", "open")
-        ],
+        domain=[("type", "=", "normal"), ("state", "=", "open")],
         readonly=True,
         states={
             "draft": [
@@ -257,9 +254,7 @@ class FixedAssetUsefulLifeEstimationChange(models.Model):
     def action_valid(self):
         for change in self:
             change.write(self._prepare_valid_data())
-            change.asset_id.write(
-                self._prepare_asset_estimation_change()
-            )
+            change.asset_id.write(self._prepare_asset_estimation_change())
             change.asset_id.compute_depreciation_board()
 
     @api.multi
@@ -285,8 +280,8 @@ class FixedAssetUsefulLifeEstimationChange(models.Model):
     def _prepare_asset_value(self):
         self.ensure_one()
         subtype = self.env.ref(
-            "fixed_asset_estimation_change."
-            "depr_line_subtype_useful_life")
+            "fixed_asset_estimation_change." "depr_line_subtype_useful_life"
+        )
         return {
             "name": self._get_asset_value_name(),
             "subtype_id": subtype.id,
@@ -329,8 +324,10 @@ class FixedAssetUsefulLifeEstimationChange(models.Model):
 
             return False
 
-        if self.asset_id.last_depreciation_id.line_date == \
-                self._get_depreciation_date().strftime("%Y-%m-%d"):
+        if (
+            self.asset_id.last_depreciation_id.line_date
+            == self._get_depreciation_date().strftime("%Y-%m-%d")
+        ):
             return False
 
         return True
@@ -339,8 +336,8 @@ class FixedAssetUsefulLifeEstimationChange(models.Model):
     def _prepare_depreciation(self):
         self.ensure_one()
         subtype = self.env.ref(
-            "fixed_asset_estimation_change."
-            "depr_line_subtype_useful_life")
+            "fixed_asset_estimation_change." "depr_line_subtype_useful_life"
+        )
         return {
             "name": self._get_depreciation_name(),
             "subtype_id": subtype.id,
@@ -376,8 +373,10 @@ class FixedAssetUsefulLifeEstimationChange(models.Model):
         year_amount = 0.0
 
         for year in table:
-            if year["date_start"] <= depreciation_date and \
-                    year["date_stop"] >= depreciation_date:
+            if (
+                year["date_start"] <= depreciation_date
+                and year["date_stop"] >= depreciation_date
+            ):
                 year_amount = year["fy_amount"]
                 break
 
@@ -447,9 +446,18 @@ class FixedAssetUsefulLifeEstimationChange(models.Model):
     def create(self, values):
         _super = super(FixedAssetUsefulLifeEstimationChange, self)
         result = _super.create(values)
-        result.write({
-            "name": result._create_sequence(),
-        })
+        ctx = self.env.context.copy()
+        ctx.update(
+            {
+                "ir_sequence_date": result.date_change,
+            }
+        )
+        sequence = result.with_context(ctx)._create_sequence()
+        result.write(
+            {
+                "name": sequence,
+            }
+        )
         return result
 
     @api.onchange("asset_id")
