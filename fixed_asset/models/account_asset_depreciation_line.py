@@ -1,17 +1,17 @@
-# -*- coding: utf-8 -*-
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from openerp import fields, models, api, _
-from openerp.exceptions import Warning as UserError
 from datetime import time
+
+from openerp import _, api, fields, models
+from openerp.exceptions import Warning as UserError
 
 
 class AccountAssetDepreciationLine(models.Model):
     _name = "account.asset.depreciation.line"
     _description = "Asset Depreciation Line"
-    _order = "type, line_date"
+    _order = "line_date, type"
 
     name = fields.Char(
         string="Depreciation Name",
@@ -122,37 +122,34 @@ class AccountAssetDepreciationLine(models.Model):
     init_entry = fields.Boolean(
         string="Initial Balance Entry",
         help="Set this flag for entries of previous fiscal years "
-             "for which OpenERP has not generated accounting entries.",
+        "for which OpenERP has not generated accounting entries.",
     )
 
     @api.multi
     def unlink(self):
-        obj_depreciation_line =\
-            self.env["account.asset.depreciation.line"]
+        obj_depreciation_line = self.env["account.asset.depreciation.line"]
 
         for document in self:
             if document.type == "create":
                 raise UserError(
-                    _('Error!'),
-                    _("You cannot remove an asset line "
-                      "of type 'Asset Value'."))
+                    _("Error!"),
+                    _("You cannot remove an asset line " "of type 'Asset Value'."),
+                )
             elif document.move_id:
                 raise UserError(
-                    _('Error!'),
-                    _("You cannot delete a depreciation line with "
-                      "an associated accounting entry."))
+                    _("Error!"),
+                    _(
+                        "You cannot delete a depreciation line with "
+                        "an associated accounting entry."
+                    ),
+                )
 
-            previous_id =\
-                document.previous_id and document.previous_id.id or False
+            previous_id = document.previous_id and document.previous_id.id or False
 
-            criteria = [
-                ("previous_id", "=", document.id)
-            ]
+            criteria = [("previous_id", "=", document.id)]
             depreciation_line_id = obj_depreciation_line.search(criteria)
             if depreciation_line_id:
-                depreciation_line_id.write({
-                    "previous_id": previous_id
-                })
+                depreciation_line_id.write({"previous_id": previous_id})
         _super = super(AccountAssetDepreciationLine, self)
         _super.unlink()
 
@@ -186,29 +183,38 @@ class AccountAssetDepreciationLine(models.Model):
                 # 'Delete Move' button on the depreciation lines.
                 if not self.env.context.get("unlink_from_asset"):
                     raise UserError(
-                        _("You are not allowed to remove an accounting entry "
-                          "linked to an asset."
-                          "\nYou should remove such entries from the asset."))
-            elif vals.keys() == ['asset_id']:
+                        _(
+                            "You are not allowed to remove an accounting entry "
+                            "linked to an asset."
+                            "\nYou should remove such entries from the asset."
+                        )
+                    )
+            elif vals.keys() == ["asset_id"]:
                 continue
-            elif dl.move_id and \
-                    not self.env.context.get("allow_asset_line_update"):
+            elif dl.move_id and not self.env.context.get("allow_asset_line_update"):
                 raise UserError(
-                    _("You cannot change a depreciation line "
-                      "with an associated accounting entry."))
-            elif vals.get('init_entry'):
+                    _(
+                        "You cannot change a depreciation line "
+                        "with an associated accounting entry."
+                    )
+                )
+            elif vals.get("init_entry"):
                 self.env.cr.execute(
                     "SELECT id "
                     "FROM account_asset_depreciation_line "
                     "WHERE asset_id = %s AND move_check = TRUE "
                     "AND type = 'depreciate' AND line_date <= %s LIMIT 1",
-                    (dl.asset_id.id, dl.line_date))
+                    (dl.asset_id.id, dl.line_date),
+                )
                 res = self.env.cr.fetchone()
                 if res:
                     raise UserError(
-                        _("You cannot set the 'Initial Balance Entry' flag "
-                          "on a depreciation line "
-                          "with prior posted entries."))
+                        _(
+                            "You cannot set the 'Initial Balance Entry' flag "
+                            "on a depreciation line "
+                            "with prior posted entries."
+                        )
+                    )
         return super(AccountAssetDepreciationLine, self).write(vals)
 
     @api.multi
@@ -224,8 +230,9 @@ class AccountAssetDepreciationLine(models.Model):
         return move_data
 
     @api.multi
-    def _setup_move_line_data(self, depreciation_date, period_id, account_id,
-                              type, move_id):
+    def _setup_move_line_data(
+        self, depreciation_date, period_id, account_id, type, move_id
+    ):
         self.ensure_one()
         asset = self.asset_id
         amount = self.amount
@@ -267,30 +274,30 @@ class AccountAssetDepreciationLine(models.Model):
 
         asset = self.asset_id
         if asset.method_time == "year":
-            depreciation_date = context.get("depreciation_date") or \
-                self.line_date
+            depreciation_date = context.get("depreciation_date") or self.line_date
         else:
-            depreciation_date = context.get("depreciation_date") or \
-                time.strftime("%Y-%m-%d")
+            depreciation_date = context.get("depreciation_date") or time.strftime(
+                "%Y-%m-%d"
+            )
         ctx = dict(context, account_period_prefer_normal=True)
-        period_ids = \
-            obj_account_period.with_context(ctx).find(depreciation_date)
+        period_ids = obj_account_period.with_context(ctx).find(depreciation_date)
         period_id = period_ids and period_ids[0] or False
-        move_id = obj_account_move.create(self._setup_move_data(
-            depreciation_date, period_id.id))
+        move_id = obj_account_move.create(
+            self._setup_move_data(depreciation_date, period_id.id)
+        )
         depr_acc_id = asset.category_id.account_depreciation_id.id
         exp_acc_id = asset.category_id.account_expense_depreciation_id.id
         ctx = dict(context, allow_asset=True)
         obj_account_move_line.with_context(ctx).create(
             self._setup_move_line_data(
-                depreciation_date,
-                period_id.id,
-                depr_acc_id,
-                "depreciation",
-                move_id.id))
+                depreciation_date, period_id.id, depr_acc_id, "depreciation", move_id.id
+            )
+        )
         obj_account_move_line.with_context(ctx).create(
-            self._setup_move_line_data(depreciation_date, period_id.id,
-                                       exp_acc_id, "expense", move_id.id))
+            self._setup_move_line_data(
+                depreciation_date, period_id.id, exp_acc_id, "expense", move_id.id
+            )
+        )
         ctx = {"allow_asset_line_update": True}
         self.with_context(ctx).write({"move_id": move_id.id})
         created_move_ids.append(move_id.id)
@@ -304,10 +311,7 @@ class AccountAssetDepreciationLine(models.Model):
 
     @api.multi
     def _get_action_account_move(self):
-        action =\
-            self.env.ref(
-                "account."
-                "action_move_journal_line").read()[0]
+        action = self.env.ref("account." "action_move_journal_line").read()[0]
         return action
 
     @api.multi
