@@ -492,14 +492,14 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     @api.multi
     def _prepare_valid_data(self):
         self.ensure_one()
-        exchange_acc_move = self._create_exchange_acc_move()
+        # exchange_acc_move = self._create_exchange_acc_move()
         disposal_acc_move = self._create_disposal_acc_move()
-        gain_acc_move = self._create_gain_acc_move()
+        # gain_acc_move = self._create_gain_acc_move()
         result = {
             "state": "valid",
-            "exchange_acc_move_id": exchange_acc_move.id,
+            # "exchange_acc_move_id": exchange_acc_move.id,
             "disposal_acc_move_id": disposal_acc_move.id,
-            "gain_acc_move_id": gain_acc_move.id,
+            # "gain_acc_move_id": gain_acc_move.id,
             "validated_user_id": self.env.user.id,
             "validated_date": fields.Datetime.now(),
         }
@@ -646,10 +646,54 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         self.ensure_one()
         journal = self.disposal_journal_id
         move_lines = (
-            self._prepare_disposal_debit_move_line()
-            + self._prepare_disposal_credit_move_line()
+            self._prepare_disposal_accum_depr_move_line()
+            + self._prepare_disposal_asset_move_line()
+            + self._prepare_disposal_exchange_move_line()
+            + self._prepare_disposal_gain_loss_move_line()
         )
         return self._prepare_acc_move(journal, move_lines)
+
+    @api.multi
+    def _prepare_disposal_accum_depr_move_line(self):
+        self.ensure_one()
+        return self._prepare_exchange_move_line(
+            description="Todo",
+            account=self.accumulated_depreciation_account_id.id,
+            debit=self.depreciated_amount,
+            credit=0.0,
+        )
+
+    @api.multi
+    def _prepare_disposal_asset_move_line(self):
+        self.ensure_one()
+        return self._prepare_exchange_move_line(
+            description="Todo",
+            account=self.asset_account_id.id,
+            credit=self.acquisition_price,
+            debit=0.0,
+        )
+
+    @api.multi
+    def _prepare_disposal_exchange_move_line(self):
+        self.ensure_one()
+        return self._prepare_exchange_move_line(
+            description="Todo",
+            account=self.exchange_account_id.id,
+            credit=0.0,
+            debit=self.disposition_price,
+        )
+
+    @api.multi
+    def _prepare_disposal_gain_loss_move_line(self):
+        self.ensure_one()
+        gain = self.gain_loss_amount >= 0.0 and abs(self.gain_loss_amount) or 0.0
+        loss = self.gain_loss_amount < 0.0 and abs(self.gain_loss_amount) or 0.0
+        return self._prepare_exchange_move_line(
+            description="Todo",
+            account=self._get_gain_account().id,
+            credit=gain,
+            debit=loss,
+        )
 
     @api.multi
     def _prepare_gain_acc_move(self):
@@ -767,3 +811,11 @@ class FixedAssetRetirementCommon(models.AbstractModel):
             return self.loss_account_id
         else:
             return self.accumulated_depreciation_account_id
+
+    @api.multi
+    def _get_gain_account(self):
+        self.ensure_one()
+        if self.gain_loss_amount < 0.0:
+            return self.loss_account_id
+        else:
+            return self.gain_account_id
