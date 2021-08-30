@@ -1,0 +1,543 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* fixed_asset_from_inventory
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,name:0
+msgid "# Document"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Accounting Setting"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory_type,active:0
+msgid "Active"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,active_reviewer_ids:0
+msgid "Active Reviewers"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory_type,asset_inventory_cancel_grp_ids:0
+msgid "Allow To Cancel Inventory-Fixed Asset Conversion"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory_type,asset_inventory_confirm_grp_ids:0
+msgid "Allow To Confirm Inventory-Fixed Asset Conversion"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory_type,asset_inventory_restart_approval_grp_ids:0
+#: field:account.asset_from_inventory_type,asset_inventory_restart_grp_ids:0
+msgid "Allow To Restart Inventory-Fixed Asset Conversion"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,allowed_product_categ_ids:0
+#: view:account.asset_from_inventory_type:fixed_asset_from_inventory.account_asset_from_inventory_type_view_form
+#: field:account.asset_from_inventory_type,allowed_product_categ_ids:0
+msgid "Allowed Product Categories"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,allowed_product_ids:0
+#: view:account.asset_from_inventory_type:fixed_asset_from_inventory.account_asset_from_inventory_type_view_form
+#: field:account.asset_from_inventory_type,allowed_product_ids:0
+msgid "Allowed Products"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,restart_ok:0
+msgid "Can Restart"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,restart_approval_ok:0
+msgid "Can Restart Approval"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,terminate_ok:0
+msgid "Can Terminate"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_search
+msgid "Cancel"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,cancel_date:0
+msgid "Cancel Date"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,cancel_reason_id:0
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Cancel inventory to fixed asset conversion. Are you sure?"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Cancellation"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Cancellation reason:"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: selection:account.asset_from_inventory,state:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,cancel_user_id:0
+msgid "Cancelled By"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory_type,code:0
+msgid "Code"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_search
+#: field:account.asset_from_inventory,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,confirm_date:0
+msgid "Confirm Date"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Confirm inventory to fixed asset conversion. Are you sure?"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Confirmation"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,confirm_user_id:0
+msgid "Confirmed By"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,create_uid:0
+#: field:account.asset_from_inventory_type,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,create_date:0
+#: field:account.asset_from_inventory_type,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,date_conversion:0
+msgid "Date Conversion"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: help:account.asset_from_inventory,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,definition_id:0
+msgid "Definition"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,display_name:0
+#: field:account.asset_from_inventory_type,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_search
+#: selection:account.asset_from_inventory,state:0
+msgid "Done"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_search
+#: selection:account.asset_from_inventory,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Finish"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,done_date:0
+msgid "Finish Date"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,done_user_id:0
+msgid "Finished By"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,asset_account_id:0
+msgid "Fixed Asset Account"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: model:ir.model,name:fixed_asset_from_inventory.model_account_asset_from_inventory
+msgid "Fixed Asset From Inventory"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: model:ir.actions.act_window,name:fixed_asset_from_inventory.account_asset_from_inventory_action
+#: model:ir.ui.menu,name:fixed_asset_from_inventory.account_asset_from_inventory_menu
+msgid "Fixed Asset From Inventory Conversion"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: model:ir.module.category,name:fixed_asset_from_inventory.account_inventory_usability_module_category
+msgid "Fixed Asset From Inventory Usability"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: help:account.asset_from_inventory,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,id:0
+#: field:account.asset_from_inventory_type,id:0
+msgid "ID"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: help:account.asset_from_inventory,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,inventory_account_id:0
+msgid "Inventory Asset Account"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: model:ir.actions.act_window,name:fixed_asset_from_inventory.account_asset_from_inventory_type_action
+#: model:ir.ui.menu,name:fixed_asset_from_inventory.account_asset_from_inventory_type_menu
+msgid "Inventory to Fixed Asset Conversion Types"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,journal_id:0
+#: field:account.asset_from_inventory_type,journal_id:0
+msgid "Journal"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,__last_update:0
+#: field:account.asset_from_inventory_type,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,write_uid:0
+#: field:account.asset_from_inventory_type,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,write_date:0
+#: field:account.asset_from_inventory_type,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Logs"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,lot_id:0
+msgid "Lot"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: help:account.asset_from_inventory,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_search
+msgid "My Reimbursement to review"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,need_validation:0
+msgid "Need Validation"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_search
+msgid "Needs my Review"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,next_reviewer_ids:0
+msgid "Next Reviewers"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,note:0
+#: view:account.asset_from_inventory_type:fixed_asset_from_inventory.account_asset_from_inventory_type_view_form
+#: field:account.asset_from_inventory_type,note:0
+msgid "Note"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Operation has been"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Policies"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Print"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,product_id:0
+msgid "Product"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Reject"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,rejected:0
+msgid "Rejected"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Request Validation"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Restart"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Restart Validation"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Restart inventory to fixed asset conversion. Are you sure?"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,reviewer_partner_ids:0
+msgid "Review Partners"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,reviewer_ids:0
+msgid "Reviewers"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Reviews"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory_type,sequence_id:0
+msgid "Sequence"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: model:res.groups,name:fixed_asset_from_inventory.asset_inventory_accounting_setting_group
+msgid "Show Accounting Setting"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: model:res.groups,name:fixed_asset_from_inventory.asset_inventory_show_log_group
+msgid "Show Logs"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: model:res.groups,name:fixed_asset_from_inventory.asset_inventory_show_tier_definition
+msgid "Show Tier Definition"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_search
+#: field:account.asset_from_inventory,state:0
+msgid "State"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,terminate_reason_id:0
+msgid "Terminate Reason"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "This inventory to fixed asset conversion needs to be\n"
+"                    validated."
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_search
+#: field:account.asset_from_inventory,type_id:0
+#: field:account.asset_from_inventory_type,name:0
+msgid "Type"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: model:ir.model,name:fixed_asset_from_inventory.model_account_asset_from_inventory_type
+msgid "Type of Fixed Asset From Inventory"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "Validate"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,validated:0
+msgid "Validated"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: field:account.asset_from_inventory,review_ids:0
+msgid "Validations"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_search
+#: selection:account.asset_from_inventory,state:0
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory_type:fixed_asset_from_inventory.account_asset_from_inventory_type_view_form
+msgid "Workflow Policy"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: code:addons/fixed_asset_from_inventory/models/account_asset_from_inventory.py:342
+#, python-format
+msgid "You can not delete data with document number"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: code:addons/fixed_asset_from_inventory/models/account_asset_from_inventory.py:341
+#, python-format
+msgid "You can only delete data on draft state"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "rejected"
+msgstr ""
+
+#. module: fixed_asset_from_inventory
+#: view:account.asset_from_inventory:fixed_asset_from_inventory.account_asset_from_inventory_view_form
+msgid "validated"
+msgstr ""
+
