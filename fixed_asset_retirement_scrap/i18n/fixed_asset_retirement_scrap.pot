@@ -1,16 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* account_asset_management_retirement_by_scrap
+#	* fixed_asset_retirement_scrap
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-24 14:16+0000\n"
-"PO-Revision-Date: 2018-11-24 14:16+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -19,17 +16,17 @@ msgstr ""
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,name:0
 msgid "# Document"
-msgstr "# Document"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,accumulated_depreciation_account_id:0
 msgid "Accumulated Depreciation Account"
-msgstr "Accumulated Depreciation Account"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,acquisition_price:0
 msgid "Acquisition Price"
-msgstr "Acquisition Price"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,active_reviewer_ids:0
@@ -39,100 +36,99 @@ msgstr ""
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,asset_id:0
 msgid "Asset"
-msgstr "Asset"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,asset_account_id:0
 msgid "Asset Account"
-msgstr "Asset Account"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: model:ir.actions.act_window,name:fixed_asset_retirement_scrap.account_asset_retirement_scrap_action
 msgid "Asset Retirement by Scrap"
-msgstr "Asset Retirement by Scrap"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: selection:account.asset_retirement_scrap,disposal_acc_move_creation:0
 #: selection:account.asset_retirement_scrap,exchange_acc_move_creation:0
 #: selection:account.asset_retirement_scrap,gain_acc_move_creation:0
 msgid "Automatic"
-msgstr "Automatic"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,cancel_ok:0
 msgid "Can Cancel"
-msgstr "Can Cancel"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,confirm_ok:0
 msgid "Can Confirm"
-msgstr "Can Confirm"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,restart_ok:0
 msgid "Can Restart"
-msgstr "Can Restart"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,restart_validation_ok:0
-#, fuzzy
 msgid "Can Restart Validation"
-msgstr "Can Restart"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,valid_ok:0
 msgid "Can Validate"
-msgstr "Can Validate"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: selection:account.asset_retirement_scrap,state:0
 msgid "Cancel"
-msgstr "Cancel"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,cancelled_user_id:0
 msgid "Cancellation By"
-msgstr "Cancellation By"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,cancelled_date:0
 msgid "Cancellation Date"
-msgstr "Cancellation Date"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,company_id:0
 msgid "Company"
-msgstr "Company"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,confirmed_user_id:0
 msgid "Confirmation By"
-msgstr "Confirmation By"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,confirmed_date:0
 msgid "Confirmation Date"
-msgstr "Confirmation Date"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,create_uid:0
 msgid "Created by"
-msgstr "Created by"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,create_date:0
 msgid "Created on"
-msgstr "Created on"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,currency_id:0
 msgid "Currency"
-msgstr "Currency"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: help:account.asset_retirement_scrap,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr "Date of the last message posted on the record."
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,definition_id:0
@@ -142,169 +138,164 @@ msgstr ""
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,depreciated_amount:0
 msgid "Depreciated Value"
-msgstr "Depreciated Value"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,display_name:0
 msgid "Display Name"
-msgstr "Display Name"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,disposal_acc_move_creation:0
 msgid "Disposal Acc. Move Creation"
-msgstr "Disposal Acc. Move Creation"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,disposal_acc_move_id:0
 msgid "Disposal Account Move"
-msgstr "Disposal Account Move"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,disposal_journal_id:0
 msgid "Disposal Journal"
-msgstr "Disposal Journal"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,date_disposition:0
 msgid "Disposition Date"
-msgstr "Disposition Date"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,disposition_price:0
 msgid "Disposition Price"
-msgstr "Disposition Price"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: selection:account.asset_retirement_scrap,state:0
 msgid "Draft"
-msgstr "Draft"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,exchange_acc_move_creation:0
 msgid "Exchange Acc. Move Creation"
-msgstr "Exchange Acc. Move Creation"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,exchange_account_id:0
 msgid "Exchange Account"
-msgstr "Exchange Account"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,exchange_acc_move_id:0
 msgid "Exchange Account Move"
-msgstr "Exchange Account Move"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,exchange_journal_id:0
 msgid "Exchange Journal"
-msgstr "Exchange Journal"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: model:ir.model,name:fixed_asset_retirement_scrap.model_account_asset_retirement_scrap
 msgid "Fixed Asset Retirement by Scrap"
-msgstr "Fixed Asset Retirement by Scrap"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,message_follower_ids:0
 msgid "Followers"
-msgstr "Followers"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,gain_account_id:0
 msgid "Gain Account"
-msgstr "Gain Account"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,gain_journal_id:0
 msgid "Gain Journal"
-msgstr "Gain Journal"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,gain_acc_move_creation:0
 msgid "Gain/Loss Acc. Move Creation"
-msgstr "Gain/Loss Acc. Move Creation"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,gain_acc_move_id:0
 msgid "Gain/Loss Account Move"
-msgstr "Gain/Loss Account Move"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,gain_loss_amount:0
 msgid "Gain/Loss Amount"
-msgstr "Gain/Loss Amount"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: help:account.asset_retirement_scrap,message_summary:0
-msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
 msgstr ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,id:0
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: help:account.asset_retirement_scrap,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr "If checked new messages require your attention."
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,message_is_follower:0
 msgid "Is a Follower"
-msgstr "Is a Follower"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,message_last_post:0
 msgid "Last Message Date"
-msgstr "Last Message Date"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,__last_update:0
 msgid "Last Modified on"
-msgstr "Last Modified on"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,write_uid:0
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,write_date:0
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,loss_account_id:0
 msgid "Loss Account"
-msgstr "Loss Account"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: selection:account.asset_retirement_scrap,disposal_acc_move_creation:0
 #: selection:account.asset_retirement_scrap,exchange_acc_move_creation:0
 #: selection:account.asset_retirement_scrap,gain_acc_move_creation:0
 msgid "Manual Selection"
-msgstr "Manual Selection"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,message_ids:0
 msgid "Messages"
-msgstr "Messages"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: help:account.asset_retirement_scrap,message_ids:0
 msgid "Messages and communication history"
-msgstr "Messages and communication history"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,need_validation:0
-#, fuzzy
 msgid "Need Validation"
-msgstr "Validation By"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,next_reviewer_ids:0
@@ -314,32 +305,32 @@ msgstr ""
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,note:0
 msgid "Note"
-msgstr "Note"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: selection:account.asset_retirement_scrap,state:0
 msgid "On Progress"
-msgstr "On Progress"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,opened_user_id:0
 msgid "Open By"
-msgstr "Open By"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,opened_date:0
 msgid "Opened Date"
-msgstr "Opened Date"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,partner_id:0
 msgid "Partner"
-msgstr "Partner"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,period_id:0
 msgid "Period"
-msgstr "Period"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,rejected:0
@@ -349,13 +340,12 @@ msgstr ""
 #. module: fixed_asset_retirement_scrap
 #: model:ir.ui.menu,name:fixed_asset_retirement_scrap.account_asset_retirement_scrap_menu
 msgid "Retirement by Scrap"
-msgstr "Retirement by Scrap"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,reviewer_partner_ids:0
-#, fuzzy
 msgid "Review Partners"
-msgstr "Partner"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,reviewer_ids:0
@@ -365,61 +355,57 @@ msgstr ""
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,state:0
 msgid "State"
-msgstr "State"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,message_summary:0
 msgid "Summary"
-msgstr "Summary"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,type_id:0
 msgid "Type"
-msgstr "Type"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,message_unread:0
 msgid "Unread Messages"
-msgstr "Unread Messages"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: selection:account.asset_retirement_scrap,state:0
 msgid "Valid"
-msgstr "Valid"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,validated:0
-#, fuzzy
 msgid "Validated"
-msgstr "Can Validate"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,validated_user_id:0
 msgid "Validation By"
-msgstr "Validation By"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,validated_date:0
 msgid "Validation Date"
-msgstr "Validation Date"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,review_ids:0
-#, fuzzy
 msgid "Validations"
-msgstr "Validation By"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: selection:account.asset_retirement_scrap,state:0
 msgid "Waiting for Approval"
-msgstr "Waiting for Approval"
+msgstr ""
 
 #. module: fixed_asset_retirement_scrap
 #: selection:account.asset_retirement_scrap,disposal_acc_move_creation:0
 #: selection:account.asset_retirement_scrap,exchange_acc_move_creation:0
 #: selection:account.asset_retirement_scrap,gain_acc_move_creation:0
 msgid "Workflow"
-msgstr "Workflow"
+msgstr ""
 
-#~ msgid "Can Open"
-#~ msgstr "Can Open"
