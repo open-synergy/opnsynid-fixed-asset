@@ -1,104 +1,87 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* account_asset_management_estimation_change
+# 	* fixed_asset_estimation_change
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-24 13:57+0000\n"
-"PO-Revision-Date: 2018-11-24 13:57+0000\n"
+"POT-Creation-Date: 2021-09-01 08:40+0000\n"
+"PO-Revision-Date: 2021-09-01 16:15+0700\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"Language: id\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,name:0
 #: field:account.asset_change_estimation_useful_life,name:0
 msgid "# Document"
-msgstr "# Document"
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,active_reviewer_ids:0
-#: field:account.asset_change_estimation_useful_life,active_reviewer_ids:0
-msgid "Active Reviewers"
-msgstr ""
+msgstr "No. Dokumen"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset.config_setting:fixed_asset_estimation_change.account_asset_config_setting_view_form
 msgid "Allowed Groups"
-msgstr "Allowed Groups"
+msgstr "Kelompok Yang Diizinkan"
 
 #. module: fixed_asset_estimation_change
-#: field:account.asset.config_setting,asset_salvage_cancel_grp_ids:0
 #: field:res.company,asset_salvage_cancel_grp_ids:0
 msgid "Allowed To Cancel Fixed Asset Salvage Value Estimation Change"
-msgstr "Allowed To Cancel Fixed Asset Salvage Value Estimation Change"
+msgstr "Diizinkan Membatalkan Perubahan Estimasi Nilai Sisa Aset Tetap"
 
 #. module: fixed_asset_estimation_change
-#: field:account.asset.config_setting,asset_useful_life_cancel_grp_ids:0
 #: field:res.company,asset_useful_life_cancel_grp_ids:0
 msgid "Allowed To Cancel Fixed Asset Useful Life Estimation Change"
-msgstr "Allowed To Cancel Fixed Asset Useful Life Estimation Change"
+msgstr "Diizinkan Membatalkan Perubahan Estimasi Umur Manfaat Aset Tetap"
 
 #. module: fixed_asset_estimation_change
-#: field:account.asset.config_setting,asset_salvage_confirm_grp_ids:0
 #: field:res.company,asset_salvage_confirm_grp_ids:0
 msgid "Allowed To Confirm Fixed Asset Salvage Value Estimation Change"
-msgstr "Allowed To Confirm Fixed Asset Salvage Value Estimation Change"
+msgstr "Diizinkan Untuk Mengkonfirmasi Perubahan Estimasi Nilai Sisa Aset Tetap"
 
 #. module: fixed_asset_estimation_change
-#: field:account.asset.config_setting,asset_useful_life_confirm_grp_ids:0
 #: field:res.company,asset_useful_life_confirm_grp_ids:0
 msgid "Allowed To Confirm Fixed Asset Useful Life Estimation Change"
-msgstr "Allowed To Confirm Fixed Asset Useful Life Estimation Change"
+msgstr "Diizinkan Untuk Mengkonfirmasi Perubahan Estimasi Umur Manfaat Aset Tetap"
 
 #. module: fixed_asset_estimation_change
-#: field:account.asset.config_setting,asset_salvage_restart_grp_ids:0
 #: field:res.company,asset_salvage_restart_grp_ids:0
 msgid "Allowed To Restart Fixed Asset Salvage Value Estimation Change"
-msgstr "Allowed To Restart Fixed Asset Salvage Value Estimation Change"
+msgstr "Diizinkan Untuk Memulai Kembali Perubahan Estimasi Nilai Sisa Aset Tetap"
 
 #. module: fixed_asset_estimation_change
-#: field:account.asset.config_setting,asset_useful_life_restart_grp_ids:0
 #: field:res.company,asset_useful_life_restart_grp_ids:0
 msgid "Allowed To Restart Fixed Asset Useful Life Estimation Change"
-msgstr "Allowed To Restart Fixed Asset Useful Life Estimation Change"
+msgstr "Diizinkan Untuk Memulai Kembali Perubahan Estimasi Umur Manfaat Aset Tetap"
 
 #. module: fixed_asset_estimation_change
-#: field:account.asset.config_setting,asset_salvage_restart_validation_grp_ids:0
 #: field:res.company,asset_salvage_restart_validation_grp_ids:0
-#, fuzzy
 msgid "Allowed To Restart Validation Asset Salvage Value Estimation Change"
-msgstr "Allowed To Restart Fixed Asset Salvage Value Estimation Change"
+msgstr "Diizinkan Untuk Memulai Kembali Validasi Perubahan Estimasi Nilai Sisa Aset"
 
 #. module: fixed_asset_estimation_change
-#: field:account.asset.config_setting,asset_useful_life_restart_validation_grp_ids:0
 #: field:res.company,asset_useful_life_restart_validation_grp_ids:0
-#, fuzzy
 msgid "Allowed To Restart Validation Asset Useful Life Estimation Change"
-msgstr "Allowed To Restart Fixed Asset Useful Life Estimation Change"
+msgstr "Diizinkan Untuk Memulai Kembali Validasi Perubahan Estimasi Umur Manfaat Aset"
 
 #. module: fixed_asset_estimation_change
 #: field:res.company,asset_salvage_open_grp_ids:0
 msgid "Allowed To Start Fixed Asset Salvage Value Estimation Change"
-msgstr "Allowed To Start Fixed Asset Salvage Value Estimation Change"
+msgstr "Diizinkan Untuk Memulai Perubahan Estimasi Nilai Sisa Aset Tetap"
 
 #. module: fixed_asset_estimation_change
-#: field:account.asset.config_setting,asset_salvage_valid_grp_ids:0
 #: field:res.company,asset_salvage_valid_grp_ids:0
 msgid "Allowed To Validate Fixed Asset Salvage Value Estimation Change"
-msgstr "Allowed To Validate Fixed Asset Salvage Value Estimation Change"
+msgstr "Diizinkan Untuk Memvalidasi Perubahan Estimasi Nilai Sisa Aset Tetap"
 
 #. module: fixed_asset_estimation_change
-#: field:account.asset.config_setting,asset_useful_life_valid_grp_ids:0
 #: field:res.company,asset_useful_life_valid_grp_ids:0
 msgid "Allowed To Validate Fixed Asset Useful Life Estimation Change"
-msgstr "Allowed To Validate Fixed Asset Useful Life Estimation Change"
+msgstr "Diizinkan Untuk Memvalidasi Perubahan Estimasi Umur Manfaat Aset Tetap"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_search
@@ -107,56 +90,25 @@ msgstr "Allowed To Validate Fixed Asset Useful Life Estimation Change"
 #: field:account.asset_change_estimation_useful_life,asset_id:0
 #: model:ir.model,name:fixed_asset_estimation_change.model_account_asset_asset
 msgid "Asset"
-msgstr "Asset"
+msgstr "Aset"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset.config_setting:fixed_asset_estimation_change.account_asset_config_setting_view_form
 #: model:ir.actions.act_window,name:fixed_asset_estimation_change.account_asset_change_estimation_salvage_action
 msgid "Asset Salvage Value Estimation Change"
-msgstr "Asset Salvage Value Estimation Change"
+msgstr "Perubahan Estimasi Nilai Sisa Aset"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset.config_setting:fixed_asset_estimation_change.account_asset_config_setting_view_form
 #: model:ir.actions.act_window,name:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_action
 msgid "Asset Useful Life Estimation Change"
-msgstr "Asset Useful Life Estimation Change"
+msgstr "Perubahan Estimasi Masa Manfaat Aset"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,asset_value_history_id:0
 #: field:account.asset_change_estimation_useful_life,asset_value_history_id:0
 msgid "Asset Value History"
-msgstr ""
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,cancel_ok:0
-#: field:account.asset_change_estimation_useful_life,cancel_ok:0
-msgid "Can Cancel"
-msgstr "Can Cancel"
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,confirm_ok:0
-#: field:account.asset_change_estimation_useful_life,confirm_ok:0
-msgid "Can Confirm"
-msgstr "Can Confirm"
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,restart_ok:0
-#: field:account.asset_change_estimation_useful_life,restart_ok:0
-msgid "Can Restart"
-msgstr "Can Restart"
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,restart_validation_ok:0
-#: field:account.asset_change_estimation_useful_life,restart_validation_ok:0
-#, fuzzy
-msgid "Can Restart Validation"
-msgstr "Can Restart"
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,valid_ok:0
-#: field:account.asset_change_estimation_useful_life,valid_ok:0
-msgid "Can Validate"
-msgstr "Can Validate"
+msgstr "Riwayat Nilai Aset"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
@@ -166,25 +118,25 @@ msgstr "Can Validate"
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_search
 #: selection:account.asset_change_estimation_useful_life,state:0
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "Membatalkan"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
 msgid "Cancellation"
-msgstr "Cancellation"
+msgstr "Pembatalan"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,cancelled_user_id:0
 #: field:account.asset_change_estimation_useful_life,cancelled_user_id:0
 msgid "Cancellation By"
-msgstr "Cancellation By"
+msgstr "Pembatalan Oleh"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,cancelled_date:0
 #: field:account.asset_change_estimation_useful_life,cancelled_date:0
 msgid "Cancellation Date"
-msgstr "Cancellation Date"
+msgstr "Tanggal Pembatalan"
 
 #. module: fixed_asset_estimation_change
 #: model:ir.model,name:fixed_asset_estimation_change.model_res_company
@@ -195,103 +147,96 @@ msgstr "Perusahaan"
 #: field:account.asset_change_estimation_salvage,company_id:0
 #: field:account.asset_change_estimation_useful_life,company_id:0
 msgid "Company"
-msgstr "Company"
+msgstr "Perusahaan"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
 msgid "Confirm"
-msgstr "Confirm"
+msgstr "Mengkonfirmasi"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
 msgid "Confirmation"
-msgstr "Confirmation"
+msgstr "Konfirmasi"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,confirmed_user_id:0
 #: field:account.asset_change_estimation_useful_life,confirmed_user_id:0
 msgid "Confirmation By"
-msgstr "Confirmation By"
+msgstr "Konfirmasi Oleh"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,confirmed_date:0
 #: field:account.asset_change_estimation_useful_life,confirmed_date:0
 msgid "Confirmation Date"
-msgstr "Confirmation Date"
+msgstr "Tanggal Konfirmasi"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,create_uid:0
 #: field:account.asset_change_estimation_useful_life,create_uid:0
 msgid "Created by"
-msgstr "Created by"
+msgstr "Dibuat Oleh"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,create_date:0
 #: field:account.asset_change_estimation_useful_life,create_date:0
 msgid "Created on"
-msgstr "Created on"
+msgstr "Dibuat Pada"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,currency_id:0
 msgid "Currency"
-msgstr "Currency"
+msgstr "Mata Uang"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,date_change:0
 #: field:account.asset_change_estimation_useful_life,date_change:0
 msgid "Date"
-msgstr "Date"
+msgstr "Tanggal"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_search
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_search
 msgid "Date by Day"
-msgstr "Date by Day"
+msgstr "Tanggal Berdasarkan Hari"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_search
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_search
 msgid "Date by Month"
-msgstr "Date by Month"
+msgstr "Tanggal Berdasarkan Bulan"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_search
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_search
-#, fuzzy
 msgid "Date by Week"
-msgstr "Date by Year"
+msgstr "Tanggal Berdasarkan Minggu"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_search
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_search
 msgid "Date by Year"
-msgstr "Date by Year"
+msgstr "Tanggal Berdasarkan Tahun"
 
 #. module: fixed_asset_estimation_change
 #: help:account.asset_change_estimation_salvage,message_last_post:0
 #: help:account.asset_change_estimation_useful_life,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr "Date of the last message posted on the record."
+msgstr "Tanggal pesan terakhir diposting pada catatan."
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,definition_id:0
 #: field:account.asset_change_estimation_useful_life,definition_id:0
 msgid "Definition"
-msgstr ""
+msgstr "Definisi"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,depreciation_history_id:0
 #: field:account.asset_change_estimation_useful_life,depreciation_history_id:0
 msgid "Depreciation History"
-msgstr ""
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,display_name:0
-#: field:account.asset_change_estimation_useful_life,display_name:0
-msgid "Display Name"
-msgstr "Display Name"
+msgstr "Riwayat Penyusutan"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_search
@@ -299,62 +244,56 @@ msgstr "Display Name"
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_search
 #: selection:account.asset_change_estimation_useful_life,state:0
 msgid "Draft"
-msgstr "Draft"
+msgstr "Konsep"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset.asset:fixed_asset_estimation_change.account_asset_view_form
 #: model:ir.ui.menu,name:fixed_asset_estimation_change.account_asset_management_estimation_change_root
 msgid "Estimation Change"
-msgstr "Estimation Change"
+msgstr "Perubahan Estimasi"
 
 #. module: fixed_asset_estimation_change
 #: model:ir.model,name:fixed_asset_estimation_change.model_account_asset_change_estimation_salvage
 msgid "Fixed Asset Salvage Value Estimation Change"
-msgstr "Fixed Asset Salvage Value Estimation Change"
+msgstr "Perubahan Estimasi Nilai Sisa Aset Tetap"
 
 #. module: fixed_asset_estimation_change
-#: field:account.asset.config_setting,asset_salvage_sequence_id:0
 #: field:res.company,asset_salvage_sequence_id:0
 msgid "Fixed Asset Salvage Value Estimation Change Sequence"
-msgstr "Fixed Asset Salvage Value Estimation Change Sequence"
+msgstr "Urutan Perubahan Estimasi Nilai Sisa Aset Tetap"
 
 #. module: fixed_asset_estimation_change
 #: model:ir.model,name:fixed_asset_estimation_change.model_account_asset_change_estimation_useful_life
 msgid "Fixed Asset Useful Life Estimation Change"
-msgstr "Fixed Asset Useful Life Estimation Change"
+msgstr "Perubahan Estimasi Umur Manfaat Aset Tetap"
 
 #. module: fixed_asset_estimation_change
-#: field:account.asset.config_setting,asset_useful_life_sequence_id:0
 #: field:res.company,asset_useful_life_sequence_id:0
 msgid "Fixed Asset Useful Life Estimation Change Sequence"
-msgstr "Fixed Asset Useful Life Estimation Change Sequence"
+msgstr "Urutan Perubahan Estimasi Umur Manfaat Aset Tetap"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,message_follower_ids:0
 #: field:account.asset_change_estimation_useful_life,message_follower_ids:0
 msgid "Followers"
-msgstr "Followers"
+msgstr "Pengikut"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset.config_setting:fixed_asset_estimation_change.account_asset_config_setting_view_form
 msgid "General"
-msgstr "General"
+msgstr "Umum"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_search
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_search
 msgid "Group By.."
-msgstr "Group By.."
+msgstr "Kelompokkan Berdasarkan.."
 
 #. module: fixed_asset_estimation_change
 #: help:account.asset_change_estimation_salvage,message_summary:0
 #: help:account.asset_change_estimation_useful_life,message_summary:0
-msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
-msgstr ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Menyimpan ringkasan Percakapan (jumlah pesan, ...). Ringkasan ini langsung dalam format html untuk disisipkan dalam tampilan kanban."
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,id:0
@@ -366,37 +305,31 @@ msgstr "ID"
 #: help:account.asset_change_estimation_salvage,message_unread:0
 #: help:account.asset_change_estimation_useful_life,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr "If checked new messages require your attention."
+msgstr "Jika dicentang, pesan baru memerlukan perhatian Anda."
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,message_is_follower:0
 #: field:account.asset_change_estimation_useful_life,message_is_follower:0
 msgid "Is a Follower"
-msgstr "Is a Follower"
+msgstr "Adalah Pengikut"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,message_last_post:0
 #: field:account.asset_change_estimation_useful_life,message_last_post:0
 msgid "Last Message Date"
-msgstr "Last Message Date"
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,__last_update:0
-#: field:account.asset_change_estimation_useful_life,__last_update:0
-msgid "Last Modified on"
-msgstr "Last Modified on"
+msgstr "Tanggal Pesan Terakhir"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,write_uid:0
 #: field:account.asset_change_estimation_useful_life,write_uid:0
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr "Terakhir Diperbarui oleh"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,write_date:0
 #: field:account.asset_change_estimation_useful_life,write_date:0
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr "Terakhir diperbarui pada"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
@@ -408,32 +341,19 @@ msgstr "Log"
 #: field:account.asset_change_estimation_salvage,message_ids:0
 #: field:account.asset_change_estimation_useful_life,message_ids:0
 msgid "Messages"
-msgstr "Messages"
+msgstr "Pesan"
 
 #. module: fixed_asset_estimation_change
 #: help:account.asset_change_estimation_salvage,message_ids:0
 #: help:account.asset_change_estimation_useful_life,message_ids:0
 msgid "Messages and communication history"
-msgstr "Messages and communication history"
+msgstr "Pesan dan riwayat komunikasi"
 
 #. module: fixed_asset_estimation_change
 #: selection:account.asset_change_estimation_useful_life,method_period:0
 #: selection:account.asset_change_estimation_useful_life,prev_method_period:0
 msgid "Month"
-msgstr "Month"
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,need_validation:0
-#: field:account.asset_change_estimation_useful_life,need_validation:0
-#, fuzzy
-msgid "Need Validation"
-msgstr "Validation"
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,next_reviewer_ids:0
-#: field:account.asset_change_estimation_useful_life,next_reviewer_ids:0
-msgid "Next Reviewers"
-msgstr ""
+msgstr "Bulan"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
@@ -441,12 +361,12 @@ msgstr ""
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
 #: field:account.asset_change_estimation_useful_life,note:0
 msgid "Note"
-msgstr "Note"
+msgstr "Catatan"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_useful_life,method_number:0
 msgid "Number of Years"
-msgstr "Number of Years"
+msgstr "Jumlah Tahun"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_search
@@ -454,141 +374,119 @@ msgstr "Number of Years"
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_search
 #: selection:account.asset_change_estimation_useful_life,state:0
 msgid "On Progress"
-msgstr "On Progress"
+msgstr "Dalam Proses"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,opened_user_id:0
 #: field:account.asset_change_estimation_useful_life,opened_user_id:0
 msgid "Open By"
-msgstr "Open By"
+msgstr "Dibuka Oleh"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,opened_date:0
 #: field:account.asset_change_estimation_useful_life,opened_date:0
 msgid "Opened Date"
-msgstr "Opened Date"
+msgstr "Dibuka Tanggal"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
 msgid "Operation has been"
-msgstr ""
+msgstr "Operasi telah"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_useful_life,method_period:0
 msgid "Period Length"
-msgstr "Period Length"
+msgstr "Panjang Periode"
 
 #. module: fixed_asset_estimation_change
 #: help:account.asset_change_estimation_useful_life,method_period:0
 msgid "Period length for the depreciation accounting entries"
-msgstr "Period length for the depreciation accounting entries"
+msgstr "Panjang periode untuk entri akuntansi penyusutan"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
 msgid "Policy"
-msgstr "Policy"
+msgstr "Kebijakan"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_useful_life,prev_method_number:0
 msgid "Previous Number of Years"
-msgstr "Previous Number of Years"
+msgstr "Jumlah Tahun Sebelumnya"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_useful_life,prev_method_period:0
 msgid "Previous Period Length"
-msgstr "Previous Period Length"
+msgstr "Panjang Periode Sebelumnya"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,prev_salvage_value:0
 msgid "Previous Salvage Value"
-msgstr "Previous Salvage Value"
+msgstr "Nilai Sisa Sebelumnya"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
 msgid "Print"
-msgstr ""
+msgstr "Mencetak"
 
 #. module: fixed_asset_estimation_change
 #: selection:account.asset_change_estimation_useful_life,method_period:0
 #: selection:account.asset_change_estimation_useful_life,prev_method_period:0
 msgid "Quarter"
-msgstr "Quarter"
+msgstr "Kuartal"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
 msgid "Reject"
-msgstr ""
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,rejected:0
-#: field:account.asset_change_estimation_useful_life,rejected:0
-msgid "Rejected"
-msgstr ""
+msgstr "Menolak"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
-#, fuzzy
 msgid "Request Validation"
-msgstr "Validation"
+msgstr "Meminta Validasi"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
 msgid "Restart"
-msgstr "Restart"
+msgstr "Memulai Kembali"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
-#, fuzzy
 msgid "Restart Validation"
-msgstr "Validation"
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,reviewer_partner_ids:0
-#: field:account.asset_change_estimation_useful_life,reviewer_partner_ids:0
-msgid "Review Partners"
-msgstr ""
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,reviewer_ids:0
-#: field:account.asset_change_estimation_useful_life,reviewer_ids:0
-msgid "Reviewers"
-msgstr ""
+msgstr "Memulai Kembali Validasi"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
 msgid "Reviews"
-msgstr ""
+msgstr "Ulasan"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,salvage_value:0
 #: model:ir.ui.menu,name:fixed_asset_estimation_change.account_asset_change_estimation_salvage_menu
 msgid "Salvage Value"
-msgstr "Salvage Value"
+msgstr "Nilai Sisa"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset.config_setting:fixed_asset_estimation_change.account_asset_config_setting_view_form
 msgid "Sequence"
-msgstr "Sequence"
+msgstr "Urutan"
 
 #. module: fixed_asset_estimation_change
 #: model:res.groups,name:fixed_asset_estimation_change.group_technical_salvage_helper
-#, fuzzy
 msgid "Show Helper Information On Salvage Value Estimation Change"
-msgstr "Asset Salvage Value Estimation Change"
+msgstr "Tampilkan Informasi Bantuan Tentang Perubahan Estimasi Nilai Sisa"
 
 #. module: fixed_asset_estimation_change
 #: model:res.groups,name:fixed_asset_estimation_change.group_technical_useful_life_helper
-#, fuzzy
 msgid "Show Helper Information On Useful Life Estimation Change"
-msgstr "Asset Useful Life Estimation Change"
+msgstr "Tampilkan Informasi Bantuan Tentang Perubahan Estimasi Umur Manfaat"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_search
@@ -596,61 +494,60 @@ msgstr "Asset Useful Life Estimation Change"
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_search
 #: field:account.asset_change_estimation_useful_life,state:0
 msgid "State"
-msgstr "State"
+msgstr "Status"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,message_summary:0
 #: field:account.asset_change_estimation_useful_life,message_summary:0
 msgid "Summary"
-msgstr "Summary"
+msgstr "Ringkasan"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
 msgid "This data needs to be validated."
-msgstr ""
+msgstr "Data ini perlu divalidasi."
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset.config_setting:fixed_asset_estimation_change.account_asset_config_setting_view_form
 msgid "To Cancel"
-msgstr "To Cancel"
+msgstr "Untuk Membatalkan"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset.config_setting:fixed_asset_estimation_change.account_asset_config_setting_view_form
 msgid "To Confirm"
-msgstr "To Confirm"
+msgstr "Untuk Mengkonfirmasi"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset.config_setting:fixed_asset_estimation_change.account_asset_config_setting_view_form
 msgid "To Restart"
-msgstr "To Restart"
+msgstr "Untuk Memulai Kembali"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset.config_setting:fixed_asset_estimation_change.account_asset_config_setting_view_form
-#, fuzzy
 msgid "To Restart Validation"
-msgstr "To Restart"
+msgstr "Untuk Memulai Kembali Validasi"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset.config_setting:fixed_asset_estimation_change.account_asset_config_setting_view_form
 msgid "To Validate"
-msgstr "To Validate"
+msgstr "Untuk Memvalidasi"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,message_unread:0
 #: field:account.asset_change_estimation_useful_life,message_unread:0
 msgid "Unread Messages"
-msgstr "Unread Messages"
+msgstr "Pesan Yang Belum Dibaca"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset.asset,useful_life_ids:0
 msgid "Useful Life Estimation Change"
-msgstr "Useful Life Estimation Change"
+msgstr "Perubahan Estimasi Umur Manfaat"
 
 #. module: fixed_asset_estimation_change
 #: model:ir.ui.menu,name:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_menu
 msgid "Useful of Life"
-msgstr "Useful of Life"
+msgstr "Umur Manfaat"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
@@ -665,41 +562,32 @@ msgstr "Valid"
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
-#, fuzzy
 msgid "Validate"
-msgstr "To Validate"
-
-#. module: fixed_asset_estimation_change
-#: field:account.asset_change_estimation_salvage,validated:0
-#: field:account.asset_change_estimation_useful_life,validated:0
-#, fuzzy
-msgid "Validated"
-msgstr "To Validate"
+msgstr "Memvalidasi"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
 msgid "Validation"
-msgstr "Validation"
+msgstr "Validasi"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,validated_user_id:0
 #: field:account.asset_change_estimation_useful_life,validated_user_id:0
 msgid "Validation By"
-msgstr "Validation By"
+msgstr "Validasi Oleh"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,validated_date:0
 #: field:account.asset_change_estimation_useful_life,validated_date:0
 msgid "Validation Date"
-msgstr "Validation Date"
+msgstr "Tanggal Validasi"
 
 #. module: fixed_asset_estimation_change
 #: field:account.asset_change_estimation_salvage,review_ids:0
 #: field:account.asset_change_estimation_useful_life,review_ids:0
-#, fuzzy
 msgid "Validations"
-msgstr "Validation"
+msgstr "Validasi"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_search
@@ -707,35 +595,22 @@ msgstr "Validation"
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_search
 #: selection:account.asset_change_estimation_useful_life,state:0
 msgid "Waiting for Approval"
-msgstr "Waiting for Approval"
+msgstr "Menunggu Persetujuan"
 
 #. module: fixed_asset_estimation_change
 #: selection:account.asset_change_estimation_useful_life,method_period:0
 #: selection:account.asset_change_estimation_useful_life,prev_method_period:0
 msgid "Year"
-msgstr "Year"
+msgstr "Tahun"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
 msgid "rejected"
-msgstr ""
+msgstr "ditolak"
 
 #. module: fixed_asset_estimation_change
 #: view:account.asset_change_estimation_salvage:fixed_asset_estimation_change.account_asset_change_estimation_salvage_view_form
 #: view:account.asset_change_estimation_useful_life:fixed_asset_estimation_change.account_asset_change_estimation_useful_life_view_form
-#, fuzzy
 msgid "validated"
-msgstr "To Validate"
-
-#~ msgid "Allowed To Start Fixed Asset Useful Life Estimation Change"
-#~ msgstr "Allowed To Start Fixed Asset Useful Life Estimation Change"
-
-#~ msgid "Approve"
-#~ msgstr "Approve"
-
-#~ msgid "Can Open"
-#~ msgstr "Can Open"
-
-#~ msgid "To Open"
-#~ msgstr "To Open"
+msgstr "divalidasi"
