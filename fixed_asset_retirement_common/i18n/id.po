@@ -1,381 +1,337 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* account_asset_management_retirement_common
+# 	* fixed_asset_retirement_common
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-24 14:28+0000\n"
-"PO-Revision-Date: 2018-11-24 14:28+0000\n"
+"POT-Creation-Date: 2021-09-03 08:38+0000\n"
+"PO-Revision-Date: 2021-09-03 18:50+0700\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"Language: id\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,name:0
 msgid "# Document"
-msgstr "# Document"
+msgstr "No. Dokumen"
 
 #. module: fixed_asset_retirement_common
 #: model:ir.model,name:fixed_asset_retirement_common.model_account_asset_retirement_common
 msgid "Abstract Model for Fixed Asset Retirement"
-msgstr "Abstract Model for Fixed Asset Retirement"
+msgstr "Model Abstrak untuk Pelepasan Aset Tetap"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
-#, fuzzy
 msgid "Accounting Configuration"
-msgstr "General Configuration"
+msgstr "Konfigurasi Akuntansi"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 msgid "Accounting Entry"
-msgstr "Accounting Entry"
+msgstr "Entri Akuntansi"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,accumulated_depreciation_account_id:0
 msgid "Accumulated Depreciation Account"
-msgstr "Accumulated Depreciation Account"
+msgstr "Akumulasi Akun Penyusutan"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,acquisition_price:0
 msgid "Acquisition Price"
-msgstr "Acquisition Price"
+msgstr "Harga Perolehan"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,active:0
 msgid "Active"
-msgstr "Active"
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,active_reviewer_ids:0
-msgid "Active Reviewers"
-msgstr ""
+msgstr "Aktif"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,set_disposition_price:0
 msgid "Allow To Set Disposition Price"
-msgstr "Allow To Set Disposition Price"
+msgstr "Izinkan Untuk Mengatur Harga Pelepasan"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,asset_retirement_cancel_grp_ids:0
 msgid "Allowed To Cancel Asset Retirement"
-msgstr "Allowed To Cancel Asset Retirement"
+msgstr "Diizinkan Untuk Membatalkan Pelepasan Aset"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,asset_retirement_confirm_grp_ids:0
 msgid "Allowed To Confirm Asset Retirement"
-msgstr "Allowed To Confirm Asset Retirement"
+msgstr "Diizinkan Untuk Mengkonfirmasi Pelepasan Aset"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,asset_retirement_open_grp_ids:0
 msgid "Allowed To Open Asset Retirement"
-msgstr "Allowed To Open Asset Retirement"
+msgstr "Diizinkan Untuk Membuka Pelepasan Aset"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,asset_retirement_restart_grp_ids:0
 msgid "Allowed To Restart Asset Retirement"
-msgstr "Allowed To Restart Asset Retirement"
+msgstr "Diizinkan Untuk Memulai Kembali Pelepasan Aset"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,asset_retirement_restart_validation_grp_ids:0
-#, fuzzy
 msgid "Allowed To Restart Validation Asset Retirement"
-msgstr "Allowed To Restart Asset Retirement"
+msgstr "Diizinkan Untuk Memulai Kembali Validasi Pelepasan Aset"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,asset_retirement_valid_grp_ids:0
 msgid "Allowed To Validate Asset Retirement"
-msgstr "Allowed To Validate Asset Retirement"
+msgstr "Diizinkan Untuk Memvalidasi Pelepasan Aset"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,asset_id:0
 msgid "Asset"
-msgstr "Asset"
+msgstr "Aset"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,asset_account_id:0
 msgid "Asset Account"
-msgstr "Asset Account"
+msgstr "Akun Aset"
 
 #. module: fixed_asset_retirement_common
 #: model:ir.actions.act_window,name:fixed_asset_retirement_common.account_asset_retirement_type_action
 #: model:ir.ui.menu,name:fixed_asset_retirement_common.account_asset_retirement_type_menu
 msgid "Asset Retirement Type"
-msgstr "Asset Retirement Type"
+msgstr "Tipe Pelepasan Aset"
 
 #. module: fixed_asset_retirement_common
 #: selection:account.asset_retirement_common,disposal_acc_move_creation:0
 #: selection:account.asset_retirement_common,exchange_acc_move_creation:0
 #: selection:account.asset_retirement_common,gain_acc_move_creation:0
 msgid "Automatic"
-msgstr "Automatic"
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,cancel_ok:0
-msgid "Can Cancel"
-msgstr "Can Cancel"
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,confirm_ok:0
-msgid "Can Confirm"
-msgstr "Can Confirm"
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,restart_ok:0
-msgid "Can Restart"
-msgstr "Can Restart"
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,restart_validation_ok:0
-#, fuzzy
-msgid "Can Restart Validation"
-msgstr "Can Restart"
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,valid_ok:0
-msgid "Can Validate"
-msgstr "Can Validate"
+msgstr "Otomatis"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 #: selection:account.asset_retirement_common,state:0
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "Membatalkan"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 msgid "Cancellation"
-msgstr "Cancellation"
+msgstr "Pembatalan"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,cancelled_user_id:0
 msgid "Cancellation By"
-msgstr "Cancellation By"
+msgstr "Pembatalan Oleh"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,cancelled_date:0
 msgid "Cancellation Date"
-msgstr "Cancellation Date"
+msgstr "Tanggal Pembatalan"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,code:0
 msgid "Code"
-msgstr "Code"
+msgstr "Kode"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,company_id:0
 msgid "Company"
-msgstr "Company"
+msgstr "Perusahaan"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 msgid "Confirm"
-msgstr "Confirm"
+msgstr "Mengkonfirmasi"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 msgid "Confirmation"
-msgstr "Confirmation"
+msgstr "Konfirmasi"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,confirmed_user_id:0
 msgid "Confirmation By"
-msgstr "Confirmation By"
+msgstr "Konfirmasi Oleh"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,confirmed_date:0
 msgid "Confirmation Date"
-msgstr "Confirmation Date"
+msgstr "Tanggal Konfirmasi"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,create_uid:0
 msgid "Created by"
-msgstr "Created by"
+msgstr "Dibuat Oleh"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,create_date:0
 msgid "Created on"
-msgstr "Created on"
+msgstr "Dibuat Pada"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,currency_id:0
 msgid "Currency"
-msgstr "Currency"
+msgstr "Mata Uang"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 msgid "Date by Day"
-msgstr "Date by Day"
+msgstr "Tanggal Berdasarkan Hari"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 msgid "Date by Month"
-msgstr "Date by Month"
+msgstr "Tanggal Berdasarkan Bulan"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
-#, fuzzy
 msgid "Date by Week"
-msgstr "Date by Year"
+msgstr "Tanggal Berdasarkan Minggu"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 msgid "Date by Year"
-msgstr "Date by Year"
+msgstr "Tanggal Berdasarkan Tahun"
 
 #. module: fixed_asset_retirement_common
 #: help:account.asset_retirement_common,message_last_post:0
 #: help:account.asset_retirement_type,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr "Date of the last message posted on the record."
+msgstr "Tanggal pesan terakhir diposting pada catatan."
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,definition_id:0
 msgid "Definition"
-msgstr ""
+msgstr "Definisi"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,depreciated_amount:0
 msgid "Depreciated Value"
-msgstr "Depreciated Value"
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,display_name:0
-#: field:account.asset_retirement_type,display_name:0
-msgid "Display Name"
-msgstr "Display Name"
+msgstr "Nilai Setelah Penyusutan"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,disposal_acc_move_creation:0
 msgid "Disposal Acc. Move Creation"
-msgstr "Disposal Acc. Move Creation"
+msgstr "Metode Pembuatan Penjurnalan Pelepasan"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,disposal_acc_move_id:0
 msgid "Disposal Account Move"
-msgstr "Disposal Account Move"
+msgstr "Penjurnalan Akun Pelepasan"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,disposal_journal_id:0
 #: field:account.asset_retirement_type,disposal_journal_id:0
 msgid "Disposal Journal"
-msgstr "Disposal Journal"
+msgstr "Jurnal Pelepasan"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,date_disposition:0
 msgid "Disposition Date"
-msgstr "Disposition Date"
+msgstr "Tanggal Pelepasan"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,disposition_price:0
 msgid "Disposition Price"
-msgstr "Disposition Price"
+msgstr "Harga Pelepasan"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 #: selection:account.asset_retirement_common,state:0
 msgid "Draft"
-msgstr "Draft"
+msgstr "Konsep"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,exchange_acc_move_creation:0
 msgid "Exchange Acc. Move Creation"
-msgstr "Exchange Acc. Move Creation"
+msgstr "Metode Pembuatan Penjurnalan Pertukaran"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,exchange_account_id:0
 #: field:account.asset_retirement_type,exchange_account_id:0
 msgid "Exchange Account"
-msgstr "Exchange Account"
+msgstr "Akun Pertukaran"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,exchange_acc_move_id:0
 msgid "Exchange Account Move"
-msgstr "Exchange Account Move"
+msgstr "Penjurnalan Akun Pertukaran"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,exchange_journal_id:0
 #: field:account.asset_retirement_type,exchange_journal_id:0
 msgid "Exchange Journal"
-msgstr "Exchange Journal"
+msgstr "Jurnal Pertukaran"
 
 #. module: fixed_asset_retirement_common
 #: model:ir.model,name:fixed_asset_retirement_common.model_account_asset_retirement_type
 msgid "Fixed Asset Retirement Type"
-msgstr "Fixed Asset Retirement Type"
+msgstr "Tipe Pelepasan Aset Tetap"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,message_follower_ids:0
 #: field:account.asset_retirement_type,message_follower_ids:0
 msgid "Followers"
-msgstr "Followers"
+msgstr "Pengikut"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,gain_account_id:0
 #: field:account.asset_retirement_type,gain_account_id:0
 msgid "Gain Account"
-msgstr "Gain Account"
+msgstr "Akun Keuntungan"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,gain_journal_id:0
 #: field:account.asset_retirement_type,gain_journal_id:0
 msgid "Gain Journal"
-msgstr "Gain Journal"
+msgstr "Jurnal Keuntungan"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,gain_acc_move_creation:0
 msgid "Gain/Loss Acc. Move Creation"
-msgstr "Gain/Loss Acc. Move Creation"
+msgstr "Metode Pembuatan Penjurnalan Keuntungan/Kerugian"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,gain_acc_move_id:0
 msgid "Gain/Loss Account Move"
-msgstr "Gain/Loss Account Move"
+msgstr "Penjurnalan Akun Keuntungan/Kerugian"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,gain_loss_amount:0
 msgid "Gain/Loss Amount"
-msgstr "Gain/Loss Amount"
+msgstr "Jumlah Keuntungan/Kerugian"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
-#, fuzzy
 msgid "Gain/Loss Journal"
-msgstr "Gain Journal"
+msgstr "Jurnal Keuntungan/Kerugian"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_type:fixed_asset_retirement_common.account_asset_retirement_type_view_form
 msgid "General Configuration"
-msgstr "General Configuration"
+msgstr "Konfigurasi Umum"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 msgid "Group By.."
-msgstr "Group By.."
+msgstr "Kelompokkan Berdasarkan.."
 
 #. module: fixed_asset_retirement_common
 #: help:account.asset_retirement_common,message_summary:0
 #: help:account.asset_retirement_type,message_summary:0
-msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
-msgstr ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Menyimpan ringkasan Percakapan (jumlah pesan, ...). Ringkasan ini langsung dalam format html untuk disisipkan dalam tampilan kanban."
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,id:0
@@ -387,35 +343,29 @@ msgstr "ID"
 #: help:account.asset_retirement_common,message_unread:0
 #: help:account.asset_retirement_type,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr "If checked new messages require your attention."
+msgstr "Jika dicentang, pesan baru memerlukan perhatian Anda."
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,message_is_follower:0
 #: field:account.asset_retirement_type,message_is_follower:0
 msgid "Is a Follower"
-msgstr "Is a Follower"
+msgstr "Adalah Pengikut"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,message_last_post:0
 #: field:account.asset_retirement_type,message_last_post:0
 msgid "Last Message Date"
-msgstr "Last Message Date"
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,__last_update:0
-#: field:account.asset_retirement_type,__last_update:0
-msgid "Last Modified on"
-msgstr "Last Modified on"
+msgstr "Tanggal Pesan Terakhir"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,write_uid:0
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr "Terakhir Diperbarui oleh"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,write_date:0
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr "Terakhir diperbarui pada"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
@@ -427,37 +377,26 @@ msgstr "Log"
 #: field:account.asset_retirement_common,loss_account_id:0
 #: field:account.asset_retirement_type,loss_account_id:0
 msgid "Loss Account"
-msgstr "Loss Account"
+msgstr "Akun Kerugian"
 
 #. module: fixed_asset_retirement_common
 #: selection:account.asset_retirement_common,disposal_acc_move_creation:0
 #: selection:account.asset_retirement_common,exchange_acc_move_creation:0
 #: selection:account.asset_retirement_common,gain_acc_move_creation:0
 msgid "Manual Selection"
-msgstr "Manual Selection"
+msgstr "Seleksi Manual"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,message_ids:0
 #: field:account.asset_retirement_type,message_ids:0
 msgid "Messages"
-msgstr "Messages"
+msgstr "Pesan"
 
 #. module: fixed_asset_retirement_common
 #: help:account.asset_retirement_common,message_ids:0
 #: help:account.asset_retirement_type,message_ids:0
 msgid "Messages and communication history"
-msgstr "Messages and communication history"
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,need_validation:0
-#, fuzzy
-msgid "Need Validation"
-msgstr "Validation"
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,next_reviewer_ids:0
-msgid "Next Reviewers"
-msgstr ""
+msgstr "Pesan dan riwayat komunikasi"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
@@ -465,147 +404,127 @@ msgstr ""
 #: view:account.asset_retirement_type:fixed_asset_retirement_common.account_asset_retirement_type_view_form
 #: field:account.asset_retirement_type,note:0
 msgid "Note"
-msgstr "Note"
+msgstr "Catatan"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 #: selection:account.asset_retirement_common,state:0
 msgid "On Progress"
-msgstr "On Progress"
+msgstr "Dalam Proses"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,opened_user_id:0
 msgid "Open By"
-msgstr "Open By"
+msgstr "Dibuka Oleh"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,opened_date:0
 msgid "Opened Date"
-msgstr "Opened Date"
+msgstr "Dibuka Tanggal"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 msgid "Operation has been"
-msgstr ""
+msgstr "Operasi telah"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,partner_id:0
 msgid "Partner"
-msgstr "Partner"
+msgstr "Mitra"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,period_id:0
 msgid "Period"
-msgstr "Period"
+msgstr "Periode"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 #: view:account.asset_retirement_type:fixed_asset_retirement_common.account_asset_retirement_type_view_form
 msgid "Policy"
-msgstr "Policy"
+msgstr "Kebijakan"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 msgid "Print"
-msgstr ""
+msgstr "Mencetak"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 msgid "Reject"
-msgstr ""
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,rejected:0
-msgid "Rejected"
-msgstr ""
+msgstr "Menolak"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
-#, fuzzy
 msgid "Request Validation"
-msgstr "Validation"
+msgstr "Meminta Validasi"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 msgid "Restart"
-msgstr "Restart"
+msgstr "Memulai Kembali"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
-#, fuzzy
 msgid "Restart Validation"
-msgstr "Validation"
+msgstr "Memulai Kembali Validasi"
 
 #. module: fixed_asset_retirement_common
 #: model:ir.ui.menu,name:fixed_asset_retirement_common.account_asset_retirement_root_menu
 msgid "Retirement"
-msgstr "Retirement"
+msgstr "Pelepasan"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,name:0
 msgid "Retirement Type"
-msgstr "Retirement Type"
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,reviewer_partner_ids:0
-#, fuzzy
-msgid "Review Partners"
-msgstr "Partner"
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,reviewer_ids:0
-msgid "Reviewers"
-msgstr ""
+msgstr "Jenis Pelepasan"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 msgid "Reviews"
-msgstr ""
+msgstr "Ulasan"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_type,sequence_id:0
 msgid "Sequence"
-msgstr "Sequence"
+msgstr "Urutan"
 
 #. module: fixed_asset_retirement_common
 #: model:res.groups,name:fixed_asset_retirement_common.group_technical_retirement_accounting
-#, fuzzy
 msgid "Show Accounting Options On Fixed Asset Retirement"
-msgstr "Abstract Model for Fixed Asset Retirement"
+msgstr "Tampilkan Opsi Akuntansi Pada Pelepasan Aset Tetap"
 
 #. module: fixed_asset_retirement_common
 #: model:res.groups,name:fixed_asset_retirement_common.group_technical_retirement_helper
-#, fuzzy
 msgid "Show Helper Information On Fixed Asset Retirement"
-msgstr "Abstract Model for Fixed Asset Retirement"
+msgstr "Tampilkan Informasi Bantuan Tentang Pelepasan Aset Tetap"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,state:0
 msgid "State"
-msgstr "State"
+msgstr "Status"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,message_summary:0
 #: field:account.asset_retirement_type,message_summary:0
 msgid "Summary"
-msgstr "Summary"
+msgstr "Ringkasan"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 msgid "This data needs to be validated."
-msgstr ""
+msgstr "Data ini perlu divalidasi."
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,type_id:0
 msgid "Type"
-msgstr "Type"
+msgstr "Tipe"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,message_unread:0
 #: field:account.asset_retirement_type,message_unread:0
 msgid "Unread Messages"
-msgstr "Unread Messages"
+msgstr "Pesan Yang Belum Dibaca"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
@@ -616,63 +535,48 @@ msgstr "Valid"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
-#, fuzzy
 msgid "Validate"
-msgstr "Can Validate"
-
-#. module: fixed_asset_retirement_common
-#: field:account.asset_retirement_common,validated:0
-#, fuzzy
-msgid "Validated"
-msgstr "Can Validate"
+msgstr "Memvalidasi"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 msgid "Validation"
-msgstr "Validation"
+msgstr "Validasi"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,validated_user_id:0
 msgid "Validation By"
-msgstr "Validation By"
+msgstr "Validasi Oleh"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,validated_date:0
 msgid "Validation Date"
-msgstr "Validation Date"
+msgstr "Tanggal Validasi"
 
 #. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,review_ids:0
-#, fuzzy
 msgid "Validations"
-msgstr "Validation"
+msgstr "Validasi"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_search
 #: selection:account.asset_retirement_common,state:0
 msgid "Waiting for Approval"
-msgstr "Waiting for Approval"
+msgstr "Menunggu Persetujuan"
 
 #. module: fixed_asset_retirement_common
 #: selection:account.asset_retirement_common,disposal_acc_move_creation:0
 #: selection:account.asset_retirement_common,exchange_acc_move_creation:0
 #: selection:account.asset_retirement_common,gain_acc_move_creation:0
 msgid "Workflow"
-msgstr "Workflow"
+msgstr "Alur Kerja"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
 msgid "rejected"
-msgstr ""
+msgstr "ditolak"
 
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_common:fixed_asset_retirement_common.account_asset_retirement_common_view_form
-#, fuzzy
 msgid "validated"
-msgstr "Can Validate"
-
-#~ msgid "Approve"
-#~ msgstr "Approve"
-
-#~ msgid "Can Open"
-#~ msgstr "Can Open"
+msgstr "divalidasi"
