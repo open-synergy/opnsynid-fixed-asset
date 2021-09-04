@@ -1,247 +1,208 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* account_asset_management_retirement_sale
+# 	* fixed_asset_retirement_sale
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-24 14:30+0000\n"
-"PO-Revision-Date: 2018-11-24 14:30+0000\n"
+"POT-Creation-Date: 2021-09-04 08:56+0000\n"
+"PO-Revision-Date: 2021-09-04 16:17+0700\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"Language: id\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,name:0
 msgid "# Document"
-msgstr "# Document"
+msgstr "No. Dokumen"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,accumulated_depreciation_account_id:0
 msgid "Accumulated Depreciation Account"
-msgstr "Accumulated Depreciation Account"
+msgstr "Akumulasi Akun Penyusutan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,acquisition_price:0
 msgid "Acquisition Price"
-msgstr "Acquisition Price"
-
-#. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,active_reviewer_ids:0
-msgid "Active Reviewers"
-msgstr ""
+msgstr "Harga Perolehan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,asset_id:0
 msgid "Asset"
-msgstr "Asset"
+msgstr "Aset"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,asset_account_id:0
 msgid "Asset Account"
-msgstr "Asset Account"
+msgstr "Akun Aset"
 
 #. module: fixed_asset_retirement_sale
 #: model:ir.actions.act_window,name:fixed_asset_retirement_sale.account_asset_retirement_sale_action
 msgid "Asset Retirement by Sale"
-msgstr "Asset Retirement by Sale"
+msgstr "Pelepasan Aset dengan Penjualan"
 
 #. module: fixed_asset_retirement_sale
 #: selection:account.asset_retirement_sale,disposal_acc_move_creation:0
 #: selection:account.asset_retirement_sale,exchange_acc_move_creation:0
 #: selection:account.asset_retirement_sale,gain_acc_move_creation:0
 msgid "Automatic"
-msgstr "Automatic"
-
-#. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,cancel_ok:0
-msgid "Can Cancel"
-msgstr "Can Cancel"
-
-#. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,confirm_ok:0
-msgid "Can Confirm"
-msgstr "Can Confirm"
-
-#. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,restart_ok:0
-msgid "Can Restart"
-msgstr "Can Restart"
-
-#. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,restart_validation_ok:0
-#, fuzzy
-msgid "Can Restart Validation"
-msgstr "Can Restart"
-
-#. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,valid_ok:0
-msgid "Can Validate"
-msgstr "Can Validate"
+msgstr "Otomatis"
 
 #. module: fixed_asset_retirement_sale
 #: selection:account.asset_retirement_sale,state:0
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "Membatalkan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,cancelled_user_id:0
 msgid "Cancellation By"
-msgstr "Cancellation By"
+msgstr "Pembatalan Oleh"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,cancelled_date:0
 msgid "Cancellation Date"
-msgstr "Cancellation Date"
+msgstr "Tanggal Pembatalan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,company_id:0
 msgid "Company"
-msgstr "Company"
+msgstr "Perusahaan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,confirmed_user_id:0
 msgid "Confirmation By"
-msgstr "Confirmation By"
+msgstr "Konfirmasi Oleh"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,confirmed_date:0
 msgid "Confirmation Date"
-msgstr "Confirmation Date"
+msgstr "Tanggal Konfirmasi"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,create_uid:0
 msgid "Created by"
-msgstr "Created by"
+msgstr "Dibuat Oleh"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,create_date:0
 msgid "Created on"
-msgstr "Created on"
+msgstr "Dibuat Pada"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,currency_id:0
 msgid "Currency"
-msgstr "Currency"
+msgstr "Mata Uang"
 
 #. module: fixed_asset_retirement_sale
 #: help:account.asset_retirement_sale,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr "Date of the last message posted on the record."
+msgstr "Tanggal pesan terakhir diposting pada catatan."
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,definition_id:0
 msgid "Definition"
-msgstr ""
+msgstr "Definisi"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,depreciated_amount:0
 msgid "Depreciated Value"
-msgstr "Depreciated Value"
-
-#. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,display_name:0
-msgid "Display Name"
-msgstr "Display Name"
+msgstr "Nilai Setelah Penyusutan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,disposal_acc_move_creation:0
 msgid "Disposal Acc. Move Creation"
-msgstr "Disposal Acc. Move Creation"
+msgstr "Metode Pembuatan Penjurnalan Pelepasan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,disposal_acc_move_id:0
 msgid "Disposal Account Move"
-msgstr "Disposal Account Move"
+msgstr "Jurnal Akun Pelepasan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,disposal_journal_id:0
 msgid "Disposal Journal"
-msgstr "Disposal Journal"
+msgstr "Jurnal Pelepasan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,date_disposition:0
 msgid "Disposition Date"
-msgstr "Disposition Date"
+msgstr "Tanggal Pelepasan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,disposition_price:0
 msgid "Disposition Price"
-msgstr "Disposition Price"
+msgstr "Harga Pelepasan"
 
 #. module: fixed_asset_retirement_sale
 #: selection:account.asset_retirement_sale,state:0
 msgid "Draft"
-msgstr "Draft"
+msgstr "Konsep"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,exchange_acc_move_creation:0
 msgid "Exchange Acc. Move Creation"
-msgstr "Exchange Acc. Move Creation"
+msgstr "Metode Pembuatan Penjurnalan Pertukaran"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,exchange_account_id:0
 msgid "Exchange Account"
-msgstr "Exchange Account"
+msgstr "Akun Pertukaran"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,exchange_acc_move_id:0
 msgid "Exchange Account Move"
-msgstr "Exchange Account Move"
+msgstr "Jurnal Akun Pertukaran"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,exchange_journal_id:0
 msgid "Exchange Journal"
-msgstr "Exchange Journal"
+msgstr "Jurnal Pertukaran"
 
 #. module: fixed_asset_retirement_sale
 #: model:ir.model,name:fixed_asset_retirement_sale.model_account_asset_retirement_sale
 msgid "Fixed Asset Retirement by Sale"
-msgstr "Fixed Asset Retirement by Sale"
+msgstr "Pelepasan Aset Tetap dengan Penjualan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,message_follower_ids:0
 msgid "Followers"
-msgstr "Followers"
+msgstr "Pengikut"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,gain_account_id:0
 msgid "Gain Account"
-msgstr "Gain Account"
+msgstr "Akun Keuntungan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,gain_journal_id:0
 msgid "Gain Journal"
-msgstr "Gain Journal"
+msgstr "Jurnal Keuntungan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,gain_acc_move_creation:0
 msgid "Gain/Loss Acc. Move Creation"
-msgstr "Gain/Loss Acc. Move Creation"
+msgstr "Metode Pembuatan Penjurnalan Keuntungan/Kerugian"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,gain_acc_move_id:0
 msgid "Gain/Loss Account Move"
-msgstr "Gain/Loss Account Move"
+msgstr "Jurnal Akun Keuntungan/Kerugian"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,gain_loss_amount:0
 msgid "Gain/Loss Amount"
-msgstr "Gain/Loss Amount"
+msgstr "Jumlah Keuntungan/Kerugian"
 
 #. module: fixed_asset_retirement_sale
 #: help:account.asset_retirement_sale,message_summary:0
-msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
-msgstr ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Menyimpan ringkasan Percakapan (jumlah pesan, ...). Ringkasan ini langsung dalam format html untuk disisipkan dalam tampilan kanban."
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,id:0
@@ -251,136 +212,104 @@ msgstr "ID"
 #. module: fixed_asset_retirement_sale
 #: help:account.asset_retirement_sale,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr "If checked new messages require your attention."
+msgstr "Jika dicentang, pesan baru memerlukan perhatian Anda."
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,message_is_follower:0
 msgid "Is a Follower"
-msgstr "Is a Follower"
+msgstr "Adalah Pengikut"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,message_last_post:0
 msgid "Last Message Date"
-msgstr "Last Message Date"
-
-#. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,__last_update:0
-msgid "Last Modified on"
-msgstr "Last Modified on"
+msgstr "Tanggal Pesan Terakhir"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,write_uid:0
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr "Terakhir Diperbarui oleh"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,write_date:0
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr "Terakhir diperbarui pada"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,loss_account_id:0
 msgid "Loss Account"
-msgstr "Loss Account"
+msgstr "Akun Kerugian"
 
 #. module: fixed_asset_retirement_sale
 #: selection:account.asset_retirement_sale,disposal_acc_move_creation:0
 #: selection:account.asset_retirement_sale,exchange_acc_move_creation:0
 #: selection:account.asset_retirement_sale,gain_acc_move_creation:0
 msgid "Manual Selection"
-msgstr "Manual Selection"
+msgstr "Seleksi Manual"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,message_ids:0
 msgid "Messages"
-msgstr "Messages"
+msgstr "Pesan"
 
 #. module: fixed_asset_retirement_sale
 #: help:account.asset_retirement_sale,message_ids:0
 msgid "Messages and communication history"
-msgstr "Messages and communication history"
-
-#. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,need_validation:0
-#, fuzzy
-msgid "Need Validation"
-msgstr "Validation By"
-
-#. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,next_reviewer_ids:0
-msgid "Next Reviewers"
-msgstr ""
+msgstr "Pesan dan riwayat komunikasi"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,note:0
 msgid "Note"
-msgstr "Note"
+msgstr "Catatan"
 
 #. module: fixed_asset_retirement_sale
 #: selection:account.asset_retirement_sale,state:0
 msgid "On Progress"
-msgstr "On Progress"
+msgstr "Dalam Proses"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,opened_user_id:0
 msgid "Open By"
-msgstr "Open By"
+msgstr "Dibuka Oleh"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,opened_date:0
 msgid "Opened Date"
-msgstr "Opened Date"
+msgstr "Tanggal Dibuka"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,partner_id:0
 msgid "Partner"
-msgstr "Partner"
+msgstr "Mitra"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,period_id:0
 msgid "Period"
-msgstr "Period"
-
-#. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,rejected:0
-msgid "Rejected"
-msgstr ""
+msgstr "Periode"
 
 #. module: fixed_asset_retirement_sale
 #: model:ir.ui.menu,name:fixed_asset_retirement_sale.account_asset_retirement_sale_menu
 msgid "Retirement by Sale"
-msgstr "Retirement by Sale"
-
-#. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,reviewer_partner_ids:0
-#, fuzzy
-msgid "Review Partners"
-msgstr "Partner"
-
-#. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,reviewer_ids:0
-msgid "Reviewers"
-msgstr ""
+msgstr "Pelepasan Dengan Penjualan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,state:0
 msgid "State"
-msgstr "State"
+msgstr "Status"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,message_summary:0
 msgid "Summary"
-msgstr "Summary"
+msgstr "Ringkasan"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,type_id:0
 msgid "Type"
-msgstr "Type"
+msgstr "Tipe"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,message_unread:0
 msgid "Unread Messages"
-msgstr "Unread Messages"
+msgstr "Pesan Yang Belum Dibaca"
 
 #. module: fixed_asset_retirement_sale
 #: selection:account.asset_retirement_sale,state:0
@@ -388,38 +317,28 @@ msgid "Valid"
 msgstr "Valid"
 
 #. module: fixed_asset_retirement_sale
-#: field:account.asset_retirement_sale,validated:0
-#, fuzzy
-msgid "Validated"
-msgstr "Can Validate"
-
-#. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,validated_user_id:0
 msgid "Validation By"
-msgstr "Validation By"
+msgstr "Validasi Oleh"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,validated_date:0
 msgid "Validation Date"
-msgstr "Validation Date"
+msgstr "Tanggal Validasi"
 
 #. module: fixed_asset_retirement_sale
 #: field:account.asset_retirement_sale,review_ids:0
-#, fuzzy
 msgid "Validations"
-msgstr "Validation By"
+msgstr "Validasi"
 
 #. module: fixed_asset_retirement_sale
 #: selection:account.asset_retirement_sale,state:0
 msgid "Waiting for Approval"
-msgstr "Waiting for Approval"
+msgstr "Menunggu Persetujuan"
 
 #. module: fixed_asset_retirement_sale
 #: selection:account.asset_retirement_sale,disposal_acc_move_creation:0
 #: selection:account.asset_retirement_sale,exchange_acc_move_creation:0
 #: selection:account.asset_retirement_sale,gain_acc_move_creation:0
 msgid "Workflow"
-msgstr "Workflow"
-
-#~ msgid "Can Open"
-#~ msgstr "Can Open"
+msgstr "Alur Kerja"
