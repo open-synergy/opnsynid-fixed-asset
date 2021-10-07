@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+    <data>
+        <record model="account.asset_retirement_type" id="retirement_type_donation">
+            <field
+                name="exchange_journal_id"
+                ref="fixed_asset_retirement_common.demo_journal2"
+            />
+            <field
+                name="disposal_journal_id"
+                ref="fixed_asset_retirement_common.demo_journal1"
+            />
+            <field
+                name="gain_journal_id"
+                ref="fixed_asset_retirement_common.demo_journal3"
+            />
+            <field
+                name="exchange_account_id"
+                ref="fixed_asset_retirement_common.demo_account1"
+            />
+            <field
+                name="gain_account_id"
+                ref="fixed_asset_retirement_common.demo_account2"
+            />
+            <field
+                name="loss_account_id"
+                ref="fixed_asset_retirement_common.demo_account3"
+            />
+        </record>
+    </data>
+</openerp>
