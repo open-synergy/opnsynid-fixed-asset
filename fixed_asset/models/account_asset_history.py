@@ -4,6 +4,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from datetime import datetime
+
 from openerp import fields, models
 
 
@@ -12,11 +13,7 @@ class AccountAssetHistory(models.Model):
     _description = "Asset History"
     _order = "date desc"
 
-    name = fields.Char(
-        string="History name",
-        size=64,
-        select=1
-    )
+    name = fields.Char(string="History name", size=64, select=1)
     user_id = fields.Many2one(
         string="User",
         comodel_name="res.users",
@@ -31,7 +28,7 @@ class AccountAssetHistory(models.Model):
         string="Asset",
         comodel_name="account.asset.asset",
         required=True,
-        ondelete="cascade"
+        ondelete="cascade",
     )
     method_time = fields.Selection(
         string="Time Method",

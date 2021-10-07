@@ -2,7 +2,7 @@
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class FixedAssetImpairmentReversal(models.Model):
@@ -25,8 +25,8 @@ class FixedAssetImpairmentReversal(models.Model):
     def search(self, args, offset=0, limit=None, order=None, count=False):
         args.append(("type", "=", "reversal"))
         return super(FixedAssetImpairmentReversal, self).search(
-            args=args, offset=offset, limit=limit,
-            order=order, count=count)
+            args=args, offset=offset, limit=limit, order=order, count=count
+        )
 
     @api.model
     def _get_sequence(self, company_id):
@@ -36,6 +36,6 @@ class FixedAssetImpairmentReversal(models.Model):
             result = company.fixed_asset_impairment_reversal_sequence_id
         else:
             result = self.env.ref(
-                "fixed_asset_impairment.sequence_"
-                "fixed_asset_impairment_reversal")
+                "fixed_asset_impairment.sequence_" "fixed_asset_impairment_reversal"
+            )
         return result

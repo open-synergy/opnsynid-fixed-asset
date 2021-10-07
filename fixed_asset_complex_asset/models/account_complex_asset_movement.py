@@ -2,7 +2,7 @@
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -100,7 +100,7 @@ class ComplexAssetMovementCommon(models.AbstractModel):
         string="Movement Type",
         selection=[
             ("add", "Add Asset to Parent Asset"),
-            ("remove", "Remove Asset From Parent Asset")
+            ("remove", "Remove Asset From Parent Asset"),
         ],
         default=lambda self: self._default_movement_type(),
         required=True,
@@ -305,9 +305,11 @@ class ComplexAssetMovementCommon(models.AbstractModel):
         _super = super(ComplexAssetMovementCommon, self)
         result = _super.create(values)
         sequence = result._create_sequence()
-        result.write({
-            "name": sequence,
-        })
+        result.write(
+            {
+                "name": sequence,
+            }
+        )
         return result
 
     @api.multi

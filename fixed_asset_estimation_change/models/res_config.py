@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
+from openerp import fields, models
 
 
 class ResConfig(models.TransientModel):
@@ -51,15 +51,13 @@ class ResConfig(models.TransientModel):
         store=False,
     )
     asset_salvage_confirm_grp_ids = fields.Many2many(
-        string="Allowed To Confirm Fixed Asset Salvage Value "
-               "Estimation Change",
+        string="Allowed To Confirm Fixed Asset Salvage Value " "Estimation Change",
         comodel_name="res.groups",
         related="company_id.asset_salvage_confirm_grp_ids",
         store=False,
     )
     asset_salvage_valid_grp_ids = fields.Many2many(
-        string="Allowed To Validate Fixed Asset Salvage Value "
-               "Estimation Change",
+        string="Allowed To Validate Fixed Asset Salvage Value " "Estimation Change",
         comodel_name="res.groups",
         related="company_id.asset_salvage_valid_grp_ids",
         store=False,
@@ -71,15 +69,13 @@ class ResConfig(models.TransientModel):
         store=False,
     )
     asset_salvage_restart_grp_ids = fields.Many2many(
-        string="Allowed To Restart Fixed Asset Salvage Value "
-               "Estimation Change",
+        string="Allowed To Restart Fixed Asset Salvage Value " "Estimation Change",
         comodel_name="res.groups",
         related="company_id.asset_salvage_restart_grp_ids",
         store=False,
     )
     asset_salvage_restart_validation_grp_ids = fields.Many2many(
-        string="Allowed To Restart Validation Asset Salvage Value "
-               "Estimation Change",
+        string="Allowed To Restart Validation Asset Salvage Value " "Estimation Change",
         comodel_name="res.groups",
         related="company_id.asset_salvage_restart_validation_grp_ids",
         store=False,

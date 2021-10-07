@@ -166,7 +166,7 @@ class AccountAssetAsset(models.Model):
         "child_ids.asset_value",
         "child_ids.parent_id",
     )
-    def _asset_value(self):
+    def _compute_asset_value(self):
         for asset in self:
             if asset.type == "view":
                 asset_value = 0.0
@@ -182,7 +182,7 @@ class AccountAssetAsset(models.Model):
     asset_value = fields.Float(
         string="Asset Value",
         digits_compute=dp.get_precision("Account"),
-        compute=_asset_value,
+        compute=_compute_asset_value,
         store=True,
         help="This amount represent the initial value of the asset.",
     )
@@ -1412,7 +1412,7 @@ class AccountAssetAsset(models.Model):
                 entry["fy_amount"] = sum([var_l["amount"] for var_l in entry["lines"]])
 
     @api.multi
-    def _compute_depreciation_table(self):
+    def _compute_depreciation_table(self):  # noqa: C901
         ctx = self._context.copy()
 
         table = []

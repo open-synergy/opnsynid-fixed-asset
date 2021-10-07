@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -26,8 +26,7 @@ class AccountMoveLine(models.Model):
         res = _super.onchange_account_id(account_id, partner_id)
         obj_account_account = self.env["account.account"]
         if account_id:
-            asset_category =\
-                obj_account_account.browse(account_id).asset_category_id
+            asset_category = obj_account_account.browse(account_id).asset_category_id
             if asset_category:
                 if not res.get("value", False):
                     res["value"] = {}
@@ -59,9 +58,12 @@ class AccountMoveLine(models.Model):
         if vals.get("asset_id") and not context.get("allow_asset"):
             raise UserError(
                 _("Error!"),
-                _("You are not allowed to link "
-                  "an accounting entry to an asset."
-                  "\nYou should generate such entries from the asset."))
+                _(
+                    "You are not allowed to link "
+                    "an accounting entry to an asset."
+                    "\nYou should generate such entries from the asset."
+                ),
+            )
         if vals.get("asset_category_id"):
             obj_account_asset = self.env["account.asset.asset"]
             obj_account_move = self.env["account.move"]
@@ -76,8 +78,9 @@ class AccountMoveLine(models.Model):
             }
             if context.get("company_id"):
                 asset_vals["company_id"] = context["company_id"]
-            ctx = dict(context, create_asset_from_move_line=True,
-                       move_id=vals['move_id'])
+            ctx = dict(
+                context, create_asset_from_move_line=True, move_id=vals["move_id"]
+            )
             asset_id = obj_account_asset.with_context(ctx).create(asset_vals)
             asset_id.onchange_category_id()
             vals["asset_id"] = asset_id
@@ -94,29 +97,37 @@ class AccountMoveLine(models.Model):
                 if vals in fields:
                     raise UserError(
                         _("Error!"),
-                        _("You cannot change an accounting item "
-                          "linked to an asset depreciation line."))
+                        _(
+                            "You cannot change an accounting item "
+                            "linked to an asset depreciation line."
+                        ),
+                    )
         if vals.get("asset_id"):
             raise UserError(
                 _("Error!"),
-                _("You are not allowed to link "
-                  "an accounting entry to an asset."
-                  "\nYou should generate such entries from the asset."))
+                _(
+                    "You are not allowed to link "
+                    "an accounting entry to an asset."
+                    "\nYou should generate such entries from the asset."
+                ),
+            )
         if vals.get("asset_category_id"):
-            assert len(self) == 1, \
-                "This option should only be used for a single id at a time."
+            assert (
+                len(self) == 1
+            ), "This option should only be used for a single id at a time."
             obj_account_asset = self.env["account.asset.asset"]
             for aml in self:
                 if vals["asset_category_id"] == aml.asset_category_id.id:
                     continue
                 debit = "debit" in vals and vals.get("debit", 0.0) or aml.debit
-                credit = "credit" in vals and \
-                    vals.get("credit", 0.0) or aml.credit
+                credit = "credit" in vals and vals.get("credit", 0.0) or aml.credit
                 asset_value = debit - credit
-                partner_id = "partner" in vals and \
-                    vals.get("partner", False) or aml.partner_id.id
-                date_start = "date" in vals and \
-                    vals.get("date", False) or aml.date
+                partner_id = (
+                    "partner" in vals
+                    and vals.get("partner", False)
+                    or aml.partner_id.id
+                )
+                date_start = "date" in vals and vals.get("date", False) or aml.date
                 asset_vals = {
                     "name": vals.get("name") or aml.name,
                     "category_id": vals["asset_category_id"],
@@ -125,10 +136,10 @@ class AccountMoveLine(models.Model):
                     "date_start": date_start,
                     "company_id": vals.get("company_id") or aml.company_id.id,
                 }
-                ctx = dict(context, create_asset_from_move_line=True,
-                           move_id=aml.move_id.id)
-                asset_id =\
-                    obj_account_asset.with_context(ctx).create(asset_vals)
+                ctx = dict(
+                    context, create_asset_from_move_line=True, move_id=aml.move_id.id
+                )
+                asset_id = obj_account_asset.with_context(ctx).create(asset_vals)
                 asset_id.onchange_category_id()
                 vals["asset_id"] = asset_id
         return res
