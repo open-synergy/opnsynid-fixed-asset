@@ -318,6 +318,7 @@ msgid "Draft"
 msgstr ""
 
 #. module: fixed_asset_impairment
+#: model:account.account.type,name:fixed_asset_impairment.demo_account_type1
 #: view:account.asset.impairment:fixed_asset_impairment.account_asset_impairment_view_form
 #: view:account.asset.impairment:fixed_asset_impairment.account_asset_impairment_view_search
 #: view:account.asset.impairment:fixed_asset_impairment.account_asset_impairment_view_tree
@@ -331,6 +332,7 @@ msgid "Fixed Asset Impairment Common"
 msgstr ""
 
 #. module: fixed_asset_impairment
+#: model:account.account.type,name:fixed_asset_impairment.demo_account_type2
 #: view:account.asset.impairment_reversal:fixed_asset_impairment.account_asset_impairment_reversal_view_form
 #: view:account.asset.impairment_reversal:fixed_asset_impairment.account_asset_impairment_reversal_view_search
 #: view:account.asset.impairment_reversal:fixed_asset_impairment.account_asset_impairment_reversal_view_tree
