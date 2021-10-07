@@ -30,4 +30,12 @@
         "views/account_asset_category_views.xml",
         "views/account_asset_improvement_views.xml",
     ],
+    "demo": [
+        "demo/tier_definition_demo.xml",
+        "demo/account_journal_demo.xml",
+        "demo/account_asset_category_demo.xml",
+    ],
+    "images": [
+        "static/description/banner.png",
+    ],
 }

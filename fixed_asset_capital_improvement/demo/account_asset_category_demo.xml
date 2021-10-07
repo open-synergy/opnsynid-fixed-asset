@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="fixed_asset.demo_asset_category1" model="account.asset.category">
+    <field name="improvement_journal_id" ref="demo_journal1" />
+</record>
+
+<record id="fixed_asset.demo_asset_category2" model="account.asset.category">
+    <field name="improvement_journal_id" ref="demo_journal1" />
+</record>
+
+<record id="fixed_asset.demo_asset_category3" model="account.asset.category">
+    <field name="improvement_journal_id" ref="demo_journal1" />
+</record>
+
+
+</data>
+</openerp>
