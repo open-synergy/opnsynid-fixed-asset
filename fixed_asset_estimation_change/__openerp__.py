@@ -31,4 +31,10 @@
         "views/account_asset_change_estimation_useful_life_views.xml",
         "views/account_asset_change_estimation_salvage_views.xml",
     ],
+    "demo": [
+        "demo/tier_definition_demo.xml",
+    ],
+    "images": [
+        "static/description/banner.png",
+    ],
 }
