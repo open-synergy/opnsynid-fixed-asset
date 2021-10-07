@@ -140,7 +140,7 @@ msgid "Asset"
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/wizards/account_asset_remove.py:331
+#: code:addons/fixed_asset/wizards/account_asset_remove.py:360
 #, python-format
 msgid "Asset '%s' Removal Journal Entry"
 msgstr ""
@@ -493,7 +493,7 @@ msgid "Create Move"
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/wizards/wizard_asset_compute.py:50
+#: code:addons/fixed_asset/wizards/wizard_asset_compute.py:45
 #, python-format
 msgid "Created Asset Moves"
 msgstr ""
@@ -578,7 +578,7 @@ msgstr ""
 
 #. module: fixed_asset
 #: code:addons/fixed_asset/models/account_asset_asset.py:1657
-#: code:addons/fixed_asset/models/account_asset_category.py:223
+#: code:addons/fixed_asset/models/account_asset_category.py:205
 #, python-format
 msgid "Degressive-Linear is only supported for Time Method = Year."
 msgstr ""
@@ -704,12 +704,12 @@ msgstr ""
 #: code:addons/fixed_asset/models/account_asset_depreciation_line.py:135
 #: code:addons/fixed_asset/models/account_asset_depreciation_line.py:140
 #: code:addons/fixed_asset/models/account_move.py:40
-#: code:addons/fixed_asset/models/account_move.py:61
-#: code:addons/fixed_asset/models/account_move_line.py:61
-#: code:addons/fixed_asset/models/account_move_line.py:96
-#: code:addons/fixed_asset/models/account_move_line.py:101
-#: code:addons/fixed_asset/wizards/account_asset_remove.py:163
-#: code:addons/fixed_asset/wizards/account_asset_remove.py:293
+#: code:addons/fixed_asset/models/account_move.py:63
+#: code:addons/fixed_asset/models/account_move_line.py:60
+#: code:addons/fixed_asset/models/account_move_line.py:99
+#: code:addons/fixed_asset/models/account_move_line.py:107
+#: code:addons/fixed_asset/wizards/account_asset_remove.py:178
+#: code:addons/fixed_asset/wizards/account_asset_remove.py:315
 #, python-format
 msgid "Error!"
 msgstr ""
@@ -725,6 +725,16 @@ msgid "Feature & Integration"
 msgstr ""
 
 #. module: fixed_asset
+#: model:account.account.type,name:fixed_asset.demo_account_type2
+msgid "Fixed Asset Depreciation"
+msgstr ""
+
+#. module: fixed_asset
+#: model:account.account.type,name:fixed_asset.demo_account_type1
+msgid "Fixed Asset at Cost"
+msgstr ""
+
+#. module: fixed_asset
 #: field:account.asset.asset,message_follower_ids:0
 msgid "Followers"
 msgstr ""
@@ -735,7 +745,7 @@ msgid "Force Period"
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/wizards/account_asset_remove.py:23
+#: code:addons/fixed_asset/wizards/account_asset_remove.py:25
 #, python-format
 msgid "Gain/Loss on Sale"
 msgstr ""
@@ -1289,7 +1299,7 @@ msgstr ""
 
 #. module: fixed_asset
 #: field:account.asset.asset,value_residual:0
-#: code:addons/fixed_asset/wizards/account_asset_remove.py:22
+#: code:addons/fixed_asset/wizards/account_asset_remove.py:24
 #, python-format
 msgid "Residual Value"
 msgstr ""
@@ -1438,7 +1448,7 @@ msgid "The number of years needed to depreciate your asset"
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/wizards/account_asset_remove.py:294
+#: code:addons/fixed_asset/wizards/account_asset_remove.py:316
 #, python-format
 msgid "The removal date must be after the last depreciation date."
 msgstr ""
@@ -1563,8 +1573,8 @@ msgid "Year"
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/models/account_move_line.py:62
-#: code:addons/fixed_asset/models/account_move_line.py:102
+#: code:addons/fixed_asset/models/account_move_line.py:61
+#: code:addons/fixed_asset/models/account_move_line.py:108
 #, python-format
 msgid "You are not allowed to link an accounting entry to an asset.\n"
 "You should generate such entries from the asset."
@@ -1585,7 +1595,7 @@ msgid "You can only delete data on draft state"
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/wizards/account_asset_remove.py:164
+#: code:addons/fixed_asset/wizards/account_asset_remove.py:179
 #, python-format
 msgid "You can't make an early removal if all the depreciation lines for previous periods are not posted."
 msgstr ""
@@ -1597,13 +1607,13 @@ msgid "You cannot change a depreciation line with an associated accounting entry
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/models/account_move.py:62
+#: code:addons/fixed_asset/models/account_move.py:64
 #, python-format
 msgid "You cannot change an accounting entry linked to an asset depreciation line."
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/models/account_move_line.py:97
+#: code:addons/fixed_asset/models/account_move_line.py:100
 #, python-format
 msgid "You cannot change an accounting item linked to an asset depreciation line."
 msgstr ""
