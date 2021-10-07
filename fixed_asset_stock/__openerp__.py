@@ -22,5 +22,5 @@
         "views/product_template_views.xml",
         "views/stock_production_lot_views.xml",
         "views/account_asset_config_setting_views.xml",
-    ]
+    ],
 }

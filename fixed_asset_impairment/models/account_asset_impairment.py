@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class FixedAssetImpairment(models.Model):
@@ -23,5 +23,5 @@ class FixedAssetImpairment(models.Model):
     def search(self, args, offset=0, limit=None, order=None, count=False):
         args.append(("type", "=", "impairment"))
         return super(FixedAssetImpairment, self).search(
-            args=args, offset=offset, limit=limit,
-            order=order, count=count)
+            args=args, offset=offset, limit=limit, order=order, count=count
+        )

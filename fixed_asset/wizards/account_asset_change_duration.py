@@ -3,7 +3,8 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 import time
-from openerp import models, fields, api
+
+from openerp import api, fields, models
 
 
 class AssetModify(models.TransientModel):
@@ -53,15 +54,13 @@ class AssetModify(models.TransientModel):
     def default_get(self, fields):
         _super = super(AssetModify, self)
         res = _super.default_get(fields)
-        obj_account_asset =\
-            self.env["account.asset.asset"]
+        obj_account_asset = self.env["account.asset.asset"]
         asset_id = self._context.get("active_id", False)
 
         asset = obj_account_asset.browse(asset_id)
         if "name" in fields:
             res.update({"name": asset.name})
-        if "method_number" in fields and \
-                asset.method_time in ["number", "year"]:
+        if "method_number" in fields and asset.method_time in ["number", "year"]:
             res.update({"method_number": asset.method_number})
         if "method_period" in fields:
             res.update({"method_period": asset.method_period})
@@ -88,8 +87,7 @@ class AssetModify(models.TransientModel):
     @api.multi
     def _create_history(self):
         self.ensure_one()
-        obj_asset_history =\
-            self.env["account.asset.history"]
+        obj_asset_history = self.env["account.asset.history"]
         obj_asset_history.create(self._prepare_data_history())
 
     @api.multi

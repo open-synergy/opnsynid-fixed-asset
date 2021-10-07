@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
+from openerp import fields, models
 
 
 class AccountAssetRecomputeTrigger(models.Model):
@@ -23,8 +23,7 @@ class AccountAssetRecomputeTrigger(models.Model):
     date_trigger = fields.Datetime(
         string="Trigger Date",
         readonly=True,
-        help="Date of the event triggering the need to "
-             "recompute the Asset Tables.",
+        help="Date of the event triggering the need to " "recompute the Asset Tables.",
     )
     date_completed = fields.Datetime(
         string="Completion Date",
@@ -32,9 +31,6 @@ class AccountAssetRecomputeTrigger(models.Model):
     )
     state = fields.Selection(
         string="State",
-        selection=[
-            ("open", "Open"),
-            ("done", "Done")
-        ],
+        selection=[("open", "Open"), ("done", "Done")],
         readonly=True,
     )

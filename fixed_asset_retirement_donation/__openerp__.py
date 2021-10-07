@@ -21,5 +21,5 @@
         "data/base_sequence_configurator_data.xml",
         "data/base_workflow_policy_data.xml",
         "views/account_asset_retirement_donation_views.xml",
-    ]
+    ],
 }

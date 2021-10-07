@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2020 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
@@ -7,11 +7,11 @@
         <record id="view_account_move_line_form_inherit" model="ir.ui.view">
               <field name="name">Journal Items (form)</field>
               <field name="model">account.move.line</field>
-              <field name="inherit_id" ref="account.view_move_line_form"/>
+              <field name="inherit_id" ref="account.view_move_line_form" />
               <field name="arch" type="xml">
                     <field name="statement_id" position="after">
-                          <field name="asset_category_id"/>
-                          <field name="asset_id"/>
+                          <field name="asset_category_id" />
+                          <field name="asset_id" />
                     </field>
               </field>
         </record>
@@ -19,10 +19,10 @@
         <record id="view_account_move_line_filter_inherit" model="ir.ui.view">
               <field name="name">Journal Items (Search)</field>
               <field name="model">account.move.line</field>
-              <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+              <field name="inherit_id" ref="account.view_account_move_line_filter" />
               <field name="arch" type="xml">
                     <field name="account_id" position="after">
-                        <field name="asset_id"/>
+                        <field name="asset_id" />
                     </field>
               </field>
         </record>

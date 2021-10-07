@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from openerp import models, api, _
+from openerp import _, api, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -32,15 +32,18 @@ class AccountMove(models.Model):
         context = self.env.context
         obj_depreciation_line = self.env["account.asset.depreciation.line"]
         for move_id in self:
-            depr_ids = obj_depreciation_line.search([
-                ("move_id", "=", move_id.id),
-                ("type", "in", ["depreciate", "remove"])])
+            depr_ids = obj_depreciation_line.search(
+                [("move_id", "=", move_id.id), ("type", "in", ["depreciate", "remove"])]
+            )
             if depr_ids and not context.get("unlink_from_asset"):
                 raise UserError(
                     _("Error!"),
-                    _("You are not allowed to remove an accounting entry "
-                      "linked to an asset."
-                      "\nYou should remove such entries from the asset."))
+                    _(
+                        "You are not allowed to remove an accounting entry "
+                        "linked to an asset."
+                        "\nYou should remove such entries from the asset."
+                    ),
+                )
             depr_ids.write({"move_id": False})
         return res
 
@@ -50,15 +53,17 @@ class AccountMove(models.Model):
         res = _super.write(vals)
         fields = self._get_fields_affects_asset_move()
         if vals in fields:
-            obj_depreciation_line = \
-                self.env["account.asset.depreciation.line"]
+            obj_depreciation_line = self.env["account.asset.depreciation.line"]
             for move_id in self:
-                depr_ids = obj_depreciation_line.search([
-                    ("move_id", "=", move_id.id),
-                    ("type", "=", "depreciate")])
+                depr_ids = obj_depreciation_line.search(
+                    [("move_id", "=", move_id.id), ("type", "=", "depreciate")]
+                )
                 if depr_ids:
                     raise UserError(
                         _("Error!"),
-                        _("You cannot change an accounting entry "
-                          "linked to an asset depreciation line."))
+                        _(
+                            "You cannot change an accounting entry "
+                            "linked to an asset depreciation line."
+                        ),
+                    )
         return res

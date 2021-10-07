@@ -31,5 +31,5 @@
         "views/account_complex_asset_movement_common_views.xml",
         "views/account_complex_asset_installation_views.xml",
         "views/account_complex_asset_removal_views.xml",
-    ]
+    ],
 }

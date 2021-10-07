@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from openerp import fields, models, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -17,7 +17,7 @@ class AccountAssetCategory(models.Model):
         result = [
             ("linear", _("Linear")),
             ("degressive", _("Degressive")),
-            ("degr-linear", _("Degressive-Linear"))
+            ("degr-linear", _("Degressive-Linear")),
         ]
         return result
 
@@ -48,55 +48,40 @@ class AccountAssetCategory(models.Model):
     account_analytic_id = fields.Many2one(
         string="Analytic account",
         comodel_name="account.analytic.account",
-        domain=[
-            ("type", "!=", "view"),
-            ("state", "not in", ["close", "cancelled"])
-        ],
+        domain=[("type", "!=", "view"), ("state", "not in", ["close", "cancelled"])],
     )
     account_asset_id = fields.Many2one(
         string="Asset Account",
         comodel_name="account.account",
         required=True,
-        domain=[
-            ("type", "=", "other")
-        ],
+        domain=[("type", "=", "other")],
     )
     account_depreciation_id = fields.Many2one(
         string="Depreciation Account",
         comodel_name="account.account",
         required=True,
-        domain=[
-            ("type", "=", "other")
-        ],
+        domain=[("type", "=", "other")],
     )
     account_expense_depreciation_id = fields.Many2one(
         string="Depr. Expense Account",
         comodel_name="account.account",
         required=True,
-        domain=[
-            ("type", "=", "other")
-        ],
+        domain=[("type", "=", "other")],
     )
     account_plus_value_id = fields.Many2one(
         string="Plus-Value Account",
         comodel_name="account.account",
-        domain=[
-            ("type", "=", "other")
-        ],
+        domain=[("type", "=", "other")],
     )
     account_min_value_id = fields.Many2one(
         string="Min-Value Account",
         comodel_name="account.account",
-        domain=[
-            ("type", "=", "other")
-        ],
+        domain=[("type", "=", "other")],
     )
     account_residual_value_id = fields.Many2one(
         string="Residual Value Account",
         comodel_name="account.account",
-        domain=[
-            ("type", "=", "other")
-        ],
+        domain=[("type", "=", "other")],
     )
     journal_id = fields.Many2one(
         string="Journal",
@@ -104,21 +89,21 @@ class AccountAssetCategory(models.Model):
         required=True,
         domain=[
             ("type", "=", "general"),
-        ]
+        ],
     )
     method = fields.Selection(
         string="Computation Method",
         selection=lambda self: self._get_method(),
         required=True,
         help="Choose the method to use to compute "
-             "the amount of depreciation lines.\n"
-             "  * Linear: Calculated on basis of: "
-             "Gross Value / Number of Depreciations\n"
-             "  * Degressive: Calculated on basis of: "
-             "Residual Value * Degressive Factor"
-             "  * Degressive-Linear (only for Time Method = Year): "
-             "Degressive becomes linear when the annual linear "
-             "depreciation exceeds the annual degressive depreciation",
+        "the amount of depreciation lines.\n"
+        "  * Linear: Calculated on basis of: "
+        "Gross Value / Number of Depreciations\n"
+        "  * Degressive: Calculated on basis of: "
+        "Residual Value * Degressive Factor"
+        "  * Degressive-Linear (only for Time Method = Year): "
+        "Degressive becomes linear when the annual linear "
+        "depreciation exceeds the annual degressive depreciation",
         default="linear",
     )
     method_number = fields.Integer(
@@ -146,16 +131,16 @@ class AccountAssetCategory(models.Model):
         selection=lambda self: self._get_method_time(),
         required=True,
         help="Choose the method to use to compute the dates and "
-             "number of depreciation lines.\n"
-             "  * Number of Years: Specify the number of years "
-             "for the depreciation.\n",
+        "number of depreciation lines.\n"
+        "  * Number of Years: Specify the number of years "
+        "for the depreciation.\n",
         default="year",
     )
     prorata = fields.Boolean(
         string="Prorata Temporis",
         help="Indicates that the first depreciation entry for this asset "
-             "has to be done from the depreciation start date instead of "
-             "the first day of the fiscal year.",
+        "has to be done from the depreciation start date instead of "
+        "the first day of the fiscal year.",
     )
     open_asset = fields.Boolean(
         string="Skip Draft State",
@@ -175,9 +160,7 @@ class AccountAssetCategory(models.Model):
         string="Active",
         default=True,
     )
-    note = fields.Text(
-        string="Note"
-    )
+    note = fields.Text(string="Note")
     asset_confim_group_ids = fields.Many2many(
         string="Allowed to Confirm",
         comodel_name="res.groups",
@@ -219,8 +202,7 @@ class AccountAssetCategory(models.Model):
         "method_time",
     )
     def _check_method(self):
-        str_error =\
-            _("Degressive-Linear is only supported for Time Method = Year.")
+        str_error = _("Degressive-Linear is only supported for Time Method = Year.")
         if self.method == "degr-linear" and self.method_time != "year":
             raise UserError(str_error)
 

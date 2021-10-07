@@ -60,9 +60,9 @@
             <field name="id" />
             <field name="name" />
             <field name="company_id" groups="base.group_multi_company" />
-            <field name="product_id"/>
-            <field name="lot_id"/>
-            <field name="date_conversion"/>
+            <field name="product_id" />
+            <field name="lot_id" />
+            <field name="date_conversion" />
             <field name="type_id" />
             <field name="state" />
         </tree>
@@ -132,7 +132,9 @@
                  ('rejected', '=', True), ('review_ids', '=', [])]}"
                         style="margin-bottom:0px;"
                     >
-                <p><i class="fa fa-info-circle" />This inventory to fixed asset conversion needs to be
+                <p><i
+                                class="fa fa-info-circle"
+                            />This inventory to fixed asset conversion needs to be
                     validated.
                     <button
                                 name="validate_tier"
@@ -193,7 +195,7 @@
                 <group name="group_1" colspan="4" col="2">
                     <group name="group_1_1" colspan="1" col="2">
                         <field name="company_id" groups="base.group_multi_company" />
-                        <field name="date_conversion"/>
+                        <field name="date_conversion" />
                         <field name="type_id" />
                         <field
                                     name="allowed_product_categ_ids"
@@ -207,21 +209,31 @@
                                 />
                     </group>
                     <group name="group_1_2">
-                        <field name="product_id" domain="['|',('id','in',allowed_product_ids[0][2]),('categ_id','in',allowed_product_categ_ids[0][2])]"/>
-                        <field name="lot_id" domain="[('product_id','=',product_id)]"/>
+                        <field
+                                    name="product_id"
+                                    domain="['|',('id','in',allowed_product_ids[0][2]),('categ_id','in',allowed_product_categ_ids[0][2])]"
+                                />
+                        <field name="lot_id" domain="[('product_id','=',product_id)]" />
                     </group>
                 </group>
                 <notebook colspan="4">
-                    <page name="accounting" string="Accounting Setting" groups="fixed_asset_from_inventory.asset_inventory_accounting_setting_group">
+                    <page
+                                name="accounting"
+                                string="Accounting Setting"
+                                groups="fixed_asset_from_inventory.asset_inventory_accounting_setting_group"
+                            >
                         <group name="accounting_1" colspan="4" col="2">
-                            <field name="journal_id"/>
-                            <field name="asset_account_id"/>
-                            <field name="inventory_account_id"/>
+                            <field name="journal_id" />
+                            <field name="asset_account_id" />
+                            <field name="inventory_account_id" />
                         </group>
                     </page>
                     <page string="Reviews" name="tier_validation">
                         <group name="tier_validation_1" colspan="4" col="2">
-                            <field name="definition_id" groups="fixed_asset_from_inventory.asset_inventory_show_tier_definition"/>
+                            <field
+                                        name="definition_id"
+                                        groups="fixed_asset_from_inventory.asset_inventory_show_tier_definition"
+                                    />
                             <field
                                         name="reviewer_partner_ids"
                                         widget="many2many_tags"
@@ -242,7 +254,11 @@
                             <field name="restart_ok" />
                         </group>
                     </page>
-                    <page name="log" string="Logs" groups="fixed_asset_from_inventory.asset_inventory_show_log_group">
+                    <page
+                                name="log"
+                                string="Logs"
+                                groups="fixed_asset_from_inventory.asset_inventory_show_log_group"
+                            >
                         <group name="group_5" colspan="4" col="3">
                             <group name="group_log_1" colspan="4" col="3">
                                 <field name="confirm_date" string="Confirmation" />
