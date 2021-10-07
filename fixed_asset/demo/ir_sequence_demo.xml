@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="demo_sequence1" model="ir.sequence">
+    <field name="name">Building</field>
+    <field name="code">Asset</field>
+    <field name="padding">6</field>
+    <field name="prefix">FA-01/%(year)s/</field>
+    <field eval="1" name="number_next" />
+    <field eval="1" name="number_increment" />
+</record>
+
+<record id="demo_sequence2" model="ir.sequence">
+    <field name="name">Vehicle</field>
+    <field name="code">Asset</field>
+    <field name="padding">6</field>
+    <field name="prefix">FA-02/%(year)s/</field>
+    <field eval="1" name="number_next" />
+    <field eval="1" name="number_increment" />
+</record>
+
+<record id="demo_sequence3" model="ir.sequence">
+    <field name="name">Equipment</field>
+    <field name="code">Asset</field>
+    <field name="padding">6</field>
+    <field name="prefix">FA-03/%(year)s/</field>
+    <field eval="1" name="number_next" />
+    <field eval="1" name="number_increment" />
+</record>
+
+
+</data>
+</openerp>

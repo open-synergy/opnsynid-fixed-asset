@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="demo_account_type1" model="account.account.type">
+    <field name="name">Fixed Asset at Cost</field>
+    <field name="code">fa</field>
+    <field name="report_type">asset</field>
+    <field name="close_method">balance</field>
+</record>
+
+<record id="demo_account_type2" model="account.account.type">
+    <field name="name">Fixed Asset Depreciation</field>
+    <field name="code">fad</field>
+    <field name="report_type">liability</field>
+    <field name="close_method">balance</field>
+</record>
+
+</data>
+</openerp>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="demo_asset_category1" model="account.asset.category">
+    <field name="name">Building</field>
+    <field name="sequence_id" ref="fixed_asset.demo_sequence1" />
+    <field name="journal_id" ref="fixed_asset.demo_journal1" />
+    <field name="account_asset_id" ref="fixed_asset.demo_account2" />
+    <field name="account_depreciation_id" ref="fixed_asset.demo_account6" />
+    <field name="account_expense_depreciation_id" ref="fixed_asset.demo_account10" />
+    <field name="method_time">year</field>
+    <field name="method_number" eval="20" />
+    <field name="method_period">month</field>
+    <field name="method">linear</field>
+    <field name="prorata" eval="1" />
+    <field name="date_min_prorate" eval="15" />
+</record>
+
+<record id="demo_asset_category2" model="account.asset.category">
+    <field name="name">Vehicle</field>
+    <field name="sequence_id" ref="fixed_asset.demo_sequence2" />
+    <field name="journal_id" ref="fixed_asset.demo_journal1" />
+    <field name="account_asset_id" ref="fixed_asset.demo_account3" />
+    <field name="account_depreciation_id" ref="fixed_asset.demo_account7" />
+    <field name="account_expense_depreciation_id" ref="fixed_asset.demo_account11" />
+    <field name="method_time">year</field>
+    <field name="method_number" eval="8" />
+    <field name="method_period">month</field>
+    <field name="method">degressive</field>
+    <field name="method_progress_factor" eval="0.025" />
+    <field name="prorata" eval="1" />
+    <field name="date_min_prorate" eval="15" />
+</record>
+
+<record id="demo_asset_category3" model="account.asset.category">
+    <field name="name">Equipment</field>
+    <field name="sequence_id" ref="fixed_asset.demo_sequence3" />
+    <field name="journal_id" ref="fixed_asset.demo_journal1" />
+    <field name="account_asset_id" ref="fixed_asset.demo_account4" />
+    <field name="account_depreciation_id" ref="fixed_asset.demo_account8" />
+    <field name="account_expense_depreciation_id" ref="fixed_asset.demo_account12" />
+    <field name="method_time">year</field>
+    <field name="method_number" eval="4" />
+    <field name="method_period">month</field>
+    <field name="method">degressive</field>
+    <field name="method_progress_factor" eval="0.5" />
+    <field name="prorata" eval="1" />
+    <field name="date_min_prorate" eval="15" />
+</record>
+
+
+</data>
+</openerp>
