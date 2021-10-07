@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="tier_def_01" model="tier.definition">
+    <field name="name">Complex Asset Installation - (test)</field>
+    <field
+                name="model_id"
+                search="[('model','=','account.complex_asset_installation')]"
+            />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_01" model="tier.definition.review">
+    <field name="definition_id" ref="fixed_asset_complex_asset.tier_def_01" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('base.group_user')])]" />
+</record>
+
+<record id="tier_def_02" model="tier.definition">
+    <field name="name">Complex Asset Removal - (test)</field>
+    <field name="model_id" search="[('model','=','account.complex_asset_removal')]" />
+    <field name="python_code">True</field>
+    <field name="validate_sequence" eval="1" />
+</record>
+
+<record id="tier_def_review_02" model="tier.definition.review">
+    <field name="definition_id" ref="fixed_asset_complex_asset.tier_def_02" />
+    <field name="review_type">group</field>
+    <field name="reviewer_group_ids" eval="[(6,0,[ref('base.group_user')])]" />
+</record>
+</data>
+</openerp>

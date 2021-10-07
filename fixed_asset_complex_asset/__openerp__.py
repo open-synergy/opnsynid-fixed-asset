@@ -32,4 +32,10 @@
         "views/account_complex_asset_installation_views.xml",
         "views/account_complex_asset_removal_views.xml",
     ],
+    "demo": [
+        "demo/tier_definition_demo.xml",
+    ],
+    "images": [
+        "static/description/banner.png",
+    ],
 }
