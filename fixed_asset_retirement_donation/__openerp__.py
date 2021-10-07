@@ -22,4 +22,11 @@
         "data/base_workflow_policy_data.xml",
         "views/account_asset_retirement_donation_views.xml",
     ],
+    "demo": [
+        "demo/account_asset_retirement_type_demo.xml",
+        "demo/tier_definition_demo.xml",
+    ],
+    "images": [
+        "static/description/banner.png",
+    ],
 }
