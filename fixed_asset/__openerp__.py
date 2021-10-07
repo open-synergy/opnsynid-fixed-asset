@@ -38,4 +38,14 @@
         "views/account_asset_history.xml",
         "views/account_invoice_view.xml",
     ],
+    "demo": [
+        "demo/ir_sequence_demo.xml",
+        "demo/account_journal_demo.xml",
+        "demo/account_account_type_demo.xml",
+        "demo/account_account_demo.xml",
+        "demo/account_asset_category_demo.xml",
+    ],
+    "images": [
+        "static/description/banner.png",
+    ],
 }
