@@ -306,6 +306,11 @@ msgid "Exchange Journal"
 msgstr ""
 
 #. module: fixed_asset_retirement_common
+#: model:account.account.type,name:fixed_asset_retirement_common.demo_account_type1
+msgid "Fixed Asset Disposal Exchange"
+msgstr ""
+
+#. module: fixed_asset_retirement_common
 #: model:ir.model,name:fixed_asset_retirement_common.model_account_asset_retirement_type
 msgid "Fixed Asset Retirement Type"
 msgstr ""
