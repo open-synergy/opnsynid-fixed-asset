@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="demo_account1" model="account.account">
+    <field name="name">Fixed Asset Disposal Cross Account - (test)</field>
+    <field name="user_type" ref="fixed_asset_retirement_common.demo_account_type1" />
+    <field name="type">other</field>
+    <field name="code">FADCA01</field>
+    <field name="parent_id" ref="account.fas" />
+</record>
+
+<record id="demo_account2" model="account.account">
+    <field name="name">Fixed Asset Disposal Gain - (test)</field>
+    <field name="user_type" ref="account.data_account_type_income" />
+    <field name="type">other</field>
+    <field name="code">FADG01</field>
+    <field name="parent_id" ref="account.income_view" />
+</record>
+
+<record id="demo_account3" model="account.account">
+    <field name="name">Fixed Asset Disposal Loss - (test)</field>
+    <field name="user_type" ref="account.data_account_type_expense" />
+    <field name="type">other</field>
+    <field name="code">FADL01</field>
+    <field name="parent_id" ref="account.ovr" />
+</record>
+</data>
+</openerp>

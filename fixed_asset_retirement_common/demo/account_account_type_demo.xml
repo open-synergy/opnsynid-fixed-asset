@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="demo_account_type1" model="account.account.type">
+    <field name="name">Fixed Asset Disposal Exchange</field>
+    <field name="code">fade</field>
+    <field name="report_type">asset</field>
+    <field name="close_method">balance</field>
+</record>
+</data>
+</openerp>

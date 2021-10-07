@@ -25,4 +25,12 @@
         "views/account_asset_retirement_type_views.xml",
         "views/account_asset_retirement_common_views.xml",
     ],
+    "demo": [
+        "demo/account_journal_demo.xml",
+        "demo/account_account_type_demo.xml",
+        "demo/account_account_demo.xml",
+    ],
+    "images": [
+        "static/description/banner.png",
+    ],
 }
