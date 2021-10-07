@@ -659,7 +659,7 @@ msgid "Waiting for Approval"
 msgstr ""
 
 #. module: fixed_asset_complex_asset
-#: code:addons/fixed_asset_complex_asset/models/account_complex_asset_movement.py:315
+#: code:addons/fixed_asset_complex_asset/models/account_complex_asset_movement.py:317
 #, python-format
 msgid "You can only delete data on draft state"
 msgstr ""
