@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="demo_account1" model="account.account">
+    <field name="name">Fixed Asset Impairment - (test)</field>
+    <field name="user_type" ref="account.data_account_type_view" />
+    <field name="type">view</field>
+    <field name="code">TFAI00</field>
+    <field name="parent_id" ref="account.fas" />
+</record>
+
+<record id="demo_account2" model="account.account">
+    <field name="name">Building Impairment - (test)</field>
+    <field name="user_type" ref="fixed_asset_impairment.demo_account_type1" />
+    <field name="type">other</field>
+    <field name="code">TFAI01</field>
+    <field name="parent_id" ref="fixed_asset_impairment.demo_account1" />
+</record>
+
+<record id="demo_account3" model="account.account">
+    <field name="name">Vehicle Impairment - (test)</field>
+    <field name="user_type" ref="fixed_asset_impairment.demo_account_type1" />
+    <field name="type">other</field>
+    <field name="code">TFAI02</field>
+    <field name="parent_id" ref="fixed_asset_impairment.demo_account1" />
+</record>
+
+<record id="demo_account4" model="account.account">
+    <field name="name">Equipment Impairment - (test)</field>
+    <field name="user_type" ref="fixed_asset_impairment.demo_account_type1" />
+    <field name="type">other</field>
+    <field name="code">TFAI03</field>
+    <field name="parent_id" ref="fixed_asset_impairment.demo_account1" />
+</record>
+
+<record id="demo_account5" model="account.account">
+    <field name="name">Fixed Asset Impairment Expense - (test)</field>
+    <field name="user_type" ref="account.data_account_type_view" />
+    <field name="type">view</field>
+    <field name="code">TFAIE00</field>
+    <field name="parent_id" ref="account.ovr" />
+</record>
+
+<record id="demo_account6" model="account.account">
+    <field name="name">Building Impairment Expense - (test)</field>
+    <field name="user_type" ref="account.data_account_type_expense" />
+    <field name="type">other</field>
+    <field name="code">TFAIE01</field>
+    <field name="parent_id" ref="fixed_asset_impairment.demo_account5" />
+</record>
+
+<record id="demo_account7" model="account.account">
+    <field name="name">Vehicle Impairment Expense - (test)</field>
+    <field name="user_type" ref="account.data_account_type_expense" />
+    <field name="type">other</field>
+    <field name="code">TFAIE02</field>
+    <field name="parent_id" ref="fixed_asset_impairment.demo_account5" />
+</record>
+
+<record id="demo_account8" model="account.account">
+    <field name="name">Equipment Impairment Expense - (test)</field>
+    <field name="user_type" ref="account.data_account_type_expense" />
+    <field name="type">other</field>
+    <field name="code">TFAIE03</field>
+    <field name="parent_id" ref="fixed_asset_impairment.demo_account5" />
+</record>
+
+<record id="demo_account9" model="account.account">
+    <field name="name">Fixed Asset Impairment Reversal - (test)</field>
+    <field name="user_type" ref="account.data_account_type_view" />
+    <field name="type">view</field>
+    <field name="code">TFAIR00</field>
+    <field name="parent_id" ref="account.fas" />
+</record>
+
+<record id="demo_account10" model="account.account">
+    <field name="name">Building Impairment Reversal - (test)</field>
+    <field name="user_type" ref="fixed_asset.demo_account_type2" />
+    <field name="type">other</field>
+    <field name="code">TFAIR01</field>
+    <field name="parent_id" ref="fixed_asset_impairment.demo_account9" />
+</record>
+
+<record id="demo_account11" model="account.account">
+    <field name="name">Vehicle Impairment Reversal - (test)</field>
+    <field name="user_type" ref="fixed_asset.demo_account_type2" />
+    <field name="type">other</field>
+    <field name="code">TFAIR02</field>
+    <field name="parent_id" ref="fixed_asset_impairment.demo_account9" />
+</record>
+
+<record id="demo_account12" model="account.account">
+    <field name="name">Equipment Impairment Reversal - (test)</field>
+    <field name="user_type" ref="fixed_asset.demo_account_type2" />
+    <field name="type">other</field>
+    <field name="code">TFAIR03</field>
+    <field name="parent_id" ref="fixed_asset_impairment.demo_account9" />
+</record>
+</data>
+</openerp>

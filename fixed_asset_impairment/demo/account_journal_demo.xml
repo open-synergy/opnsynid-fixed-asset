@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="demo_journal1" model="account.journal">
+    <field name="name">Fixed Asset Impairment - (test)</field>
+    <field name="type">general</field>
+    <field name="code">TFAI</field>
+</record>
+
+<record id="demo_journal2" model="account.journal">
+    <field name="name">Fixed Asset Impairment Reversal - (test)</field>
+    <field name="type">general</field>
+    <field name="code">TFAIR</field>
+</record>
+</data>
+</openerp>

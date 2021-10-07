@@ -31,4 +31,14 @@
         "views/account_asset_impairment_views.xml",
         "views/account_asset_impairment_reversal_views.xml",
     ],
+    "demo": [
+        "demo/account_journal_demo.xml",
+        "demo/account_account_type_demo.xml",
+        "demo/account_account_demo.xml",
+        "demo/account_asset_category_demo.xml",
+        "demo/tier_definition_demo.xml",
+    ],
+    "images": [
+        "static/description/banner.png",
+    ],
 }
