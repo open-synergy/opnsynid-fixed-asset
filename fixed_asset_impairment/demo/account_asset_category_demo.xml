@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="fixed_asset.demo_asset_category1" model="account.asset.category">
+    <field name="impairment_account_id" ref="demo_account2" />
+    <field name="impairment_expense_account_id" ref="demo_account6" />
+    <field name="impairment_reversal_account_id" ref="demo_account10" />
+    <field name="impairment_journal_id" ref="demo_journal1" />
+</record>
+
+<record id="fixed_asset.demo_asset_category2" model="account.asset.category">
+    <field name="impairment_account_id" ref="demo_account3" />
+    <field name="impairment_expense_account_id" ref="demo_account7" />
+    <field name="impairment_reversal_account_id" ref="demo_account11" />
+    <field name="impairment_journal_id" ref="demo_journal1" />
+</record>
+
+<record id="fixed_asset.demo_asset_category3" model="account.asset.category">
+    <field name="impairment_account_id" ref="demo_account4" />
+    <field name="impairment_expense_account_id" ref="demo_account8" />
+    <field name="impairment_reversal_account_id" ref="demo_account12" />
+    <field name="impairment_journal_id" ref="demo_journal1" />
+</record>
+
+
+</data>
+</openerp>
