@@ -1,0 +1,15 @@
+scenario1:
+  attribute:
+    category_name: "asset_category_building"
+    purchase_value: 1200.00
+    salvage_value: 0.0
+    day_start: 1
+    month_start: 1
+    year_start: false
+  workflow_steps:
+    - name: create_depreciation_table
+      error: false
+    - name: confirm
+      error: false
+    - name: approve
+      error: false
