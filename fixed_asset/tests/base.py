@@ -3,8 +3,9 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from datetime import date
+from datetime import date, datetime
 
+from dateutil.relativedelta import relativedelta
 from openerp.tests.common import TransactionCase
 
 
@@ -28,10 +29,19 @@ class BaseCase(TransactionCase):
         return result
 
     def _create_asset_no_error(
-        self, category, purchase_value, salvage_value, date_start=False
+        self,
+        category,
+        purchase_value,
+        salvage_value,
+        day_start_offset,
+        month_start_offset,
+        year_start_offset,
     ):
-        if not date_start:
-            date_start = date(date.today().year, 1, 1)
+        dt_start = datetime(date.today().year, 1, 1)
+        dt_start = dt_start + relativedelta(
+            years=year_start_offset, months=month_start_offset, days=day_start_offset
+        )
+        date_start = dt_start.strftime("%Y-%m-%d")
         values = {
             "category_id": category.id,
             "type": "normal",
@@ -71,3 +81,29 @@ class BaseCase(TransactionCase):
         asset.validate_tier()
         self.assertTrue(asset.validated)
         self.assertEqual(asset.state, "open")
+
+    def action_asset_cancel_no_error(self, asset, attribute):
+        asset.action_cancel()
+        self.assertEqual(asset.state, "cancel")
+
+    def action_asset_restart_no_error(self, asset, attribute):
+        asset.action_restart()
+        self.assertEqual(asset.state, "draft")
+
+    def action_asset_depreciate_no_error(self, asset, attribute):
+        index = 0
+        depreciations = asset.depreciation_line_ids.filtered(
+            lambda r: r.type == "depreciate"
+            and not r.move_check
+            and not r.subtype_id
+            and not r.init_entry
+        )
+        self.assertEqual(len(depreciations), len(attribute["depreciation"]))
+        for schedule in attribute["depreciation"]:
+            depreciation_line = depreciations[index]
+            depreciation_line.create_move()
+            self.assertEqual(asset.value_residual, schedule["asset_value"])
+            self.assertEqual(asset.value_depreciated, schedule["depreciated_value"])
+            index += 1
+        if len(depreciations) == 0:
+            self.assertEqual(asset.state, "close")
