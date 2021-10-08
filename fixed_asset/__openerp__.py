@@ -18,6 +18,11 @@
         "base_multiple_approval",
         "base_cancel_reason",
     ],
+    "external_dependencies": {
+        "python": [
+            "ddt",
+        ],
+    },
     "data": [
         "security/account_asset_security.xml",
         "security/ir.model.access.csv",
@@ -44,6 +49,7 @@
         "demo/account_account_type_demo.xml",
         "demo/account_account_demo.xml",
         "demo/account_asset_category_demo.xml",
+        "demo/tier_definition_demo.xml",
     ],
     "images": [
         "static/description/banner.png",

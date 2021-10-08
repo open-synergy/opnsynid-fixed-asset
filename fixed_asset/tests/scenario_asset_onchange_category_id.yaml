@@ -1,0 +1,10 @@
+scenario1:
+  category_name: "asset_category_building"
+  to_be_check:
+    method: "linear"
+    method_number: 20
+    method_time: year
+    method_period: month
+    method_progress_factor: 0.3
+    prorata: true
+    account_analytic: false

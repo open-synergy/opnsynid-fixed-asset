@@ -1,0 +1,83 @@
+scenario1:
+  attribute:
+    super_user: false
+    user: user1
+    groups:
+      - group_employee
+      - group_confirm
+  policies:
+    - name: confirm_ok
+      status: true
+    - name: restart_validation_ok
+      status: false
+    - name: cancel_ok
+      status: false
+    - name: restart_ok
+      status: false
+
+scenario2:
+  attribute:
+    super_user: false
+    user: user1
+    groups:
+      - group_employee
+      - group_cancel
+  policies:
+    - name: confirm_ok
+      status: false
+    - name: restart_validation_ok
+      status: false
+    - name: cancel_ok
+      status: true
+    - name: restart_ok
+      status: false
+
+scenario3:
+  attribute:
+    super_user: false
+    user: user1
+    groups:
+      - group_employee
+      - group_restart
+  policies:
+    - name: confirm_ok
+      status: false
+    - name: restart_validation_ok
+      status: false
+    - name: cancel_ok
+      status: false
+    - name: restart_ok
+      status: true
+
+scenario4:
+  attribute:
+    super_user: false
+    user: user1
+    groups:
+      - group_employee
+      - group_restart_validation
+  policies:
+    - name: confirm_ok
+      status: false
+    - name: restart_validation_ok
+      status: true
+    - name: cancel_ok
+      status: false
+    - name: restart_ok
+      status: false
+
+scenario5:
+  attribute:
+    super_user: true
+    user: user1
+    groups:
+      - group_employee
+  policies:
+    - name: confirm_ok
+      status: true
+    - name: restart_validation_ok
+      status: true
+    - name: cancel_ok
+      status: true
+    - name: restart_ok
+      status: true
