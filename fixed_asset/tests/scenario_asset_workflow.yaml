@@ -1,15 +1,63 @@
 scenario1:
   attribute:
     category_name: "asset_category_building"
-    purchase_value: 1200.00
+    purchase_value: 500000000.00
     salvage_value: 0.0
-    day_start: 1
-    month_start: 1
-    year_start: false
+    day_start_offset: 0
+    month_start_offset: 2
+    year_start_offset: -20
+    depreciation:
+      - asset_value: 2083333.34
+        depreciated_value: 497916666.66
+        year_depreciation_offset: 0
+        month_depreciation_offset: 0
+        day_depreciation_offset: 0
+      - asset_value: 0.0
+        depreciated_value: 500000000.00
+        year_depreciation_offset: 0
+        month_depreciation_offset: 1
+        day_depreciation_offset: -1
+
+  workflow_steps:
+    - name: cancel
+      error: false
+    - name: restart
+      error: false
+    - name: create_depreciation_table
+      error: false
+    - name: confirm
+      error: false
+    - name: approve
+      error: false
+    - name: depreciate
+      error: false
+
+scenario2:
+  attribute:
+    category_name: "asset_category_vehicle"
+    purchase_value: 230000000
+    salvage_value: 0.0
+    day_start_offset: 0
+    month_start_offset: 2
+    year_start_offset: -8
+    depreciation:
+      - asset_value: 172913222.87
+        depreciated_value: 57086777.13
+        year_depreciation_offset: 0
+        month_depreciation_offset: 0
+        day_depreciation_offset: 0
+      - asset_value: 0.0
+        depreciated_value: 230000000
+        year_depreciation_offset: 0
+        month_depreciation_offset: 1
+        day_depreciation_offset: -1
+
   workflow_steps:
     - name: create_depreciation_table
       error: false
     - name: confirm
       error: false
     - name: approve
+      error: false
+    - name: depreciate
       error: false

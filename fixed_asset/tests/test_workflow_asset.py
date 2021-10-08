@@ -3,7 +3,6 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from datetime import date
 
 from ddt import ddt, file_data
 
@@ -17,15 +16,16 @@ class TestWorklowAsset(BaseCase):
         category = getattr(self, attribute["category_name"])
         purchase_value = attribute["purchase_value"]
         salvage_value = attribute["salvage_value"]
-        day_start = attribute["day_start"]
-        month_start = attribute["month_start"]
-        if attribute["year_start"]:
-            year_start = attribute["year_start"]
-        else:
-            year_start = date.today().year
-        date_start = date(year_start, month_start, day_start).strftime("%Y-%m-%d")
+        day_start_offset = attribute["day_start_offset"]
+        month_start_offset = attribute["month_start_offset"]
+        year_start_offset = attribute["year_start_offset"]
         asset = self._create_asset_no_error(
-            category, purchase_value, salvage_value, date_start
+            category,
+            purchase_value,
+            salvage_value,
+            day_start_offset,
+            month_start_offset,
+            year_start_offset,
         )
         for workflow_step in workflow_steps:
             method_name = "action_asset_" + workflow_step["name"]
