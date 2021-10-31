@@ -243,6 +243,11 @@ msgid "Depreciated Value"
 msgstr ""
 
 #. module: fixed_asset_retirement_common
+#: field:account.asset_retirement_common,depreciation_line_id:0
+msgid "Depreciation Line"
+msgstr ""
+
+#. module: fixed_asset_retirement_common
 #: field:account.asset_retirement_common,display_name:0
 #: field:account.asset_retirement_type,display_name:0
 msgid "Display Name"
@@ -357,6 +362,11 @@ msgstr ""
 #. module: fixed_asset_retirement_common
 #: view:account.asset_retirement_type:fixed_asset_retirement_common.account_asset_retirement_type_view_form
 msgid "General Configuration"
+msgstr ""
+
+#. module: fixed_asset_retirement_common
+#: field:account.asset_retirement_common,generate_accounting_entry:0
+msgid "Generate Accounting Entry"
 msgstr ""
 
 #. module: fixed_asset_retirement_common
