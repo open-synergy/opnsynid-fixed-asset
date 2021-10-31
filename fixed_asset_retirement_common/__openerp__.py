@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Fixed Asset Retirement",
-    "version": "8.0.1.0.3",
+    "version": "8.0.1.1.0",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "OpenSynergy Indonesia",
@@ -21,6 +21,7 @@
     "data": [
         "security/res_groups_data.xml",
         "security/ir.model.access.csv",
+        "data/account_asset_depreciation_line_subtype_data.xml",
         "menu.xml",
         "views/account_asset_retirement_type_views.xml",
         "views/account_asset_retirement_common_views.xml",

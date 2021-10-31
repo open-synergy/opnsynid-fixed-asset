@@ -126,6 +126,7 @@
                         <field name="date_disposition" />
                         <field name="period_id" />
                         <field name="type_id" invisible="1" />
+                        <field name="generate_accounting_entry" />
                     </group>
                     <group name="group_1_2" colspan="1" col="2">
                         <field
@@ -162,7 +163,12 @@
                                 groups="fixed_asset_retirement_common.group_technical_retirement_accounting"
                             >
                         <group name="acc_config_1" colspan="4" col="2">
-                            <group name="acc_config_1_1" colspan="1" col="2">
+                            <group
+                                        name="acc_config_1_1"
+                                        colspan="1"
+                                        col="2"
+                                        invisible="1"
+                                    >
                                 <field name="exchange_acc_move_creation" />
                                 <field name="disposal_acc_move_creation" />
                                 <field name="gain_acc_move_creation" />
@@ -187,9 +193,10 @@
                                 groups="fixed_asset_retirement_common.group_technical_retirement_helper"
                             >
                         <group name="acc_entry_1" colspan="4" col="2">
-                            <field name="exchange_acc_move_id" />
+                            <field name="exchange_acc_move_id" invisible="1" />
                             <field name="disposal_acc_move_id" />
-                            <field name="gain_acc_move_id" />
+                            <field name="gain_acc_move_id" invisible="1" />
+                            <field name="depreciation_line_id" />
                         </group>
                     </page>
                     <page name="policy" string="Policy" groups="base.group_system">
