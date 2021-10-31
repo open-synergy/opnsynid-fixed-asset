@@ -141,6 +141,11 @@ msgid "Depreciated Value"
 msgstr ""
 
 #. module: fixed_asset_retirement_donation
+#: field:account.asset_retirement_donation,depreciation_line_id:0
+msgid "Depreciation Line"
+msgstr ""
+
+#. module: fixed_asset_retirement_donation
 #: field:account.asset_retirement_donation,display_name:0
 msgid "Display Name"
 msgstr ""
@@ -228,6 +233,11 @@ msgstr ""
 #. module: fixed_asset_retirement_donation
 #: field:account.asset_retirement_donation,gain_loss_amount:0
 msgid "Gain/Loss Amount"
+msgstr ""
+
+#. module: fixed_asset_retirement_donation
+#: field:account.asset_retirement_donation,generate_accounting_entry:0
+msgid "Generate Accounting Entry"
 msgstr ""
 
 #. module: fixed_asset_retirement_donation
