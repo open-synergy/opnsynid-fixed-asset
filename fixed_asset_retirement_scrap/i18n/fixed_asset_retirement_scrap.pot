@@ -141,6 +141,11 @@ msgid "Depreciated Value"
 msgstr ""
 
 #. module: fixed_asset_retirement_scrap
+#: field:account.asset_retirement_scrap,depreciation_line_id:0
+msgid "Depreciation Line"
+msgstr ""
+
+#. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,display_name:0
 msgid "Display Name"
 msgstr ""
@@ -228,6 +233,11 @@ msgstr ""
 #. module: fixed_asset_retirement_scrap
 #: field:account.asset_retirement_scrap,gain_loss_amount:0
 msgid "Gain/Loss Amount"
+msgstr ""
+
+#. module: fixed_asset_retirement_scrap
+#: field:account.asset_retirement_scrap,generate_accounting_entry:0
+msgid "Generate Accounting Entry"
 msgstr ""
 
 #. module: fixed_asset_retirement_scrap
