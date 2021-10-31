@@ -1,7 +1,7 @@
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from openerp import api, fields, models
+from openerp import _, api, fields, models
 
 
 class FixedAssetRetirementCommon(models.AbstractModel):
@@ -320,6 +320,15 @@ class FixedAssetRetirementCommon(models.AbstractModel):
             ],
         },
     )
+    depreciation_line_id = fields.Many2one(
+        string="Depreciation Line",
+        comodel_name="account.asset.depreciation.line",
+        readonly=True,
+    )
+    generate_accounting_entry = fields.Boolean(
+        string="Generate Accounting Entry",
+        default=True,
+    )
     note = fields.Text(
         string="Note",
     )
@@ -441,11 +450,13 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     def action_valid(self):
         for retirement in self:
             retirement.write(self._prepare_valid_data())
+            retirement._unlink_residual_depreciation()
             retirement.asset_id.write(
                 {
                     "state": "removed",
                 }
             )
+            retirement.asset_id.compute_depreciation_board()
 
     @api.multi
     def action_cancel(self):
@@ -453,15 +464,23 @@ class FixedAssetRetirementCommon(models.AbstractModel):
             exchange_acc_move = self.exchange_acc_move_id
             disposal_acc_move = self.disposal_acc_move_id
             gain_acc_move = self.gain_acc_move_id
+            if retirement.depreciation_line_id:
+                retirement.depreciation_line_id.unlink_move()
+                retirement.depreciation_line_id.unlink()
             retirement.write(self._prepare_cancel_data())
-            exchange_acc_move.unlink()
-            disposal_acc_move.unlink()
-            gain_acc_move.unlink()
+            retirement.asset_id.compute_depreciation_board()
+            if exchange_acc_move:
+                exchange_acc_move.unlink()
+            if disposal_acc_move:
+                disposal_acc_move.unlink()
+            if gain_acc_move:
+                gain_acc_move.unlink()
             retirement.asset_id.write(
                 {
                     "state": "open",
                 }
             )
+
             retirement.restart_validation()
 
     @api.multi
@@ -493,15 +512,19 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     def _prepare_valid_data(self):
         self.ensure_one()
         # exchange_acc_move = self._create_exchange_acc_move()
-        disposal_acc_move = self._create_disposal_acc_move()
+        disposal_acc_move = False
+        if self.generate_accounting_entry:
+            disposal_acc_move = self._create_disposal_acc_move()
         # gain_acc_move = self._create_gain_acc_move()
+        depreciation_line = self._create_depreciation_line()
         result = {
             "state": "valid",
             # "exchange_acc_move_id": exchange_acc_move.id,
-            "disposal_acc_move_id": disposal_acc_move.id,
+            "disposal_acc_move_id": disposal_acc_move and disposal_acc_move.id or False,
             # "gain_acc_move_id": gain_acc_move.id,
             "validated_user_id": self.env.user.id,
             "validated_date": fields.Datetime.now(),
+            "depreciation_line_id": depreciation_line.id,
         }
         return result
 
@@ -515,6 +538,7 @@ class FixedAssetRetirementCommon(models.AbstractModel):
             "exchange_acc_move_id": False,
             "disposal_acc_move_id": False,
             "gain_acc_move_id": False,
+            "depreciation_line_id": False,
         }
         return result
 
@@ -656,8 +680,9 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     @api.multi
     def _prepare_disposal_accum_depr_move_line(self):
         self.ensure_one()
+        description = "%s asset disposal" % (self.asset_id.code)
         return self._prepare_exchange_move_line(
-            description="Todo",
+            description=_(description),
             account=self.accumulated_depreciation_account_id.id,
             debit=self.depreciated_amount,
             credit=0.0,
@@ -666,8 +691,9 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     @api.multi
     def _prepare_disposal_asset_move_line(self):
         self.ensure_one()
+        description = "%s asset disposal" % (self.asset_id.code)
         return self._prepare_exchange_move_line(
-            description="Todo",
+            description=_(description),
             account=self.asset_account_id.id,
             credit=self.acquisition_price,
             debit=0.0,
@@ -676,8 +702,9 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     @api.multi
     def _prepare_disposal_exchange_move_line(self):
         self.ensure_one()
+        description = "%s asset disposal" % (self.asset_id.code)
         return self._prepare_exchange_move_line(
-            description="Todo",
+            description=_(description),
             account=self.exchange_account_id.id,
             credit=0.0,
             debit=self.disposition_price,
@@ -688,8 +715,9 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         self.ensure_one()
         gain = self.gain_loss_amount >= 0.0 and abs(self.gain_loss_amount) or 0.0
         loss = self.gain_loss_amount < 0.0 and abs(self.gain_loss_amount) or 0.0
+        description = "%s asset disposal" % (self.asset_id.code)
         return self._prepare_exchange_move_line(
-            description="Todo",
+            description=_(description),
             account=self._get_gain_account().id,
             credit=gain,
             debit=loss,
@@ -739,8 +767,9 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     @api.multi
     def _prepare_exchange_debit_move_line(self):
         self.ensure_one()
+        description = "%s asset disposal" % (self.asset_id.code)
         return self._prepare_exchange_move_line(
-            description="Todo",
+            description=_(description),
             account=self.exchange_account_id.id,
             debit=self.disposition_price,
             credit=0.0,
@@ -749,8 +778,9 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     @api.multi
     def _prepare_exchange_credit_move_line(self):
         self.ensure_one()
+        description = "%s asset disposal" % (self.asset_id.code)
         return self._prepare_exchange_move_line(
-            description="Todo",
+            description=_(description),
             account=self.gain_account_id.id,
             debit=0.0,
             credit=self.disposition_price,
@@ -759,8 +789,9 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     @api.multi
     def _prepare_disposal_debit_move_line(self):
         self.ensure_one()
+        description = "%s asset disposal" % (self.asset_id.code)
         return self._prepare_exchange_move_line(
-            description="Todo",
+            description=_(description),
             account=self.accumulated_depreciation_account_id.id,
             debit=self.depreciated_amount,
             credit=0.0,
@@ -769,8 +800,9 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     @api.multi
     def _prepare_disposal_credit_move_line(self):
         self.ensure_one()
+        description = "%s asset disposal" % (self.asset_id.code)
         return self._prepare_exchange_move_line(
-            description="Todo",
+            description=_(description),
             account=self.asset_account_id.id,
             debit=0.0,
             credit=self.depreciated_amount,
@@ -779,8 +811,9 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     @api.multi
     def _prepare_gain_debit_move_line(self):
         self.ensure_one()
+        description = "%s asset disposal" % (self.asset_id.code)
         return self._prepare_exchange_move_line(
-            description="Todo",
+            description=_(description),
             account=self._get_gain_debit_account().id,
             debit=abs(self.gain_loss_amount),
             credit=0.0,
@@ -789,8 +822,9 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     @api.multi
     def _prepare_gain_credit_move_line(self):
         self.ensure_one()
+        description = "%s asset disposal" % (self.asset_id.code)
         return self._prepare_exchange_move_line(
-            description="Todo",
+            description=_(description),
             account=self._get_gain_credit_account().id,
             debit=0.0,
             credit=abs(self.gain_loss_amount),
@@ -819,3 +853,38 @@ class FixedAssetRetirementCommon(models.AbstractModel):
             return self.loss_account_id
         else:
             return self.gain_account_id
+
+    @api.multi
+    def _prepare_depreciation_line(self):
+        self.ensure_one()
+        subtype_id = self.env.ref(
+            "fixed_asset_retirement_common." "depr_line_subtype_disposal"
+        )
+        amount = self.acquisition_price - self.depreciated_amount
+        return {
+            "name": "Disposal",
+            "previous_id": self.asset_id.last_posted_depreciation_line_id.id,
+            "subtype_id": subtype_id.id,
+            "type": "remove",
+            "line_date": self.date_disposition,
+            "amount": amount,
+            "init_entry": True,
+            "asset_id": self.asset_id.id,
+        }
+
+    @api.multi
+    def _create_depreciation_line(self):
+        self.ensure_one()
+        obj_line = self.env["account.asset.depreciation.line"]
+        asset_value = obj_line.create(self._prepare_depreciation_line())
+        return asset_value
+
+    @api.multi
+    def _unlink_residual_depreciation(self):
+        self.ensure_one()
+        obj_line = self.env["account.asset.depreciation.line"]
+        criteria = [
+            ("asset_id", "=", self.asset_id.id),
+            ("line_date", ">", self.date_disposition),
+        ]
+        obj_line.search(criteria).unlink()
