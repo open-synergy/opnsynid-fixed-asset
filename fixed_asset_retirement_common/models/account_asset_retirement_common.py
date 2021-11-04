@@ -456,7 +456,6 @@ class FixedAssetRetirementCommon(models.AbstractModel):
                     "state": "removed",
                 }
             )
-            retirement.asset_id.compute_depreciation_board()
 
     @api.multi
     def action_cancel(self):

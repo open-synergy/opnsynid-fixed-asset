@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Fixed Asset Retirement",
-    "version": "8.0.1.1.0",
+    "version": "8.0.1.1.1",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "OpenSynergy Indonesia",
