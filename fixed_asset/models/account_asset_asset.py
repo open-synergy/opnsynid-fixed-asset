@@ -101,6 +101,7 @@ class AccountAssetAsset(models.Model):
         readonly=True,
         states={"draft": [("readonly", False)]},
         default="/",
+        copy=False,
     )
     purchase_value = fields.Float(
         string="Purchase Value",
@@ -302,6 +303,7 @@ class AccountAssetAsset(models.Model):
     date_remove = fields.Date(
         string="Asset Removal Date",
         readonly=True,
+        copy=False,
     )
     state = fields.Selection(
         string="Status",
@@ -419,6 +421,7 @@ class AccountAssetAsset(models.Model):
         comodel_name="account.asset.history",
         inverse_name="asset_id",
         readonly=True,
+        copy=False,
     )
     depreciation_line_ids = fields.One2many(
         string="Depreciation Lines",
@@ -426,6 +429,7 @@ class AccountAssetAsset(models.Model):
         inverse_name="asset_id",
         readonly=True,
         states={"draft": [("readonly", False)]},
+        copy=False,
     )
     type = fields.Selection(
         string="Type",
