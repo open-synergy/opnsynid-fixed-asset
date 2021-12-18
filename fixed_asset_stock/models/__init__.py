@@ -7,6 +7,7 @@ from . import (
     res_company,
     res_config,
     stock_production_lot,
+    product_category,
     product_template,
     stock_quant,
 )

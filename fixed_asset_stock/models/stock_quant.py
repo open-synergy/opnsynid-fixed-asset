@@ -16,7 +16,6 @@ class StockQuant(models.Model):
             result.lot_id
             and result.product_id.auto_capitalization
             and result.cost > result.company_id.auto_capitalization_limit
-            and result.product_id.asset_category_id
         ):
             result._create_fixed_asset()
         return result
@@ -48,11 +47,31 @@ class StockQuant(models.Model):
             return False
 
     @api.multi
+    def _get_asset_category(self):
+        self.ensure_one()
+        result = False
+        product = self.product_id
+        categ = product.categ_id
+        if product.asset_category_id:
+            result = product.asset_category_id
+
+        if not result and categ.asset_category_id:
+            result = categ.asset_category_id
+
+        if not result:
+            error_msg = _("No asset category defined")
+            raise UserError(error_msg)
+
+        return result
+
+
+
+    @api.multi
     def _prepare_fixed_asset_data(self):
         self.ensure_one()
         product = self.product_id
         move = self.history_ids[0]  # TODO: Error prone?
-        categ = product.asset_category_id
+        categ = self._get_asset_category()
         partner = self._get_asset_partner()
         purchase_value = self.inventory_value
         salvage_value = self._get_salvage_value(purchase_value)
