@@ -2,7 +2,8 @@
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from openerp import api, models
+from openerp import _, api, models
+from openerp.exceptions import Warning as UserError
 
 
 class StockQuant(models.Model):
@@ -63,8 +64,6 @@ class StockQuant(models.Model):
             raise UserError(error_msg)
 
         return result
-
-
 
     @api.multi
     def _prepare_fixed_asset_data(self):
