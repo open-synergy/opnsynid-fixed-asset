@@ -10,4 +10,5 @@ from . import (
     product_category,
     product_template,
     stock_quant,
+    stock_move,
 )

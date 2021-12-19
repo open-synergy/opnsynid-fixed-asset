@@ -5,7 +5,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Stock and Asset Management Integration",
-    "version": "8.0.1.1.0",
+    "version": "8.0.2.0.0",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
@@ -13,7 +13,7 @@
     "installable": True,
     "depends": [
         "fixed_asset",
-        "stock_account",
+        "stock_move_backdating",
     ],
     "data": [
         "wizards/create_fixed_asset_from_lot.xml",

@@ -36,7 +36,13 @@ class StockQuant(models.Model):
     def _create_fixed_asset(self):
         self.ensure_one()
         obj_asset = self.env["account.asset.asset"]
-        obj_asset.create(self._prepare_fixed_asset_data())
+        asset = obj_asset.create(self._prepare_fixed_asset_data())
+        self.lot_id.write({"asset_id": asset.id})
+        asset.depreciation_line_ids[0].with_context(allow_asset_line_update=True).write(
+            {
+                "line_date": asset._get_date_start(),
+            }
+        )
 
     @api.multi
     def _get_asset_partner(self):
@@ -82,7 +88,7 @@ class StockQuant(models.Model):
             "category_id": categ.id,
             "parent_id": False,
             "partner_id": partner and partner.id or False,
-            "date_start": move.date,
+            "date_start": self.in_date,
             "method": categ.method,
             "type": "normal",
             "company_id": move.company_id.id,
@@ -93,4 +99,5 @@ class StockQuant(models.Model):
             "prorata": categ.prorata,
             "lot_id": self.lot_id.id,
             "product_id": product.id,
+            "date_min_prorate": categ.date_min_prorate,
         }
