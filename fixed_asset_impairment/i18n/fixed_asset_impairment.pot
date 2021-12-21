@@ -165,7 +165,7 @@ msgid "Can Validate"
 msgstr ""
 
 #. module: fixed_asset_impairment
-#: code:addons/fixed_asset_impairment/models/account_asset_impairment_common.py:553
+#: code:addons/fixed_asset_impairment/models/account_asset_impairment_common.py:555
 #, python-format
 msgid "Can not impair asset before purchase date"
 msgstr ""
@@ -520,13 +520,13 @@ msgid "Next Reviewers"
 msgstr ""
 
 #. module: fixed_asset_impairment
-#: code:addons/fixed_asset_impairment/models/account_asset_impairment_common.py:557
+#: code:addons/fixed_asset_impairment/models/account_asset_impairment_common.py:559
 #, python-format
 msgid "No impairment before last depreciation date"
 msgstr ""
 
 #. module: fixed_asset_impairment
-#: code:addons/fixed_asset_impairment/models/account_asset_impairment_common.py:548
+#: code:addons/fixed_asset_impairment/models/account_asset_impairment_common.py:550
 #, python-format
 msgid "No zero or negative value"
 msgstr ""
@@ -770,7 +770,7 @@ msgid "Waiting for Approval"
 msgstr ""
 
 #. module: fixed_asset_impairment
-#: code:addons/fixed_asset_impairment/models/account_asset_impairment_common.py:402
+#: code:addons/fixed_asset_impairment/models/account_asset_impairment_common.py:404
 #, python-format
 msgid "You can only delete data on draft state"
 msgstr ""
