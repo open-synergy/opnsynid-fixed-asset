@@ -140,7 +140,7 @@ msgid "Asset"
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/wizards/account_asset_remove.py:360
+#: code:addons/fixed_asset/wizards/account_asset_remove.py:364
 #, python-format
 msgid "Asset '%s' Removal Journal Entry"
 msgstr ""
@@ -708,8 +708,8 @@ msgstr ""
 #: code:addons/fixed_asset/models/account_move_line.py:60
 #: code:addons/fixed_asset/models/account_move_line.py:99
 #: code:addons/fixed_asset/models/account_move_line.py:107
-#: code:addons/fixed_asset/wizards/account_asset_remove.py:178
-#: code:addons/fixed_asset/wizards/account_asset_remove.py:315
+#: code:addons/fixed_asset/wizards/account_asset_remove.py:180
+#: code:addons/fixed_asset/wizards/account_asset_remove.py:319
 #, python-format
 msgid "Error!"
 msgstr ""
@@ -1448,7 +1448,7 @@ msgid "The number of years needed to depreciate your asset"
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/wizards/account_asset_remove.py:316
+#: code:addons/fixed_asset/wizards/account_asset_remove.py:320
 #, python-format
 msgid "The removal date must be after the last depreciation date."
 msgstr ""
@@ -1595,7 +1595,7 @@ msgid "You can only delete data on draft state"
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/wizards/account_asset_remove.py:179
+#: code:addons/fixed_asset/wizards/account_asset_remove.py:181
 #, python-format
 msgid "You can't make an early removal if all the depreciation lines for previous periods are not posted."
 msgstr ""
