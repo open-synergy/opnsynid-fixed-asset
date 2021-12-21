@@ -231,7 +231,12 @@ class AccountAssetDepreciationLine(models.Model):
 
     @api.multi
     def _setup_move_line_data(
-        self, depreciation_date, period_id, account_id, type, move_id
+        self,
+        depreciation_date,
+        period_id,
+        account_id,
+        type,  # pylint: disable=W0622
+        move_id,
     ):
         self.ensure_one()
         asset = self.asset_id

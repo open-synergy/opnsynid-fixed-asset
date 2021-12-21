@@ -29,7 +29,9 @@ class FixedAssetImpairmentCommon(models.AbstractModel):
     def _default_date(self):
         return fields.Datetime.now()
 
-    def _compute_depreciation(self, cr, uid, ids, name, args, context=None):
+    def _compute_depreciation(  # pylint: disable=R8110
+        self, cr, uid, ids, name, args, context=None
+    ):
         res = {}
         for asset in self.browse(cr, uid, ids, context=context):
             res[asset.id] = {}

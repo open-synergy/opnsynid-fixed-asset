@@ -27,7 +27,6 @@
         "menu.xml",
         "views/account_asset_config_setting_views.xml",
         "views/account_asset_views.xml",
-        # "views/account_asset_category_views.xml",
         "views/account_complex_asset_movement_common_views.xml",
         "views/account_complex_asset_installation_views.xml",
         "views/account_complex_asset_removal_views.xml",

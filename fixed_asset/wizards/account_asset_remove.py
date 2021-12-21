@@ -19,13 +19,13 @@ class AccountAssetRemove(orm.TransientModel):
 
     _residual_value_regime_countries = ["FR"]
 
-    def _posting_regime(self, cr, uid, context=None):
+    def _posting_regime(self, cr, uid, context=None):  # pylint: disable=R8110
         return [
             ("residual_value", _("Residual Value")),
             ("gain_loss_on_sale", _("Gain/Loss on Sale")),
         ]
 
-    def _get_posting_regime(self, cr, uid, context=None):
+    def _get_posting_regime(self, cr, uid, context=None):  # pylint: disable=R8110
         if not context:
             context = {}
         asset_obj = self.pool.get("account.asset.asset")
@@ -36,7 +36,7 @@ class AccountAssetRemove(orm.TransientModel):
         else:
             return "gain_loss_on_sale"
 
-    def _get_sale(self, cr, uid, context=None):
+    def _get_sale(self, cr, uid, context=None):  # pylint: disable=R8110
         if not context:
             context = {}
         inv_line_obj = self.pool.get("account.invoice.line")
@@ -61,13 +61,13 @@ class AccountAssetRemove(orm.TransientModel):
                 sale_value += amount
         return {"sale_value": sale_value, "account_sale_id": account_sale_id}
 
-    def _get_sale_value(self, cr, uid, context=None):
+    def _get_sale_value(self, cr, uid, context=None):  # pylint: disable=R8110
         return self._get_sale(cr, uid, context=context)["sale_value"]
 
-    def _get_sale_account(self, cr, uid, context=None):
+    def _get_sale_account(self, cr, uid, context=None):  # pylint: disable=R8110
         return self._get_sale(cr, uid, context=context)["account_sale_id"]
 
-    def _get_plus_account(self, cr, uid, context=None):
+    def _get_plus_account(self, cr, uid, context=None):  # pylint: disable=R8110
         if not context:
             context = {}
         acc = False
@@ -77,7 +77,7 @@ class AccountAssetRemove(orm.TransientModel):
             acc = asset.category_id.account_plus_value_id
         return acc and acc.id or False
 
-    def _get_min_account(self, cr, uid, context=None):
+    def _get_min_account(self, cr, uid, context=None):  # pylint: disable=R8110
         if not context:
             context = {}
         acc = False
@@ -87,7 +87,7 @@ class AccountAssetRemove(orm.TransientModel):
             acc = asset.category_id.account_min_value_id
         return acc and acc.id or False
 
-    def _get_residual_account(self, cr, uid, context=None):
+    def _get_residual_account(self, cr, uid, context=None):  # pylint: disable=R8110
         if not context:
             context = {}
         acc = False
@@ -151,7 +151,9 @@ class AccountAssetRemove(orm.TransientModel):
         ("sale_value", "CHECK (sale_value>=0)", "The Sale Value must be positive!")
     ]
 
-    def _prepare_early_removal(self, cr, uid, asset, date_remove, context=None):
+    def _prepare_early_removal(
+        self, cr, uid, asset, date_remove, context=None
+    ):  # pylint: disable=R8110
         """
         Generate last depreciation entry on the day before the removal date.
         """
@@ -207,7 +209,9 @@ class AccountAssetRemove(orm.TransientModel):
         asset_line_obj.unlink(cr, uid, dl_ids, context=context)
         return residual_value
 
-    def _get_removal_data(self, cr, uid, wiz_data, asset, residual_value, context=None):
+    def _get_removal_data(
+        self, cr, uid, wiz_data, asset, residual_value, context=None
+    ):  # pylint: disable=R8110
         move_lines = []
         partner_id = asset.partner_id and asset.partner_id.id or False
         categ = asset.category_id
@@ -277,7 +281,7 @@ class AccountAssetRemove(orm.TransientModel):
 
         return move_lines
 
-    def remove(self, cr, uid, ids, context=None):
+    def remove(self, cr, uid, ids, context=None):  # pylint: disable=R8110
         asset_obj = self.pool.get("account.asset.asset")
         asset_line_obj = self.pool.get("account.asset.depreciation.line")
         move_obj = self.pool.get("account.move")

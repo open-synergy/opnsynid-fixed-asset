@@ -224,7 +224,7 @@ class AccountAssetAsset(models.Model):
                     and (l.init_entry or l.move_check)
                 )
                 value_depreciated = (
-                    sum([totl.amount for totl in lines])
+                    sum(totl.amount for totl in lines)
                     + asset._get_additional_depreciated_value()
                 )
                 asset.value_residual = asset._get_asset_value() - value_depreciated
@@ -1031,7 +1031,7 @@ class AccountAssetAsset(models.Model):
 
     @api.multi
     def _get_depreciation_entry_name(self, seq):
-        """ use this method to customise the name of the accounting entry """
+        """use this method to customise the name of the accounting entry"""
         return (self.code or str(self.id)) + "/" + str(seq)
 
     @api.multi
@@ -1114,7 +1114,7 @@ class AccountAssetAsset(models.Model):
         # depr_line = self.last_posted_depreciation_line_id
 
         # last_date = table[-1]["lines"][-1]["date"]
-        depreciated_value = sum([vari_l.amount for vari_l in posted_lines])
+        depreciated_value = sum(vari_l.amount for vari_l in posted_lines)
 
         for entry in table[table_i_start:]:
             for line in entry["lines"][line_i_start:]:
@@ -1413,7 +1413,7 @@ class AccountAssetAsset(models.Model):
 
         for _i, entry in enumerate(table):
             if not entry["fy_amount"]:
-                entry["fy_amount"] = sum([var_l["amount"] for var_l in entry["lines"]])
+                entry["fy_amount"] = sum(var_l["amount"] for var_l in entry["lines"])
 
     @api.multi
     def _compute_depreciation_table(self):  # noqa: C901
