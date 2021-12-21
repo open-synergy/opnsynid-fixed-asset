@@ -183,7 +183,7 @@ msgid "Lot/Serial"
 msgstr ""
 
 #. module: fixed_asset_stock
-#: code:addons/fixed_asset_stock/models/stock_quant.py:63
+#: code:addons/fixed_asset_stock/models/stock_quant.py:69
 #, python-format
 msgid "No asset category defined"
 msgstr ""
@@ -236,6 +236,11 @@ msgstr ""
 #. module: fixed_asset_stock
 #: view:account.asset.config_setting:fixed_asset_stock.account_asset_config_setting_view_form
 msgid "Stock Integration"
+msgstr ""
+
+#. module: fixed_asset_stock
+#: model:ir.model,name:fixed_asset_stock.model_stock_move
+msgid "Stock Move"
 msgstr ""
 
 #. module: fixed_asset_stock
