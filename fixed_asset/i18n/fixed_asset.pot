@@ -701,8 +701,8 @@ msgstr ""
 #: code:addons/fixed_asset/models/account_asset_asset.py:936
 #: code:addons/fixed_asset/models/account_asset_asset.py:1619
 #: code:addons/fixed_asset/models/account_asset_asset.py:1683
-#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:135
-#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:140
+#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:134
+#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:139
 #: code:addons/fixed_asset/models/account_move.py:40
 #: code:addons/fixed_asset/models/account_move.py:63
 #: code:addons/fixed_asset/models/account_move_line.py:60
@@ -1575,7 +1575,7 @@ msgid "You are not allowed to link an accounting entry to an asset.\n"
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:186
+#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:185
 #: code:addons/fixed_asset/models/account_move.py:41
 #, python-format
 msgid "You are not allowed to remove an accounting entry linked to an asset.\n"
@@ -1595,7 +1595,7 @@ msgid "You can't make an early removal if all the depreciation lines for previou
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:196
+#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:195
 #, python-format
 msgid "You cannot change a depreciation line with an associated accounting entry."
 msgstr ""
@@ -1626,7 +1626,7 @@ msgid "You cannot compute a depreciation table for an asset starting in an undef
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:141
+#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:140
 #, python-format
 msgid "You cannot delete a depreciation line with an associated accounting entry."
 msgstr ""
@@ -1638,13 +1638,13 @@ msgid "You cannot delete an asset that contains posted depreciation lines."
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:136
+#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:135
 #, python-format
 msgid "You cannot remove an asset line of type 'Asset Value'."
 msgstr ""
 
 #. module: fixed_asset
-#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:212
+#: code:addons/fixed_asset/models/account_asset_depreciation_line.py:211
 #, python-format
 msgid "You cannot set the 'Initial Balance Entry' flag on a depreciation line with prior posted entries."
 msgstr ""
