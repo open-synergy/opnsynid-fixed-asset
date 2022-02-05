@@ -2,7 +2,6 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from datetime import time
 
 from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
@@ -278,12 +277,8 @@ class AccountAssetDepreciationLine(models.Model):
         asset_ids = []
 
         asset = self.asset_id
-        if asset.method_time == "year":
-            depreciation_date = context.get("depreciation_date") or self.line_date
-        else:
-            depreciation_date = context.get("depreciation_date") or time.strftime(
-                "%Y-%m-%d"
-            )
+        depreciation_date = context.get("depreciation_date") or self.line_date
+
         ctx = dict(context, account_period_prefer_normal=True)
         period_ids = obj_account_period.with_context(ctx).find(depreciation_date)
         period_id = period_ids and period_ids[0] or False
