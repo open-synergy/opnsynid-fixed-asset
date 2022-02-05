@@ -250,10 +250,7 @@
                                             invisible="1"
                                         />
                                 <field name="last_posted_asset_line_id" invisible="1" />
-                                <field
-                                            name="method_end"
-                                            attrs="{'required': [('method_time','=','end')], 'invisible':[('method_time','in',['number','year'])]}"
-                                        />
+                                <field name="method_end" invisible="1" />
                             </group>
                             <group
                                         name="grp_general_3_2"

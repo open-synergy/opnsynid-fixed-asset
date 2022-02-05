@@ -472,6 +472,8 @@ class AccountAssetAsset(models.Model):
         result = 0
         if self.method_time == "year":
             result = 12
+        elif self.method_time == "month":
+            result = 1
         return result
 
     @api.multi
@@ -1175,9 +1177,14 @@ class AccountAssetAsset(models.Model):
         self.ensure_one()
         asset_start_date = datetime.strptime(self.date_start, "%Y-%m-%d")
         asset_start_date += relativedelta(day=1)
-        depreciation_stop_date = asset_start_date + relativedelta(
-            years=self.method_number, days=-1
-        )
+        if self.method_time == "year":
+            depreciation_stop_date = asset_start_date + relativedelta(
+                years=self.method_number, days=-1
+            )
+        elif self.method_time == "month":
+            depreciation_stop_date = asset_start_date + relativedelta(
+                months=self.method_number, days=-1
+            )
         return depreciation_stop_date
 
     @api.multi
@@ -1233,19 +1240,20 @@ class AccountAssetAsset(models.Model):
         Localization: override this method to change the degressive-linear
         calculation logic according to local legislation.
         """
-        if self.method_time != "year":
-            raise UserError(
-                _("Programming Error"),
-                _(
-                    "The '_compute_year_amount' method is only intended for "
-                    "Time Method 'Number of Years.''"
-                ),
-            )
+        # if self.method_time != "year":
+        #     raise UserError(
+        #         _("Programming Error"),
+        #         _(
+        #             "The '_compute_year_amount' method is only intended for "
+        #             "Time Method 'Number of Years.''"
+        #         ),
+        #     )
 
-        year_amount_liner_divider = (
-            self.method_period_number - self.method_period_start_number
-        )
-        year_amount_linear = (amount_to_depr / year_amount_liner_divider) * 12
+        if self.method_time in ["year", "month"]:
+            year_amount_liner_divider = (
+                self.method_period_number - self.method_period_start_number
+            )
+            year_amount_linear = (amount_to_depr / year_amount_liner_divider) * 12
 
         if self.method == "linear":
             return year_amount_linear

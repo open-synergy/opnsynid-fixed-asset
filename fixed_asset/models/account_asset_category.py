@@ -25,6 +25,7 @@ class AccountAssetCategory(models.Model):
     def _get_method_time(self):
         result = [
             ("year", _("Number of Years")),
+            ("month", _("Number of Months")),
         ]
         return result
 
