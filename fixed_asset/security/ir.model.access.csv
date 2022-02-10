@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fixed_asset_category_employee,fixed.asset.category - employee,model_fixed_asset_category,base.group_user,1,1,1,1
+access_fixed_asset_category_all,fixed.asset.category - all,model_fixed_asset_category,,1,0,0,0
+access_fixed_asset_depreciation_line_subtype_employee,fixed.asset_depreciation_line_subtype - employee,model_fixed_asset_depreciation_line_subtype,,1,0,0,0
+access_fixed_asset_depreciation_line_subtype_all,fixed.asset_depreciation_line_subtype - all,model_fixed_asset_depreciation_line_subtype,base.group_user,1,1,1,1
+access_fixed_asset_asset_employee,fixed.asset.asset - employee,model_fixed_asset_asset,base.group_user,1,1,1,1
+access_fixed_asset_asset_all,fixed.asset.asset - all,model_fixed_asset_asset,,1,0,0,0
+access_fixed_asset_depreciation_line_employee,fixed.asset.depreciation.line - employee,model_fixed_asset_depreciation_line,base.group_user,1,1,1,1
+access_fixed_asset_depreciation_line_all,fixed.asset.depreciation.line - all,model_fixed_asset_depreciation_line,,1,0,0,0

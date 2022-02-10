@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<record id="fixed_asset_asset_view_form" model="ir.ui.view">
+    <field name="name">fixed.asset.asset.form</field>
+    <field name="model">fixed.asset.asset</field>
+    <field name="arch" type="xml">
+        <form string="Asset">
+            <header>
+                <button
+                        string="Confirm"
+                        name="action_confirm"
+                        attrs="{'invisible':[('confirm_ok','=',False)]}"
+                        type="object"
+                        class="oe_highlight"
+                        confirm="Confirm data. Are you sure?"
+                    />
+                <button
+                        name="action_approve_approval"
+                        string="Approve"
+                        attrs="{'invisible':[('approve_ok','=',False)]}"
+                        type="object"
+                        class="oe_highlight"
+                        confirm="Approve data. Are you sure?"
+                    />
+                <button
+                        name="action_reject_approval"
+                        string="Reject"
+                        attrs="{'invisible':[('reject_ok','=',False)]}"
+                        type="object"
+                        confirm="Reject data. Are you sure?"
+                    />
+                <button
+                        string="Cancel"
+                        name="action_cancel"
+                        type="object"
+                        attrs="{'invisible':[('cancel_ok','=',False)]}"
+                        confirm="Cancel data. Are you sure?"
+                    />
+                <button
+                        string="Restart"
+                        name="action_restart"
+                        attrs="{'invisible':[('restart_ok','=',False)]}"
+                        confirm="Restart Asset. Are you sure?"
+                        type="object"
+                    />
+                <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,confirm,open,close"
+                    />
+            </header>
+            <field name="need_validation" invisible="1" />
+            <field name="approved" invisible="1" />
+            <field name="rejected" invisible="1" />
+            <sheet>
+                <div class="oe_button_box" name="button_box">
+                    <button
+                            icon="fa-book"
+                            name="open_entries"
+                            string="Journal Entries"
+                            type="object"
+                        />
+                </div>
+            <div name="div_title">
+                <label for="name" class="oe_edit_only" />
+                <h1>
+                    <field
+                                name="code"
+                                class="oe_inline"
+                                placeholder="Code of Asset..."
+                            />
+                    -
+                    <field
+                                name="name"
+                                class="oe_inline"
+                                placeholder="Name of Asset..."
+                                default_focus="1"
+                            />
+                </h1>
+            </div>
+                <group name="grp_1" colspan="4" col="2">
+                    <group name="grp_1_1" colspan="1" col="2">
+                        <field name="parent_id" invisible="1" />
+                        <field name="type" invisible="1" />
+                        <field
+                                name="company_id"
+                                widget="selection"
+                                groups="base.group_multi_company"
+                            />
+                        <field
+                                name="company_currency_id"
+                                groups="base.group_multi_currency"
+                                invisible="1"
+                            />
+                        <field name="move_line_check" invisible="1" />
+                        <field
+                                name="category_id"
+                                attrs="{'required':[('type','=','normal')]}"
+                            />
+                    </group>
+                    <group name="grp_1_1" colspan="1" col="2">
+                        <field
+                                name="asset_value"
+                                widget="monetary"
+                                options="{'currency_field': 'company_currency_id'}"
+                                attrs="{'invisible':[('type','=','view')]}"
+                            />
+                        <field
+                                name="value_depreciated"
+                                widget="monetary"
+                                options="{'currency_field': 'company_currency_id'}"
+                                attrs="{'invisible':[('type','=','view')]}"
+                            />
+                        <field
+                                name="value_residual"
+                                widget="monetary"
+                                options="{'currency_field': 'company_currency_id'}"
+                                attrs="{'invisible':[('type','=','view')]}"
+                            />
+                    </group>
+                </group>
+                <notebook colspan="4" attrs="{'invisible':[('type','=','view')]}">
+                    <page name="page_general" string="General">
+                        <group
+                                name="grp_general_1"
+                                colspan="4"
+                                col="2"
+                                string="Acquisition"
+                            >
+                            <group name="grp_general_1_1" colspan="1" col="2">
+                                <field name="asset_acquisition_move_line_id" />
+                                <field name="asset_acquisition_move_id" />
+
+                            </group>
+                            <group name="grp_general_1_2" colspan="1" col="2">
+                                <field
+                                        name="purchase_value"
+                                        widget="monetary"
+                                        options="{'currency_field': 'currency_id'}"
+                                        attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"
+                                    />
+                                <field
+                                        name="date_start"
+                                        attrs="{'readonly':[('state','!=','draft')],'required':[('type','=','normal')]}"
+                                    />
+                                <field name="partner_id" />
+                            </group>
+                        </group>
+                        <group
+                                name="grp_general_2"
+                                colspan="4"
+                                col="4"
+                                string="Other Information"
+                            >
+                            <field
+                                    name="salvage_value"
+                                    widget="monetary"
+                                    options="{'currency_field': 'company_currency_id'}"
+                                    attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"
+                                />
+                            <field
+                                    name="account_analytic_id"
+                                    groups="analytic.group_analytic_accounting"
+                                />
+                            <field name="date_remove" />
+                        </group>
+                        <group name="grp_general_3" colspan="4" col="2">
+                            <group
+                                    name="grp_general_3_1"
+                                    colspan="1"
+                                    col="2"
+                                    string="Depreciation Dates"
+                                >
+                                <field name="method_time" />
+                                <field
+                                        name="method_number"
+                                        attrs="{'invisible':[('method_time','=','end')], 'required':[('method_time','in',['number','year'])]}"
+                                    />
+                                <field name="method_period" />
+                                <field name="method_period_number" />
+                                <field
+                                        name="method_period_start_number"
+                                        invisible="1"
+                                    />
+                                <field
+                                        name="method_period_depreciated_number"
+                                        invisible="1"
+                                    />
+                                <field
+                                        name="method_period_remaining_number"
+                                        invisible="1"
+                                    />
+                                <field
+                                        name="last_posted_depreciation_line_id"
+                                        invisible="1"
+                                    />
+                                <field name="last_posted_asset_line_id" invisible="1" />
+                                <field
+                                        name="method_end"
+                                        attrs="{'required': [('method_time','=','end')], 'invisible':[('method_time','in',['number','year'])]}"
+                                    />
+                            </group>
+                            <group
+                                    name="grp_general_3_2"
+                                    colspan="1"
+                                    col="2"
+                                    string="Depreciation Method"
+                                >
+                                  <field name="method" />
+                                  <field
+                                        name="method_progress_factor"
+                                        attrs="{'invisible':[('method','=','linear')], 'required':[('method','in',['degressive','degr-linear'])]}"
+                                    />
+                                  <field
+                                        name="prorata"
+                                        attrs="{'invisible':[('method_time','!=','year')]}"
+                                    />
+                                  <field name="prorate_by_month" />
+                                  <field name="date_min_prorate" />
+                            </group>
+                        </group>
+                    </page>
+                    <page name="page_depreciation" string="Depreciation Board">
+                        <div>
+                            <button
+                                    type="object"
+                                    name="compute_depreciation_board"
+                                    string="Compute"
+                                    icon="fa-gears"
+                                    class="oe_highlight"
+                                    attrs="{'invisible':[('state','!=','draft')]}"
+                                />
+                        </div>
+                        <field
+                                name="depreciation_line_ids"
+                                mode="tree"
+                                options="{'reload_on_button': true}"
+                            >
+                        <tree
+                                    string="Asset Lines"
+                                    colors="blue:(move_check == False) and (init_entry == False)"
+                                    create="false"
+                                >
+                            <field name="type" />
+                            <field name="subtype_id" />
+                            <field name="line_date" />
+                            <field name="depreciated_value" readonly="1" />
+                            <field name="amount" />
+                            <field name="remaining_value" readonly="1" />
+                            <field name="init_entry" string="Init" />
+                            <field name="move_check" />
+                            <field name="parent_state" invisible="1" />
+                            <button
+                                        name="action_mark_as_init"
+                                        icon="fa-check"
+                                        string="Mark As Init"
+                                        type="object"
+                                        attrs="{'invisible':['|','|',('init_entry','=',True),('move_check','!=',False),('parent_state','!=','open')]}"
+                                    />
+                            <button
+                                        name="action_unmark_as_init"
+                                        icon="fa-close"
+                                        string="Unmark As Init"
+                                        type="object"
+                                        attrs="{'invisible':['|','|',('init_entry','!=',True),('move_check','!=',False),('parent_state','!=','open')]}"
+                                    />
+                            <button
+                                        name="create_move"
+                                        icon="fa-gears"
+                                        string="Create Move"
+                                        type="object"
+                                        attrs="{'invisible':['|','|',('init_entry','=',True),('move_check','!=',False),('parent_state','!=','open')]}"
+                                    />
+                            <button
+                                        name="open_move"
+                                        icon="fa-list"
+                                        string="View Move"
+                                        type="object"
+                                        attrs="{'invisible':[('move_check','!=',True)]}"
+                                    />
+                            <button
+                                        name="unlink_move"
+                                        icon="fa-eraser"
+                                        string="Delete Move"
+                                        type="object"
+                                        confirm="Are you sure ?"
+                                        groups="account.group_account_manager"
+                                        attrs="{'invisible':[('move_check','!=',True)]}"
+                                    />
+                        </tree>
+                        <form string="Asset Line">
+                            <group name="grp_depreciation_1" colspan="4" col="2">
+                                <group name="grp_depreciation_1_1" colspan="1" col="2">
+                                    <field name="parent_state" invisible="1" />
+                                    <field name="asset_value" invisible="1" />
+                                    <field name="type" />
+                                    <field name="subtype_id" />
+                                    <field name="name" />
+                                    <field
+                                                name="amount"
+                                                attrs="{'readonly':[('move_check','=',True)]}"
+                                            />
+                                    <field
+                                                name="init_entry"
+                                                attrs="{'readonly':['|', ('move_check', '=', True), ('type', '=', 'create')]}"
+                                            />
+                                    <field name="move_id" />
+                                    <field name="move_check" />
+                                </group>
+                                <group name="grp_depreciation_1_2" colspan="1" col="2">
+                                    <field
+                                                name="line_date"
+                                                attrs="{'readonly':[('move_check','=',True)]}"
+                                            />
+                                    <field name="depreciated_value" readonly="1" />
+                                    <field name="remaining_value" readonly="1" />
+                                </group>
+                            </group>
+                        </form>
+                        </field>
+                    </page>
+                    <page name="page_note" string="Notes">
+                        <field name="note" placeholder="Add an internal note here..." />
+                    </page>
+                    <page name="helper" string="Helper" invisible="1">
+                        <group
+                                name="helper_1"
+                                colspan="4"
+                                col="2"
+                                string="Posted Asset Values"
+                            >
+                            <field name="last_posted_asset_value_id" />
+                            <field
+                                    name="posted_asset_value_ids"
+                                    nolabel="1"
+                                    colspan="2"
+                                />
+                        </group>
+                        <group
+                                name="helper_2"
+                                colspan="4"
+                                col="2"
+                                string="Posted Depreciations"
+                            >
+                            <field name="last_depreciation_id" />
+                            <field
+                                    name="posted_depreciation_ids"
+                                    nolabel="1"
+                                    colspan="2"
+                                />
+                        </group>
+                        <group
+                                name="helper_3"
+                                colspan="4"
+                                col="2"
+                                string="Posted Histories"
+                            >
+                            <field name="last_posted_history_id" />
+                            <field name="posted_history_ids" nolabel="1" />
+                        </group>
+                        <group
+                                name="helper_4"
+                                colspan="4"
+                                col="2"
+                                string="Unposted Histories"
+                            >
+                            <field name="unposted_history_ids" nolabel="1" />
+                        </group>
+                    </page>
+                    <page string="Approvals" name="tier_validation">
+                        <group>
+                            <field name="approval_template_id" />
+                            <field
+                                    name="active_approver_partner_ids"
+                                    widget="many2many_tags"
+                                />
+                        </group>
+                        <field
+                                name="approval_ids"
+                                attrs="{'invisible':[('approval_ids', '=', [])]}"
+                                nolabel="1"
+                            />
+                    </page>
+                    <page name="policy" string="Policies" groups="base.group_system">
+                        <group name="policy_1" colspan="4" col="2">
+                            <field name="policy_template_id" />
+                            <button
+                                    name="action_reload_policy_template"
+                                    type="object"
+                                    string="Reload Template Policy"
+                                    icon="fa-refresh"
+                                    class="oe_highlight"
+                                />
+                            <field name="confirm_ok" />
+                            <field name="approve_ok" />
+                            <field name="reject_ok" />
+                            <field name="close_ok" />
+                            <field name="cancel_ok" />
+                            <field name="restart_ok" />
+                            <field name="restart_approval_ok" />
+                        </group>
+                    </page>
+                    <page name="page_log" string="Logs">
+                        <group name="grp_log_1" colspan="4" col="3">
+                            <group name="grp_log_2" colspan="4" col="3">
+                                <field name="confirm_date" string="Confirmation" />
+                                <field name="confirm_user_id" nolabel="1" />
+                                <field name="open_date" string="Running On" />
+                                <field name="open_user_id" nolabel="1" />
+                                <field name="close_date" string="Closing On" />
+                                <field name="close_user_id" nolabel="1" />
+                                <field name="cancel_date" string="Cancel" />
+                                <field name="cancel_user_id" nolabel="1" />
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers" />
+                <field name="message_ids" widget="mail_thread" />
+            </div>
+        </form>
+    </field>
+</record>
+
+<record id="fixed_asset_asset_view_tree" model="ir.ui.view">
+      <field name="name">fixed.asset.asset.tree</field>
+      <field name="model">fixed.asset.asset</field>
+      <field name="arch" type="xml">
+          <tree string="Assets" colors="blue:(type == 'view')">
+                <field name="id" />
+                <field name="name" />
+                <field name="type" invisible="1" />
+                <field name="code" />
+                <field name="asset_value" />
+                <field name="value_depreciated" />
+                <field name="value_residual" />
+                <field name="date_start" />
+                <field name="date_remove" />
+                <field name="category_id" />
+                <field name="state" />
+                <field name="company_id" groups="base.group_multi_company" />
+          </tree>
+      </field>
+</record>
+
+<record id="fixed_asset_asset_view_search" model="ir.ui.view">
+    <field name="name">fixed.asset.asset.search</field>
+    <field name="model">fixed.asset.asset</field>
+    <field name="arch" type="xml">
+        <search string="Account Asset">
+            <field name="name" string="Asset" />
+            <field name="code" />
+            <field name="date_start" />
+            <field name="category_id" />
+            <group name="dom_state" string="State">
+                <field
+                        name="partner_id"
+                        filter_domain="[('partner_id','child_of',self)]"
+                    />
+                <filter
+                        string="Draft"
+                        name="draft"
+                        domain="[('state','=','draft')]"
+                        help="Draft Assets"
+                    />
+                <filter
+                        string="Waiting for Approval"
+                        name="confirm"
+                        domain="[('state','=','confirm')]"
+                        help="Assets waiting to be confirmed"
+                    />
+                <filter
+                        string="Running"
+                        domain="[('state','=', 'open')]"
+                        help="Assets in Running State"
+                    />
+                <filter
+                        string="Close"
+                        domain="[('state','=', 'close')]"
+                        help="Assets in Close State"
+                    />
+                <filter
+                        string="Removed"
+                        domain="[('state','=', 'removed')]"
+                        help="Assets which have been removed"
+                    />
+            </group>
+            <group expand="0" string="Group By...">
+                  <filter name="grp_type" string="Type" context="{'group_by':'type'}" />
+                <filter
+                        name="grp_category"
+                        string="Category"
+                        context="{'group_by':'category_id'}"
+                    />
+                <filter
+                        name="grp_date_start_year"
+                        string="Date Start by Year"
+                        context="{'group_by':'date_start:year'}"
+                    />
+                <filter
+                        name="grp_date_start_month"
+                        string="Date Start by Month"
+                        context="{'group_by':'date_start:month'}"
+                    />
+                <filter
+                        name="grp_date_start_week"
+                        string="Date Start by Week"
+                        context="{'group_by':'date_start:week'}"
+                    />
+                <filter
+                        name="grp_date_start_day"
+                        string="Date Start by Day"
+                        context="{'group_by':'date_start:week'}"
+                    />
+
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="fixed_asset_asset_action" model="ir.actions.act_window">
+    <field name="name">Assets</field>
+    <field name="res_model">fixed.asset.asset</field>
+    <field name="view_type">form</field>
+    <field name="view_id" ref="fixed_asset_asset_view_tree" />
+    <field name="search_view_id" ref="fixed_asset_asset_view_search" />
+</record>
+
+<menuitem
+        id="menu_fixed_asset_asset"
+        parent="fixed_asset.menu_finance_assets"
+        action="fixed_asset_asset_action"
+    />
+</odoo>
