@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="view_account_asset_form">
+          <field name="name">account.asset.form</field>
+          <field name="model">account.account</field>
+          <field name="inherit_id" ref="account.view_account_form" />
+          <field name="arch" type="xml">
+                <field name="user_type_id" position="after">
+                    <field name="fixed_asset_category_id" />
+                </field>
+          </field>
+    </record>
+</odoo>
