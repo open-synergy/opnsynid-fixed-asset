@@ -11,7 +11,7 @@
     "application": False,
     "installable": True,
     "depends": [
-        "account_accountant",
+        "account",
         "account_fiscal_year",
         "ssi_sequence_mixin",
         "ssi_policy_mixin",
