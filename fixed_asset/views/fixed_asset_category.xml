@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="fixed_asset_category_view_form" model="ir.ui.view">
+        <field name="name">fixed.asset.category.form</field>
+        <field name="model">fixed.asset.category</field>
+        <field name="arch" type="xml">
+            <form string="Asset category">
+                <header />
+                <sheet>
+                    <div
+                        class="oe_right oe_button_box"
+                        style="width: 300px;"
+                        name="buttons"
+                    />
+                    <group name="group_1" colspan="4" col="2">
+                        <group name="group_1_1" colspan="1" col="2">
+                            <field name="name" />
+                            <field
+                                name="company_id"
+                                widget="selection"
+                                groups="base.group_multi_company"
+                            />
+                            <field name="sequence_id" />
+                        </group>
+                        <group name="group_1_2" colspan="1" col="2">
+                            <field name="active" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="accounting" string="Accounting">
+                            <group name="accounting_1" colspan="4" col="2">
+                                <field name="journal_id" />
+                                <field name="account_asset_id" />
+                                <field name="account_depreciation_id" />
+                                <field name="account_expense_depreciation_id" />
+                                <field name="account_plus_value_id" />
+                                <field name="account_min_value_id" />
+                                <field name="account_residual_value_id" />
+                            </group>
+                            <group
+                                name="accounting_2"
+                                groups="analytic.group_analytic_accounting"
+                                string="Analytic Information"
+                            >
+                                <field name="account_analytic_id" />
+                            </group>
+                        </page>
+                        <page name="depreciation_date" string="Depreciation Dates">
+                            <group name="depreciation_date_1" colspan="4" col="2">
+                                <field name="method_time" />
+                                <field
+                                    name="method_number"
+                                    attrs="{'invisible':[('method_time','=','end')], 'required':[('method_time','in',['number','year'])]}"
+                                />
+                                <field name="method_period" />
+                            </group>
+                        </page>
+                        <page name="depreciation_method" string="Depreciation Method">
+                            <group name="depreciation_method_1" colspan="4" col="2">
+                                <field name="method" />
+                                <field
+                                    name="method_progress_factor"
+                                    attrs="{'invisible':[('method','=','linear')], 'required':[('method','in',['degressive','degr-linear'])]}"
+                                />
+                                <field
+                                    name="prorata"
+                                    attrs="{'readonly':[('method_time','!=','year')]}"
+                                />
+                                <field name="date_min_prorate" />
+                                <field name="open_asset" />
+                            </group>
+                        </page>
+                        <page name="note" string="Note">
+                            <group name="note_1" colspan="4" col="2">
+                                <field name="note" nolabel="1" />
+                            </group>
+                        </page>
+                        <page name="workflow_policy" string="Workflow Policy">
+                            <group name="workflow_policy_1" colspan="4" col="2">
+                                <field
+                                    name="asset_confim_group_ids"
+                                    widget="many2many_tags"
+                                />
+                                <field
+                                    name="asset_close_group_ids"
+                                    widget="many2many_tags"
+                                />
+                                <field
+                                    name="asset_cancel_group_ids"
+                                    widget="many2many_tags"
+                                />
+                                <field
+                                    name="asset_restart_group_ids"
+                                    widget="many2many_tags"
+                                />
+                                <field
+                                    name="asset_restart_approval_group_ids"
+                                    widget="many2many_tags"
+                                />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fixed_asset_category_view_tree" model="ir.ui.view">
+          <field name="name">fixed.asset.category.tree</field>
+          <field name="model">fixed.asset.category</field>
+          <field name="arch" type="xml">
+            <tree string="Asset category">
+                  <field name="name" />
+                  <field name="journal_id" />
+                  <field name="method" />
+                  <field name="method_time" />
+                  <field name="method_number" />
+                  <field name="method_period" />
+                  <field name="prorata" />
+                  <field name="company_id" groups="base.group_multi_company" />
+            </tree>
+          </field>
+    </record>
+
+    <record id="fixed_asset_category_view_search" model="ir.ui.view">
+          <field name="name">fixed.asset.category.search</field>
+          <field name="model">fixed.asset.category</field>
+          <field name="arch" type="xml">
+                <search string="Search Asset Category">
+                      <field name="name" string="Asset Category" />
+                      <field name="journal_id" />
+                </search>
+          </field>
+    </record>
+
+    <record id="fixed_asset_category_action" model="ir.actions.act_window">
+          <field name="name">Fixed Asset Categories</field>
+          <field name="res_model">fixed.asset.category</field>
+          <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_fixed_asset_category"
+        name="Categories"
+        parent="fixed_asset.menu_finance_config_assets"
+        action="fixed_asset_category_action"
+    />
+</odoo>

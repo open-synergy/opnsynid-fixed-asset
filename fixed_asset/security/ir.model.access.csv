@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fixed_asset_category_invoice,fixed.asset.category,model_fixed_asset_category,account.group_account_invoice,1,0,0,0
+access_fixed_asset_category_user,fixed.asset.category,model_fixed_asset_category,account.group_account_user,1,0,0,0
+access_fixed_asset_category_manager,fixed.asset.category,model_fixed_asset_category,account.group_account_manager,1,1,1,1
+access_fixed_asset_depreciation_line_subtype_all,fixed.asset_depreciation_line - All,model_fixed_asset_depreciation_line_subtype,,1,0,0,0
+access_fixed_asset_depreciation_line_subtype_employee,fixed.asset_depreciation_line - Employee,model_fixed_asset_depreciation_line_subtype,base.group_user,1,0,0,0
+access_fixed_asset_asset_invoice,fixed.asset.asset,model_fixed_asset_asset,account.group_account_invoice,1,1,1,1
+access_fixed_asset_asset_user,fixed.asset.asset,model_fixed_asset_asset,account.group_account_user,1,1,1,1
+access_fixed_asset_asset_manager,fixed.asset.asset,model_fixed_asset_asset,account.group_account_manager,1,1,1,1
+access_fixed_asset_depreciation_line_invoice,fixed.asset.depreciation.line,model_fixed_asset_depreciation_line,account.group_account_invoice,1,1,1,1
+access_fixed_asset_depreciation_line_user,fixed.asset.depreciation.line,model_fixed_asset_depreciation_line,account.group_account_user,1,1,1,1
+access_fixed_asset_depreciation_line_manager,fixed.asset.depreciation.line,model_fixed_asset_depreciation_line,account.group_account_manager,1,1,1,1
+access_fixed_asset_history_user,fixed.asset.history,model_fixed_asset_history,account.group_account_user,1,0,0,0
+access_fixed_asset_history_manager,fixed.asset.history,model_fixed_asset_history,account.group_account_manager,1,1,1,1
+access_fixed_asset_recompute_trigger_user,fixed.asset.recompute.trigger,model_fixed_asset_recompute_trigger,account.group_account_user,1,1,1,1
+access_fixed_asset_recompute_trigger_manager,fixed.asset.recompute.trigger,model_fixed_asset_recompute_trigger,account.group_account_manager,1,1,1,1
