@@ -12,15 +12,8 @@ class AccountMove(models.Model):
     @api.model
     def _get_fields_affects_asset_move(self):
         fields = [
-            "credit",
-            "debit",
-            "account_id",
             "journal_id",
             "date",
-            "asset_category_id",
-            "asset_id",
-            "tax_code_id",
-            "tax_amount",
         ]
         return fields
 

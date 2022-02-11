@@ -41,12 +41,12 @@ class AccountInvoice(models.Model):
         return res
 
     @api.model
-    def line_get_convert(self, line, part, date):
+    def line_get_convert(self, line, part):
         _super = super(AccountInvoice, self)
-        res = _super.line_get_convert(line, part, date)
-        if line.get("asset_category_id"):
+        res = _super.line_get_convert(line, part)
+        if line.get("fixed_asset_category_id"):
             if res.get("debit") or res.get("credit"):
-                res["asset_category_id"] = line["asset_category_id"]
+                res["fixed_asset_category_id"] = line["fixed_asset_category_id"]
         return res
 
     @api.multi
@@ -54,5 +54,5 @@ class AccountInvoice(models.Model):
         self.ensure_one()
         _super = super(AccountInvoice, self)
         res = _super.inv_line_characteristic_hashcode(invoice_line)
-        res += "-%s" % invoice_line.get("asset_category_id", False)
+        res += "-%s" % invoice_line.get("fixed_asset_category_id", False)
         return res

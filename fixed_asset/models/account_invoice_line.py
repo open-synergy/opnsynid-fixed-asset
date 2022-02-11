@@ -8,12 +8,12 @@ from odoo import api, fields, models
 class AccountInvoiceLine(models.Model):
     _inherit = "account.invoice.line"
 
-    asset_category_id = fields.Many2one(
-        string="Asset Category",
+    fixed_asset_category_id = fields.Many2one(
+        string="Fixed Asset Category",
         comodel_name="fixed.asset.category",
     )
-    asset_id = fields.Many2one(
-        string="Asset",
+    fixed_asset_id = fields.Many2one(
+        string="Fixed Asset",
         comodel_name="fixed.asset.asset",
         domain=[("type", "=", "normal"), ("state", "in", ["open", "close"])],
         help="Complete this field when selling an asset "
@@ -32,18 +32,20 @@ class AccountInvoiceLine(models.Model):
         )
         obj_account_account = self.env["account.account"]
         if account_id:
-            asset_category = obj_account_account.browse(account_id).asset_category_id
+            asset_category = obj_account_account.browse(
+                account_id
+            ).fixed_asset_category_id
             if asset_category:
                 if not res.get("value", False):
                     res["value"] = {}
                 else:
-                    res["value"]["asset_category_id"] = asset_category.id
+                    res["value"]["fixed_asset_category_id"] = asset_category.id
         return res
 
     @api.multi
     def move_line_get_item(self, line):
         _super = super(AccountInvoiceLine, self)
         res = _super.move_line_get_item(line)
-        if line.asset_category_id:
-            res["asset_category_id"] = line.asset_category_id.id
+        if line.fixed_asset_category_id:
+            res["fixed_asset_category_id"] = line.fixed_asset_category_id.id
         return res

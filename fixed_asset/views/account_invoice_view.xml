@@ -9,9 +9,9 @@
       <field name="inherit_id" ref="account.view_invoice_line_form" />
       <field name="arch" type="xml">
         <field name="account_id" position="before">
-          <field name="asset_id" groups="account.group_account_manager" />
+          <field name="fixed_asset_id" groups="account.group_account_manager" />
           <field
-                    name="asset_category_id"
+                    name="fixed_asset_category_id"
                     invisible="context.get('type') not in ['in_invoice','in_refund']"
                 />
         </field>
@@ -27,7 +27,7 @@
                 expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']"
                 position="before"
             >
-          <field name="asset_category_id" />
+          <field name="fixed_asset_category_id" />
         </xpath>
       </field>
     </record>
@@ -41,7 +41,7 @@
                 expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']"
                 position="before"
             >
-          <field name="asset_id" groups="account.group_account_manager" />
+          <field name="fixed_asset_id" groups="account.group_account_manager" />
         </xpath>
       </field>
     </record>

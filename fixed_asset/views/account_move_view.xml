@@ -12,8 +12,8 @@
                 expr="//notebook//field[@name='line_ids']/tree/field[@name='date_maturity']"
                 position="after"
             >
-          <field name="asset_category_id" />
-          <field name="asset_id" />
+          <field name="fixed_asset_category_id" />
+          <field name="fixed_asset_id" />
         </xpath>
       </field>
     </record>

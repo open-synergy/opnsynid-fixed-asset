@@ -246,7 +246,7 @@ class FixedAssetDepreciationLine(models.Model):
             "partner_id": asset.partner_id.id,
             "analytic_account_id": analytic_id,
             "date": depreciation_date,
-            "asset_id": asset.id,
+            "fixed_asset_id": asset.id,
         }
         return move_line_data
 

@@ -9,13 +9,13 @@ from odoo.exceptions import UserError
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
-    asset_id = fields.Many2one(
-        string="Asset",
+    fixed_asset_id = fields.Many2one(
+        string="Fixed Asset",
         comodel_name="fixed.asset.asset",
         ondelete="restrict",
     )
-    asset_category_id = fields.Many2one(
-        string="Asset Category",
+    fixed_asset_category_id = fields.Many2one(
+        string="Fixed Asset Category",
         comodel_name="fixed.asset.category",
     )
 
@@ -25,12 +25,14 @@ class AccountMoveLine(models.Model):
         res = _super.onchange_account_id(account_id, partner_id)
         obj_account_account = self.env["account.account"]
         if account_id:
-            asset_category = obj_account_account.browse(account_id).asset_category_id
+            asset_category = obj_account_account.browse(
+                account_id
+            ).fixed_asset_category_id
             if asset_category:
                 if not res.get("value", False):
                     res["value"] = {}
                 else:
-                    res["value"]["asset_category_id"] = asset_category.id
+                    res["value"]["fixed_asset_category_id"] = asset_category.id
         return res
 
     @api.model
@@ -41,8 +43,8 @@ class AccountMoveLine(models.Model):
             "account_id",
             "journal_id",
             "date",
-            "asset_category_id",
-            "asset_id",
+            "fixed_asset_category_id",
+            "fixed_asset_id",
             "tax_code_id",
             "tax_amount",
         ]
@@ -54,7 +56,7 @@ class AccountMoveLine(models.Model):
         res = _super.create(vals)
 
         context = self.env.context
-        if vals.get("asset_id") and not context.get("allow_asset"):
+        if vals.get("fixed_asset_id") and not context.get("allow_asset"):
             raise UserError(
                 _("Error!"),
                 _(
@@ -63,14 +65,14 @@ class AccountMoveLine(models.Model):
                     "\nYou should generate such entries from the asset."
                 ),
             )
-        if vals.get("asset_category_id"):
+        if vals.get("fixed_asset_category_id"):
             obj_fixed_asset = self.env["fixed.asset.asset"]
             obj_account_move = self.env["account.move"]
             move = obj_account_move.browse(vals["move_id"])
             asset_value = vals["debit"] or -vals["credit"]
             asset_vals = {
                 "name": vals["name"],
-                "category_id": vals["asset_category_id"],
+                "category_id": vals["fixed_asset_category_id"],
                 "purchase_value": asset_value,
                 "partner_id": vals["partner_id"],
                 "date_start": move.date,
@@ -82,17 +84,17 @@ class AccountMoveLine(models.Model):
             )
             asset_id = obj_fixed_asset.with_context(ctx).create(asset_vals)
             asset_id.onchange_category_id()
-            vals["asset_id"] = asset_id
+            vals["fixed_asset_id"] = asset_id
         return res
 
     @api.multi
-    def write(self, vals, context=None, check=True):
+    def write(self, vals):
         _super = super(AccountMoveLine, self)
-        res = _super.write(vals, context=context, check=check)
+        res = _super.write(vals)
         context = self.env.context
         fields = self._get_fields_affects_asset_move_line()
         for move_line in self:
-            if move_line.asset_id.id:
+            if move_line.fixed_asset_id.id:
                 if vals in fields:
                     raise UserError(
                         _("Error!"),
@@ -101,7 +103,7 @@ class AccountMoveLine(models.Model):
                             "linked to an asset depreciation line."
                         ),
                     )
-        if vals.get("asset_id"):
+        if vals.get("fixed_asset_id"):
             raise UserError(
                 _("Error!"),
                 _(
@@ -110,13 +112,13 @@ class AccountMoveLine(models.Model):
                     "\nYou should generate such entries from the asset."
                 ),
             )
-        if vals.get("asset_category_id"):
+        if vals.get("fixed_asset_category_id"):
             assert (
                 len(self) == 1
             ), "This option should only be used for a single id at a time."
             obj_fixed_asset = self.env["fixed.asset.asset"]
             for aml in self:
-                if vals["asset_category_id"] == aml.asset_category_id.id:
+                if vals["fixed_asset_category_id"] == aml.fixed_asset_category_id.id:
                     continue
                 debit = "debit" in vals and vals.get("debit", 0.0) or aml.debit
                 credit = "credit" in vals and vals.get("credit", 0.0) or aml.credit
@@ -140,5 +142,5 @@ class AccountMoveLine(models.Model):
                 )
                 asset_id = obj_fixed_asset.with_context(ctx).create(asset_vals)
                 asset_id.onchange_category_id()
-                vals["asset_id"] = asset_id
+                vals["fixed_asset_id"] = asset_id
         return res

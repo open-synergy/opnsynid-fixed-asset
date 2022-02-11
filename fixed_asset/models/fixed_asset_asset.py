@@ -46,7 +46,7 @@ class FixedAssetAsset(models.Model):
     account_move_line_ids = fields.One2many(
         string="Entries",
         comodel_name="account.move.line",
-        inverse_name="asset_id",
+        inverse_name="fixed_asset_id",
         readonly=True,
     )
 
