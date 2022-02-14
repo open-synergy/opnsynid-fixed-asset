@@ -847,7 +847,7 @@ class FixedAssetAsset(models.Model):
         string="Can Reject",
         compute="_compute_policy",
         store=False,
-    )    
+    )
     close_ok = fields.Boolean(
         string="Can Close",
         compute="_compute_policy",
@@ -1769,23 +1769,6 @@ class FixedAssetAsset(models.Model):
             if dl_ids:
                 dl_ids.unlink()
             document.write(document._prepare_cancel_data())
-
-    @api.multi
-    def action_remove(self):
-        for document in self:
-            ctx = {}
-            if document.value_residual:
-                ctx.update({"early_removal": True})
-        return {
-            "name": _("Generate Asset Removal entries"),
-            "view_type": "form",
-            "view_mode": "form",
-            "res_model": "fixed.asset.remove",
-            "target": "new",
-            "type": "ir.actions.act_window",
-            "context": ctx,
-            "nodestroy": True,
-        }
 
     @api.multi
     def _prepare_close_data(self):

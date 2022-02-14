@@ -46,15 +46,6 @@
                         type="object"
                         groups="account.group_account_manager"
                     />
-                <button
-                        name="action_remove"
-                        invisible="1"
-                        string="Remove"
-                        type="object"
-                        groups="account.group_account_manager"
-                        attrs="{'invisible':['|', ('method_time', '!=', 'year'),('state', 'not in', ['open', 'close'])]}"
-                        help="Asset removal."
-                    />
                 <field
                         name="state"
                         widget="statusbar"
