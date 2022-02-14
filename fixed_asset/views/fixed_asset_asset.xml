@@ -234,6 +234,7 @@
                                     name="compute_depreciation_board"
                                     string="Compute"
                                     icon="fa-gears"
+                                    class="oe_highlight"
                                     attrs="{'invisible':[('state','!=','draft')]}"
                                 />
                         </div>
