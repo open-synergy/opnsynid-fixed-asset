@@ -68,14 +68,14 @@
             <field name="approved" invisible="1" />
             <field name="rejected" invisible="1" />
             <sheet>
-            <div name="div_smart_button" class="oe_button_box oe_right">
-                <button
-                            name="open_entries"
-                            string="Journal Entries"
-                            type="object"
-                            class="oe_inline"
-                        />
-            </div>
+                <div class="oe_button_box" name="button_box">
+                    <button
+                        icon="fa-book"
+                        name="open_entries"
+                        string="Journal Entries"
+                        type="object"
+                    />
+                </div>
             <div name="div_title">
                 <label for="name" class="oe_edit_only" />
                 <h1>
