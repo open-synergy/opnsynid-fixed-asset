@@ -28,7 +28,6 @@
         "menu.xml",
         "data/ir_sequence_data.xml",
         "data/sequence_template_data.xml",
-        "wizards/account_asset_remove_view.xml",
         "wizards/account_asset_change_duration_view.xml",
         "wizards/wizard_asset_compute_view.xml",
         "views/fixed_asset_config_setting_views.xml",
