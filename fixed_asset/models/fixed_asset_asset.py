@@ -313,6 +313,7 @@ class FixedAssetAsset(models.Model):
         selection=[
             ("draft", "Draft"),
             ("confirm", "Waiting for Approval"),
+            ("reject", "Rejected"),
             ("open", "Running"),
             ("close", "Close"),
             ("removed", "Removed"),
