@@ -17,18 +17,23 @@
                         class="oe_highlight"
                     />
                 <button
-                        string="Request Validation"
-                        name="request_validation"
-                        attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
-                        class="oe_highlight"
-                        type="object"
-                    />
+                    name="action_approve_approval"
+                    string="Approve"
+                    attrs="{'invisible': [('approval_ids', '=', [])]}"
+                    type="object"
+                    class="oe_highlight"
+                />
                 <button
-                        name="restart_validation"
-                        string="Restart Validation"
-                        attrs="{'invisible': ['|','|',('approval_ids', '=', []),('rejected','=',False),('state','not in',['confirm'])]}"
-                        type="object"
-                    />
+                    name="action_reject_approval"
+                    string="Reject"
+                    type="object"
+                />
+                <button
+                    name="action_request_approval"
+                    string="Request Approval"
+                    attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
+                    type="object"
+                />
                 <button
                         string="Cancel"
                         name="action_cancel"
@@ -62,47 +67,6 @@
             <field name="need_validation" invisible="1" />
             <field name="approved" invisible="1" />
             <field name="rejected" invisible="1" />
-            <div
-                    class="alert alert-warning"
-                    attrs="{'invisible': ['|', '|', '|',
-                 ('approved', '=', True), ('state', 'not in', ['confirm']),
-                 ('rejected', '=', True), ('approval_ids', '=', [])]}"
-                    style="margin-bottom:0px;"
-                >
-                <p><i class="fa fa-info-circle" />This Asset needs to be
-                    approved.
-                    <button
-                            name="action_approve_approval"
-                            string="Approve"
-                            attrs="{'invisible': [('approval_ids', '=', [])]}"
-                            type="object"
-                            class="oe_inline oe_button btn-success"
-                            icon="fa-check"
-                        />
-                    <button
-                            name="action_reject_approval"
-                            string="Reject"
-                            type="object"
-                            class="btn-icon btn-danger"
-                            icon="fa-stop"
-                        />
-                </p>
-            </div>
-            <div
-                    class="alert alert-success"
-                    attrs="{'invisible': ['|', '|', ('approved', '!=', True), ('state', 'not in', ['confirm']), ('approval_ids', '=', [])]}"
-                    style="margin-bottom:0px;"
-                >
-                <p><i class="fa fa-thumbs-up" /> Operation has been <b>approved</b>!</p>
-            </div>
-            <div
-                    class="alert alert-danger"
-                    attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['confirm']), ('approval_ids', '=', [])]}"
-                    style="margin-bottom:0px;"
-                >
-                <p><i class="fa fa-thumbs-down" /> Operation has been <b
-                        >rejected</b>.</p>
-            </div>
             <sheet>
             <div name="div_smart_button" class="oe_button_box oe_right">
                 <button
