@@ -101,7 +101,6 @@ class FixedAssetAsset(models.Model):
     )
     code = fields.Char(
         string="Reference",
-        size=32,
         readonly=True,
         states={"draft": [("readonly", False)]},
         default="/",
@@ -879,18 +878,6 @@ class FixedAssetAsset(models.Model):
             asset_line = asset_line_obj.create(asset_line_vals)
             if self._context.get("create_asset_from_move_line"):
                 asset_line.move_id = self._context["move_id"]
-        ctx = self.env.context.copy()
-        ctx.update(
-            {
-                "ir_sequence_date": asset.date_start,
-            }
-        )
-        sequence = asset.with_context(ctx)._create_sequence()
-        asset.write(
-            {
-                "code": sequence,
-            }
-        )
         return asset
 
     @api.multi
