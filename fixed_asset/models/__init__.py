@@ -5,7 +5,6 @@ from . import (
     res_config,
     fixed_asset_category,
     account_account,
-    fixed_asset_recompute_trigger,
     fixed_asset_asset,
     fixed_asset_depreciation_line_subtype,
     fixed_asset_depreciation_line,

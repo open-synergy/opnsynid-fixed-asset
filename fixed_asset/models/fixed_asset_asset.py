@@ -1569,67 +1569,6 @@ class FixedAssetAsset(models.Model):
 
         return table
 
-    @api.multi
-    def _compute_entries(self, date_end, check_triggers=False):
-        # TODO : add ir_cron job calling this method to
-        # generate periodical accounting entries
-        result = []
-        obj_depreciation_line = self.env["fixed.asset.depreciation.line"]
-        error_log = ""
-        if check_triggers:
-            recompute_obj = self.env["fixed.asset.recompute.trigger"]
-            recomputes = recompute_obj.sudo().search([("state", "=", "open")])
-        if check_triggers and recomputes:
-            trigger_companies = recomputes.mapped("company_id")
-            for asset in self:
-                if asset.company_id.id in trigger_companies.ids:
-                    asset.compute_depreciation_board()
-
-        depreciations = obj_depreciation_line.search(
-            [
-                ("asset_id", "in", self.ids),
-                ("type", "=", "depreciate"),
-                ("init_entry", "=", False),
-                ("line_date", "<=", date_end),
-                ("move_check", "=", False),
-            ],
-            order="line_date",
-        )
-        for depreciation in depreciations:
-            try:
-                with self.env.cr.savepoint():
-                    result += depreciation.create_move()
-            except Exception:
-                e = exc_info()[0]
-                tb = "".join(format_exception(*exc_info()))
-                asset = depreciation.asset_id
-                asset_ref = (
-                    asset.code
-                    and "{} (ref: {})".format(asset.name, asset.code)
-                    or asset.name
-                )
-                error_log += _("\nError while processing asset '%s': %s") % (
-                    asset_ref,
-                    str(e),
-                )
-                error_msg = _("Error while processing asset '%s': \n\n%s") % (
-                    asset_ref,
-                    tb,
-                )
-                _logger.error("%s, %s", self._name, error_msg)
-
-        if check_triggers and recomputes:
-            companies = recomputes.mapped("company_id")
-            triggers = recomputes.filtered(lambda r: r.company_id.id in companies.ids)
-            if triggers:
-                recompute_vals = {
-                    "date_completed": fields.Datetime.now(),
-                    "state": "done",
-                }
-                triggers.sudo().write(recompute_vals)
-
-        return (result, error_log)
-
     # -- Constrains Methods --
     @api.constrains(
         "method",
