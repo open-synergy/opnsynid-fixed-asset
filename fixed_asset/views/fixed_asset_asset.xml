@@ -361,48 +361,6 @@
                         </form>
                         </field>
                     </page>
-                    <page name="page_history" string="History">
-                        <field name="account_move_line_ids" readonly="1">
-                            <tree
-                                    colors="red:parent_state == 'draft';black:parent_state == 'valid'"
-                                    string="Journal Items"
-                                >
-                                <field name="move_id" />
-                                <field name="journal_id" />
-                                <!-- <field name="period_id" /> -->
-                                <field name="date" />
-                                <field name="ref" />
-                                <field name="partner_id" />
-                                <field name="account_id" />
-                                <field name="debit" sum="Total Debit" />
-                                <field name="credit" sum="Total Credit" />
-                                <field name="parent_state" invisible="1" />
-                            </tree>
-                            <form string="Journal Item">
-                                <field name="journal_id" options='{"no_open":True}' />
-                                <field name="move_id" options='{"no_open":True}' />
-                                <newline />
-                                <field name="name" />
-                                <field name="ref" />
-                                <newline />
-                                <field name="date" />
-                                <!-- <field name="period_id" options='{"no_open":True}' /> -->
-                                <newline />
-                                <field name="partner_id" options='{"no_open":True}' />
-                                <newline />
-                                <field name="account_id" options='{"no_open":True}' />
-                                <field
-                                        name="analytic_account_id"
-                                        groups="analytic.group_analytic_accounting"
-                                        options='{"no_open":True}'
-                                    />
-                                <newline />
-                                <field name="debit" sum="Total Debit" />
-                                <field name="credit" sum="Total Credit" />
-                            </form>
-                        </field>
-                        <field name="history_ids" readonly="1" />
-                    </page>
                     <page name="page_note" string="Notes">
                         <field name="note" placeholder="Add an internal note here..." />
                     </page>

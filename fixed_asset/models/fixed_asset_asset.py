@@ -420,13 +420,6 @@ class FixedAssetAsset(models.Model):
         "have to be done from the depreciation start date instead "
         "of the first day of the fiscal year.",
     )
-    history_ids = fields.One2many(
-        string="History",
-        comodel_name="fixed.asset.history",
-        inverse_name="asset_id",
-        readonly=True,
-        copy=False,
-    )
     depreciation_line_ids = fields.One2many(
         string="Depreciation Lines",
         comodel_name="fixed.asset.depreciation.line",

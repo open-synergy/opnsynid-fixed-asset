@@ -34,7 +34,6 @@
         "views/account_move_line_view.xml",
         "views/account_move_view.xml",
         "views/fixed_asset_asset.xml",
-        "views/fixed_asset_history.xml",
         "views/account_invoice_view.xml",
     ],
     "demo": [],
