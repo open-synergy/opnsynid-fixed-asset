@@ -10,9 +10,9 @@
         <form string="Asset">
             <header>
                 <button
-                        string="Confirm Asset"
+                        string="Confirm"
                         name="action_confirm"
-                        attrs="{'invisible':[('state','!=','draft')]}"
+                        attrs="{'invisible':[('confirm_ok','=',False)]}"
                         type="object"
                         class="oe_highlight"
                     />
