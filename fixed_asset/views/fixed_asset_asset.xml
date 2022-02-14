@@ -287,7 +287,7 @@
                                     />
                             <button
                                         name="unlink_move"
-                                        icon="fa-unlink"
+                                        icon="fa-eraser"
                                         string="Delete Move"
                                         type="object"
                                         confirm="Are you sure ?"
