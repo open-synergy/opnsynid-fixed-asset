@@ -39,12 +39,11 @@
                         confirm="Cancel data. Are you sure?"
                     />
                 <button
-                        string="Set to Draft"
+                        string="Restart"
                         name="action_restart"
-                        attrs="{'invisible':[('state','!=','cancel')]}"
+                        attrs="{'invisible':[('restart_ok','=',False)]}"
                         confirm="Restart Asset. Are you sure?"
                         type="object"
-                        groups="account.group_account_manager"
                     />
                 <field
                         name="state"
