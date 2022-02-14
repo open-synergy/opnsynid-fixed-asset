@@ -838,6 +838,16 @@ class FixedAssetAsset(models.Model):
         string="Can Confirm",
         compute="_compute_policy",
     )
+    approve_ok = fields.Boolean(
+        string="Can Approve",
+        compute="_compute_policy",
+        store=False,
+    )
+    reject_ok = fields.Boolean(
+        string="Can Reject",
+        compute="_compute_policy",
+        store=False,
+    )    
     close_ok = fields.Boolean(
         string="Can Close",
         compute="_compute_policy",
@@ -1591,7 +1601,7 @@ class FixedAssetAsset(models.Model):
     )
     def onchange_policy_template_id(self):
         template_id = self._get_template_policy()
-        self.policy_template_id = template_id            
+        self.policy_template_id = template_id
 
     @api.onchange(
         "category_id",

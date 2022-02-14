@@ -19,20 +19,17 @@
                 <button
                     name="action_approve_approval"
                     string="Approve"
-                    attrs="{'invisible': [('approval_ids', '=', [])]}"
+                    attrs="{'invisible':[('approve_ok','=',False)]}"
                     type="object"
                     class="oe_highlight"
+                    confirm="Approve data. Are you sure?"
                 />
                 <button
                     name="action_reject_approval"
                     string="Reject"
+                    attrs="{'invisible':[('reject_ok','=',False)]}"
                     type="object"
-                />
-                <button
-                    name="action_request_approval"
-                    string="Request Approval"
-                    attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
-                    type="object"
+                    confirm="Reject data. Are you sure?"
                 />
                 <button
                         string="Cancel"
@@ -401,6 +398,8 @@
                                 class="oe_highlight"
                             />
                             <field name="confirm_ok" />
+                            <field name="approve_ok" />
+                            <field name="reject_ok" />
                             <field name="close_ok" />
                             <field name="cancel_ok" />
                             <field name="restart_ok" />
