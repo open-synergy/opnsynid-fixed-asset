@@ -66,21 +66,6 @@ class FixedAssetCategory(models.Model):
         required=True,
         domain=[("internal_type", "=", "other")],
     )
-    account_plus_value_id = fields.Many2one(
-        string="Plus-Value Account",
-        comodel_name="account.account",
-        domain=[("internal_type", "=", "other")],
-    )
-    account_min_value_id = fields.Many2one(
-        string="Min-Value Account",
-        comodel_name="account.account",
-        domain=[("internal_type", "=", "other")],
-    )
-    account_residual_value_id = fields.Many2one(
-        string="Residual Value Account",
-        comodel_name="account.account",
-        domain=[("internal_type", "=", "other")],
-    )
     journal_id = fields.Many2one(
         string="Journal",
         comodel_name="account.journal",

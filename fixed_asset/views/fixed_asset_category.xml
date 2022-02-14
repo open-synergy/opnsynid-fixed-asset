@@ -36,9 +36,6 @@
                                 <field name="account_asset_id" />
                                 <field name="account_depreciation_id" />
                                 <field name="account_expense_depreciation_id" />
-                                <field name="account_plus_value_id" />
-                                <field name="account_min_value_id" />
-                                <field name="account_residual_value_id" />
                             </group>
                             <group
                                 name="accounting_2"
