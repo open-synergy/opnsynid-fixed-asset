@@ -28,7 +28,6 @@
         "menu.xml",
         "data/ir_sequence_data.xml",
         "data/sequence_template_data.xml",
-        "wizards/wizard_asset_compute_view.xml",
         "views/fixed_asset_config_setting_views.xml",
         "views/fixed_asset_category.xml",
         "views/account_account_view.xml",
