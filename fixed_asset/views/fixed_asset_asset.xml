@@ -35,8 +35,8 @@
                         string="Cancel"
                         name="action_cancel"
                         type="object"
-                        attrs="{'invisible':[('state','=','cancel')]}"
-                        confirm="Cancel Asset. Are you sure?"
+                        attrs="{'invisible':[('cancel_ok','=',False)]}"
+                        confirm="Cancel data. Are you sure?"
                     />
                 <button
                         string="Set to Draft"
