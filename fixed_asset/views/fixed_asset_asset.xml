@@ -390,6 +390,16 @@
                     </page>
                     <page name="policy" string="Policies" groups="base.group_system">
                         <group name="policy_1" colspan="4" col="2">
+                            <field
+                                name="policy_template_id"
+                            />
+                            <button
+                                name="action_reload_policy_template"
+                                type="object"
+                                string="Reload Template Policy"
+                                icon="fa-refresh"
+                                class="oe_highlight"
+                            />
                             <field name="confirm_ok" />
                             <field name="close_ok" />
                             <field name="cancel_ok" />

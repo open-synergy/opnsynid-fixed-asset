@@ -1587,6 +1587,13 @@ class FixedAssetAsset(models.Model):
             self.account_analytic_id = category.account_analytic_id.id
 
     @api.onchange(
+        "type_id",
+    )
+    def onchange_policy_template_id(self):
+        template_id = self._get_template_policy()
+        self.policy_template_id = template_id            
+
+    @api.onchange(
         "category_id",
     )
     def onchange_date_min_prorate(self):
