@@ -75,30 +75,6 @@
                                 <field name="note" nolabel="1" />
                             </group>
                         </page>
-                        <page name="workflow_policy" string="Workflow Policy">
-                            <group name="workflow_policy_1" colspan="4" col="2">
-                                <field
-                                    name="asset_confim_group_ids"
-                                    widget="many2many_tags"
-                                />
-                                <field
-                                    name="asset_close_group_ids"
-                                    widget="many2many_tags"
-                                />
-                                <field
-                                    name="asset_cancel_group_ids"
-                                    widget="many2many_tags"
-                                />
-                                <field
-                                    name="asset_restart_group_ids"
-                                    widget="many2many_tags"
-                                />
-                                <field
-                                    name="asset_restart_approval_group_ids"
-                                    widget="many2many_tags"
-                                />
-                            </group>
-                        </page>
                     </notebook>
                 </sheet>
             </form>
