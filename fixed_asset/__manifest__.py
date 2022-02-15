@@ -25,6 +25,8 @@
     "data": [
         "security/account_asset_security.xml",
         "security/ir.model.access.csv",
+        "data/approval_template_data.xml",
+        "data/policy_template_data.xml",
         "menu.xml",
         "data/ir_sequence_data.xml",
         "data/sequence_template_data.xml",
