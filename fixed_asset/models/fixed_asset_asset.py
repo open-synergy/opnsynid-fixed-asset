@@ -900,7 +900,10 @@ class FixedAssetAsset(models.Model):
                 "type": "create",
             }
             asset_line = asset_line_obj.create(asset_line_vals)
+            if not asset.policy_template_id:
+                asset.onchange_policy_template_id()
         return asset
+ 
 
     @api.multi
     def write(self, vals):
