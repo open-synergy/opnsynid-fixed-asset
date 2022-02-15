@@ -429,6 +429,7 @@
       <field name="model">fixed.asset.asset</field>
       <field name="arch" type="xml">
           <tree string="Assets" colors="blue:(type == 'view')">
+                <field name="id"/>
                 <field name="name" />
                 <field name="type" invisible="1" />
                 <field name="code" />
