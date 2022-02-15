@@ -15,6 +15,7 @@
                         attrs="{'invisible':[('confirm_ok','=',False)]}"
                         type="object"
                         class="oe_highlight"
+                        confirm="Confirm data. Are you sure?"
                     />
                 <button
                     name="action_approve_approval"
@@ -82,8 +83,8 @@
             </div>
                 <group name="grp_1" colspan="4" col="2">
                     <group name="grp_1_1" colspan="1" col="2">
-                        <field name="parent_id" />
-                        <field name="type" />
+                        <field name="parent_id" invisible="1"/>
+                        <field name="type" invisible="1"/>
                         <field
                                 name="company_id"
                                 widget="selection"
@@ -95,6 +96,10 @@
                                 invisible="1"
                             />
                         <field name="move_line_check" invisible="1" />
+                        <field
+                                name="category_id"
+                                attrs="{'required':[('type','=','normal')]}"
+                            />
                     </group>
                     <group name="grp_1_1" colspan="1" col="2">
                         <field
@@ -119,27 +124,24 @@
                 </group>
                 <notebook colspan="4" attrs="{'invisible':[('type','=','view')]}">
                     <page name="page_general" string="General">
-                        <group name="grp_general_1" colspan="4" col="2">
+                        <group name="grp_general_1" colspan="4" col="2" string="Acquisition">
                             <group name="grp_general_1_1" colspan="1" col="2">
-                                 <field
-                                        name="purchase_value"
-                                        widget="monetary"
-                                        options="{'currency_field': 'currency_id'}"
-                                        attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"
-                                    />
-                                 <field
-                                        name="date_start"
-                                        attrs="{'readonly':[('state','!=','draft')],'required':[('type','=','normal')]}"
-                                    />
+                                <field name="asset_acquisition_move_line_id"/>
+                                <field name="asset_acquisition_move_id"/>
+
                             </group>
                             <group name="grp_general_1_2" colspan="1" col="2">
-                                 <field
-                                        name="salvage_value"
-                                        widget="monetary"
-                                        options="{'currency_field': 'company_currency_id'}"
-                                        attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"
-                                    />
-                                 <field name="date_remove" />
+                                <field
+                                       name="purchase_value"
+                                       widget="monetary"
+                                       options="{'currency_field': 'currency_id'}"
+                                       attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"
+                                   />
+                                <field
+                                       name="date_start"
+                                       attrs="{'readonly':[('state','!=','draft')],'required':[('type','=','normal')]}"
+                                   />
+                                <field name="partner_id" />
                             </group>
                         </group>
                         <group
@@ -149,16 +151,16 @@
                                 string="Other Information"
                             >
                             <field
-                                    name="category_id"
-                                    attrs="{'required':[('type','=','normal')]}"
-                                />
-                            <field name="partner_id" />
+                                   name="salvage_value"
+                                   widget="monetary"
+                                   options="{'currency_field': 'company_currency_id'}"
+                                   attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"
+                               />
                             <field
                                     name="account_analytic_id"
                                     groups="analytic.group_analytic_accounting"
                                 />
-                            <field name="asset_acquisition_move_line_id"/>
-                            <field name="asset_acquisition_move_id"/>
+                            <field name="date_remove" />
                         </group>
                         <group name="grp_general_3" colspan="4" col="2">
                             <group
