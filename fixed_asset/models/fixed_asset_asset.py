@@ -4,8 +4,6 @@
 import calendar
 import logging
 from datetime import datetime
-from sys import exc_info
-from traceback import format_exception
 
 from dateutil.relativedelta import relativedelta
 
@@ -899,11 +897,10 @@ class FixedAssetAsset(models.Model):
                 "init_entry": True,
                 "type": "create",
             }
-            asset_line = asset_line_obj.create(asset_line_vals)
+            asset_line_obj.create(asset_line_vals)
             if not asset.policy_template_id:
                 asset.onchange_policy_template_id()
         return asset
-
 
     @api.multi
     def write(self, vals):
@@ -1682,14 +1679,6 @@ class FixedAssetAsset(models.Model):
     def onchange_type_depreciation_line_ids(self):
         if self.depreciation_line_ids:
             self.depreciation_line_ids.unlink()
-
-    @api.onchange(
-        "category_id",
-    )
-    def onchange_policy_template_id(self):
-        template_id = self._get_template_policy()
-        for document in self:
-            document.policy_template_id = template_id
 
     # -- Workflow Methods --
     @api.multi

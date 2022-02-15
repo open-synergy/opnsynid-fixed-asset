@@ -90,9 +90,11 @@ class AccountMoveLine(models.Model):
         res = _super.create(vals)
 
         if asset:
-            asset.write({
-                "asset_acquisition_move_line_id": res.id,
-            })
+            asset.write(
+                {
+                    "asset_acquisition_move_line_id": res.id,
+                }
+            )
         return res
 
     # @api.multi

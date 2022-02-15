@@ -35,7 +35,7 @@ class AccountInvoice(models.Model):
                 line_id = data["invl_id"]
                 line = obj_line.browse([line_id])[0]
                 if line.fixed_asset_category_id:
-                    result[index].update({
-                        "fixed_asset_category_id": line.fixed_asset_category_id.id
-                    })
+                    result[index].update(
+                        {"fixed_asset_category_id": line.fixed_asset_category_id.id}
+                    )
         return result

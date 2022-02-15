@@ -8,7 +8,6 @@ from . import (
     fixed_asset_asset,
     fixed_asset_depreciation_line_subtype,
     fixed_asset_depreciation_line,
-    account_move,
     account_move_line,
     account_invoice_line,
     account_invoice,

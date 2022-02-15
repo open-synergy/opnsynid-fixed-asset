@@ -18,20 +18,20 @@
                         confirm="Confirm data. Are you sure?"
                     />
                 <button
-                    name="action_approve_approval"
-                    string="Approve"
-                    attrs="{'invisible':[('approve_ok','=',False)]}"
-                    type="object"
-                    class="oe_highlight"
-                    confirm="Approve data. Are you sure?"
-                />
+                        name="action_approve_approval"
+                        string="Approve"
+                        attrs="{'invisible':[('approve_ok','=',False)]}"
+                        type="object"
+                        class="oe_highlight"
+                        confirm="Approve data. Are you sure?"
+                    />
                 <button
-                    name="action_reject_approval"
-                    string="Reject"
-                    attrs="{'invisible':[('reject_ok','=',False)]}"
-                    type="object"
-                    confirm="Reject data. Are you sure?"
-                />
+                        name="action_reject_approval"
+                        string="Reject"
+                        attrs="{'invisible':[('reject_ok','=',False)]}"
+                        type="object"
+                        confirm="Reject data. Are you sure?"
+                    />
                 <button
                         string="Cancel"
                         name="action_cancel"
@@ -58,11 +58,11 @@
             <sheet>
                 <div class="oe_button_box" name="button_box">
                     <button
-                        icon="fa-book"
-                        name="open_entries"
-                        string="Journal Entries"
-                        type="object"
-                    />
+                            icon="fa-book"
+                            name="open_entries"
+                            string="Journal Entries"
+                            type="object"
+                        />
                 </div>
             <div name="div_title">
                 <label for="name" class="oe_edit_only" />
@@ -83,8 +83,8 @@
             </div>
                 <group name="grp_1" colspan="4" col="2">
                     <group name="grp_1_1" colspan="1" col="2">
-                        <field name="parent_id" invisible="1"/>
-                        <field name="type" invisible="1"/>
+                        <field name="parent_id" invisible="1" />
+                        <field name="type" invisible="1" />
                         <field
                                 name="company_id"
                                 widget="selection"
@@ -124,23 +124,28 @@
                 </group>
                 <notebook colspan="4" attrs="{'invisible':[('type','=','view')]}">
                     <page name="page_general" string="General">
-                        <group name="grp_general_1" colspan="4" col="2" string="Acquisition">
+                        <group
+                                name="grp_general_1"
+                                colspan="4"
+                                col="2"
+                                string="Acquisition"
+                            >
                             <group name="grp_general_1_1" colspan="1" col="2">
-                                <field name="asset_acquisition_move_line_id"/>
-                                <field name="asset_acquisition_move_id"/>
+                                <field name="asset_acquisition_move_line_id" />
+                                <field name="asset_acquisition_move_id" />
 
                             </group>
                             <group name="grp_general_1_2" colspan="1" col="2">
                                 <field
-                                       name="purchase_value"
-                                       widget="monetary"
-                                       options="{'currency_field': 'currency_id'}"
-                                       attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"
-                                   />
+                                        name="purchase_value"
+                                        widget="monetary"
+                                        options="{'currency_field': 'currency_id'}"
+                                        attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"
+                                    />
                                 <field
-                                       name="date_start"
-                                       attrs="{'readonly':[('state','!=','draft')],'required':[('type','=','normal')]}"
-                                   />
+                                        name="date_start"
+                                        attrs="{'readonly':[('state','!=','draft')],'required':[('type','=','normal')]}"
+                                    />
                                 <field name="partner_id" />
                             </group>
                         </group>
@@ -151,11 +156,11 @@
                                 string="Other Information"
                             >
                             <field
-                                   name="salvage_value"
-                                   widget="monetary"
-                                   options="{'currency_field': 'company_currency_id'}"
-                                   attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"
-                               />
+                                    name="salvage_value"
+                                    widget="monetary"
+                                    options="{'currency_field': 'company_currency_id'}"
+                                    attrs="{'readonly':['|',('move_line_check','=',True),('state','!=','draft')]}"
+                                />
                             <field
                                     name="account_analytic_id"
                                     groups="analytic.group_analytic_accounting"
@@ -381,16 +386,14 @@
                     </page>
                     <page name="policy" string="Policies" groups="base.group_system">
                         <group name="policy_1" colspan="4" col="2">
-                            <field
-                                name="policy_template_id"
-                            />
+                            <field name="policy_template_id" />
                             <button
-                                name="action_reload_policy_template"
-                                type="object"
-                                string="Reload Template Policy"
-                                icon="fa-refresh"
-                                class="oe_highlight"
-                            />
+                                    name="action_reload_policy_template"
+                                    type="object"
+                                    string="Reload Template Policy"
+                                    icon="fa-refresh"
+                                    class="oe_highlight"
+                                />
                             <field name="confirm_ok" />
                             <field name="approve_ok" />
                             <field name="reject_ok" />
@@ -429,7 +432,7 @@
       <field name="model">fixed.asset.asset</field>
       <field name="arch" type="xml">
           <tree string="Assets" colors="blue:(type == 'view')">
-                <field name="id"/>
+                <field name="id" />
                 <field name="name" />
                 <field name="type" invisible="1" />
                 <field name="code" />
@@ -488,35 +491,31 @@
                     />
             </group>
             <group expand="0" string="Group By...">
-                  <filter
-                      name="grp_type"
-                      string="Type"
-                      context="{'group_by':'type'}"
-                      />
+                  <filter name="grp_type" string="Type" context="{'group_by':'type'}" />
                 <filter
-                      name="grp_category"
-                      string="Category"
-                      context="{'group_by':'category_id'}"
+                        name="grp_category"
+                        string="Category"
+                        context="{'group_by':'category_id'}"
                     />
                 <filter
-                      name="grp_date_start_year"
-                      string="Date Start by Year"
-                      context="{'group_by':'date_start:year'}"
+                        name="grp_date_start_year"
+                        string="Date Start by Year"
+                        context="{'group_by':'date_start:year'}"
                     />
                 <filter
-                      name="grp_date_start_month"
-                      string="Date Start by Month"
-                      context="{'group_by':'date_start:month'}"
+                        name="grp_date_start_month"
+                        string="Date Start by Month"
+                        context="{'group_by':'date_start:month'}"
                     />
                 <filter
-                      name="grp_date_start_week"
-                      string="Date Start by Week"
-                      context="{'group_by':'date_start:week'}"
+                        name="grp_date_start_week"
+                        string="Date Start by Week"
+                        context="{'group_by':'date_start:week'}"
                     />
                 <filter
-                      name="grp_date_start_day"
-                      string="Date Start by Day"
-                      context="{'group_by':'date_start:week'}"
+                        name="grp_date_start_day"
+                        string="Date Start by Day"
+                        context="{'group_by':'date_start:week'}"
                     />
 
             </group>
