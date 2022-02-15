@@ -48,6 +48,19 @@ class FixedAssetAsset(models.Model):
         comodel_name="account.move.line",
         inverse_name="fixed_asset_id",
         readonly=True,
+        copy=False,
+    )
+    asset_acquisition_move_line_id = fields.Many2one(
+        string="Acquisiton Journal Item",
+        comodel_name="account.move.line",
+        readonly=True,
+        ondelete="restrict",
+    )
+    asset_acquisition_move_id = fields.Many2one(
+        string="Acquisiton Journal Entry",
+        comodel_name="account.move",
+        related="asset_acquisition_move_line_id.move_id",
+        readonly=True,
     )
 
     @api.multi
@@ -887,8 +900,6 @@ class FixedAssetAsset(models.Model):
                 "type": "create",
             }
             asset_line = asset_line_obj.create(asset_line_vals)
-            if self._context.get("create_asset_from_move_line"):
-                asset_line.move_id = self._context["move_id"]
         return asset
 
     @api.multi
@@ -921,16 +932,6 @@ class FixedAssetAsset(models.Model):
                     raise UserError(
                         _("You can only delete data on draft state"),
                     )
-            if document.account_move_line_ids:
-                raise UserError(
-                    _(
-                        "You cannot delete an asset that contains "
-                        "posted depreciation lines."
-                    ),
-                )
-            parent = document.parent_id
-            if parent:
-                document.salvage_value = parent.salvage_value
         _super = super(FixedAssetAsset, self)
         _super.unlink()
 

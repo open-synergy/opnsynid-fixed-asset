@@ -157,6 +157,8 @@
                                     name="account_analytic_id"
                                     groups="analytic.group_analytic_accounting"
                                 />
+                            <field name="asset_acquisition_move_line_id"/>
+                            <field name="asset_acquisition_move_id"/>
                         </group>
                         <group name="grp_general_3" colspan="4" col="2">
                             <group

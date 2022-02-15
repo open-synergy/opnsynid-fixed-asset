@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
+from odoo.exceptions import UserError
 
 
 class AccountInvoiceLine(models.Model):
@@ -40,12 +41,4 @@ class AccountInvoiceLine(models.Model):
                     res["value"] = {}
                 else:
                     res["value"]["fixed_asset_category_id"] = asset_category.id
-        return res
-
-    @api.multi
-    def move_line_get_item(self, line):
-        _super = super(AccountInvoiceLine, self)
-        res = _super.move_line_get_item(line)
-        if line.fixed_asset_category_id:
-            res["fixed_asset_category_id"] = line.fixed_asset_category_id.id
         return res
