@@ -903,7 +903,7 @@ class FixedAssetAsset(models.Model):
             if not asset.policy_template_id:
                 asset.onchange_policy_template_id()
         return asset
- 
+
 
     @api.multi
     def write(self, vals):
@@ -1725,10 +1725,18 @@ class FixedAssetAsset(models.Model):
     @api.multi
     def _prepare_open_data(self):
         self.ensure_one()
+        ctx = self.env.context.copy()
+        ctx.update(
+            {
+                "ir_sequence_date": self.date_start,
+            }
+        )
+        sequence = self.with_context(ctx)._create_sequence()
         return {
             "state": "open",
             "open_date": fields.Datetime.now(),
             "open_user_id": self.env.user.id,
+            "code": sequence,
         }
 
     @api.multi
