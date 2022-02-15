@@ -488,18 +488,37 @@
                     />
             </group>
             <group expand="0" string="Group By...">
+                  <filter
+                      name="grp_type"
+                      string="Type"
+                      context="{'group_by':'type'}"
+                      />
                 <filter
-                        string="Type"
-                        icon="terp-stock_symbol-selection"
-                        domain=""
-                        context="{'group_by':'type'}"
+                      name="grp_category"
+                      string="Category"
+                      context="{'group_by':'category_id'}"
                     />
                 <filter
-                        string="Category"
-                        icon="terp-stock_symbol-selection"
-                        domain=""
-                        context="{'group_by':'category_id'}"
+                      name="grp_date_start_year"
+                      string="Date Start by Year"
+                      context="{'group_by':'date_start:year'}"
                     />
+                <filter
+                      name="grp_date_start_month"
+                      string="Date Start by Month"
+                      context="{'group_by':'date_start:month'}"
+                    />
+                <filter
+                      name="grp_date_start_week"
+                      string="Date Start by Week"
+                      context="{'group_by':'date_start:week'}"
+                    />
+                <filter
+                      name="grp_date_start_day"
+                      string="Date Start by Day"
+                      context="{'group_by':'date_start:week'}"
+                    />
+
             </group>
         </search>
     </field>
