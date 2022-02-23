@@ -405,16 +405,7 @@
                     </page>
                     <page name="page_log" string="Logs">
                         <group name="grp_log_1" colspan="4" col="3">
-                            <group name="grp_log_2" colspan="4" col="3">
-                                <field name="confirm_date" string="Confirmation" />
-                                <field name="confirm_user_id" nolabel="1" />
-                                <field name="open_date" string="Running On" />
-                                <field name="open_user_id" nolabel="1" />
-                                <field name="close_date" string="Closing On" />
-                                <field name="close_user_id" nolabel="1" />
-                                <field name="cancel_date" string="Cancel" />
-                                <field name="cancel_user_id" nolabel="1" />
-                            </group>
+                            <field name="state_change_history_ids" nolabel="1" />
                         </group>
                     </page>
                 </notebook>
