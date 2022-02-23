@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Fixed Asset",
-    "version": "11.0.1.0.0",
+    "version": "11.0.2.0.0",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
@@ -16,6 +16,7 @@
         "ssi_sequence_mixin",
         "ssi_policy_mixin",
         "ssi_multiple_approval_mixin",
+        "ssi_state_change_history_mixin",
     ],
     "external_dependencies": {
         "python": [

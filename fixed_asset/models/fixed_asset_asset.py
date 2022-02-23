@@ -34,6 +34,7 @@ class FixedAssetAsset(models.Model):
         "mixin.multiple_approval",
         "mixin.sequence",
         "mixin.policy",
+        "mixin.state_change_history",
     ]
     _order = "date_start desc, name"
     _parent_store = True
@@ -796,49 +797,6 @@ class FixedAssetAsset(models.Model):
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
-    # Log Fields
-    confirm_date = fields.Datetime(
-        string="Confirm Date",
-        readonly=True,
-        copy=False,
-    )
-    confirm_user_id = fields.Many2one(
-        string="Confirmed By",
-        comodel_name="res.users",
-        readonly=True,
-        copy=False,
-    )
-    open_date = fields.Datetime(
-        string="Running Date",
-        readonly=True,
-        copy=False,
-    )
-    open_user_id = fields.Many2one(
-        string="Running By",
-        comodel_name="res.users",
-        readonly=True,
-        copy=False,
-    )
-    close_date = fields.Datetime(
-        string="Close Date",
-        readonly=True,
-        copy=False,
-    )
-    close_user_id = fields.Many2one(
-        string="Close By",
-        comodel_name="res.users",
-        readonly=True,
-        copy=False,
-    )
-    cancel_date = fields.Datetime(
-        string="Cancel Date",
-        readonly=True,
-    )
-    cancel_user_id = fields.Many2one(
-        string="Cancelled By",
-        comodel_name="res.users",
-        readonly=True,
-    )
 
     @api.multi
     def _compute_policy(self):
@@ -1597,6 +1555,8 @@ class FixedAssetAsset(models.Model):
             self.method_progress_factor = category.method_progress_factor
             self.prorata = category.prorata
             self.account_analytic_id = category.account_analytic_id.id
+            self.date_min_prorate = self.date_min_prorate
+            self.prorate_by_month = True
 
     @api.onchange(
         "type_id",
