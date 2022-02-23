@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+        <record id="sequence_template_fixed_asset_disposal" model="sequence.template">
+            <field name="name">Fixed Asset Disposal Sequence Template</field>
+            <field
+            name="model_id"
+            ref="fixed_asset_disposal.model_fixed_asset_disposal"
+        />
+            <field
+            name="sequence_field_id"
+            search="[('model_id.model','=','fixed.asset.disposal'),('name','=','name')]"
+        />
+            <field
+            name="date_field_id"
+            search="[('model_id.model','=','fixed.asset.disposal'),('name','=','date_disposition')]"
+        />
+            <field name="sequence_selection_method">use_sequence</field>
+            <field
+            name="sequence_id"
+            ref="fixed_asset_disposal.sequence_fixed_asset_disposal"
+        />
+            <field name="add_custom_prefix">False</field>
+            <field name="add_custom_suffix">False</field>
+            <field name="python_code">result = True</field>
+        </record>
+</odoo>
