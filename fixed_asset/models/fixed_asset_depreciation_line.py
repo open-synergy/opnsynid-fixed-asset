@@ -131,18 +131,16 @@ class FixedAssetDepreciationLine(models.Model):
 
         for document in self:
             if document.type == "create":
-                raise UserError(
-                    _("Error!"),
-                    _("You cannot remove an asset line " "of type 'Asset Value'."),
+                str_msg = _(
+                    "Error!\nYou cannot remove an asset line " "of type 'Asset Value'."
                 )
+                raise UserError(str_msg)
             elif document.move_id:
-                raise UserError(
-                    _("Error!"),
-                    _(
-                        "You cannot delete a depreciation line with "
-                        "an associated accounting entry."
-                    ),
+                str_msg = _(
+                    "Error!\nYou cannot delete a depreciation line with "
+                    "an associated accounting entry."
                 )
+                raise UserError(str_msg)
 
             previous_id = document.previous_id and document.previous_id.id or False
 
@@ -170,22 +168,20 @@ class FixedAssetDepreciationLine(models.Model):
                 # allow to remove an accounting entry via the
                 # 'Delete Move' button on the depreciation lines.
                 if not self.env.context.get("unlink_from_asset"):
-                    raise UserError(
-                        _(
-                            "You are not allowed to remove an accounting entry "
-                            "linked to an asset."
-                            "\nYou should remove such entries from the asset."
-                        )
+                    str_msg = _(
+                        "Error!\nYou are not allowed to remove an accounting entry "
+                        "linked to an asset."
+                        "\nYou should remove such entries from the asset."
                     )
+                    raise UserError(str_msg)
             elif vals.keys() == ["asset_id"]:
                 continue
             elif dl.move_id and not self.env.context.get("allow_asset_line_update"):
-                raise UserError(
-                    _(
-                        "You cannot change a depreciation line "
-                        "with an associated accounting entry."
-                    )
+                str_msg = _(
+                    "Error!\nYou cannot change a depreciation line "
+                    "with an associated accounting entry."
                 )
+                raise UserError(str_msg)
             elif vals.get("init_entry"):
                 self.env.cr.execute(
                     "SELECT id "
@@ -196,13 +192,12 @@ class FixedAssetDepreciationLine(models.Model):
                 )
                 res = self.env.cr.fetchone()
                 if res:
-                    raise UserError(
-                        _(
-                            "You cannot set the 'Initial Balance Entry' flag "
-                            "on a depreciation line "
-                            "with prior posted entries."
-                        )
+                    str_msg = _(
+                        "Error!\nYou cannot set the 'Initial Balance Entry' flag "
+                        "on a depreciation line "
+                        "with prior posted entries."
                     )
+                    raise UserError(str_msg)
         return super(FixedAssetDepreciationLine, self).write(vals)
 
     @api.multi
