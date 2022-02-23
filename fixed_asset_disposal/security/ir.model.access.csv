@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+fixed_asset_disposal_type_employee,fixed.asset.disposal_type – Employee,model_fixed_asset_disposal_type,base.group_user,1,1,1,1
+fixed_asset_disposal_type_all,fixed.asset.disposal_type – All,model_fixed_asset_disposal_type,,1,0,0,0
+fixed_asset_disposal_employee,fixed.asset.disposal – Employee,model_fixed_asset_disposal,base.group_user,1,1,1,1
+fixed_asset_disposal_all,fixed.asset.disposal – All,model_fixed_asset_disposal,,1,0,0,0
