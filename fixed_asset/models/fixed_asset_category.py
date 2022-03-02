@@ -194,6 +194,6 @@ class FixedAssetCategory(models.Model):
             account_asset_id = values.get("account_asset_id")
             if account_asset_id:
                 account = obj_account_account.browse(account_asset_id)
-                if not account.asset_category_id:
-                    account.write({"asset_category_id": rec.id})
+                if not account.fixed_asset_category_id:
+                    account.write({"fixed_asset_category_id": rec.id})
         return result
