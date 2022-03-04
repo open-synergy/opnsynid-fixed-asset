@@ -143,9 +143,7 @@
                                 <field name="loss_account_id" />
                             </group>
                             <group name="acc_config_1_2" colspan="1" col="2">
-                                <field name="exchange_journal_id" />
                                 <field name="disposal_journal_id" />
-                                <field name="gain_journal_id" />
                             </group>
                         </group>
                     </page>
@@ -264,15 +262,7 @@
                     groups="fixed_asset_disposal.group_technical_disposal_accounting"
                 />
             <field
-                    name="exchange_journal_id"
-                    groups="fixed_asset_disposal.group_technical_disposal_accounting"
-                />
-            <field
                     name="disposal_journal_id"
-                    groups="fixed_asset_disposal.group_technical_disposal_accounting"
-                />
-            <field
-                    name="gain_journal_id"
                     groups="fixed_asset_disposal.group_technical_disposal_accounting"
                 />
             <field name="state" />
@@ -345,21 +335,9 @@
                         groups="fixed_asset_disposal.group_technical_disposal_accounting"
                     />
                 <filter
-                        name="grp_exchange_journal"
-                        string="Exchange Journal"
-                        context="{'group_by':'exchange_journal_id'}"
-                        groups="fixed_asset_disposal.group_technical_disposal_accounting"
-                    />
-                <filter
                         name="grp_disposal_journal"
                         string="Disposal Journal"
                         context="{'group_by':'disposal_journal_id'}"
-                        groups="fixed_asset_disposal.group_technical_disposal_accounting"
-                    />
-                <filter
-                        name="grp_gain_journal"
-                        string="Gain/Loss Journal"
-                        context="{'group_by':'gain_journal_id'}"
                         groups="fixed_asset_disposal.group_technical_disposal_accounting"
                     />
                 <filter

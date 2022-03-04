@@ -32,18 +32,8 @@ class FixedAssetDisposalType(models.Model):
         comodel_name="ir.sequence",
         company_dependent=True,
     )
-    exchange_journal_id = fields.Many2one(
-        string="Exchange Journal",
-        comodel_name="account.journal",
-        company_dependent=True,
-    )
     disposal_journal_id = fields.Many2one(
         string="Disposal Journal",
-        comodel_name="account.journal",
-        company_dependent=True,
-    )
-    gain_journal_id = fields.Many2one(
-        string="Gain Journal",
         comodel_name="account.journal",
         company_dependent=True,
     )

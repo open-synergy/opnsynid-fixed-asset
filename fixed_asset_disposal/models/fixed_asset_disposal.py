@@ -224,26 +224,8 @@ class FixedAssetDisposal(models.Model):
             ],
         },
     )
-    exchange_journal_id = fields.Many2one(
-        string="Exchange Journal",
-        comodel_name="account.journal",
-        readonly=True,
-        required=True,
-        states={
-            "draft": [("readonly", False)],
-        },
-    )
     disposal_journal_id = fields.Many2one(
         string="Disposal Journal",
-        comodel_name="account.journal",
-        readonly=True,
-        required=True,
-        states={
-            "draft": [("readonly", False)],
-        },
-    )
-    gain_journal_id = fields.Many2one(
-        string="Gain Journal",
         comodel_name="account.journal",
         readonly=True,
         required=True,
@@ -418,20 +400,14 @@ class FixedAssetDisposal(models.Model):
     @api.multi
     def action_cancel(self):
         for document in self:
-            exchange_acc_move = self.exchange_acc_move_id
             disposal_acc_move = self.disposal_acc_move_id
-            gain_acc_move = self.gain_acc_move_id
             if document.depreciation_line_id:
                 document.depreciation_line_id.unlink_move()
                 document.depreciation_line_id.unlink()
             document.write(self._prepare_cancel_data())
             document.asset_id.compute_depreciation_board()
-            if exchange_acc_move:
-                exchange_acc_move.unlink()
             if disposal_acc_move:
                 disposal_acc_move.unlink()
-            if gain_acc_move:
-                gain_acc_move.unlink()
             document.asset_id.write(
                 {
                     "state": "open",
@@ -471,8 +447,6 @@ class FixedAssetDisposal(models.Model):
         result = {
             "state": "valid",
             "disposal_acc_move_id": disposal_acc_move and disposal_acc_move.id or False,
-            "validated_user_id": self.env.user.id,
-            "validated_date": fields.Datetime.now(),
             "depreciation_line_id": depreciation_line.id,
         }
         return result
@@ -482,9 +456,7 @@ class FixedAssetDisposal(models.Model):
         self.ensure_one()
         result = {
             "state": "cancel",
-            "exchange_acc_move_id": False,
             "disposal_acc_move_id": False,
-            "gain_acc_move_id": False,
             "depreciation_line_id": False,
         }
         return result
@@ -542,22 +514,10 @@ class FixedAssetDisposal(models.Model):
             self.loss_account_id = self.type_id.loss_account_id
 
     @api.onchange("asset_id", "type_id")
-    def onchange_exchange_journal_id(self):
-        self.exchange_journal_id = False
-        if self.type_id:
-            self.exchange_journal_id = self.type_id.exchange_journal_id
-
-    @api.onchange("asset_id", "type_id")
     def onchange_disposal_journal_id(self):
         self.disposal_journal_id = False
         if self.type_id:
             self.disposal_journal_id = self.type_id.disposal_journal_id
-
-    @api.onchange("asset_id", "type_id")
-    def onchange_gain_journal_id(self):
-        self.gain_journal_id = False
-        if self.type_id:
-            self.gain_journal_id = self.type_id.gain_journal_id
 
     @api.onchange(
         "type_id",
@@ -595,16 +555,6 @@ class FixedAssetDisposal(models.Model):
             "journal_id": journal.id,
             "line_id": move_lines,
         }
-
-    @api.multi
-    def _prepare_exchange_acc_move(self):
-        self.ensure_one()
-        journal = self.exchange_journal_id
-        move_lines = (
-            self._prepare_exchange_debit_move_line()
-            + self._prepare_exchange_credit_move_line()
-        )
-        return self._prepare_acc_move(journal, move_lines)
 
     @api.multi
     def _prepare_disposal_acc_move(self):
@@ -665,135 +615,9 @@ class FixedAssetDisposal(models.Model):
         )
 
     @api.multi
-    def _prepare_gain_acc_move(self):
-        self.ensure_one()
-        journal = self.gain_journal_id
-        move_lines = (
-            self._prepare_gain_debit_move_line() + self._prepare_gain_credit_move_line()
-        )
-        return self._prepare_acc_move(journal, move_lines)
-
-    @api.multi
-    def _create_exchange_acc_move(self):
-        self.ensure_one()
-        return self.env["account.move"].create(self._prepare_exchange_acc_move())
-
-    @api.multi
     def _create_disposal_acc_move(self):
         self.ensure_one()
         return self.env["account.move"].create(self._prepare_disposal_acc_move())
-
-    @api.multi
-    def _create_gain_acc_move(self):
-        self.ensure_one()
-        return self.env["account.move"].create(self._prepare_gain_acc_move())
-
-    @api.multi
-    def _prepare_exchange_move_line(self, description, account, debit, credit):
-        self.ensure_one()
-        return [
-            (
-                0,
-                0,
-                {
-                    "name": description,
-                    "account_id": account,
-                    "debit": debit,
-                    "credit": credit,
-                    "analytic_account_id": False,
-                },
-            )
-        ]
-
-    @api.multi
-    def _prepare_exchange_debit_move_line(self):
-        self.ensure_one()
-        description = "%s fixed asset disposal" % (self.asset_id.code)
-        return self._prepare_exchange_move_line(
-            description=_(description),
-            account=self.exchange_account_id.id,
-            debit=self.disposition_price,
-            credit=0.0,
-        )
-
-    @api.multi
-    def _prepare_exchange_credit_move_line(self):
-        self.ensure_one()
-        description = "%s fixed asset disposal" % (self.asset_id.code)
-        return self._prepare_exchange_move_line(
-            description=_(description),
-            account=self.gain_account_id.id,
-            debit=0.0,
-            credit=self.disposition_price,
-        )
-
-    @api.multi
-    def _prepare_disposal_debit_move_line(self):
-        self.ensure_one()
-        description = "%s fixed asset disposal" % (self.asset_id.code)
-        return self._prepare_exchange_move_line(
-            description=_(description),
-            account=self.accumulated_depreciation_account_id.id,
-            debit=self.depreciated_amount,
-            credit=0.0,
-        )
-
-    @api.multi
-    def _prepare_disposal_credit_move_line(self):
-        self.ensure_one()
-        description = "%s fixed asset disposal" % (self.asset_id.code)
-        return self._prepare_exchange_move_line(
-            description=_(description),
-            account=self.asset_account_id.id,
-            debit=0.0,
-            credit=self.depreciated_amount,
-        )
-
-    @api.multi
-    def _prepare_gain_debit_move_line(self):
-        self.ensure_one()
-        description = "%s fixed asset disposal" % (self.asset_id.code)
-        return self._prepare_exchange_move_line(
-            description=_(description),
-            account=self._get_gain_debit_account().id,
-            debit=abs(self.gain_loss_amount),
-            credit=0.0,
-        )
-
-    @api.multi
-    def _prepare_gain_credit_move_line(self):
-        self.ensure_one()
-        description = "%s fixed asset disposal" % (self.asset_id.code)
-        return self._prepare_exchange_move_line(
-            description=_(description),
-            account=self._get_gain_credit_account().id,
-            debit=0.0,
-            credit=abs(self.gain_loss_amount),
-        )
-
-    @api.multi
-    def _get_gain_debit_account(self):
-        self.ensure_one()
-        if self.gain_loss_amount >= 0.0:
-            return self.gain_account_id
-        else:
-            return self.accumulated_depreciation_account_id
-
-    @api.multi
-    def _get_gain_credit_account(self):
-        self.ensure_one()
-        if self.gain_loss_amount < 0.0:
-            return self.loss_account_id
-        else:
-            return self.accumulated_depreciation_account_id
-
-    @api.multi
-    def _get_gain_account(self):
-        self.ensure_one()
-        if self.gain_loss_amount < 0.0:
-            return self.loss_account_id
-        else:
-            return self.gain_account_id
 
     @api.multi
     def _prepare_depreciation_line(self):

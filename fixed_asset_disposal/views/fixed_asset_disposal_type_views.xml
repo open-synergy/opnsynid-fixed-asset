@@ -21,6 +21,7 @@
         <form>
             <group name="top" colspan="4" col="2">
                 <field name="name" />
+                <field name="code" />
                 <field name="active" />
             </group>
             <notebook>
@@ -31,9 +32,15 @@
                             <field name="set_disposition_price" />
                         </group>
                         <group name="general_1_2" colspan="1" col="2">
-                            <field name="exchange_journal_id" />
+                        </group>
+                    </group>
+                </page>
+                <page name="accounting" string="Accounting Configuration">
+                    <group name="accounting_1" colspan="4" col="2">
+                        <group name="accounting_1_1" colspan="1" col="2">
                             <field name="disposal_journal_id" />
-                            <field name="gain_journal_id" />
+                        </group>
+                        <group name="accounting_1_2" colspan="1" col="2">
                             <field name="exchange_account_id" />
                             <field name="gain_account_id" />
                             <field name="loss_account_id" />
@@ -57,7 +64,7 @@
 </record>
 
 <record id="fixed_asset_disposal_type_action" model="ir.actions.act_window">
-    <field name="name">Fixed Asset Disposal Type</field>
+    <field name="name">Fixed Asset Disposal Types</field>
     <field name="res_model">fixed.asset.disposal_type</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
@@ -65,7 +72,7 @@
 
 <menuitem
         id="fixed_asset_disposal_type_menu"
-        name="Fixed Asset Disposal Type"
+        name="Disposal Types"
         parent="fixed_asset.menu_finance_config_assets"
         action="fixed_asset_disposal_type_action"
         sequence="1"
