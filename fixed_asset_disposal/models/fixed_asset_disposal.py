@@ -530,13 +530,7 @@ class FixedAssetDisposal(models.Model):
     def create(self, values):
         _super = super(FixedAssetDisposal, self)
         result = _super.create(values)
-        ctx = self.env.context.copy()
-        ctx.update(
-            {
-                "ir_sequence_date": result.date_disposition,
-            }
-        )
-        sequence = result.with_context(ctx)._create_sequence()
+        sequence = result._create_sequence()
         result.write(
             {
                 "name": sequence,
