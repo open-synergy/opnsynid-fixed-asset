@@ -1735,10 +1735,18 @@ class FixedAssetAsset(models.Model):
     @api.multi
     def _prepare_close_data(self):
         self.ensure_one()
+        ctx = self.env.context.copy()
+        ctx.update(
+            {
+                "ir_sequence_date": self.date_start,
+            }
+        )
+        sequence = self.with_context(ctx)._create_sequence()
         return {
             "state": "close",
             "close_date": fields.Datetime.now(),
             "close_user_id": self.env.user.id,
+            "code": sequence,
         }
 
     @api.multi
