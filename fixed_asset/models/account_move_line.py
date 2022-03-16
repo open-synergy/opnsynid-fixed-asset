@@ -158,9 +158,15 @@ class AccountMoveLine(models.Model):
     @api.multi
     def unlink(self):
         _super = super(AccountMoveLine, self)
+        obj_fa = self.env["fixed.asset.asset"]
         for record in self:
             if record.fixed_asset_id:
-                fixed_asset = record.fixed_asset_id
-                record.write({"fixed_asset_id": False})
-                fixed_asset.unlink()
+                criteria = [
+                    ("asset_acquisition_move_line_id", "=", record.id),
+                ]
+                fixed_assets = obj_fa.search(criteria)
+                if len(fixed_assets) > 0:
+                    fixed_asset = fixed_assets[0]
+                    record.write({"fixed_asset_id": False})
+                    fixed_asset.unlink()
         return _super.unlink()
