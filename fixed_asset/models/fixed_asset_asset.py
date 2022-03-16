@@ -515,7 +515,7 @@ class FixedAssetAsset(models.Model):
             ) * asset.method_number
             np_date_unit = asset._get_numpy_date_unit()
 
-            dt_asset_start_date = np.datetime64(asset.date_start, np_date_unit)
+            dt_asset_start_date = np.datetime64(asset._get_date_start(), np_date_unit)
 
             if asset_value:
                 dt_posted_asset_value_date = np.datetime64(
@@ -1123,7 +1123,7 @@ class FixedAssetAsset(models.Model):
     @api.multi
     def _get_depreciation_stop_date(self, depreciation_start_date):
         self.ensure_one()
-        asset_start_date = datetime.strptime(self.date_start, "%Y-%m-%d")
+        asset_start_date = datetime.strptime(self._get_date_start(), "%Y-%m-%d")
         asset_start_date += relativedelta(day=1)
         depreciation_stop_date = asset_start_date + relativedelta(
             years=self.method_number, days=-1
@@ -1368,10 +1368,10 @@ class FixedAssetAsset(models.Model):
 
         company = self.company_id
         init_flag = False
-        asset_date_start = datetime.strptime(self.date_start, "%Y-%m-%d")
+        asset_date_start = datetime.strptime(self._get_date_start(), "%Y-%m-%d")
         fy = company.find_daterange_fy(asset_date_start)
         fiscalyear_lock_date = company.fiscalyear_lock_date
-        if fiscalyear_lock_date and fiscalyear_lock_date >= self.date_start:
+        if fiscalyear_lock_date and fiscalyear_lock_date >= self._get_date_start():
             init_flag = True
         if fy:
             fy_id = fy.id
@@ -1584,12 +1584,14 @@ class FixedAssetAsset(models.Model):
 
     @api.onchange(
         "date_start",
+        "prorate_by_month",
+        "date_min_prorate",
     )
     def onchange_line_date_depreciation_line(self):
         dl_ids = self.depreciation_line_ids.filtered(lambda x: x.type == "create")
         if dl_ids:
             for document in dl_ids:
-                document.line_date = self.date_start
+                document.line_date = self._get_date_start()
 
     @api.onchange(
         "method_time",
