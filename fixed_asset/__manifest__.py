@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Fixed Asset",
-    "version": "11.0.2.0.3",
+    "version": "11.0.2.1.0",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
@@ -31,6 +31,7 @@
         "menu.xml",
         "data/ir_sequence_data.xml",
         "data/sequence_template_data.xml",
+        "wizards/mass_depreciation_views.xml",
         "views/fixed_asset_config_setting_views.xml",
         "views/fixed_asset_category.xml",
         "views/account_account_view.xml",
