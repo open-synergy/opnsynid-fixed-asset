@@ -85,6 +85,7 @@ class AccountMoveLine(models.Model):
             )
             asset = obj_fixed_asset.with_context(ctx).create(asset_vals)
             asset.onchange_category_id()
+            asset.onchange_line_date_depreciation_line()
             vals["fixed_asset_id"] = asset.id
 
         res = _super.create(vals)
