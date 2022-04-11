@@ -1555,7 +1555,7 @@ class FixedAssetAsset(models.Model):
             self.method_progress_factor = category.method_progress_factor
             self.prorata = category.prorata
             self.account_analytic_id = category.account_analytic_id.id
-            self.date_min_prorate = self.date_min_prorate
+            self.date_min_prorate = category.date_min_prorate
             self.prorate_by_month = True
 
     @api.onchange(
