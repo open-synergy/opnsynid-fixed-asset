@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+<record id="account_mass_depreciation_view_form" model="ir.ui.view">
+    <field name="name">Mass Depreciation</field>
+    <field name="model">account.mass_depreciation</field>
+    <field name="arch" type="xml">
+        <form>
+            <group name="group_1" colspan="4" col="2">
+                <field name="category_ids" widget="many2many_tags" />
+                <field name="date" />
+            </group>
+            <footer>
+                <button
+                        string="Confirm"
+                        name="action_confirm"
+                        type="object"
+                        class="oe_highlight"
+                        confirm="Are you sure?"
+                    />
+                or
+                <button string="Cancel" class="oe_link" special="cancel" />
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="account_mass_depreciation_action" model="ir.actions.act_window">
+    <field name="name">Mass Depreciation</field>
+    <field name="res_model">account.mass_depreciation</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="account_mass_depreciation_view_form" />
+    <field name="target">new</field>
+</record>
+
+<menuitem
+        id="menu_mass_depreciation_action"
+        parent="fixed_asset.menu_finance_assets"
+        action="account_mass_depreciation_action"
+        sequence="99"
+    />
+
+</odoo>
