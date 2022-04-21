@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Fixed Asset",
-    "version": "11.0.2.1.1",
+    "version": "14.0.1.0.0",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
@@ -13,10 +13,12 @@
     "depends": [
         "account",
         "account_fiscal_year",
-        "ssi_sequence_mixin",
-        "ssi_policy_mixin",
-        "ssi_multiple_approval_mixin",
-        "ssi_state_change_history_mixin",
+        "mail",
+        "ssi_master_data_mixin",
+        "ssi_transaction_confirm_mixin",
+        "ssi_transaction_done_mixin",
+        "ssi_transaction_cancel_mixin",
+        "ssi_transaction_open_mixin",
     ],
     "external_dependencies": {
         "python": [
@@ -35,10 +37,7 @@
         "views/fixed_asset_config_setting_views.xml",
         "views/fixed_asset_category.xml",
         "views/account_account_view.xml",
-        "views/account_move_line_view.xml",
-        "views/account_move_view.xml",
         "views/fixed_asset_asset.xml",
-        "views/account_invoice_view.xml",
     ],
     "demo": [],
     "images": [

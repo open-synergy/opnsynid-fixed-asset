@@ -26,17 +26,46 @@
                         />
                     </header>
                     <field name="company_id" invisible="1" />
-                    <separator string="Feature &amp; Integration" />
-                    <group name="feature_group">
-                        <label for="id" string="Feature" />
-                        <div name="feature">
-
+                    <h2>Feature &amp; Integration</h2>
+                    <div
+                        class="row mt16 o_settings_container"
+                        name="div_feature_integration"
+                    >
+                        <div
+                            class="col-12 col-lg-6 o_setting_box"
+                            name="div_feature_setting"
+                        >
+                            <div
+                                class="o_setting_left_pane"
+                                name="div_feature_setting_left"
+                            />
+                            <div
+                                class="o_setting_right_pane"
+                                name="div_feature_setting_right"
+                            >
+                                <div class="text-muted">
+                                    Digitalize your scanned or PDF vendor bills with OCR and Artificial Intelligence
+                                </div>
+                            </div>
                         </div>
-                        <label for="id" string="Integration" />
-                        <div name="integration">
-
+                        <div
+                            class="col-12 col-lg-6 o_setting_box"
+                            name="div_integration_setting"
+                        >
+                            <div
+                                class="o_setting_left_pane"
+                                name="div_integration_setting_left"
+                            />
+                            <div
+                                class="o_setting_right_pane"
+                                name="div_integration_setting_right"
+                            >
+                                <div class="text-muted">
+                                    Digitalize your scanned or PDF vendor bills with OCR and Artificial Intelligence
+                                </div>
+                            </div>
                         </div>
-                    </group>
+                    </div>
                 </form>
             </field>
         </record>
@@ -45,7 +74,6 @@
             <field name="name">Asset Configuration</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">fixed.asset.config_setting</field>
-            <field name="view_type">form</field>
             <field name="target">inline</field>
             <field name="view_mode">form</field>
         </record>

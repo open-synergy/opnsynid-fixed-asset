@@ -8,6 +8,9 @@ from odoo.exceptions import UserError
 
 class FixedAssetCategory(models.Model):
     _name = "fixed.asset.category"
+    _inherit = [
+        "mixin.master_data",
+    ]
     _description = "Fixed Asset Category"
     _order = "name"
 
@@ -27,22 +30,19 @@ class FixedAssetCategory(models.Model):
         ]
         return result
 
-    @api.model
-    def _get_company(self):
-        obj_res_company = self.env["res.company"]
-        return obj_res_company._company_default_get("fixed.asset.category")
-
     name = fields.Char(
-        string="Name",
-        size=64,
-        required=True,
-        select=1,
+        string="Category",
     )
+
+    @api.model
+    def _default_company_id(self):
+        return self.env.user.company_id.id
+
     company_id = fields.Many2one(
         string="Company",
         comodel_name="res.company",
         required=True,
-        default=lambda self: self._get_company(),
+        default=lambda self: self._default_company_id(),
     )
     account_analytic_id = fields.Many2one(
         string="Analytic account",
@@ -134,16 +134,6 @@ class FixedAssetCategory(models.Model):
         string="Date Min. to Prorate",
         default=15,
     )
-    sequence_id = fields.Many2one(
-        string="Sequence",
-        comodel_name="ir.sequence",
-        company_dependent=True,
-    )
-    active = fields.Boolean(
-        string="Active",
-        default=True,
-    )
-    note = fields.Text(string="Note")
 
     @api.constrains(
         "method",
@@ -179,7 +169,6 @@ class FixedAssetCategory(models.Model):
                 account.write({"fixed_asset_category_id": result.id})
         return result
 
-    @api.multi
     def write(self, values):
         _super = super(FixedAssetCategory, self)
 

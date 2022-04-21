@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 import calendar
 import logging
-from datetime import datetime
+from datetime import date, datetime
 
 from dateutil.relativedelta import relativedelta
 
@@ -30,17 +30,35 @@ class FixedAssetAsset(models.Model):
     _name = "fixed.asset.asset"
     _description = "Fixed Asset"
     _inherit = [
-        "mail.thread",
-        "mixin.multiple_approval",
-        "mixin.sequence",
-        "mixin.policy",
-        "mixin.state_change_history",
+        "mixin.transaction_confirm",
+        "mixin.transaction_cancel",
+        "mixin.transaction_open",
+        "mixin.transaction_done",
     ]
     _order = "date_start desc, name"
-    _parent_store = True
     _approval_from_state = "draft"
     _approval_to_state = "open"
     _approval_state = "confirm"
+    _after_approved_method = "action_open"
+    _create_sequence_state = "open"
+    _done_state = "close"
+
+    @api.model
+    def _get_policy_field(self):
+        res = super(FixedAssetAsset, self)._get_policy_field()
+        policy_field = [
+            "confirm_ok",
+            "open_ok",
+            "approve_ok",
+            "done_ok",
+            "cancel_ok",
+            "reject_ok",
+            "restart_ok",
+            "restart_approval_ok",
+            "manual_number_ok",
+        ]
+        res += policy_field
+        return res
 
     account_move_line_ids = fields.One2many(
         string="Entries",
@@ -62,24 +80,20 @@ class FixedAssetAsset(models.Model):
         readonly=True,
     )
 
-    @api.multi
     @api.depends(
         "depreciation_line_ids",
     )
     def _compute_move_line_check(self):
         for document in self:
-            for line in document.depreciation_line_ids:
-                if line.move_id:
-                    document.move_line_check = True
-                else:
-                    document.move_line_check = False
+            document.move_line_check = bool(
+                document.depreciation_line_ids.filtered("move_id")
+            )
 
     move_line_check = fields.Boolean(
         string="Has accounting entries",
         compute="_compute_move_line_check",
     )
 
-    @api.multi
     def name_get(self):
         result = []
         for rec in self:
@@ -127,7 +141,6 @@ class FixedAssetAsset(models.Model):
         "\nPurchase Value - Salvage Value.",
     )
 
-    @api.multi
     def _asset_value_compute(self):
         self.ensure_one()
         if self.type == "view":
@@ -136,7 +149,6 @@ class FixedAssetAsset(models.Model):
             asset_value = self.purchase_value - self.salvage_value
         return asset_value
 
-    @api.multi
     def _value_get(self):
         self.ensure_one()
         asset_value = self._asset_value_compute()
@@ -154,7 +166,6 @@ class FixedAssetAsset(models.Model):
             ("+", "purchase_value"),
         ]
 
-    @api.multi
     def _get_asset_value(self):
         """
         Dynamically add/subsstract asset value from list.
@@ -172,7 +183,6 @@ class FixedAssetAsset(models.Model):
                 result -= getattr(self, field_dict[1])
         return result
 
-    @api.multi
     @api.depends(
         "purchase_value",
         "salvage_value",
@@ -203,7 +213,6 @@ class FixedAssetAsset(models.Model):
         help="This amount represent the initial value of the asset.",
     )
 
-    @api.multi
     def _get_additional_depreciated_value(self):
         self.ensure_one()
         result = 0.0
@@ -218,7 +227,6 @@ class FixedAssetAsset(models.Model):
     def _get_additional_depreciated_value_field(self):
         return []
 
-    @api.multi
     @api.depends(
         "asset_value",
         "depreciation_line_ids",
@@ -306,7 +314,7 @@ class FixedAssetAsset(models.Model):
         inverse_name="parent_id",
     )
     date_start = fields.Date(
-        string="Asset Start Date",
+        string="Purchase Date",
         readonly=True,
         states={"draft": [("readonly", False)]},
         default=datetime.now().strftime("%Y-%m-%d"),
@@ -355,7 +363,6 @@ class FixedAssetAsset(models.Model):
         states={"draft": [("readonly", False)]},
     )
 
-    @api.multi
     def _get_method(self):
         return self.env["fixed.asset.category"]._get_method()
 
@@ -408,7 +415,6 @@ class FixedAssetAsset(models.Model):
         states={"draft": [("readonly", False)]},
     )
 
-    @api.multi
     def _get_method_time(self):
         return self.env["fixed.asset.category"]._get_method_time()
 
@@ -451,19 +457,6 @@ class FixedAssetAsset(models.Model):
         default="normal",
         states={"draft": [("readonly", False)]},
     )
-
-    @api.model
-    def _get_company(self):
-        obj_res_company = self.env["res.company"]
-        return obj_res_company._company_default_get("fixed.asset.asset")
-
-    company_id = fields.Many2one(
-        string="Company",
-        comodel_name="res.company",
-        required=True,
-        readonly=True,
-        default=lambda self: self._get_company(),
-    )
     company_currency_id = fields.Many2one(
         string="Company Currency",
         related="company_id.currency_id",
@@ -474,7 +467,6 @@ class FixedAssetAsset(models.Model):
         comodel_name="account.analytic.account",
     )
 
-    @api.multi
     def _get_method_time_coefficient(self):
         self.ensure_one()
         result = 0
@@ -482,17 +474,14 @@ class FixedAssetAsset(models.Model):
             result = 12
         return result
 
-    @api.multi
     def _get_method_period_coefficient(self):
         self.ensure_one()
         return 1
 
-    @api.multi
     def _get_numpy_date_unit(self):
         self.ensure_one()
         return "M"
 
-    @api.multi
     @api.depends(
         "method_time",
         "method_number",
@@ -526,7 +515,7 @@ class FixedAssetAsset(models.Model):
 
             if depreciation and asset_value:
                 # TODO: Pretty sure numpy has method to change string into dt
-                dt_temp = datetime.strptime(asset_value.line_date, "%Y-%m-%d")
+                dt_temp = asset_value.line_date
                 dt_temp = dt_temp + relativedelta(day=1, days=-1)
                 dt_temp = np.datetime64(dt_temp, np_date_unit)
                 dt_depreciation = np.datetime64(depreciation.line_date, np_date_unit)
@@ -559,7 +548,6 @@ class FixedAssetAsset(models.Model):
         compute="_compute_method_period_number",
     )
 
-    @api.multi
     def _prepare_valid_lines_domain(self):
         self.ensure_one()
         return [
@@ -570,7 +558,6 @@ class FixedAssetAsset(models.Model):
             ("asset_id", "=", self.id),
         ]
 
-    @api.multi
     def _get_asset_value_line_domain(self):
         self.ensure_one()
         return [
@@ -578,7 +565,6 @@ class FixedAssetAsset(models.Model):
             ("type", "=", "create"),
         ]
 
-    @api.multi
     @api.depends(
         "depreciation_line_ids",
         "depreciation_line_ids.line_date",
@@ -614,7 +600,6 @@ class FixedAssetAsset(models.Model):
         compute="_compute_last_posted_depreciation_line",
     )
 
-    @api.multi
     def _prepare_posted_lines_domain(self):
         self.ensure_one()
         date = self.last_posted_asset_line_id.line_date
@@ -631,7 +616,6 @@ class FixedAssetAsset(models.Model):
             ("subtype_id", "=", False),
         ]
 
-    @api.multi
     @api.depends(
         "depreciation_line_ids",
         "depreciation_line_ids.init_entry",
@@ -651,7 +635,6 @@ class FixedAssetAsset(models.Model):
         compute="_compute_posted_depreciation_line_ids",
     )
 
-    @api.multi
     def _prepare_posted_asset_value_domain(self):
         self.ensure_one()
         return [
@@ -660,7 +643,6 @@ class FixedAssetAsset(models.Model):
             ("asset_id", "=", self.id),
         ]
 
-    @api.multi
     def _prepare_posted_depreciation_domain(self):
         self.ensure_one()
         return [
@@ -673,7 +655,6 @@ class FixedAssetAsset(models.Model):
             ("asset_id", "=", self.id),
         ]
 
-    @api.multi
     def _prepare_posted_history_domain(self):
         self.ensure_one()
         return [
@@ -684,7 +665,6 @@ class FixedAssetAsset(models.Model):
             ("asset_id", "=", self.id),
         ]
 
-    @api.multi
     def _prepare_unposted_history_domain(self):
         self.ensure_one()
         return [
@@ -693,7 +673,6 @@ class FixedAssetAsset(models.Model):
             ("asset_id", "=", self.id),
         ]
 
-    @api.multi
     @api.depends(
         "depreciation_line_ids",
         "depreciation_line_ids.init_entry",
@@ -797,43 +776,9 @@ class FixedAssetAsset(models.Model):
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
-
-    @api.multi
-    def _compute_policy(self):
-        _super = super(FixedAssetAsset, self)
-        _super._compute_policy()
-
     # Policy Field
-    confirm_ok = fields.Boolean(
-        string="Can Confirm",
-        compute="_compute_policy",
-    )
-    approve_ok = fields.Boolean(
-        string="Can Approve",
-        compute="_compute_policy",
-        store=False,
-    )
-    reject_ok = fields.Boolean(
-        string="Can Reject",
-        compute="_compute_policy",
-        store=False,
-    )
-    close_ok = fields.Boolean(
+    done_ok = fields.Boolean(
         string="Can Close",
-        compute="_compute_policy",
-    )
-    cancel_ok = fields.Boolean(
-        string="Can Cancel",
-        compute="_compute_policy",
-    )
-    restart_ok = fields.Boolean(
-        string="Can Restart",
-        compute="_compute_policy",
-    )
-    restart_approval_ok = fields.Boolean(
-        string="Can Restart Approval",
-        compute="_compute_policy",
-        store=False,
     )
 
     @api.model
@@ -860,7 +805,6 @@ class FixedAssetAsset(models.Model):
                 asset.onchange_policy_template_id()
         return asset
 
-    @api.multi
     def write(self, vals):
         _super = super(FixedAssetAsset, self)
         res = _super.write(vals)
@@ -882,18 +826,6 @@ class FixedAssetAsset(models.Model):
                 asset.with_context(ctx).validate()
         return res
 
-    @api.multi
-    def unlink(self):
-        for document in self:
-            if document.state != "draft":
-                if not self.env.context.get("force_unlink", False):
-                    raise UserError(
-                        _("You can only delete data on draft state"),
-                    )
-        _super = super(FixedAssetAsset, self)
-        _super.unlink()
-
-    @api.multi
     def copy(self, default=None):
         _super = super(FixedAssetAsset, self)
         if default is None:
@@ -902,25 +834,23 @@ class FixedAssetAsset(models.Model):
             "depreciation_line_ids": [],
             "account_move_line_ids": [],
             "state": "draft",
-            "history_ids": [],
         }
         default.update(update_vals)
 
         return _super.copy(default)
 
     # -- Other Methods --
-    @api.multi
     def _get_date_start(self):
         self.ensure_one()
         date_start = self.date_start
-        dt_date_start = datetime.strptime(date_start, "%Y-%m-%d")
+        str_date = date_start.strftime("%Y-%m-%d")
+        dt_date_start = datetime.strptime(str_date, "%Y-%m-%d")
         if self.prorate_by_month:
             if dt_date_start.day > self.date_min_prorate:
                 dt_date_start = dt_date_start + relativedelta(day=1, months=1)
 
         return dt_date_start.strftime("%Y-%m-%d")
 
-    @api.multi
     def _get_assets(self):
         asset_ids = []
         for asset in self:
@@ -933,7 +863,6 @@ class FixedAssetAsset(models.Model):
             _parent_get(asset)
         return asset_ids
 
-    @api.multi
     def _get_assets_from_dl(self):
         self.ensure_one()
         asset_ids = []
@@ -964,7 +893,6 @@ class FixedAssetAsset(models.Model):
         else:
             return False
 
-    @api.multi
     def _get_first_period_amount(
         self, table, entry, depreciation_start_date, line_dates
     ):
@@ -979,12 +907,10 @@ class FixedAssetAsset(models.Model):
             amount = entry["fy_amount"] - amount * full_periods
         return amount
 
-    @api.multi
     def _get_depreciation_entry_name(self, seq):
         """use this method to customise the name of the accounting entry"""
         return (self.code or str(self.id)) + "/" + str(seq)
 
-    @api.multi
     def _prepare_old_lines_domain(self):
         self.ensure_one()
         return [
@@ -994,7 +920,6 @@ class FixedAssetAsset(models.Model):
             ("init_entry", "=", False),
         ]
 
-    @api.multi
     def _delete_unposted_history(self):
         self.ensure_one()
         line_obj = self.env["fixed.asset.depreciation.line"]
@@ -1003,7 +928,6 @@ class FixedAssetAsset(models.Model):
         if old_lines:
             old_lines.unlink()
 
-    @api.multi
     def _compute_starting_depreciation_entry(self, table):
         self.ensure_one()
         # TODO: Use new helper field
@@ -1051,7 +975,6 @@ class FixedAssetAsset(models.Model):
 
         return table_i_start, line_i_start
 
-    @api.multi
     def _create_depreciation_lines(self, table, table_index_start, line_index_start):
         self.ensure_one()
         line_i_start = line_index_start
@@ -1087,7 +1010,59 @@ class FixedAssetAsset(models.Model):
                     seq -= 1
             line_i_start = 0
 
-    @api.multi
+    def _compute_depreciation_amount_per_fiscal_year(self, table, line_dates):
+        digits = self.env["decimal.precision"].precision_get("Account")
+        fy_residual_amount = amount_to_depr = self._get_amount_to_depreciate()
+        i_max = len(table) - 1
+        asset_sign = self._get_asset_value() >= 0 and 1 or -1
+
+        for i, entry in enumerate(table):
+
+            year_amount = self._compute_year_amount(amount_to_depr, fy_residual_amount)
+
+            if i == i_max:
+                if self.method == "degressive":
+                    year_amount = fy_residual_amount - self.salvage_value
+
+            if self.method_period == "year":
+                period_amount = year_amount
+            elif self.method_period == "quarter":
+                period_amount = year_amount / 4
+            elif self.method_period == "month":
+                period_amount = year_amount / 12
+
+            if i == i_max:
+                if self.method == "linear":
+                    fy_amount = fy_residual_amount
+                else:
+                    fy_amount = fy_residual_amount - self.salvage_value
+            else:
+                firstyear = i == 0 and True or False
+                fy_factor = self._get_fy_duration_factor(entry, self, firstyear)
+
+                fy_amount = year_amount * fy_factor
+
+            if asset_sign * (fy_amount - fy_residual_amount) > 0:
+                fy_amount = fy_residual_amount
+
+            period_amount = round(period_amount, digits)
+            fy_amount = round(fy_amount, digits)
+
+            entry.update(
+                {
+                    "period_amount": period_amount,
+                    "fy_amount": fy_amount,
+                }
+            )
+
+            fy_residual_amount -= fy_amount
+            if round(fy_residual_amount, digits) == 0:
+                break
+
+        i_max = i
+        table = table[: i_max + 1]
+        return table
+
     def compute_depreciation_board(self):
         for asset in self:
             if asset.value_residual == 0.0:
@@ -1102,35 +1077,44 @@ class FixedAssetAsset(models.Model):
             asset._create_depreciation_lines(table, table_i_start, line_i_start)
         return True
 
-    @api.multi
     def _get_depreciation_start_date(self, fy):
         """
-        In case of "Linear": the first month is counted as a full month
+        In case of 'Linear': the first month is counted as a full month
         if the fiscal year starts in the middle of a month.
         """
         if self.prorata:
-            depreciation_start_date = datetime.strptime(
-                self.last_posted_asset_line_id.line_date, "%Y-%m-%d"
-            )
-            depreciation_start_date += relativedelta(day=1)
+            depreciation_start_date = self.date_start
         else:
-            fy_date_start = datetime.strptime(fy.date_start, "%Y-%m-%d")
-            depreciation_start_date = datetime(
-                fy_date_start.year, fy_date_start.month, 1
-            )
+            depreciation_start_date = fy.date_from
         return depreciation_start_date
 
-    @api.multi
     def _get_depreciation_stop_date(self, depreciation_start_date):
-        self.ensure_one()
-        asset_start_date = datetime.strptime(self._get_date_start(), "%Y-%m-%d")
-        asset_start_date += relativedelta(day=1)
-        depreciation_stop_date = asset_start_date + relativedelta(
-            years=self.method_number, days=-1
-        )
+        if self.method_time == "year" and not self.method_end:
+            depreciation_stop_date = depreciation_start_date + relativedelta(
+                years=self.method_number, days=-1
+            )
+        elif self.method_time == "number":
+            if self.method_period == "month":
+                depreciation_stop_date = depreciation_start_date + relativedelta(
+                    months=self.method_number, days=-1
+                )
+            elif self.method_period == "quarter":
+                m = [x for x in [3, 6, 9, 12] if x >= depreciation_start_date.month][0]
+                first_line_date = depreciation_start_date + relativedelta(
+                    month=m, day=31
+                )
+                months = self.method_number * 3
+                depreciation_stop_date = first_line_date + relativedelta(
+                    months=months - 1, days=-1
+                )
+            elif self.method_period == "year":
+                depreciation_stop_date = depreciation_start_date + relativedelta(
+                    years=self.method_number, days=-1
+                )
+        elif self.method_time == "year" and self.method_end:
+            depreciation_stop_date = self.method_end
         return depreciation_stop_date
 
-    @api.multi
     def _get_amount_to_depreciate(self):
         self.ensure_one()
         asset_value = self.last_posted_asset_line_id.remaining_value
@@ -1139,7 +1123,6 @@ class FixedAssetAsset(models.Model):
         else:
             return asset_value
 
-    @api.multi
     def _compute_line_dates(self, table, start_date, stop_date):
         """
         The posting dates of the accounting entries depend on the
@@ -1177,7 +1160,18 @@ class FixedAssetAsset(models.Model):
 
         return line_dates
 
-    @api.multi
+    def _get_amount_linear(
+        self, depreciation_start_date, depreciation_stop_date, entry
+    ):
+        """
+        Override this method if you want to compute differently the
+        yearly amount.
+        """
+        year = entry["date_stop"].year
+        cy_days = calendar.isleap(year) and 366 or 365
+        days = (depreciation_stop_date - depreciation_start_date).days + 1
+        return (self._get_amount_to_depreciate() / days) * cy_days
+
     def _compute_year_amount(self, amount_to_depr, residual_amount):
         """
         Localization: override this method to change the degressive-linear
@@ -1185,8 +1179,8 @@ class FixedAssetAsset(models.Model):
         """
         if self.method_time != "year":
             raise UserError(
-                _("Programming Error"),
                 _(
+                    "Programming Error!\n"
                     "The '_compute_year_amount' method is only intended for "
                     "Time Method 'Number of Years.''"
                 ),
@@ -1213,6 +1207,15 @@ class FixedAssetAsset(models.Model):
 
         raise UserError(_("Illegal value %s in asset.method.") % self.method)
 
+    def _get_fy_info(self, date):
+        """Return an homogeneus data structure for fiscal years."""
+        fy_info = self.company_id.compute_fiscalyear_dates(date)
+        if "record" not in fy_info:
+            fy_info["record"] = DummyFy(
+                date_from=fy_info["date_from"], date_to=fy_info["date_to"]
+            )
+        return fy_info
+
     @api.model
     def _get_fy_duration_factor(self, entry, asset, firstyear):
         """
@@ -1237,18 +1240,17 @@ class FixedAssetAsset(models.Model):
             duration_factor = float(fy_months) / 12
         return duration_factor
 
-    def _get_fy_duration(self, fy_id, option="days"):
-        """
-        Returns fiscal year duration.
+    def _get_fy_duration(self, fy, option="days"):
+        """Returns fiscal year duration.
+
         @param option:
         - days: duration in days
         - months: duration in months,
                   a started month is counted as a full month
         - years: duration in calendar years, considering also leap years
         """
-        fy = self.env["date.range"].browse(fy_id)
-        fy_date_start = fields.Datetime.from_string(fy.date_start)
-        fy_date_stop = fields.Datetime.from_string(fy.date_end)
+        fy_date_start = fy.date_from
+        fy_date_stop = fy.date_to
         days = (fy_date_stop - fy_date_start).days + 1
         months = (
             (fy_date_stop.year - fy_date_start.year) * 12
@@ -1268,17 +1270,16 @@ class FixedAssetAsset(models.Model):
                     if fy_date_stop.year == year:
                         duration = (fy_date_stop - fy_date_start).days + 1
                     else:
-                        duration = (datetime(year, 12, 31) - fy_date_start).days + 1
+                        duration = (date(year, 12, 31) - fy_date_start).days + 1
                     factor = float(duration) / cy_days
                 elif i == cnt - 1:  # last year
-                    duration = (fy_date_stop - datetime(year, 1, 1)).days + 1
+                    duration = (fy_date_stop - date(year, 1, 1)).days + 1
                     factor += float(duration) / cy_days
                 else:
                     factor += 1.0
                 year += 1
             return factor
 
-    @api.multi
     def _compute_depreciation_table_lines(
         self, table, depreciation_start_date, depreciation_stop_date, line_dates
     ):
@@ -1368,147 +1369,40 @@ class FixedAssetAsset(models.Model):
 
         company = self.company_id
         init_flag = False
-        asset_date_start = datetime.strptime(self._get_date_start(), "%Y-%m-%d")
-        fy = company.find_daterange_fy(asset_date_start)
+        asset_date_start = self.date_start
+        # asset_date_start = datetime.strptime(self._get_date_start(), "%Y-%m-%d")
+        fy = self._get_fy_info(asset_date_start)
         fiscalyear_lock_date = company.fiscalyear_lock_date
+
         if fiscalyear_lock_date and fiscalyear_lock_date >= self._get_date_start():
             init_flag = True
-        if fy:
-            fy_id = fy.id
-            fy_date_start = datetime.strptime(fy.date_start, "%Y-%m-%d")
-            fy_date_stop = datetime.strptime(fy.date_end, "%Y-%m-%d")
-        else:
-            # The following logic is used when no fiscal year
-            # is defined for the asset start date:
-            # - We lookup the first fiscal year defined in the system
-            # - The 'undefined' fiscal years are assumed to be years
-            #   with a duration equal to a calendar year
-            first_fy = self.env["date.range"].search(
-                [
-                    ("company_id", "=", self.company_id.id),
-                    ("type_id.fiscal_year", "=", True),
-                ],
-                order="date_end ASC",
-                limit=1,
-            )
-            if not first_fy:
-                raise UserError(_("No Fiscal Year defined."))
-            first_fy_date_start = datetime.strptime(first_fy.date_start, "%Y-%m-%d")
-            fy_date_start = first_fy_date_start
-            if asset_date_start > fy_date_start:
-                asset_ref = (
-                    self.code
-                    and "{} (ref: {})".format(self.name, self.code)
-                    or self.name
-                )
-                raise UserError(
-                    _(
-                        "You cannot compute a depreciation table for an asset "
-                        "starting in an undefined future fiscal year."
-                        "\nPlease correct the start date for asset '%s'."
-                    )
-                    % asset_ref
-                )
-            while asset_date_start < fy_date_start:
-                fy_date_start = fy_date_start - relativedelta(years=1)
-            fy_date_stop = fy_date_start + relativedelta(years=1, days=-1)
-            fy_id = False
-            fy = DummyFy(
-                date_start=fy_date_start.strftime("%Y-%m-%d"),
-                date_end=fy_date_stop.strftime("%Y-%m-%d"),
-                id=False,
-                state="done",
-                dummy=True,
-            )
-            init_flag = True
 
-        depreciation_start_date = self._get_depreciation_start_date(fy)
+        depreciation_start_date = self._get_depreciation_start_date(fy["record"])
         depreciation_stop_date = self._get_depreciation_stop_date(
             depreciation_start_date
         )
+        fy_date_start = asset_date_start
 
         while fy_date_start <= depreciation_stop_date:
+            fy_info = self._get_fy_info(fy_date_start)
             table.append(
                 {
-                    "fy_id": fy_id,
-                    "date_start": fy_date_start,
-                    "date_stop": fy_date_stop,
+                    "fy_id": fy_info["record"],
+                    "date_start": fy_info["date_from"],
+                    "date_stop": fy_info["date_to"],
                     "init": init_flag,
                 }
             )
-            fy_date_start = fy_date_stop + relativedelta(days=1)
-            fy = company.find_daterange_fy(fy_date_start)
-            if fy:
-                if fiscalyear_lock_date and fiscalyear_lock_date >= fy.date_end:
-                    init_flag = True
-                else:
-                    init_flag = False
-                fy_date_stop = datetime.strptime(fy.date_end, "%Y-%m-%d")
-            else:
-                fy_date_stop = fy_date_stop + relativedelta(years=1)
-                if (
-                    fiscalyear_lock_date
-                    and fiscalyear_lock_date >= fy_date_stop.strftime("%Y-%m-%d")
-                ):
-                    init_flag = True
-                else:
-                    init_flag = False
+            fy_date_start = fy_info["date_to"] + relativedelta(days=1)
+
         # Step 1:
         # Calculate depreciation amount per fiscal year.
         # This is calculation is skipped for method_time != 'year'.
-        digits = self.env["decimal.precision"].precision_get("Account")
-        fy_residual_amount = amount_to_depr = self._get_amount_to_depreciate()
-        i_max = len(table) - 1
-        asset_sign = self._get_asset_value() >= 0 and 1 or -1
         line_dates = self._compute_line_dates(
             table, depreciation_start_date, depreciation_stop_date
         )
 
-        for i, entry in enumerate(table):
-
-            year_amount = self._compute_year_amount(amount_to_depr, fy_residual_amount)
-
-            if i == i_max:
-                if self.method == "degressive":
-                    year_amount = fy_residual_amount - self.salvage_value
-
-            if self.method_period == "year":
-                period_amount = year_amount
-            elif self.method_period == "quarter":
-                period_amount = year_amount / 4
-            elif self.method_period == "month":
-                period_amount = year_amount / 12
-
-            if i == i_max:
-                if self.method == "linear":
-                    fy_amount = fy_residual_amount
-                else:
-                    fy_amount = fy_residual_amount - self.salvage_value
-            else:
-                firstyear = i == 0 and True or False
-                fy_factor = self._get_fy_duration_factor(entry, self, firstyear)
-
-                fy_amount = year_amount * fy_factor
-
-            if asset_sign * (fy_amount - fy_residual_amount) > 0:
-                fy_amount = fy_residual_amount
-
-            period_amount = round(period_amount, digits)
-            fy_amount = round(fy_amount, digits)
-
-            entry.update(
-                {
-                    "period_amount": period_amount,
-                    "fy_amount": fy_amount,
-                }
-            )
-
-            fy_residual_amount -= fy_amount
-            if round(fy_residual_amount, digits) == 0:
-                break
-
-        i_max = i
-        table = table[: i_max + 1]
+        table = self._compute_depreciation_amount_per_fiscal_year(table, line_dates)
 
         # Step 2:
         # Spread depreciation amount per fiscal year
@@ -1557,13 +1451,6 @@ class FixedAssetAsset(models.Model):
             self.account_analytic_id = category.account_analytic_id.id
             self.date_min_prorate = category.date_min_prorate
             self.prorate_by_month = True
-
-    @api.onchange(
-        "type_id",
-    )
-    def onchange_policy_template_id(self):
-        template_id = self._get_template_policy()
-        self.policy_template_id = template_id
 
     @api.onchange(
         "category_id",
@@ -1643,7 +1530,6 @@ class FixedAssetAsset(models.Model):
             self.depreciation_line_ids.unlink()
 
     # -- Workflow Methods --
-    @api.multi
     def action_approve_approval(self):
         _super = super(FixedAssetAsset, self)
         _super.action_approve_approval()
@@ -1651,80 +1537,14 @@ class FixedAssetAsset(models.Model):
             if document.approved:
                 document.validate()
 
-    @api.multi
-    def restart_validation(self):
-        _super = super(FixedAssetAsset, self)
-        _super.restart_validation()
-        for document in self:
-            document.action_request_approval()
-
-    @api.multi
-    def _prepare_confirm_data(self):
-        self.ensure_one()
-        return {
-            "state": "confirm",
-            "confirm_date": fields.Datetime.now(),
-            "confirm_user_id": self.env.user.id,
-        }
-
-    @api.multi
-    def action_confirm(self):
-        for document in self:
-            document.write(document._prepare_confirm_data())
-            document.action_request_approval()
-
-    @api.multi
-    def _prepare_open_data(self):
-        self.ensure_one()
-        ctx = self.env.context.copy()
-        ctx.update(
-            {
-                "ir_sequence_date": self.date_start,
-            }
-        )
-        sequence = self.with_context(ctx)._create_sequence()
-        return {
-            "state": "open",
-            "open_date": fields.Datetime.now(),
-            "open_user_id": self.env.user.id,
-            "code": sequence,
-        }
-
-    @api.multi
     def validate(self):
         for document in self:
             currency = document.company_id.currency_id
             if document.type == "normal" and currency.is_zero(document.value_residual):
-                document.write(document._prepare_close_data())
+                document.write(document._prepare_done_data())
             else:
                 document.write(document._prepare_open_data())
 
-    @api.multi
-    def _prepare_restart_data(self):
-        self.ensure_one()
-        return {
-            "state": "draft",
-            "confirm_date": False,
-            "confirm_user_id": False,
-            "open_date": False,
-            "open_user_id": False,
-        }
-
-    @api.multi
-    def action_restart(self):
-        for document in self:
-            document.write(document._prepare_restart_data())
-
-    @api.multi
-    def _prepare_cancel_data(self):
-        self.ensure_one()
-        return {
-            "state": "cancel",
-            "cancel_date": fields.Datetime.now(),
-            "cancel_user_id": self.env.user.id,
-        }
-
-    @api.multi
     def action_cancel(self):
         for document in self:
             dl_ids = document.depreciation_line_ids.filtered(
@@ -1734,33 +1554,13 @@ class FixedAssetAsset(models.Model):
                 dl_ids.unlink()
             document.write(document._prepare_cancel_data())
 
-    @api.multi
-    def _prepare_close_data(self):
-        self.ensure_one()
-        ctx = self.env.context.copy()
-        ctx.update(
-            {
-                "ir_sequence_date": self.date_start,
-            }
-        )
-        sequence = self.with_context(ctx)._create_sequence()
-        return {
-            "state": "close",
-            "close_date": fields.Datetime.now(),
-            "close_user_id": self.env.user.id,
-            "code": sequence,
-        }
-
-    @api.multi
     def _get_account_move_ids(self):
         return self.mapped("account_move_line_ids.move_id")
 
-    @api.multi
     def _get_action_account_move(self):
         action = self.env.ref("account." "action_move_journal_line").read()[0]
         return action
 
-    @api.multi
     def open_entries(self):
         self.ensure_one()
         account_move_ids = self._get_account_move_ids()
