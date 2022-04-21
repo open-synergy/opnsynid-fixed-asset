@@ -1,0 +1,17 @@
+# List the OCA project dependencies, one per line
+# Add a repository url and branch if you need a forked version
+#
+# Examples
+# ========
+#
+# To depend on the standard version of sale-workflow, use:
+# sale-workflow
+#
+# To explicitely give the URL of a fork, and still use the version specified in
+# .travis.yml, use:
+# sale-workflow https://github.com/OCA/sale-workflow
+#
+# To provide both the URL and a branch, use:
+server-ux https://github.com/OCA/server-ux.git 14.0
+account-financial-tools https://github.com/OCA/account-financial-tools.git 14.0
+ssi-mixin https://github.com/open-synergy/ssi-mixin.git 14.0

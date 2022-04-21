@@ -33,11 +33,10 @@
                         confirm="Reject data. Are you sure?"
                     />
                 <button
+                        name="%(ssi_transaction_cancel_mixin.base_select_cancel_reason_action)d"
                         string="Cancel"
-                        name="action_cancel"
-                        type="object"
-                        attrs="{'invisible':[('cancel_ok','=',False)]}"
-                        confirm="Cancel data. Are you sure?"
+                        type="action"
+                        attrs="{'invisible':[('cancel_ok','!=',True)]}"
                     />
                 <button
                         string="Restart"
@@ -71,6 +70,7 @@
                                 name="code"
                                 class="oe_inline"
                                 placeholder="Code of Asset..."
+                                attrs="{'readonly':[('manual_number_ok','=',False)]}"
                             />
                     -
                     <field
@@ -241,7 +241,7 @@
                             >
                         <tree
                                     string="Asset Lines"
-                                    colors="blue:(move_check == False) and (init_entry == False)"
+                                    decoration-info="(move_check == False) and (init_entry == False)"
                                     create="false"
                                 >
                             <field name="type" />
@@ -397,22 +397,18 @@
                             <field name="confirm_ok" />
                             <field name="approve_ok" />
                             <field name="reject_ok" />
-                            <field name="close_ok" />
+                            <field name="done_ok" />
                             <field name="cancel_ok" />
                             <field name="restart_ok" />
-                            <field name="restart_approval_ok" />
-                        </group>
-                    </page>
-                    <page name="page_log" string="Logs">
-                        <group name="grp_log_1" colspan="4" col="3">
-                            <field name="state_change_history_ids" nolabel="1" />
+                            <field name="manual_number_ok" />
                         </group>
                     </page>
                 </notebook>
             </sheet>
             <div class="oe_chatter">
-                <field name="message_follower_ids" widget="mail_followers" />
-                <field name="message_ids" widget="mail_thread" />
+                <field name="message_follower_ids" groups="base.group_user" />
+                <field name="activity_ids" />
+                <field name="message_ids" />
             </div>
         </form>
     </field>
@@ -422,7 +418,7 @@
       <field name="name">fixed.asset.asset.tree</field>
       <field name="model">fixed.asset.asset</field>
       <field name="arch" type="xml">
-          <tree string="Assets" colors="blue:(type == 'view')">
+          <tree string="Assets">
                 <field name="id" />
                 <field name="name" />
                 <field name="type" invisible="1" />
@@ -433,7 +429,14 @@
                 <field name="date_start" />
                 <field name="date_remove" />
                 <field name="category_id" />
-                <field name="state" />
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-success="state == 'open'"
+                    decoration-warning="state == 'removed'"
+                    decoration-info="state == 'draft'"
+                    decoration-muted="state == 'close'"
+                />
                 <field name="company_id" groups="base.group_multi_company" />
           </tree>
       </field>
@@ -443,73 +446,11 @@
     <field name="name">fixed.asset.asset.search</field>
     <field name="model">fixed.asset.asset</field>
     <field name="arch" type="xml">
-        <search string="Account Asset">
+        <search>
             <field name="name" string="Asset" />
             <field name="code" />
             <field name="date_start" />
             <field name="category_id" />
-            <group name="dom_state" string="State">
-                <field
-                        name="partner_id"
-                        filter_domain="[('partner_id','child_of',self)]"
-                    />
-                <filter
-                        string="Draft"
-                        name="draft"
-                        domain="[('state','=','draft')]"
-                        help="Draft Assets"
-                    />
-                <filter
-                        string="Waiting for Approval"
-                        name="confirm"
-                        domain="[('state','=','confirm')]"
-                        help="Assets waiting to be confirmed"
-                    />
-                <filter
-                        string="Running"
-                        domain="[('state','=', 'open')]"
-                        help="Assets in Running State"
-                    />
-                <filter
-                        string="Close"
-                        domain="[('state','=', 'close')]"
-                        help="Assets in Close State"
-                    />
-                <filter
-                        string="Removed"
-                        domain="[('state','=', 'removed')]"
-                        help="Assets which have been removed"
-                    />
-            </group>
-            <group expand="0" string="Group By...">
-                  <filter name="grp_type" string="Type" context="{'group_by':'type'}" />
-                <filter
-                        name="grp_category"
-                        string="Category"
-                        context="{'group_by':'category_id'}"
-                    />
-                <filter
-                        name="grp_date_start_year"
-                        string="Date Start by Year"
-                        context="{'group_by':'date_start:year'}"
-                    />
-                <filter
-                        name="grp_date_start_month"
-                        string="Date Start by Month"
-                        context="{'group_by':'date_start:month'}"
-                    />
-                <filter
-                        name="grp_date_start_week"
-                        string="Date Start by Week"
-                        context="{'group_by':'date_start:week'}"
-                    />
-                <filter
-                        name="grp_date_start_day"
-                        string="Date Start by Day"
-                        context="{'group_by':'date_start:week'}"
-                    />
-
-            </group>
         </search>
     </field>
 </record>
@@ -517,7 +458,6 @@
 <record id="fixed_asset_asset_action" model="ir.actions.act_window">
     <field name="name">Assets</field>
     <field name="res_model">fixed.asset.asset</field>
-    <field name="view_type">form</field>
     <field name="view_id" ref="fixed_asset_asset_view_tree" />
     <field name="search_view_id" ref="fixed_asset_asset_view_search" />
 </record>

@@ -5,13 +5,14 @@
 <odoo>
     <data noupdate="1">
         <record id="sequence_account_asset_asset" model="ir.sequence">
-            <field name="name">Asset</field>
+            <field name="name">General Sequence: Fixed Asset</field>
             <field name="code">account.asset.asset</field>
-            <field name="padding">6</field>
             <field name="prefix">ASSET/%(year)s/</field>
-            <field eval="True" name="use_date_range" />
             <field eval="1" name="number_next" />
             <field eval="1" name="number_increment" />
+            <field name="padding" eval="6" />
+            <field name="use_date_range" eval="1" />
+            <field eval="False" name="company_id" />
         </record>
     </data>
 </odoo>

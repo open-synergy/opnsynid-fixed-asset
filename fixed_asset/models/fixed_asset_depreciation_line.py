@@ -47,7 +47,6 @@ class FixedAssetDepreciationLine(models.Model):
         required=True,
     )
 
-    @api.multi
     @api.depends(
         "amount",
         "previous_id",
@@ -94,7 +93,6 @@ class FixedAssetDepreciationLine(models.Model):
         readonly=True,
     )
 
-    @api.multi
     @api.depends(
         "move_id",
     )
@@ -125,7 +123,6 @@ class FixedAssetDepreciationLine(models.Model):
         "for which OpenERP has not generated accounting entries.",
     )
 
-    @api.multi
     def unlink(self):
         obj_depreciation_line = self.env["fixed.asset.depreciation.line"]
 
@@ -163,7 +160,6 @@ class FixedAssetDepreciationLine(models.Model):
             amount = self.amount
             self.remaining_value = asset_value - depreciated_value - amount
 
-    @api.multi
     def write(self, vals):
         for dl in self:
             if vals.keys() == ["move_id"] and not vals["move_id"]:
@@ -205,7 +201,6 @@ class FixedAssetDepreciationLine(models.Model):
                     )
         return super(FixedAssetDepreciationLine, self).write(vals)
 
-    @api.multi
     def _setup_move_data(self, depreciation_date):
         asset = self.asset_id
         move_data = {
@@ -216,7 +211,6 @@ class FixedAssetDepreciationLine(models.Model):
         }
         return move_data
 
-    @api.multi
     def _setup_move_line_data(
         self,
         depreciation_date,
@@ -250,7 +244,6 @@ class FixedAssetDepreciationLine(models.Model):
         }
         return move_line_data
 
-    @api.multi
     def create_move(self):
         self.ensure_one()
         context = self.env.context
@@ -294,12 +287,10 @@ class FixedAssetDepreciationLine(models.Model):
                 asset.write({"state": "close"})
         return created_move_ids
 
-    @api.multi
     def _get_action_account_move(self):
         action = self.env.ref("account." "action_move_journal_line").read()[0]
         return action
 
-    @api.multi
     def open_move(self):
         self.ensure_one()
         move = self.move_id
@@ -311,7 +302,6 @@ class FixedAssetDepreciationLine(models.Model):
             action = {"type": "ir.actions.act_window_close"}
         return action
 
-    @api.multi
     def unlink_move(self):
         ctx = {"unlink_from_asset": True}
 
@@ -328,22 +318,18 @@ class FixedAssetDepreciationLine(models.Model):
             self.unlink()
         return True
 
-    @api.multi
     def _mark_as_init(self):
         self.ensure_one()
         self.write({"init_entry": True})
 
-    @api.multi
     def action_mark_as_init(self):
         for document in self:
             document._mark_as_init()
 
-    @api.multi
     def _unmark_as_init(self):
         self.ensure_one()
         self.write({"init_entry": False})
 
-    @api.multi
     def action_unmark_as_init(self):
         for document in self:
             document._unmark_as_init()

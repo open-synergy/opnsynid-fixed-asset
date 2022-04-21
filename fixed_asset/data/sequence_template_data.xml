@@ -3,21 +3,24 @@
      Copyright 2022 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
+    <data noupdate="1">
         <record id="fixed_asset_sequence_template" model="sequence.template">
-            <field name="name">Fixed Asset Sequence Template</field>
+            <field name="name">Standard: Fixed Asset Sequence Template</field>
             <field name="model_id" ref="fixed_asset.model_fixed_asset_asset" />
             <field
-            name="sequence_field_id"
-            search="[('model_id.model','=','fixed.asset.asset'),('name','=','code')]"
-        />
+                name="sequence_field_id"
+                search="[('model_id.model','=','fixed.asset.asset'),('name','=','code')]"
+            />
             <field
-            name="date_field_id"
-            search="[('model_id.model','=','fixed.asset.asset'),('name','=','date_start')]"
-        />
+                name="date_field_id"
+                search="[('model_id.model','=','fixed.asset.asset'),('name','=','date_start')]"
+            />
             <field name="sequence_selection_method">use_sequence</field>
             <field name="sequence_id" ref="fixed_asset.sequence_account_asset_asset" />
-            <field name="add_custom_prefix">False</field>
-            <field name="add_custom_suffix">False</field>
+            <field name="add_custom_prefix" eval="0" />
+            <field name="add_custom_suffix" eval="0" />
+            <field name="computation_method">use_python</field>
             <field name="python_code">result = True</field>
         </record>
+    </data>
 </odoo>

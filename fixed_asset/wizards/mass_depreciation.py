@@ -2,7 +2,7 @@
 # Copyright 2022 PT. Simetri Sinergi Indonesia
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class AccountMassDepreciation(models.TransientModel):
@@ -18,12 +18,10 @@ class AccountMassDepreciation(models.TransientModel):
         required=True,
     )
 
-    @api.multi
     def action_confirm(self):
         for wizard in self:
             wizard._mass_depreciate()
 
-    @api.multi
     def _mass_depreciate(self):
         self.ensure_one()
         obj_line = self.env["fixed.asset.depreciation.line"]
