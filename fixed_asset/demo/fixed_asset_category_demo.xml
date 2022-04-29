@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+<data>
+<record id="demo_asset_category1" model="fixed.asset.category">
+    <field name="name">Equipment</field>
+    <field name="code">X001</field>
+    <field name="journal_id" ref="fixed_asset.demo_journal_fixed_asset_depreciation" />
+    <field name="account_asset_id" ref="fixed_asset.demo_account1" />
+    <field name="account_depreciation_id" ref="fixed_asset.demo_account3" />
+    <field name="account_expense_depreciation_id" ref="fixed_asset.demo_account5" />
+    <field name="method_time">year</field>
+    <field name="method_number" eval="4" />
+    <field name="method_period">month</field>
+    <field name="method">linear</field>
+    <field name="prorata" eval="1" />
+    <field name="date_min_prorate" eval="15" />
+</record>
+
+<record id="demo_asset_category2" model="fixed.asset.category">
+    <field name="name">Vehicle</field>
+    <field name="code">X002</field>
+    <field name="journal_id" ref="fixed_asset.demo_journal_fixed_asset_depreciation" />
+    <field name="account_asset_id" ref="fixed_asset.demo_account2" />
+    <field name="account_depreciation_id" ref="fixed_asset.demo_account4" />
+    <field name="account_expense_depreciation_id" ref="fixed_asset.demo_account6" />
+    <field name="method_time">year</field>
+    <field name="method_number" eval="8" />
+    <field name="method_period">month</field>
+    <field name="method">linear</field>
+    <field name="prorata" eval="1" />
+    <field name="date_min_prorate" eval="15" />
+</record>
+</data>
+</odoo>

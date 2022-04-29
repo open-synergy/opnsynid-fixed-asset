@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2022 OpenSynergy Indonesia
      Copyright 2022 PT. Simetri Sinergi Indonesia
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
 <odoo>
 <record id="fixed_asset_asset_view_form" model="ir.ui.view">
     <field name="name">fixed.asset.asset.form</field>
@@ -456,7 +456,7 @@
 </record>
 
 <record id="fixed_asset_asset_action" model="ir.actions.act_window">
-    <field name="name">Assets</field>
+    <field name="name">Fixed Assets</field>
     <field name="res_model">fixed.asset.asset</field>
     <field name="view_id" ref="fixed_asset_asset_view_tree" />
     <field name="search_view_id" ref="fixed_asset_asset_view_search" />
@@ -464,7 +464,9 @@
 
 <menuitem
         id="menu_fixed_asset_asset"
-        parent="fixed_asset.menu_finance_assets"
+        parent="ssi_financial_accounting.menu_fixed_asset"
+        name="Fixed Assets"
         action="fixed_asset_asset_action"
+        groups="fixed_asset.fixed_asset_viewer_group"
     />
 </odoo>

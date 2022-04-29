@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2022 OpenSynergy Indonesia
      Copyright 2022 PT. Simetri Sinergi Indonesia
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
 <odoo>
     <record id="fixed_asset_category_view_search" model="ir.ui.view">
         <field name="name">fixed.asset.category.search</field>
@@ -107,7 +107,8 @@
     <menuitem
         id="menu_fixed_asset_category"
         name="Categories"
-        parent="fixed_asset.menu_finance_config_assets"
+        parent="ssi_financial_accounting.menu_fixed_asset_configuration"
         action="fixed_asset_category_action"
+        groups="fixed_asset.fixed_asset_category_group"
     />
 </odoo>

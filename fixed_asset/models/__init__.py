@@ -1,8 +1,8 @@
-# Copyright 2020 OpenSynergy Indonesia
-# Copyright 2020 PT. Simetri Sinergi Indonesia
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+# Copyright 2022 OpenSynergy Indonesia
+# Copyright 2022 PT. Simetri Sinergi Indonesia
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
+
 from . import (
-    res_config,
     fixed_asset_category,
     account_account,
     fixed_asset_asset,

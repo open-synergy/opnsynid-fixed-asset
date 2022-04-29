@@ -1,6 +1,7 @@
 # Copyright 2022 OpenSynergy Indonesia
 # Copyright 2022 PT. Simetri Sinergi Indonesia
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
+
 import calendar
 import logging
 from datetime import date, datetime
@@ -9,8 +10,6 @@ from dateutil.relativedelta import relativedelta
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
-
-from odoo.addons import decimal_precision as dp
 
 _logger = logging.getLogger(__name__)
 
@@ -207,7 +206,6 @@ class FixedAssetAsset(models.Model):
 
     asset_value = fields.Float(
         string="Asset Value",
-        digits=dp.get_precision("Account"),
         compute=_compute_asset_value,
         store=True,
         help="This amount represent the initial value of the asset.",
@@ -263,19 +261,16 @@ class FixedAssetAsset(models.Model):
 
     value_residual = fields.Float(
         string="Residual Value",
-        digits=dp.get_precision("Account"),
         compute=_compute_depreciation,
         store=True,
     )
     value_depreciated = fields.Float(
         string="Depreciated Value",
-        digits=dp.get_precision("Account"),
         compute=_compute_depreciation,
         store=True,
     )
     salvage_value = fields.Float(
         string="Salvage Value",
-        digits=dp.get_precision("Account"),
         readonly=True,
         states={"draft": [("readonly", False)]},
         help="The estimated value that an asset will realize upon "
@@ -1533,12 +1528,12 @@ class FixedAssetAsset(models.Model):
     def action_approve_approval(self):
         _super = super(FixedAssetAsset, self)
         _super.action_approve_approval()
-        for document in self:
+        for document in self.sudo():
             if document.approved:
                 document.validate()
 
     def validate(self):
-        for document in self:
+        for document in self.sudo():
             currency = document.company_id.currency_id
             if document.type == "normal" and currency.is_zero(document.value_residual):
                 document.write(document._prepare_done_data())
@@ -1546,7 +1541,7 @@ class FixedAssetAsset(models.Model):
                 document.write(document._prepare_open_data())
 
     def action_cancel(self):
-        for document in self:
+        for document in self.sudo():
             dl_ids = document.depreciation_line_ids.filtered(
                 lambda x: x.type != "create"
             )
