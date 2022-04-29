@@ -19,7 +19,7 @@ class AccountMassDepreciation(models.TransientModel):
     )
 
     def action_confirm(self):
-        for wizard in self:
+        for wizard in self.sudo():
             wizard._mass_depreciate()
 
     def _mass_depreciate(self):

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+<record id="fixed_asset_viewer_group" model="res.groups">
+    <field name="name">Viewer</field>
+    <field name="category_id" ref="fixed_asset.fixed_asset_module_category" />
+</record>
+
+<record id="fixed_asset_user_group" model="res.groups">
+    <field name="name">User</field>
+    <field name="category_id" ref="fixed_asset.fixed_asset_module_category" />
+    <field name="implied_ids" eval="[(4, ref('fixed_asset_viewer_group'))]" />
+    <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+</record>
+
+<record id="fixed_asset_validator_group" model="res.groups">
+    <field name="name">Validator</field>
+    <field name="category_id" ref="fixed_asset.fixed_asset_module_category" />
+    <field name="implied_ids" eval="[(4, ref('fixed_asset_user_group'))]" />
+    <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+</record>
+
+<!-- Configurator -->
+<record id="fixed_asset_category_group" model="res.groups">
+    <field name="name">Fixed Asset Category</field>
+    <field
+            name="category_id"
+            ref="ssi_financial_accounting.financial_accounting_configurator_module_category"
+        />
+    <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+</record>
+
+<!-- Wizard -->
+<record id="mass_depreciation_group" model="res.groups">
+    <field name="name">Mass Depreciation</field>
+    <field
+            name="category_id"
+            ref="ssi_financial_accounting.financial_accounting_wizard_module_category"
+        />
+    <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+</record>
+
+</odoo>

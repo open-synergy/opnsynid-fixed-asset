@@ -1,6 +1,6 @@
 # Copyright 2022 OpenSynergy Indonesia
 # Copyright 2022 PT. Simetri Sinergi Indonesia
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from datetime import time
 
@@ -323,7 +323,7 @@ class FixedAssetDepreciationLine(models.Model):
         self.write({"init_entry": True})
 
     def action_mark_as_init(self):
-        for document in self:
+        for document in self.sudo():
             document._mark_as_init()
 
     def _unmark_as_init(self):
@@ -331,5 +331,5 @@ class FixedAssetDepreciationLine(models.Model):
         self.write({"init_entry": False})
 
     def action_unmark_as_init(self):
-        for document in self:
+        for document in self.sudo():
             document._unmark_as_init()
