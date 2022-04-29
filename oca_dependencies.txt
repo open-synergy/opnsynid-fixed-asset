@@ -14,3 +14,4 @@
 # To provide both the URL and a branch, use:
 account-financial-tools https://github.com/OCA/account-financial-tools.git 14.0
 ssi-mixin https://github.com/open-synergy/ssi-mixin.git 14.0
+ssi-financial-accounting https://github.com/open-synergy/ssi-financial-acconting.git 14.0
