@@ -29,9 +29,8 @@ env:
     - VERSION="14.0" TESTS="0" LINT_CHECK="0" MAKEPOT="1"
 
 install:
-  - git clone --depth=1
-    https://github.com/simetri-sinergi-id/maintainer-quality-tools.git
-    ${HOME}/maintainer-quality-tools
+  - git clone --depth=1 https://github.com/akretion/maintainer-quality-tools.git -b
+    master-no-QUnitSuite ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
 
