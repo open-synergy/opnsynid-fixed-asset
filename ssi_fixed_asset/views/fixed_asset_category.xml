@@ -109,6 +109,6 @@
         name="Categories"
         parent="ssi_financial_accounting.menu_fixed_asset_configuration"
         action="fixed_asset_category_action"
-        groups="fixed_asset.fixed_asset_category_group"
+        groups="ssi_fixed_asset.fixed_asset_category_group"
     />
 </odoo>

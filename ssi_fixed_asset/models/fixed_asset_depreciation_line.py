@@ -251,6 +251,7 @@ class FixedAssetDepreciationLine(models.Model):
         obj_fixed_asset = self.env["fixed.asset.asset"]
         obj_account_move = self.env["account.move"]
         obj_account_move_line = self.env["account.move.line"]
+
         created_move_ids = []
         asset_ids = []
 

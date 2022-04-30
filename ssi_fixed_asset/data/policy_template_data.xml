@@ -6,7 +6,7 @@
 <data noupdate="1">
 <record id="policy_template_fixed_asset" model="policy.template">
     <field name="name">Standard</field>
-    <field name="model_id" ref="fixed_asset.model_fixed_asset_asset" />
+    <field name="model_id" ref="ssi_fixed_asset.model_fixed_asset_asset" />
     <field
                 name="state_field_id"
                 search="[('model_id.model','=','fixed.asset.asset'),('name','=','state')]"
@@ -29,7 +29,7 @@
     <field name="computation_method">use_group</field>
     <field
                 name="group_ids"
-                eval="[(6,0,[ref('fixed_asset.fixed_asset_user_group')])]"
+                eval="[(6,0,[ref('ssi_fixed_asset.fixed_asset_user_group')])]"
             />
     <field name="restrict_additional" eval="0" />
 </record>
@@ -48,7 +48,7 @@
     <field name="computation_method">use_group</field>
     <field
                 name="group_ids"
-                eval="[(6,0,[ref('fixed_asset.fixed_asset_validator_group')])]"
+                eval="[(6,0,[ref('ssi_fixed_asset.fixed_asset_validator_group')])]"
             />
     <field name="restrict_additional" eval="0" />
 </record>
@@ -67,7 +67,7 @@
     <field name="computation_method">use_group</field>
     <field
                 name="group_ids"
-                eval="[(6,0,[ref('fixed_asset.fixed_asset_validator_group')])]"
+                eval="[(6,0,[ref('ssi_fixed_asset.fixed_asset_validator_group')])]"
             />
     <field name="restrict_additional" eval="0" />
 </record>
@@ -122,7 +122,7 @@ result = True</field>
     <field name="computation_method">use_group</field>
     <field
                 name="group_ids"
-                eval="[(6,0,[ref('fixed_asset.fixed_asset_validator_group')])]"
+                eval="[(6,0,[ref('ssi_fixed_asset.fixed_asset_validator_group')])]"
             />
     <field name="restrict_additional" eval="0" />
 </record>

@@ -40,7 +40,7 @@
         id="menu_mass_depreciation_action"
         parent="ssi_financial_accounting.menu_fixed_asset"
         action="account_mass_depreciation_action"
-        groups="fixed_asset.mass_depreciation_group"
+        groups="ssi_fixed_asset.mass_depreciation_group"
         sequence="99"
     />
 
