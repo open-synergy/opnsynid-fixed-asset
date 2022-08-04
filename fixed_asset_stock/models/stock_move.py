@@ -2,11 +2,20 @@
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from openerp import api, models
+from openerp import api, fields, models
 
 
 class StockMove(models.Model):
     _inherit = "stock.move"
+
+    override_auto_capitalization = fields.Boolean(
+        string="Override Auto Capitalization",
+        default=False,
+    )
+    auto_create_asset = fields.Boolean(
+        string="Auto Create Fixed Asset",
+        default=False,
+    )
 
     @api.multi
     def action_done(self):

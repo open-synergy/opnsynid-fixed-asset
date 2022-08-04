@@ -13,11 +13,7 @@ class StockQuant(models.Model):
     def create(self, values):
         _super = super(StockQuant, self)
         result = _super.create(values)
-        if (
-            result.lot_id
-            and result.product_id.auto_capitalization
-            and result.cost > result.company_id.auto_capitalization_limit
-        ):
+        if result._check_autocreate_fixed_asset():
             result._create_fixed_asset()
         return result
 
@@ -43,6 +39,24 @@ class StockQuant(models.Model):
                 "line_date": asset._get_date_start(),
             }
         )
+
+    @api.multi
+    def _check_autocreate_fixed_asset(self):
+        self.ensure_one()
+        result = False
+        move = self.history_ids[0]
+        if (
+            self.lot_id
+            and self.product_id.auto_capitalization
+            and not move.override_auto_capitalization
+            and self.cost > self.company_id.auto_capitalization_limit
+        ):
+            result = True
+        elif (
+            self.lot_id and move.override_auto_capitalization and move.auto_create_asset
+        ):
+            result = True
+        return result
 
     @api.multi
     def _get_asset_partner(self):
