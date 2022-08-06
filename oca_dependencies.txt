@@ -12,6 +12,7 @@
 # sale-workflow https://github.com/OCA/sale-workflow
 #
 # To provide both the URL and a branch, use:
+oca-account-financial-tools https://github.com/OCA/account-financial-tools.git 14.0
 ssi-mixin https://github.com/open-synergy/ssi-mixin.git 14.0
 ssi-financial-accounting https://github.com/open-synergy/ssi-financial-accounting.git 14.0
 oca-server-ux https://github.com/OCA/server-ux.git 14.0
