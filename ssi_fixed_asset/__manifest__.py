@@ -4,7 +4,7 @@
 
 {
     "name": "Fixed Asset",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
@@ -40,6 +40,7 @@
         "views/fixed_asset_category.xml",
         "views/account_account_view.xml",
         "views/fixed_asset_asset.xml",
+        "views/account_move_line_views.xml",
     ],
     "demo": [
         "demo/account_journal_demo.xml",

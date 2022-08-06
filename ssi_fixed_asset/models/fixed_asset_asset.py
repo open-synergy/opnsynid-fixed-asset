@@ -41,6 +41,7 @@ class FixedAssetAsset(models.Model):
     _after_approved_method = "action_open"
     _create_sequence_state = "open"
     _done_state = "close"
+    _document_number_field = "code"
 
     @api.model
     def _get_policy_field(self):
@@ -1221,9 +1222,7 @@ class FixedAssetAsset(models.Model):
         fy_id = entry["fy_id"]
         if asset.prorata:
             if firstyear:
-                depreciation_date_start = datetime.strptime(
-                    asset.last_posted_asset_line_id.line_date, "%Y-%m-%d"
-                )
+                depreciation_date_start = asset.last_posted_asset_line_id.line_date
                 first_fy_asset_days = depreciation_date_start + relativedelta(day=1)
 
                 duration_factor = float(13 - first_fy_asset_days.month) / 12.0
@@ -1540,14 +1539,12 @@ class FixedAssetAsset(models.Model):
             else:
                 document.write(document._prepare_open_data())
 
-    def action_cancel(self):
-        for document in self.sudo():
-            dl_ids = document.depreciation_line_ids.filtered(
-                lambda x: x.type != "create"
-            )
-            if dl_ids:
-                dl_ids.unlink()
-            document.write(document._prepare_cancel_data())
+    def action_cancel(self, cancel_reason=False):
+        _super = super(FixedAssetAsset, self)
+        res = _super.action_cancel(cancel_reason)
+        for record in self.sudo():
+            record._unlink_creation_depreciation_line()
+        return res
 
     def _get_account_move_ids(self):
         return self.mapped("account_move_line_ids.move_id")
@@ -1566,3 +1563,9 @@ class FixedAssetAsset(models.Model):
         else:
             action = {"type": "ir.actions.act_window_close"}
         return action
+
+    def _unlink_creation_depreciation_line(self):
+        self.ensure_one()
+        lines = self.depreciation_line_ids.filtered(lambda x: x.type != "create")
+        if lines:
+            lines.unlink()

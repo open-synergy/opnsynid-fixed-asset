@@ -256,37 +256,40 @@
                             <button
                                         name="action_mark_as_init"
                                         icon="fa-check"
-                                        string="Mark As Init"
+                                        title="Mark As Init"
+                                        confirm="Mark as init. Are you sure?"
                                         type="object"
                                         attrs="{'invisible':['|','|',('init_entry','=',True),('move_check','!=',False),('parent_state','!=','open')]}"
                                     />
                             <button
                                         name="action_unmark_as_init"
                                         icon="fa-close"
-                                        string="Unmark As Init"
+                                        title="Unmark As Init"
+                                        confirm="Unmark as init. Are you sure?"
                                         type="object"
                                         attrs="{'invisible':['|','|',('init_entry','!=',True),('move_check','!=',False),('parent_state','!=','open')]}"
                                     />
                             <button
                                         name="create_move"
                                         icon="fa-gears"
-                                        string="Create Move"
+                                        title="Create Move"
                                         type="object"
+                                        confirm="Create accounting entry. Are you sure?"
                                         attrs="{'invisible':['|','|',('init_entry','=',True),('move_check','!=',False),('parent_state','!=','open')]}"
                                     />
                             <button
                                         name="open_move"
                                         icon="fa-list"
-                                        string="View Move"
+                                        title="View Move"
                                         type="object"
                                         attrs="{'invisible':[('move_check','!=',True)]}"
                                     />
                             <button
                                         name="unlink_move"
                                         icon="fa-eraser"
-                                        string="Delete Move"
+                                        title="Delete Move"
                                         type="object"
-                                        confirm="Are you sure ?"
+                                        confirm="Delete accounting entry. Are you sure?"
                                         groups="account.group_account_manager"
                                         attrs="{'invisible':[('move_check','!=',True)]}"
                                     />
