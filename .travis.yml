@@ -13,6 +13,7 @@ addons:
     packages:
       - expect-dev # provides unbuffer utility
       - swig
+      - python3-pykcs11
 
 stages:
   - test
@@ -34,6 +35,7 @@ install:
     master-no-QUnitSuite ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
+  - pip install PyPDF2==1.26.0
 
 script:
   - travis_run_tests
