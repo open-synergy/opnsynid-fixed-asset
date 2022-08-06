@@ -129,16 +129,14 @@ class FixedAssetDepreciationLine(models.Model):
         for document in self:
             if document.type == "create":
                 raise UserError(
-                    _("Error!"),
                     _("You cannot remove an asset line " "of type 'Asset Value'."),
                 )
             elif document.move_id:
                 raise UserError(
-                    _("Error!"),
                     _(
                         "You cannot delete a depreciation line with "
                         "an associated accounting entry."
-                    ),
+                    )
                 )
 
             previous_id = document.previous_id and document.previous_id.id or False
@@ -304,8 +302,7 @@ class FixedAssetDepreciationLine(models.Model):
         return action
 
     def unlink_move(self):
-        ctx = {"unlink_from_asset": True}
-
+        ctx = {"unlink_from_asset": True, "force_delete": True}
         move = self.move_id
         if move.state == "posted":
             move.button_cancel()
