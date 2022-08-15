@@ -2,12 +2,25 @@
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from openerp import _, api, models
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
 class StockQuant(models.Model):
+    _name = "stock.quant"
     _inherit = "stock.quant"
+
+    asset_id = fields.Many2one(
+        string="Fixed Asset",
+        comodel_name="account.asset.asset",
+        related="lot_id.asset_id",
+        store=True,
+    )
+    asset_value = fields.Float(
+        string="Asset Value",
+        related="lot_id.asset_id.asset_value",
+        store=False,
+    )
 
     @api.model
     def create(self, values):
