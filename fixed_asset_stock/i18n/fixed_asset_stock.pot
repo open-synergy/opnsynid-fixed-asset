@@ -24,6 +24,11 @@ msgid "Asset Category"
 msgstr ""
 
 #. module: fixed_asset_stock
+#: field:stock.quant,asset_value:0
+msgid "Asset Value"
+msgstr ""
+
+#. module: fixed_asset_stock
 #: field:product.template,auto_capitalization:0
 msgid "Auto Capitalization"
 msgstr ""
@@ -117,6 +122,7 @@ msgstr ""
 #: field:stock.link_fixed_asset_to_lot_detail,asset_id:0
 #: view:stock.production.lot:fixed_asset_stock.stock_production_lot_view_form
 #: field:stock.production.lot,asset_id:0
+#: field:stock.quant,asset_id:0
 msgid "Fixed Asset"
 msgstr ""
 
@@ -188,7 +194,7 @@ msgid "Lot/Serial"
 msgstr ""
 
 #. module: fixed_asset_stock
-#: code:addons/fixed_asset_stock/models/stock_quant.py:83
+#: code:addons/fixed_asset_stock/models/stock_quant.py:96
 #, python-format
 msgid "No asset category defined"
 msgstr ""
@@ -251,6 +257,11 @@ msgstr ""
 #. module: fixed_asset_stock
 #: model:ir.model,name:fixed_asset_stock.model_stock_move
 msgid "Stock Move"
+msgstr ""
+
+#. module: fixed_asset_stock
+#: help:stock.quant,asset_value:0
+msgid "This amount represent the initial value of the asset."
 msgstr ""
 
 #. module: fixed_asset_stock
