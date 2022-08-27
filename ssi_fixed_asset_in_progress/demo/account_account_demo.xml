@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+<record id="demo_account1" model="account.account">
+    <field name="name">Asset in Progress - (test)</field>
+    <field name="code">XAIP001</field>
+    <field name="user_type_id" ref="data_account_type_aip" />
+    <field name="internal_type">other</field>
+    <field name="reconcile" eval="0" />
+</record>
+</odoo>

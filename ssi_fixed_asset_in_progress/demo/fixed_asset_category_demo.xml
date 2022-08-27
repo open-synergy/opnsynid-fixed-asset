@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+<data>
+<record id="ssi_fixed_asset.demo_asset_category1" model="fixed.asset.category">
+    <field name="account_fixed_asset_in_progress_id" ref="demo_account1" />
+    <field name="fixed_asset_in_progress_journal_id" ref="demo_journal_aip" />
+</record>
+
+<record id="ssi_fixed_asset.demo_asset_category2" model="fixed.asset.category">
+    <field name="account_fixed_asset_in_progress_id" ref="demo_account1" />
+    <field name="fixed_asset_in_progress_journal_id" ref="demo_journal_aip" />
+</record>
+</data>
+</odoo>
