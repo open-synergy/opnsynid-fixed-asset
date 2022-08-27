@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_asset_in_progress_all,fixed_asset.in_progress - all user,model_fixed_asset_in_progress,,1,0,0,0
+access_asset_in_progress_viewer,fixed_asset.in_progress - viewer,model_fixed_asset_in_progress,fixed_asset_in_progress_viewer_group,1,0,0,0
+access_asset_in_progress_user,fixed_asset.in_progress - user,model_fixed_asset_in_progress,fixed_asset_in_progress_user_group,1,1,1,1

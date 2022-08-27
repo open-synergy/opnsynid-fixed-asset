@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-4.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+    <!-- Workflow -->
+<record
+        id="fixed_asset_in_progress_workflow_module_category"
+        model="ir.module.category"
+    >
+    <field name="name">Fixed Asset in Progress</field>
+    <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_module_category"
+        />
+    <field name="sequence">4</field>
+</record>
+
+<!-- Data Ownership -->
+<record
+        id="fixed_asset_in_progress_data_ownership_module_category"
+        model="ir.module.category"
+    >
+    <field name="name">Analytic Budget</field>
+    <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_data_ownership_module_category"
+        />
+    <field name="sequence">4</field>
+</record>
+
+</odoo>

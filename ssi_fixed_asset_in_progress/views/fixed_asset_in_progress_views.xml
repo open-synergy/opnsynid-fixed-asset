@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+  <record id="fixed_asset_in_progress_view_search" model="ir.ui.view">
+    <field name="name">fixed_asset.in_progress - search</field>
+    <field name="model">fixed_asset.in_progress</field>
+    <field
+            name="inherit_id"
+            ref="ssi_transaction_mixin.mixin_transaction_view_search"
+        />
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data>
+
+        </data>
+    </field>
+</record>
+
+<record id="fixed_asset_in_progress_view_tree" model="ir.ui.view">
+    <field name="name">fixed_asset.in_progress - tree</field>
+    <field name="model">fixed_asset.in_progress</field>
+    <field name="mode">primary</field>
+    <field name="inherit_id" ref="ssi_transaction_mixin.mixin_transaction_view_tree" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='user_id']" position="before">
+                <field name="company_currency_id" />
+                <field name="category_id" />
+                <field name="fixed_asset_id" />
+                <field name="date_start" />
+                <field name="date_end" />
+                <field name="amount_in_progress" />
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="fixed_asset_in_progress_view_form" model="ir.ui.view">
+    <field name="name">fixed_asset.in_progress - form</field>
+    <field name="model">fixed_asset.in_progress</field>
+    <field name="mode">primary</field>
+    <field name="inherit_id" ref="ssi_transaction_mixin.mixin_transaction_view_form" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="company_currency_id" />
+            </xpath>
+            <xpath expr="//group[@name='header_right']" position="inside">
+                <field name="date_start" />
+                <field name="date_end" />
+                <field name="category_id" />
+                <field name="title" />
+            </xpath>
+            <xpath expr="//page[1]" position="before">
+                <page name="move_line" string="In Progres Move Lines">
+                    <field
+                            name="fixed_asset_in_progress_move_line_ids"
+                            widget="many2many"
+                            domain="[('account_id','=',fixed_asset_in_progress_account_id),('fixed_asset_in_progress_id','=',False),('fixed_asset_id','=',False)]"
+                        />
+                </page>
+                <page name="accounting" string="Accounting">
+                    <group name="accounting_1" colspan="4" col="2">
+                        <field name="journal_id" />
+                        <field name="fixed_asset_account_id" />
+                        <field name="fixed_asset_in_progress_account_id" />
+                    </group>
+                    <group name="accounting_2" colspan="4" col="2">
+                        <field name="move_line_id" />
+                        <field name="move_id" />
+                        <field name="fixed_asset_id" />
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//group[@name='footer_left']" position="inside">
+                <field name="amount_in_progress" />
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="fixed_asset_in_progress_action" model="ir.actions.act_window">
+    <field name="name">Fixed Asset in Progress</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">fixed_asset.in_progress</field>
+    <field name="view_mode">tree,form</field>
+    <field
+            name="search_view_id"
+            ref="ssi_fixed_asset_in_progress.fixed_asset_in_progress_view_search"
+        />
+</record>
+
+<menuitem
+        id="fixed_asset_in_progress_menu"
+        name="Fixed Asset in Progress"
+        parent="ssi_financial_accounting.menu_fixed_asset"
+        groups="ssi_fixed_asset_in_progress.fixed_asset_in_progress_viewer_group"
+        action="fixed_asset_in_progress_action"
+    />
+</odoo>

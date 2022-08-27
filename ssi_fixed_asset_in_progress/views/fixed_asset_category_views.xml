@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+<record model="ir.ui.view" id="fixed_asset_category_view_form">
+    <field name="name">fixed.asset.category form</field>
+    <field name="model">fixed.asset.category</field>
+    <field name="inherit_id" ref="ssi_fixed_asset.fixed_asset_category_view_form" />
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='journal_id']" position="after">
+            <field name="fixed_asset_in_progress_journal_id" />
+        </xpath>
+        <xpath expr="//field[@name='account_expense_depreciation_id']" position="after">
+            <field name="account_fixed_asset_in_progress_id" />
+        </xpath>
+    </field>
+</record>
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+<record model="account.account.type" id="data_account_type_aip">
+    <field name="name">Asset in Progress</field>
+    <field name="type">other</field>
+    <field name="internal_group">asset</field>
+    <field name="include_initial_balance" eval="True" />
+</record>
+</odoo>
