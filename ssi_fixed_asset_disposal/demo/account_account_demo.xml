@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+<record id="demo_account1" model="account.account">
+    <field name="name">Fixed Asset Disposal Cross Account - (test)</field>
+    <field name="code">FAD001</field>
+    <field name="user_type_id" ref="data_account_type_fixed_asset_disposal_cross" />
+    <field name="internal_type">other</field>
+    <field name="reconcile" eval="0" />
+</record>
+
+<record id="demo_account2" model="account.account">
+    <field name="name">Fixed Asset Disposal Profit - (test)</field>
+    <field name="code">FAD002</field>
+    <field name="user_type_id" ref="account.data_account_type_other_income" />
+    <field name="internal_type">other</field>
+</record>
+
+<record id="demo_account3" model="account.account">
+    <field name="name">Fixed Asset Disposal Loss - (test)</field>
+    <field name="code">FAD003</field>
+    <field name="user_type_id" ref="account.data_account_type_expenses" />
+    <field name="internal_type">other</field>
+</record>
+</odoo>

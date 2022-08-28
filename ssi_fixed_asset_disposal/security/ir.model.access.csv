@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fixed_asset_disposal_all,fixed_asset.disposal - all user,model_fixed_asset_disposal,,1,0,0,0
+access_fixed_asset_disposal_viewer,fixed_asset.disposal - viewer,model_fixed_asset_disposal,fixed_asset_disposal_viewer_group,1,0,0,0
+access_fixed_asset_disposal_user,fixed_asset.disposal - user,model_fixed_asset_disposal,fixed_asset_disposal_user_group,1,1,1,1
+access_fixed_asset_disposal_type_all,fixed_asset.disposal_type - all,model_fixed_asset_disposal_type,,1,0,0,0
+access_fixed_asset_disposal_type_configurator,fixed_asset.disposal_type - configurator,model_fixed_asset_disposal_type,fixed_asset_disposal_type_configurator_group,1,1,1,1
