@@ -334,10 +334,10 @@ class FixedAssetInProgress(models.Model):
         "category_id",
     )
     def onchange_fixed_asset_account_id(self):
-        self.account_asset_id = False
+        self.fixed_asset_account_id = False
         if self.category_id:
             categ = self.category_id
-            self.account_asset_id = categ.account_asset_id
+            self.fixed_asset_account_id = categ.account_asset_id
 
     @api.onchange(
         "category_id",
