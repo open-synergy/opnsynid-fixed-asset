@@ -34,7 +34,7 @@
         </record>
 
         <record id="stock_link_fixed_asset_to_lot_action" model="ir.actions.act_window">
-            <field name="name">Create Fixed Assets From Lot</field>
+            <field name="name">Link to Serial Number</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">stock.link_fixed_asset_to_lot</field>
             <field name="view_type">form</field>
