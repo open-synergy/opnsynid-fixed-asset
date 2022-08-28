@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+  <record id="fixed_asset_disposal_view_search" model="ir.ui.view">
+    <field name="name">fixed_asset.disposal - search</field>
+    <field name="model">fixed_asset.disposal</field>
+    <field
+            name="inherit_id"
+            ref="ssi_transaction_mixin.mixin_transaction_view_search"
+        />
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data>
+
+        </data>
+    </field>
+</record>
+
+<record id="fixed_asset_disposal_view_tree" model="ir.ui.view">
+    <field name="name">fixed_asset.disposal - tree</field>
+    <field name="model">fixed_asset.disposal</field>
+    <field name="mode">primary</field>
+    <field name="inherit_id" ref="ssi_transaction_mixin.mixin_transaction_view_tree" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='user_id']" position="before">
+                <field name="company_currency_id" />
+                <field name="asset_id" />
+                <field name="date_disposition" />
+                <field name="type_id" />
+                <field name="acquisition_price" />
+                <field name="depreciated_amount" />
+                <field name="disposition_price" />
+                <field name="gain_loss_amount" />
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="fixed_asset_disposal_view_form" model="ir.ui.view">
+    <field name="name">fixed_asset.disposal - form</field>
+    <field name="model">fixed_asset.disposal</field>
+    <field name="mode">primary</field>
+    <field name="inherit_id" ref="ssi_transaction_mixin.mixin_transaction_view_form" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="company_currency_id" />
+                <field name="asset_id" />
+            </xpath>
+            <xpath expr="//group[@name='header_right']" position="inside">
+                <field name="type_id" />
+                <field name="date_disposition" />
+                <field name="acquisition_price" force_save="1" />
+                <field name="depreciated_amount" force_save="1" />
+                <field name="disposition_price" />
+                <field name="gain_loss_amount" force_save="1" />
+            </xpath>
+            <xpath expr="//page[1]" position="before">
+                <page name="accounting" string="Accounting">
+                    <group name="accounting_1" colspan="4" col="2">
+                        <field name="disposal_journal_id" />
+                        <field name="asset_account_id" />
+                        <field name="accumulated_depreciation_account_id" />
+                        <field name="exchange_account_id" />
+                        <field name="gain_account_id" />
+                        <field name="loss_account_id" />
+                    </group>
+                    <group name="accounting_2" colspan="4" col="2">
+                        <field name="depreciation_line_id" />
+                        <field name="generate_accounting_entry" />
+                        <field name="disposal_acc_move_id" />
+                    </group>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="fixed_asset_disposal_action" model="ir.actions.act_window">
+    <field name="name">Fixed Asset Disposals</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">fixed_asset.disposal</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="fixed_asset_disposal_view_search" />
+</record>
+
+<menuitem
+        id="fixed_asset_disposal_menu"
+        name="Disposals"
+        parent="ssi_financial_accounting.menu_fixed_asset"
+        groups="fixed_asset_disposal_viewer_group"
+        action="fixed_asset_disposal_action"
+    />
+</odoo>

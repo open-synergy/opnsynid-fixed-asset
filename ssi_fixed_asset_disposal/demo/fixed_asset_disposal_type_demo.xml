@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+<record id="demo_fixed_asset_disposal_type1" model="fixed_asset.disposal_type">
+    <field name="name">Sale - (test)</field>
+    <field name="code">X001</field>
+    <field name="set_disposition_price" eval="1" />
+    <field name="disposal_journal_id" ref="demo_journal_fixed_asset_disposal" />
+    <field name="exchange_account_id" ref="demo_account1" />
+    <field name="gain_account_id" ref="demo_account2" />
+    <field name="loss_account_id" ref="demo_account3" />
+</record>
+
+<record id="demo_fixed_asset_disposal_type2" model="fixed_asset.disposal_type">
+    <field name="name">Waste - (test)</field>
+    <field name="code">X002</field>
+    <field name="set_disposition_price" eval="0" />
+    <field name="disposal_journal_id" ref="demo_journal_fixed_asset_disposal" />
+    <field name="exchange_account_id" ref="demo_account1" />
+    <field name="gain_account_id" ref="demo_account2" />
+    <field name="loss_account_id" ref="demo_account3" />
+</record>
+
+<record id="demo_fixed_asset_disposal_type3" model="fixed_asset.disposal_type">
+    <field name="name">Missing - (test)</field>
+    <field name="code">X003</field>
+    <field name="set_disposition_price" eval="0" />
+    <field name="disposal_journal_id" ref="demo_journal_fixed_asset_disposal" />
+    <field name="exchange_account_id" ref="demo_account1" />
+    <field name="gain_account_id" ref="demo_account2" />
+    <field name="loss_account_id" ref="demo_account3" />
+</record>
+</odoo>
