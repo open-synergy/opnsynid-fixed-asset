@@ -18,7 +18,6 @@ class LinkFixedAssetToLot(models.TransientModel):
             ("product_id", "!=", False),
             ("lot_id", "=", False),
             ("id", "in", asset_ids),
-            ("state", "=", "open"),
         ]
         for asset in obj_asset.search(criteria):
             data = {
@@ -39,7 +38,7 @@ class LinkFixedAssetToLot(models.TransientModel):
     @api.multi
     def button_link(self):
         self.ensure_one()
-        for detail in self.detail_ids.filtered(lambda r: not r.lot_id):
+        for detail in self.detail_ids.filtered(lambda r: r.lot_id):
             detail._link_fixed_asset_to_asset()
             detail._update_quant_value()
 
@@ -71,6 +70,8 @@ class LinkFixedAssetToLotDetail(models.TransientModel):
         self.asset_id.write(
             {
                 "lot_id": self.lot_id.id,
+                "code": self.lot_id.name,
+                "name": self.lot_id.product_id.name,
             }
         )
         self.lot_id.write(
