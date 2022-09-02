@@ -73,7 +73,6 @@ msgstr ""
 
 #. module: fixed_asset_stock
 #: model:ir.actions.act_window,name:fixed_asset_stock.stock_create_fixed_asset_from_lot_action
-#: model:ir.actions.act_window,name:fixed_asset_stock.stock_link_fixed_asset_to_lot_action
 msgid "Create Fixed Assets From Lot"
 msgstr ""
 
@@ -189,6 +188,16 @@ msgid "Link Fixed Asset To Lot Detail"
 msgstr ""
 
 #. module: fixed_asset_stock
+#: model:ir.actions.act_window,name:fixed_asset_stock.stock_link_fixed_asset_to_lot_action
+msgid "Link to Serial Number"
+msgstr ""
+
+#. module: fixed_asset_stock
+#: field:account.asset.asset,lot_id:0
+msgid "Lot"
+msgstr ""
+
+#. module: fixed_asset_stock
 #: model:ir.model,name:fixed_asset_stock.model_stock_production_lot
 msgid "Lot/Serial"
 msgstr ""
@@ -236,7 +245,6 @@ msgid "Quants"
 msgstr ""
 
 #. module: fixed_asset_stock
-#: field:account.asset.asset,lot_id:0
 #: field:stock.create_fixed_asset_from_lot,detail_ids:0
 #: field:stock.create_fixed_asset_from_lot_detail,lot_id:0
 #: field:stock.link_fixed_asset_to_lot,detail_ids:0
