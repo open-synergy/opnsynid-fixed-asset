@@ -5,7 +5,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Stock and Asset Management Integration",
-    "version": "8.0.2.3.0",
+    "version": "8.0.2.4.0",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",

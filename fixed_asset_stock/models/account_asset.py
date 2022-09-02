@@ -9,7 +9,7 @@ class AccountAsset(models.Model):
     _inherit = "account.asset.asset"
 
     lot_id = fields.Many2one(
-        string="Serial Number",
+        string="Lot",
         comodel_name="stock.production.lot",
         ondelete="restrict",
     )
