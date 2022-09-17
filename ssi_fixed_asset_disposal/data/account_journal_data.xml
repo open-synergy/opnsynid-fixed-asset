@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+<data noupdate="1">
+<record id="journal_fas" model="account.journal">
+    <field name="name">Fixed Asset Disposal</field>
+    <field name="code">FAS</field>
+    <field name="type">general</field>
+</record>
+</data>
+</odoo>
