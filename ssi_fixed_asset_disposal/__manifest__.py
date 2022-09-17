@@ -3,7 +3,7 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Fixed Asset Disposal",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
@@ -30,6 +30,7 @@
         "data/sequence_template_data.xml",
         "data/account_type_demo.xml",
         "data/fixed_asset_depreciation_line_subtype_data.xml",
+        "data/account_journal_data.xml",
         "views/fixed_asset_disposal_type_views.xml",
         "views/fixed_asset_disposal_views.xml",
     ],
