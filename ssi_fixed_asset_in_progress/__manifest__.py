@@ -4,7 +4,7 @@
 
 {
     "name": "Fixed Asset In Progress",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.1.0",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
@@ -33,6 +33,7 @@
         "data/ir_sequence_data.xml",
         "data/sequence_template_data.xml",
         "data/account_type_demo.xml",
+        "data/account_journal_data.xml",
         "views/fixed_asset_category_views.xml",
         "views/fixed_asset_in_progress_views.xml",
     ],
