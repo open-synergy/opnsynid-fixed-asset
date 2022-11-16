@@ -1682,12 +1682,11 @@ class FixedAssetAsset(models.Model):
                 "ir_sequence_date": self.date_start,
             }
         )
-        sequence = self.with_context(ctx)._create_sequence()
+        self.with_context(ctx)._create_sequence()
         return {
             "state": "open",
             "open_date": fields.Datetime.now(),
             "open_user_id": self.env.user.id,
-            "code": sequence,
         }
 
     @api.multi
@@ -1743,12 +1742,11 @@ class FixedAssetAsset(models.Model):
                 "ir_sequence_date": self.date_start,
             }
         )
-        sequence = self.with_context(ctx)._create_sequence()
+        self.with_context(ctx)._create_sequence()
         return {
             "state": "close",
             "close_date": fields.Datetime.now(),
             "close_user_id": self.env.user.id,
-            "code": sequence,
         }
 
     @api.multi
