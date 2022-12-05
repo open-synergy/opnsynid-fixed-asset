@@ -319,6 +319,9 @@ class FixedAssetDepreciationLine(models.Model):
     def _mark_as_init(self):
         self.ensure_one()
         self.write({"init_entry": True})
+        currency = self.company_id.currency_id
+        if currency.is_zero(self.value_residual):
+            self.write({"state": "close"})
 
     def action_mark_as_init(self):
         for document in self.sudo():
@@ -327,6 +330,9 @@ class FixedAssetDepreciationLine(models.Model):
     def _unmark_as_init(self):
         self.ensure_one()
         self.write({"init_entry": False})
+        currency = self.company_id.currency_id
+        if not currency.is_zero(self.value_residual):
+            self.write({"state": "open"})
 
     def action_unmark_as_init(self):
         for document in self.sudo():
