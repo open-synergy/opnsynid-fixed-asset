@@ -259,7 +259,7 @@
                                         title="Mark As Init"
                                         confirm="Mark as init. Are you sure?"
                                         type="object"
-                                        attrs="{'invisible':['|','|',('init_entry','=',True),('move_check','!=',False),('parent_state','!=','open')]}"
+                                        attrs="{'invisible':['|','|',('init_entry','=',True),('move_check','!=',False),('parent_state','not in',['open','close'])]}"
                                     />
                             <button
                                         name="action_unmark_as_init"
@@ -267,7 +267,7 @@
                                         title="Unmark As Init"
                                         confirm="Unmark as init. Are you sure?"
                                         type="object"
-                                        attrs="{'invisible':['|','|',('init_entry','!=',True),('move_check','!=',False),('parent_state','!=','open')]}"
+                                        attrs="{'invisible':['|','|',('init_entry','!=',True),('move_check','!=',False),('parent_state','not in',['open','close'])]}"
                                     />
                             <button
                                         name="create_move"
