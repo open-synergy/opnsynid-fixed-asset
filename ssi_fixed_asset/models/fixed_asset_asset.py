@@ -838,14 +838,12 @@ class FixedAssetAsset(models.Model):
     # -- Other Methods --
     def _get_date_start(self):
         self.ensure_one()
-        date_start = self.date_start
-        str_date = date_start.strftime("%Y-%m-%d")
-        dt_date_start = datetime.strptime(str_date, "%Y-%m-%d")
+        dt_date_start = self.date_start
         if self.prorate_by_month:
             if dt_date_start.day > self.date_min_prorate:
                 dt_date_start = dt_date_start + relativedelta(day=1, months=1)
 
-        return dt_date_start.strftime("%Y-%m-%d")
+        return dt_date_start
 
     def _get_assets(self):
         asset_ids = []
@@ -1079,7 +1077,7 @@ class FixedAssetAsset(models.Model):
         if the fiscal year starts in the middle of a month.
         """
         if self.prorata:
-            depreciation_start_date = self.date_start
+            depreciation_start_date = self._get_date_start()
         else:
             depreciation_start_date = fy.date_from
         return depreciation_start_date
@@ -1363,7 +1361,7 @@ class FixedAssetAsset(models.Model):
 
         company = self.company_id
         init_flag = False
-        asset_date_start = self.date_start
+        asset_date_start = self._get_date_start()
         # asset_date_start = datetime.strptime(self._get_date_start(), "%Y-%m-%d")
         fy = self._get_fy_info(asset_date_start)
         fiscalyear_lock_date = company.fiscalyear_lock_date
