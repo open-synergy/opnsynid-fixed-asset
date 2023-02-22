@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl-3.0) -->
+<odoo>
+    <data noupdate="1">
+        <record
+            id="sequence_fixed_asset_useful_life_estimation_change"
+            model="ir.sequence"
+        >
+            <field name="name">Fixed Asset Useful Life Estimation Change</field>
+            <field name="code">faulec</field>
+            <field name="prefix">FAULEC/%(range_y)s/</field>
+            <field eval="1" name="number_next" />
+            <field eval="1" name="number_increment" />
+            <field name="padding" eval="6" />
+            <field name="use_date_range" eval="1" />
+            <field eval="False" name="company_id" />
+        </record>
+    </data>
+</odoo>
