@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License LGPL-4.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+    <!-- Workflow -->
+    <record
+        id="fixed_asset_useful_life_estimation_change_workflow_module_category"
+        model="ir.module.category"
+    >
+        <field name="name">Fixed Asset Useful Life Estimation Change</field>
+        <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_module_category"
+        />
+        <field name="sequence">5</field>
+    </record>
+
+    <!-- Data Ownership -->
+    <record
+        id="fixed_asset_useful_life_estimation_change_data_ownership_module_category"
+        model="ir.module.category"
+    >
+        <field name="name">Analytic Budget</field>
+        <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_data_ownership_module_category"
+        />
+        <field name="sequence">5</field>
+    </record>
+
+</odoo>
