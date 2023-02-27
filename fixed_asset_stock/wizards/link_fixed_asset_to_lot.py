@@ -85,7 +85,10 @@ class LinkFixedAssetToLotDetail(models.TransientModel):
         total_qty = 0.0
         for quant in self.lot_id.quant_ids:
             total_qty += quant.qty
-        unit_price = self.asset_id.asset_value / total_qty
+        if total_qty == 0:
+            unit_price = 0.0
+        else:
+            unit_price = self.asset_id.asset_value / total_qty
         self.lot_id.quant_ids.write(
             {
                 "cost": unit_price,
