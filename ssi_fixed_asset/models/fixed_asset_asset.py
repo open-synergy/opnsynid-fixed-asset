@@ -380,7 +380,7 @@ class FixedAssetAsset(models.Model):
         "depreciation exceeds the annual degressive depreciation",
     )
     method_number = fields.Integer(
-        string="Number of Years",
+        string="Number of Periods",
         readonly=True,
         default=5,
         states={"draft": [("readonly", False)]},
@@ -468,6 +468,8 @@ class FixedAssetAsset(models.Model):
         result = 0
         if self.method_time == "year":
             result = 12
+        elif self.method_time == "month":
+            result = 1
         return result
 
     def _get_method_period_coefficient(self):
@@ -1087,6 +1089,10 @@ class FixedAssetAsset(models.Model):
             depreciation_stop_date = depreciation_start_date + relativedelta(
                 years=self.method_number, days=-1
             )
+        if self.method_time == "month" and not self.method_end:
+            depreciation_stop_date = depreciation_start_date + relativedelta(
+                months=self.method_number, days=-1
+            )
         elif self.method_time == "number":
             if self.method_period == "month":
                 depreciation_stop_date = depreciation_start_date + relativedelta(
@@ -1171,7 +1177,7 @@ class FixedAssetAsset(models.Model):
         Localization: override this method to change the degressive-linear
         calculation logic according to local legislation.
         """
-        if self.method_time != "year":
+        if self.method_time not in ["year", "month"]:
             raise UserError(
                 _(
                     "Programming Error!\n"
