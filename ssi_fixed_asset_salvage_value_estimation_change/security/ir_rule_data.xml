@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+    <record
+        id="fixed_asset_salvage_value_estimation_change_internal_user_rule"
+        model="ir.rule"
+    >
+        <field
+            name="name"
+        >Fixed Asset Salvage Value Estimation Change - Responsible to own data</field>
+        <field
+            name="model_id"
+            ref="model_fixed_asset_salvage_value_estimation_change"
+        />
+        <field name="groups" eval="[(4, ref('base.group_user'))]" />
+        <field name="domain_force">[('user_id','=',user.id)]</field>
+        <field name="perm_unlink" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_create" eval="1" />
+    </record>
+
+    <record
+        id="fixed_asset_salvage_value_estimation_change_company_rule"
+        model="ir.rule"
+    >
+        <field
+            name="name"
+        >Fixed Asset Salvage Value Estimation Change - Responsible to company data</field>
+        <field
+            name="model_id"
+            ref="model_fixed_asset_salvage_value_estimation_change"
+        />
+        <field
+            name="groups"
+            eval="[(4, ref('fixed_asset_salvage_value_estimation_change_company_group'))]"
+        />
+        <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        <field name="perm_unlink" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_create" eval="1" />
+    </record>
+
+    <record
+        id="fixed_asset_salvage_value_estimation_change_company_child_rule"
+        model="ir.rule"
+    >
+        <field
+            name="name"
+        >Fixed Asset Salvage Value Estimation Change - Responsible to company and all child companies data</field>
+        <field
+            name="model_id"
+            ref="model_fixed_asset_salvage_value_estimation_change"
+        />
+        <field
+            name="groups"
+            eval="[(4, ref('fixed_asset_salvage_value_estimation_change_company_child_group'))]"
+        />
+        <field name="domain_force">[('company_id','in',user.company_ids.ids)]</field>
+        <field name="perm_unlink" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_create" eval="1" />
+    </record>
+
+    <record id="fixed_asset_salvage_value_estimation_change_all_rule" model="ir.rule">
+        <field
+            name="name"
+        >Fixed Asset Salvage Value Estimation Change - Responsible to all data</field>
+        <field
+            name="model_id"
+            ref="model_fixed_asset_salvage_value_estimation_change"
+        />
+        <field
+            name="groups"
+            eval="[(4, ref('fixed_asset_salvage_value_estimation_change_all_group'))]"
+        />
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="perm_unlink" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_create" eval="1" />
+    </record>
+</odoo>

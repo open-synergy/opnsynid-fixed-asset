@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+    <!-- Workflow -->
+    <record
+        id="fixed_asset_salvage_value_estimation_change_viewer_group"
+        model="res.groups"
+    >
+        <field name="name">Viewer</field>
+        <field
+            name="category_id"
+            ref="fixed_asset_salvage_value_estimation_change_workflow_module_category"
+        />
+    </record>
+
+    <record
+        id="fixed_asset_salvage_value_estimation_change_user_group"
+        model="res.groups"
+    >
+        <field name="name">User</field>
+        <field
+            name="category_id"
+            ref="fixed_asset_salvage_value_estimation_change_workflow_module_category"
+        />
+        <field
+            name="implied_ids"
+            eval="[(4, ref('fixed_asset_salvage_value_estimation_change_viewer_group'))]"
+        />
+    </record>
+
+    <record
+        id="fixed_asset_salvage_value_estimation_change_validator_group"
+        model="res.groups"
+    >
+        <field name="name">Validator</field>
+        <field
+            name="category_id"
+            ref="fixed_asset_salvage_value_estimation_change_workflow_module_category"
+        />
+        <field
+            name="implied_ids"
+            eval="[(4, ref('fixed_asset_salvage_value_estimation_change_user_group'))]"
+        />
+        <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+    </record>
+
+    <!-- Data Ownership -->
+    <record
+        id="fixed_asset_salvage_value_estimation_change_company_group"
+        model="res.groups"
+    >
+        <field name="name">Company</field>
+        <field
+            name="category_id"
+            ref="fixed_asset_salvage_value_estimation_change_data_ownership_module_category"
+        />
+    </record>
+
+    <record
+        id="fixed_asset_salvage_value_estimation_change_company_child_group"
+        model="res.groups"
+    >
+        <field name="name">Company and All Child Companies</field>
+        <field
+            name="category_id"
+            ref="fixed_asset_salvage_value_estimation_change_data_ownership_module_category"
+        />
+        <field
+            name="implied_ids"
+            eval="[(4, ref('fixed_asset_salvage_value_estimation_change_company_group'))]"
+        />
+    </record>
+
+    <record
+        id="fixed_asset_salvage_value_estimation_change_all_group"
+        model="res.groups"
+    >
+        <field name="name">All</field>
+        <field
+            name="category_id"
+            ref="fixed_asset_salvage_value_estimation_change_data_ownership_module_category"
+        />
+        <field
+            name="implied_ids"
+            eval="[(4, ref('fixed_asset_salvage_value_estimation_change_company_child_group'))]"
+        />
+    </record>
+</odoo>
