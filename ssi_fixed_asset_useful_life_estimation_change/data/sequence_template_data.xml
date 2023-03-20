@@ -3,8 +3,11 @@
      Copyright 2023 PT. Simetri Sinergi Indonesia
      License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl-3.0-standalone.html). -->
 <odoo>
-    <data noupdate="1">
-        <record id="sequence_template" model="sequence.template">
+    <data noupdate="0">
+        <record
+            id="fixed_asset_salvage_estimation_change_sequence_template"
+            model="sequence.template"
+        >
             <field name="name">Standard</field>
             <field
                 name="model_id"

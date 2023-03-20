@@ -51,6 +51,10 @@
         <field name="mode">primary</field>
         <field name="arch" type="xml">
             <data>
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="asset_id" />
+                    <field name="date" />
+                </xpath>
                 <xpath expr="//group[@name='header_right']" position="inside">
                     <field name="previous_method_number" force_save="1" />
                     <field name="previous_method_period" force_save="1" />
