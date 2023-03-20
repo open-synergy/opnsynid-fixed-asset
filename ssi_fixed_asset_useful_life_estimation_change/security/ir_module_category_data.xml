@@ -21,7 +21,7 @@
         id="fixed_asset_useful_life_estimation_change_data_ownership_module_category"
         model="ir.module.category"
     >
-        <field name="name">Analytic Budget</field>
+        <field name="name">Fixed Asset Useful Life Estimation Change</field>
         <field
             name="parent_id"
             ref="ssi_financial_accounting.financial_accounting_data_ownership_module_category"

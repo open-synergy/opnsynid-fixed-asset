@@ -26,7 +26,7 @@
         <field name="model_id" ref="model_fixed_asset_useful_life_estimation_change" />
         <field
             name="groups"
-            eval="[(4, ref('fixed_asset_in_progres_company_group'))]"
+            eval="[(4, ref('fixed_asset_useful_life_estimation_change_company_group'))]"
         />
         <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
         <field name="perm_unlink" eval="1" />
@@ -45,7 +45,7 @@
         <field name="model_id" ref="model_fixed_asset_useful_life_estimation_change" />
         <field
             name="groups"
-            eval="[(4, ref('fixed_asset_in_progres_company_child_group'))]"
+            eval="[(4, ref('fixed_asset_useful_life_estimation_change_company_child_group'))]"
         />
         <field name="domain_force">[('company_id','in',user.company_ids.ids)]</field>
         <field name="perm_unlink" eval="1" />
@@ -59,7 +59,10 @@
             name="name"
         >Fixed Asset Useful Life Estimation Change - Responsible to all data</field>
         <field name="model_id" ref="model_fixed_asset_useful_life_estimation_change" />
-        <field name="groups" eval="[(4, ref('fixed_asset_in_progres_all_group'))]" />
+        <field
+            name="groups"
+            eval="[(4, ref('fixed_asset_useful_life_estimation_change_all_group'))]"
+        />
         <field name="domain_force">[(1,'=',1)]</field>
         <field name="perm_unlink" eval="1" />
         <field name="perm_write" eval="1" />

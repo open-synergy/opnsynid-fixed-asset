@@ -50,7 +50,10 @@
     </record>
 
     <!-- Data Ownership -->
-    <record id="fixed_asset_in_progres_company_group" model="res.groups">
+    <record
+        id="fixed_asset_useful_life_estimation_change_company_group"
+        model="res.groups"
+    >
         <field name="name">Company</field>
         <field
             name="category_id"
@@ -58,7 +61,10 @@
         />
     </record>
 
-    <record id="fixed_asset_in_progres_company_child_group" model="res.groups">
+    <record
+        id="fixed_asset_useful_life_estimation_change_company_child_group"
+        model="res.groups"
+    >
         <field name="name">Company and All Child Companies</field>
         <field
             name="category_id"
@@ -66,11 +72,11 @@
         />
         <field
             name="implied_ids"
-            eval="[(4, ref('fixed_asset_in_progres_company_group'))]"
+            eval="[(4, ref('fixed_asset_useful_life_estimation_change_company_group'))]"
         />
     </record>
 
-    <record id="fixed_asset_in_progres_all_group" model="res.groups">
+    <record id="fixed_asset_useful_life_estimation_change_all_group" model="res.groups">
         <field name="name">All</field>
         <field
             name="category_id"
@@ -78,7 +84,7 @@
         />
         <field
             name="implied_ids"
-            eval="[(4, ref('fixed_asset_in_progres_company_child_group'))]"
+            eval="[(4, ref('fixed_asset_useful_life_estimation_change_company_child_group'))]"
         />
     </record>
 </odoo>
