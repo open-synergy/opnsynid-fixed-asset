@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record
+            id="action_print_report_fixed_asset_yearly_qweb"
+            model="ir.actions.report"
+        >
+            <field name="name">Print Yearly Asset Report</field>
+            <field name="model">account.wizard_fixed_asset_yearly</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">ssi_fixed_asset_report.fixed_asset_yearly</field>
+            <field name="report_file">ssi_fixed_asset_report.fixed_asset_yearly</field>
+            <field name="paperformat_id" ref="account_financial_report.report_qweb_paperformat" />
+        </record>
+        <record
+            id="action_print_report_fixed_asset_yearly_html"
+            model="ir.actions.report"
+        >
+            <field name="name">Print Yearly Asset Report</field>
+            <field name="model">account.wizard_fixed_asset_yearly</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">ssi_fixed_asset_report.fixed_asset_yearly</field>
+            <field name="report_file">ssi_fixed_asset_report.fixed_asset_yearly</field>
+        </record>
+
+    </data>
+</odoo>

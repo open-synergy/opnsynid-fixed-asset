@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+<data>
+
+<record id="form_account_wizardFixedAssetYearly" model="ir.ui.view">
+    <field name="name">Print Yearly Fixed Asset Report</field>
+    <field name="model">account.wizard_fixed_asset_yearly</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+        <form string="Print Yearly Fixed Asset Report">
+            <group col="2" colspan="2">
+                <field name="year" />
+                <field name="asset_category_ids" widget="many2many_tags" />
+            </group>
+            <footer>
+                <button
+                    name="button_export_html"
+                    string="View"
+                    type="object"
+                    default_focus="1"
+                    class="oe_highlight"
+                />
+                or
+                <button
+                    name="button_export_pdf"
+                    string="Export PDF"
+                    type="object"
+                />
+                or
+                <button
+                    name="button_export_xlsx"
+                    string="Export XLSX"
+                    type="object"
+                />
+                or
+                <button string="Cancel" class="oe_link" special="cancel" />
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="waction_account_wizardFixedAssetYearly" model="ir.actions.act_window">
+    <field name="name">Print Yearly Fixed Asset Report</field>
+    <field name="res_model">account.wizard_fixed_asset_yearly</field>
+    <field name="view_id" ref="form_account_wizardFixedAssetYearly" />
+    <field name="target">new</field>
+</record>
+
+<menuitem
+            id="menu_account_reportFixedAssetYearly"
+            name="Yearly Fixed Asset Report"
+            parent="ssi_financial_accounting.menu_financial_accounting_report"
+            action="waction_account_wizardFixedAssetYearly"
+            sequence="20"
+        />
+
+</data>
+</odoo>
