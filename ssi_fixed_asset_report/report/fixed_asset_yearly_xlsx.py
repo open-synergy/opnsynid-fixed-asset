@@ -43,7 +43,6 @@ class FixedAssetYearlyXslx(models.AbstractModel):
 
     def generate_xlsx_report(self, workbook, data, objects):
         wbf, workbook = self.add_workbook_format(workbook)
-        print('\n data', data)
         worksheet = workbook.add_worksheet('Yearly Asset Report')
         worksheet.set_column('A:A', 5)
         worksheet.set_column('B:B', 20)
