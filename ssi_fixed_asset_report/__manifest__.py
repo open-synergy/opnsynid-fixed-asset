@@ -12,6 +12,7 @@
     "application": False,
     "installable": True,
     "depends": [
+        "report_xlsx",
         "ssi_fixed_asset",
     ],
     "external_dependencies": {
@@ -22,6 +23,11 @@
         "wizards/wizard_fixed_yearly_asset.xml",
         "reports.xml",
         "report/templates/fixed_asset_yearly.xml",
+        "report/templates/layouts.xml",
+        "views/report_template.xml",
+    ],
+    "qweb": [
+        "static/src/xml/report.xml",
     ],
     "demo": [
 
