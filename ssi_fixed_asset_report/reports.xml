@@ -2,6 +2,22 @@
 <odoo>
     <data>
 
+        <record id="report_qweb_paperformat" model="report.paperformat">
+            <field name="name">Yearly fixed asset report qweb paperformat</field>
+            <field name="default" eval="True" />
+            <field name="format">custom</field>
+            <field name="page_height">297</field>
+            <field name="page_width">210</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">12</field>
+            <field name="margin_bottom">8</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">10</field>
+            <field name="dpi">110</field>
+        </record>
+
         <record
             id="action_print_report_fixed_asset_yearly_qweb"
             model="ir.actions.report"
@@ -9,10 +25,11 @@
             <field name="name">Print Yearly Asset Report</field>
             <field name="model">account.wizard_fixed_asset_yearly</field>
             <field name="report_type">qweb-pdf</field>
-            <field name="report_name">ssi_fixed_asset_report.fixed_asset_yearly</field>
-            <field name="report_file">ssi_fixed_asset_report.fixed_asset_yearly</field>
-            <field name="paperformat_id" ref="account_financial_report.report_qweb_paperformat" />
+            <field name="report_name">ssi_fixed_asset_report.report_fixed_asset_yearly</field>
+            <field name="report_file">ssi_fixed_asset_report.report_fixed_asset_yearly</field>
+            <field name="paperformat_id" ref="ssi_fixed_asset_report.report_qweb_paperformat" />
         </record>
+
         <record
             id="action_print_report_fixed_asset_yearly_html"
             model="ir.actions.report"
@@ -20,8 +37,17 @@
             <field name="name">Print Yearly Asset Report</field>
             <field name="model">account.wizard_fixed_asset_yearly</field>
             <field name="report_type">qweb-html</field>
-            <field name="report_name">ssi_fixed_asset_report.fixed_asset_yearly</field>
-            <field name="report_file">ssi_fixed_asset_report.fixed_asset_yearly</field>
+            <field name="report_name">ssi_fixed_asset_report.report_fixed_asset_yearly</field>
+            <field name="report_file">ssi_fixed_asset_report.report_fixed_asset_yearly</field>
+        </record>
+
+        <record id="action_report_fixed_asset_yearly_xlsx" model="ir.actions.report">
+            <field name="name">Yearly Asset Report</field>
+            <field name="model">account.wizard_fixed_asset_yearly</field>
+            <field name="type">ir.actions.report</field>
+            <field name="report_name">a_f_r.report_fixed_asset_yearly_xlsx</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_file">report_fixed_asset_yearly</field>
         </record>
 
     </data>
