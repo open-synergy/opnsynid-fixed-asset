@@ -80,7 +80,7 @@ class FixedAssetUsefulLifeEstimationChange(models.Model):
     previous_method_number = fields.Integer(
         string="Previous Method Number",
         required=True,
-        reaadonly=True,
+        readonly=True,
     )
     previous_method_period = fields.Selection(
         selection=[
@@ -129,26 +129,26 @@ class FixedAssetUsefulLifeEstimationChange(models.Model):
         res += policy_field
         return res
 
-    @api.onchange(asset_id)
+    @api.onchange("asset_id")
     def onchange_method_number(self):
         self.method_number = False
         if self.asset_id:
             self.method_number = self.asset_id.method_number
 
-    @api.onchange(asset_id)
+    @api.onchange("asset_id")
     def onchange_method_period(self):
         self.method_period = False
         if self.asset_id:
             self.method_period = self.asset_id.method_period
 
-    @api.onchange(asset_id)
+    @api.onchange("asset_id")
     def onchange_previous_method_number(self):
         self.previous_method_number = False
         if self.asset_id:
-            self.previous_method_number = self.asset_id.previous_method_number
+            self.previous_method_number = self.asset_id.method_number
 
-    @api.onchange(asset_id)
+    @api.onchange("asset_id")
     def onchange_previous_method_period(self):
         self.previous_method_period = False
         if self.asset_id:
-            self.previous_method_period = self.asset_id.previous_method_period
+            self.previous_method_period = self.asset_id.method_period
