@@ -36,7 +36,6 @@ install:
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
   - pip install PyPDF2==1.26.0
-  - pip list
 
 script:
   - travis_run_tests
