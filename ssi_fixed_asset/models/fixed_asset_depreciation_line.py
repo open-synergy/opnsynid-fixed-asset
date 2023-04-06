@@ -254,7 +254,7 @@ class FixedAssetDepreciationLine(models.Model):
         asset_ids = []
 
         asset = self.asset_id
-        if asset.method_time == "year":
+        if asset.method_time == "year" or asset.method_time == "month":
             depreciation_date = context.get("depreciation_date") or self.line_date
         else:
             depreciation_date = context.get("depreciation_date") or time.strftime(
