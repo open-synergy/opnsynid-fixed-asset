@@ -35,6 +35,7 @@ Contributors
 ------------
 
 * Andhitia Rama <andhitia.r@gmail.com>
+* Michael Viriyananda <viriyananda.michael@gmail.com>
 * Usamah <usa8bit@gmail.com>
 
 Maintainer
