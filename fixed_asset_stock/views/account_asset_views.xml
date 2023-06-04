@@ -14,7 +14,17 @@
             <page name="stock" string="Stock">
                 <group name="stock_1" colspan="4" col="2">
                     <field name="product_id" />
-                    <field name="lot_id" readonly="1" />
+                    <field name="asset_relation" />
+                    <field name="lot_id" />
+                    <field
+                                name="join_lot_id"
+                                domain="[('product_id','=',product_id)]"
+                            />
+                    <field
+                                name="join_lot_ids"
+                                widget="many2many_tags"
+                                domain="[('product_id','=',product_id)]"
+                            />
                 </group>
             </page>
         </xpath>

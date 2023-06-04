@@ -13,6 +13,42 @@ class StockProductionLot(models.Model):
         comodel_name="account.asset.asset",
         ondelete="restrict",
     )
+    join_asset_ids = fields.One2many(
+        string="Join Asset",
+        comodel_name="account.asset.asset",
+        inverse_name="join_lot_id",
+    )
+    join_asset_id = fields.Many2one(
+        string="Join Asset",
+        comodel_name="account.asset.asset",
+    )
+    lot_relation = fields.Selection(
+        string="Lot Relation",
+        selection=[
+            ("o2o", "Lot is an asset"),
+            ("o2m", "One lot split into multiple asset"),
+            ("m2o", "Multiple lot join into one asset"),
+            ("no", "No relation"),
+        ],
+        compute="_compute_lot_relation",
+        store=True,
+    )
+
+    @api.depends(
+        "asset_id",
+        "join_asset_ids",
+        "join_asset_id",
+    )
+    def _compute_lot_relation(self):
+        for record in self:
+            result = "no"
+            if record.asset_id:
+                result = "o2o"
+            elif len(record.join_asset_ids) > 0:
+                result = "o2m"
+            elif record.join_asset_id:
+                result = "m2o"
+            record.lot_relation = result
 
     @api.multi
     def _get_initial_move(self):

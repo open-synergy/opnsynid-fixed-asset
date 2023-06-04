@@ -21,6 +21,27 @@ class StockQuant(models.Model):
         related="lot_id.asset_id.asset_value",
         store=False,
     )
+    join_asset_ids = fields.One2many(
+        string="Join Asset",
+        comodel_name="account.asset.asset",
+        related="lot_id.join_asset_ids",
+    )
+    join_asset_id = fields.Many2one(
+        string="Join Asset",
+        comodel_name="account.asset.asset",
+        related="lot_id.join_asset_id",
+    )
+    lot_relation = fields.Selection(
+        string="Lot Relation",
+        selection=[
+            ("o2o", "Lot is an asset"),
+            ("o2m", "One lot split into multiple asset"),
+            ("m2o", "Multiple lot join into one asset"),
+            ("no", "No relation"),
+        ],
+        related="lot_id.lot_relation",
+        store=True,
+    )
 
     @api.model
     def create(self, values):
