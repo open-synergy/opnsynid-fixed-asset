@@ -2,7 +2,7 @@
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from openerp import api, fields, models
+from openerp import _, api, fields, models
 
 
 class LinkFixedAssetToLot(models.TransientModel):
@@ -67,6 +67,9 @@ class LinkFixedAssetToLotDetail(models.TransientModel):
     @api.multi
     def _link_fixed_asset_to_asset(self):
         self.ensure_one()
+        if self.asset_id.asset_relation != "no":
+            error_msg = _("Asset is already have relationship with lot")
+            raise error_msg
         self.asset_id.write(
             {
                 "lot_id": self.lot_id.id,
