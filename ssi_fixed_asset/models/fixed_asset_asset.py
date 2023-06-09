@@ -935,7 +935,7 @@ class FixedAssetAsset(models.Model):
         last_line = self.last_posted_depreciation_line_id
 
         if len(posted_lines) > 0:
-            last_depreciation_date = datetime.strptime(last_line.line_date, "%Y-%m-%d")
+            last_depreciation_date = last_line.line_date
             last_date_in_table = table[-1]["lines"][-1]["date"]
             if last_date_in_table <= last_depreciation_date:
                 raise UserError(
