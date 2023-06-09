@@ -272,7 +272,7 @@ class FixedAssetDisposal(models.Model):
             if document.depreciation_line_id:
                 document.depreciation_line_id.unlink_move()
                 document.depreciation_line_id.unlink()
-            document.write(self._prepare_cancel_data(cancel_reason=cancel_reason))
+            document.write(self._prepare_cancel_additional_data())
             document.asset_id.compute_depreciation_board()
             if disposal_acc_move:
                 disposal_acc_move.with_context(force_delete=True).unlink()
@@ -300,16 +300,12 @@ class FixedAssetDisposal(models.Model):
         )
         return result
 
-    def _prepare_cancel_data(self, cancel_reason=False):
+    def _prepare_cancel_additional_data(self):
         self.ensure_one()
-        _super = super(FixedAssetDisposal, self)
-        result = _super._prepare_cancel_data(cancel_reason=cancel_reason)
-        result.update(
-            {
-                "disposal_acc_move_id": False,
-                "depreciation_line_id": False,
-            }
-        )
+        result = {
+            "disposal_acc_move_id": False,
+            "depreciation_line_id": False,
+        }
         return result
 
     @api.onchange("asset_id")

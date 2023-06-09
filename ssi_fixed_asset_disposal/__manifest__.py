@@ -3,7 +3,7 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Fixed Asset Disposal",
-    "version": "14.0.1.1.0",
+    "version": "14.0.1.1.1",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
