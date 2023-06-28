@@ -1,7 +1,6 @@
 # Copyright 2023 OpenSynergy Indonesia
 # Copyright 2023 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from datetime import date, datetime
 
 from dateutil.relativedelta import relativedelta
 
@@ -19,10 +18,10 @@ class WizardFixedAssetYearly(models.TransientModel):
             list_year.append((str(i), str(i)))
         return list_year
 
-    year = fields.Selection(
+    fiscal_year_id = fields.Many2one(
         string="Year",
+        comodel_name="date.range",
         required=True,
-        selection="_get_year_selection",
     )
     asset_category_ids = fields.Many2many(
         string="Asset Category",
@@ -74,7 +73,7 @@ class WizardFixedAssetYearly(models.TransientModel):
             category_ids = self.asset_category_ids
         else:
             category_ids = self.env["fixed.asset.category"].search([])
-        date_end = f"{self.year}-12-31"
+        date_end = self.fiscal_year_id.date_end.strftime("%Y-%m-%d")
         criteria = [
             ("date_start", "<=", date_end),
             ("state", "in", ["open", "close", "removed"]),
@@ -131,7 +130,7 @@ class WizardFixedAssetYearly(models.TransientModel):
             )
         return {
             "wizard_id": self.id,
-            "year": self.year,
+            "year": self.fiscal_year_id.name,
             "asset_categories": ", ".join(
                 self.asset_category_ids.mapped("display_name")
             ),
@@ -142,7 +141,8 @@ class WizardFixedAssetYearly(models.TransientModel):
         }
 
     def _get_nbv_previous_year(self, asset):
-        date_end = date(int(self.year), 12, 31)
+        # date_end = date(int(self.year), 12, 31)
+        date_end = self.fiscal_year_id.date_end
         filtered = asset.depreciation_line_ids.filtered(
             lambda x: x.line_date <= date_end and (x.init_entry or x.move_check)
         )
@@ -154,7 +154,8 @@ class WizardFixedAssetYearly(models.TransientModel):
         return result
 
     def _get_dpr_previous_year(self, asset):
-        date_end = date(int(self.year), 12, 31)
+        # date_end = date(int(self.year), 12, 31)
+        date_end = self.fiscal_year_id.date_end
         filtered = asset.depreciation_line_ids.filtered(
             lambda x: x.line_date <= date_end and (x.init_entry or x.move_check)
         )
@@ -166,9 +167,10 @@ class WizardFixedAssetYearly(models.TransientModel):
         return result
 
     def _get_depreciation_amount(self, asset, month):
-        dt_date_start = datetime(int(self.year), month, 1)
-        date_start = dt_date_start.date()
-        date_end = (dt_date_start + relativedelta(months=1, days=-1)).date()
+        # dt_date_start = datetime(int(self.year), month, 1)
+        # date_start = dt_date_start.date()
+        dt_date_start = date_start = self.fiscal_year_id.date_start
+        date_end = dt_date_start + relativedelta(months=1, days=-1)
         filtered = asset.depreciation_line_ids.filtered(
             lambda x: (
                 date_start <= x.line_date <= date_end
@@ -190,7 +192,8 @@ class WizardFixedAssetYearly(models.TransientModel):
         return result
 
     def _get_dpr_current_year(self, asset):
-        date_end = date(int(self.year), 12, 31)
+        # date_end = date(int(self.year), 12, 31)
+        date_end = self.fiscal_year_id.date_end
         filtered = asset.depreciation_line_ids.filtered(
             lambda x: x.line_date <= date_end and (x.init_entry or x.move_check)
         )
@@ -202,7 +205,8 @@ class WizardFixedAssetYearly(models.TransientModel):
         return result
 
     def _get_nbv_current_year(self, asset):
-        date_end = date(int(self.year), 12, 31)
+        # date_end = date(int(self.year), 12, 31)
+        date_end = self.fiscal_year_id.date_end
         filtered = asset.depreciation_line_ids.filtered(
             lambda x: x.line_date <= date_end and (x.init_entry or x.move_check)
         )

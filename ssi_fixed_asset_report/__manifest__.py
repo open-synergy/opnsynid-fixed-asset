@@ -4,7 +4,7 @@
 
 {
     "name": "Fixed Asset Report",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
@@ -14,10 +14,9 @@
     "depends": [
         "report_xlsx",
         "ssi_fixed_asset",
+        "account_fiscal_year",
     ],
-    "external_dependencies": {
-
-    },
+    "external_dependencies": {},
     "data": [
         "security/ir.model.access.csv",
         "wizards/wizard_fixed_yearly_asset.xml",
@@ -29,10 +28,6 @@
     "qweb": [
         "static/src/xml/report.xml",
     ],
-    "demo": [
-
-    ],
-    "images": [
-
-    ],
+    "demo": [],
+    "images": [],
 }
