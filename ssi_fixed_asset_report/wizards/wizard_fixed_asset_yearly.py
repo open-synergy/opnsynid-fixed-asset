@@ -170,6 +170,7 @@ class WizardFixedAssetYearly(models.TransientModel):
         # dt_date_start = datetime(int(self.year), month, 1)
         # date_start = dt_date_start.date()
         dt_date_start = date_start = self.fiscal_year_id.date_start
+        date_start = dt_date_start + relativedelta(months=month - 1, day=1)
         date_end = dt_date_start + relativedelta(months=1, days=-1)
         filtered = asset.depreciation_line_ids.filtered(
             lambda x: (
