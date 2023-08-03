@@ -1,7 +1,7 @@
 # Do NOT update manually; changes here will be overwritten by Copier
-_commit: 9bee604
+_commit: c26a26c
 _src_path: gh:open-synergy/ssi-addons-repo-template
-dependency_installation_mode: OCA
+dependency_installation_mode: PIP
 generate_requirements_txt: true
 include_aeroo_report: false
 include_wkhtmltopdf: false
@@ -12,3 +12,4 @@ repo_name: opnsynid-fixed-asset
 repo_slug: opnsynid-fixed-asset
 travis_apt_packages: []
 travis_apt_sources: []
+
