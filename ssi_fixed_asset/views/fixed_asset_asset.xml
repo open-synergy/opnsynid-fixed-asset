@@ -290,7 +290,6 @@
                                         title="Delete Move"
                                         type="object"
                                         confirm="Delete accounting entry. Are you sure?"
-                                        groups="account.group_account_manager"
                                         attrs="{'invisible':[('move_check','!=',True)]}"
                                     />
                         </tree>
@@ -299,6 +298,7 @@
                                 <group name="grp_depreciation_1_1" colspan="1" col="2">
                                     <field name="parent_state" invisible="1" />
                                     <field name="asset_value" invisible="1" />
+                                    <field name="previous_id" />
                                     <field name="type" />
                                     <field name="subtype_id" />
                                     <field name="name" />
