@@ -120,10 +120,10 @@ class FixedAssetAsset(models.Model):
 
     name = fields.Char(
         string="Asset Name",
-        size=64,
         required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
+        default=False,
     )
     code = fields.Char(
         string="Reference",
@@ -131,6 +131,7 @@ class FixedAssetAsset(models.Model):
         states={"draft": [("readonly", False)]},
         default="/",
         copy=False,
+        required=True,
     )
     purchase_value = fields.Float(
         string="Purchase Value",
@@ -491,38 +492,43 @@ class FixedAssetAsset(models.Model):
         for asset in self:
             method_period_start_number = (
                 method_period_depreciated_number
-            ) = method_period_remaining_number = 0.0
-            asset_value = asset.last_posted_asset_value_id
-            depreciation = asset.last_depreciation_id
+            ) = method_period_remaining_number = method_period_number = 0.0
+            if asset.last_posted_asset_value_id:
+                asset_value = asset.last_posted_asset_value_id
+                depreciation = asset.last_depreciation_id
 
-            coef_method_time = asset._get_method_time_coefficient()
-            coef_method_period = asset._get_method_period_coefficient()
-            method_period_number = (
-                coef_method_time / coef_method_period
-            ) * asset.method_number
-            np_date_unit = asset._get_numpy_date_unit()
+                coef_method_time = asset._get_method_time_coefficient()
+                coef_method_period = asset._get_method_period_coefficient()
+                method_period_number = (
+                    coef_method_time / coef_method_period
+                ) * asset.method_number
+                np_date_unit = asset._get_numpy_date_unit()
 
-            dt_asset_start_date = np.datetime64(asset._get_date_start(), np_date_unit)
-
-            if asset_value:
-                dt_posted_asset_value_date = np.datetime64(
-                    asset_value.line_date, np_date_unit
+                dt_asset_start_date = np.datetime64(
+                    asset._get_date_start(), np_date_unit
                 )
-                dt_diff = dt_posted_asset_value_date - dt_asset_start_date
-                method_period_start_number = int(dt_diff / coef_method_period)
 
-            if depreciation and asset_value:
-                # TODO: Pretty sure numpy has method to change string into dt
-                dt_temp = asset_value.line_date
-                dt_temp = dt_temp + relativedelta(day=1, days=-1)
-                dt_temp = np.datetime64(dt_temp, np_date_unit)
-                dt_depreciation = np.datetime64(depreciation.line_date, np_date_unit)
-                method_period_depreciated_number = dt_depreciation - dt_temp
-            method_period_remaining_number = (
-                method_period_number
-                - method_period_start_number
-                - int(method_period_depreciated_number)
-            )
+                if asset_value:
+                    dt_posted_asset_value_date = np.datetime64(
+                        asset_value.line_date, np_date_unit
+                    )
+                    dt_diff = dt_posted_asset_value_date - dt_asset_start_date
+                    method_period_start_number = int(dt_diff / coef_method_period)
+
+                if depreciation and asset_value:
+                    # TODO: Pretty sure numpy has method to change string into dt
+                    dt_temp = asset_value.line_date
+                    dt_temp = dt_temp + relativedelta(day=1, days=-1)
+                    dt_temp = np.datetime64(dt_temp, np_date_unit)
+                    dt_depreciation = np.datetime64(
+                        depreciation.line_date, np_date_unit
+                    )
+                    method_period_depreciated_number = dt_depreciation - dt_temp
+                method_period_remaining_number = (
+                    method_period_number
+                    - method_period_start_number
+                    - int(method_period_depreciated_number)
+                )
 
             asset.method_period_number = method_period_number
             asset.method_period_start_number = method_period_start_number
@@ -978,13 +984,11 @@ class FixedAssetAsset(models.Model):
         posted_lines = self.posted_depreciation_line_ids
         obj_line = self.env["fixed.asset.depreciation.line"]
         seq = len(posted_lines)
-        # SPONGE
         depr_line = self.last_posted_history_id
         # depr_line = self.last_posted_depreciation_line_id
 
         # last_date = table[-1]["lines"][-1]["date"]
         depreciated_value = sum(vari_l.amount for vari_l in posted_lines)
-
         for entry in table[table_i_start:]:
             for line in entry["lines"][line_i_start:]:
                 seq += 1
@@ -1060,18 +1064,32 @@ class FixedAssetAsset(models.Model):
         return table
 
     def compute_depreciation_board(self):
-        for asset in self:
+        for asset in self.sudo():
             if asset.value_residual == 0.0:
                 continue
             asset._delete_unposted_history()
             table = asset._compute_depreciation_table()
+
             if not table:
                 continue
+
             table_i_start, line_i_start = asset._compute_starting_depreciation_entry(
                 table
             )
             asset._create_depreciation_lines(table, table_i_start, line_i_start)
-        return True
+            asset._recompute_lines()
+
+    def _recompute_lines(self):
+        self.ensure_one()
+        domain = [
+            ("asset_id", "=", self.id),
+            ("type", "=", "depreciate"),
+            ("move_id", "=", False),
+            ("init_entry", "=", False),
+        ]
+        Line = self.env["fixed.asset.depreciation.line"]
+        lines = Line.search(domain)
+        lines.action_compute()
 
     def _get_depreciation_start_date(self, fy):
         """
@@ -1079,7 +1097,7 @@ class FixedAssetAsset(models.Model):
         if the fiscal year starts in the middle of a month.
         """
         if self.prorata:
-            depreciation_start_date = self._get_date_start()
+            depreciation_start_date = self.last_posted_asset_line_id.line_date
         else:
             depreciation_start_date = fy.date_from
         return depreciation_start_date
@@ -1087,11 +1105,11 @@ class FixedAssetAsset(models.Model):
     def _get_depreciation_stop_date(self, depreciation_start_date):
         if self.method_time == "year" and not self.method_end:
             depreciation_stop_date = depreciation_start_date + relativedelta(
-                years=self.method_number, days=-1
+                years=self.method_number, months=-1, day=31
             )
         if self.method_time == "month" and not self.method_end:
             depreciation_stop_date = depreciation_start_date + relativedelta(
-                months=self.method_number, days=-1
+                months=self.method_number - 1, day=31
             )
         elif self.method_time == "number":
             if self.method_period == "month":
@@ -1367,18 +1385,28 @@ class FixedAssetAsset(models.Model):
 
         company = self.company_id
         init_flag = False
-        asset_date_start = self._get_date_start()
-        # asset_date_start = datetime.strptime(self._get_date_start(), "%Y-%m-%d")
+        asset_date_start = self.last_posted_asset_line_id.line_date
         fy = self._get_fy_info(asset_date_start)
         fiscalyear_lock_date = company.fiscalyear_lock_date
 
-        if fiscalyear_lock_date and fiscalyear_lock_date >= self._get_date_start():
+        if fiscalyear_lock_date and fiscalyear_lock_date >= asset_date_start:
             init_flag = True
 
         depreciation_start_date = self._get_depreciation_start_date(fy["record"])
+
+        # SPONGE
+        # raise UserError(str(depreciation_start_date))
+
+        # depreciation_stop_date = self._get_depreciation_stop_date(
+        #     depreciation_start_date
+        # )
         depreciation_stop_date = self._get_depreciation_stop_date(
-            depreciation_start_date
+            self._get_date_start()
         )
+
+        # SPONGE
+        # raise UserError(str(depreciation_stop_date))
+
         fy_date_start = asset_date_start
 
         while fy_date_start <= depreciation_stop_date:
@@ -1393,6 +1421,9 @@ class FixedAssetAsset(models.Model):
             )
             fy_date_start = fy_info["date_to"] + relativedelta(days=1)
 
+        # SPONGE
+        # raise UserError(str(table))
+
         # Step 1:
         # Calculate depreciation amount per fiscal year.
         # This is calculation is skipped for method_time != 'year'.
@@ -1400,7 +1431,13 @@ class FixedAssetAsset(models.Model):
             table, depreciation_start_date, depreciation_stop_date
         )
 
+        # SPONGE
+        # raise UserError(str(line_dates))
+
         table = self._compute_depreciation_amount_per_fiscal_year(table, line_dates)
+
+        # SPONGE
+        # raise UserError(str(table))
 
         # Step 2:
         # Spread depreciation amount per fiscal year
@@ -1408,6 +1445,9 @@ class FixedAssetAsset(models.Model):
         self._compute_depreciation_table_lines(
             table, depreciation_start_date, depreciation_stop_date, line_dates
         )
+
+        # SPONGE
+        # raise UserError(str(table))
 
         return table
 
@@ -1422,6 +1462,14 @@ class FixedAssetAsset(models.Model):
             raise UserError(str_error)
 
     # -- Onchange Methods --
+
+    @api.onchange(
+        "category_id",
+    )
+    def onchange_policy_template_id(self):
+        template_id = self._get_template_policy()
+        self.policy_template_id = template_id
+
     @api.onchange(
         "category_id",
     )
@@ -1473,10 +1521,11 @@ class FixedAssetAsset(models.Model):
         "date_min_prorate",
     )
     def onchange_line_date_depreciation_line(self):
-        dl_ids = self.depreciation_line_ids.filtered(lambda x: x.type == "create")
-        if dl_ids:
-            for document in dl_ids:
-                document.line_date = self._get_date_start()
+        if self.date_start:
+            dl_ids = self.depreciation_line_ids.filtered(lambda x: x.type == "create")
+            if dl_ids:
+                for document in dl_ids:
+                    document.line_date = self._get_date_start()
 
     @api.onchange(
         "method_time",

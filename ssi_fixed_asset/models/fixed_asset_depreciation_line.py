@@ -339,3 +339,7 @@ class FixedAssetDepreciationLine(models.Model):
     def action_unmark_as_init(self):
         for document in self.sudo():
             document._unmark_as_init()
+
+    def action_compute(self):
+        for document in self.sudo():
+            document._compute()

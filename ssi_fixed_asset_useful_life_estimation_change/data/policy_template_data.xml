@@ -144,7 +144,7 @@ if not document.approval_template_id:
             <field name="restrict_state" eval="1" />
             <field
                 name="state_ids"
-                search="[('field_id.model_id.model','=','fixed_asset_useful_life_estimation_change'),('value','in',['draft','done'])]"
+                search="[('field_id.model_id.model','=','fixed_asset_useful_life_estimation_change'),('value','in',['draft'])]"
             />
             <field name="restrict_user" eval="1" />
             <field name="computation_method">use_group</field>
