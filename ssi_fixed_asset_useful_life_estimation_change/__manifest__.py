@@ -27,6 +27,7 @@
         "data/policy_template_data.xml",
         "data/ir_sequence_data.xml",
         "data/sequence_template_data.xml",
+        "data/fixed_asset_depreciation_line_subtype_data.xml",
         "views/fixed_asset_useful_life_estimation_change_view.xml",
     ],
     "demo": [],
