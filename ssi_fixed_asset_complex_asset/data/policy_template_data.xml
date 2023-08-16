@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2023 OpenSynergy Indonesia
      Copyright 2023 PT. Simetri Sinergi Indonesia
-     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
     <data noupdate="1">
 <!-- INSTALLATION -->
-        <record id="complex_fixed_asset_installation_policy_template" model="policy.template">
+        <record
+            id="complex_fixed_asset_installation_policy_template"
+            model="policy.template"
+        >
             <field name="name">Standard</field>
             <field name="model_id" ref="model_complex_fixed_asset_installation" />
             <field
@@ -21,7 +24,10 @@
             id="complex_fixed_asset_installation_policy_template_detail_confirm"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_installation_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_installation_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_installation'),('name','=','confirm_ok')]"
@@ -45,7 +51,10 @@
             id="complex_fixed_asset_installation_policy_template_detail_approve"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_installation_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_installation_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_installation'),('name','=','approve_ok')]"
@@ -67,7 +76,10 @@ if env.user.id in document.active_approver_user_ids.ids:
             id="complex_fixed_asset_installation_policy_template_detail_reject"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_installation_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_installation_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_installation'),('name','=','reject_ok')]"
@@ -89,7 +101,10 @@ if env.user.id in document.active_approver_user_ids.ids:
             id="complex_fixed_asset_installation_policy_template_detail_restart_approval"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_installation_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_installation_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_installation'),('name','=','restart_approval_ok')]"
@@ -116,7 +131,10 @@ if not document.approval_template_id:
             id="complex_fixed_asset_installation_policy_template_detail_cancel"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_installation_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_installation_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_installation'),('name','=','cancel_ok')]"
@@ -140,7 +158,10 @@ if not document.approval_template_id:
             id="complex_fixed_asset_installation_policy_template_detail_restart"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_installation_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_installation_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_installation'),('name','=','restart_ok')]"
@@ -164,7 +185,10 @@ if not document.approval_template_id:
             id="complex_fixed_asset_installation_policy_template_detail_manual_number"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_installation_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_installation_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_installation'),('name','=','manual_number_ok')]"
@@ -184,7 +208,10 @@ if not document.approval_template_id:
         </record>
 
 <!-- REMOVAL -->
-        <record id="complex_fixed_asset_removal_policy_template" model="policy.template">
+        <record
+            id="complex_fixed_asset_removal_policy_template"
+            model="policy.template"
+        >
             <field name="name">Standard</field>
             <field name="model_id" ref="model_complex_fixed_asset_removal" />
             <field
@@ -200,7 +227,10 @@ if not document.approval_template_id:
             id="complex_fixed_asset_removal_policy_template_detail_confirm"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_removal_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_removal_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_removal'),('name','=','confirm_ok')]"
@@ -224,7 +254,10 @@ if not document.approval_template_id:
             id="complex_fixed_asset_removal_policy_template_detail_approve"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_removal_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_removal_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_removal'),('name','=','approve_ok')]"
@@ -246,7 +279,10 @@ if env.user.id in document.active_approver_user_ids.ids:
             id="complex_fixed_asset_removal_policy_template_detail_reject"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_removal_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_removal_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_removal'),('name','=','reject_ok')]"
@@ -268,7 +304,10 @@ if env.user.id in document.active_approver_user_ids.ids:
             id="complex_fixed_asset_removal_policy_template_detail_restart_approval"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_removal_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_removal_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_removal'),('name','=','restart_approval_ok')]"
@@ -295,7 +334,10 @@ if not document.approval_template_id:
             id="complex_fixed_asset_removal_policy_template_detail_cancel"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_removal_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_removal_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_removal'),('name','=','cancel_ok')]"
@@ -319,7 +361,10 @@ if not document.approval_template_id:
             id="complex_fixed_asset_removal_policy_template_detail_restart"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_removal_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_removal_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_removal'),('name','=','restart_ok')]"
@@ -343,7 +388,10 @@ if not document.approval_template_id:
             id="complex_fixed_asset_removal_policy_template_detail_manual_number"
             model="policy.template_detail"
         >
-            <field name="template_id" ref="complex_fixed_asset_removal_policy_template" />
+            <field
+                name="template_id"
+                ref="complex_fixed_asset_removal_policy_template"
+            />
             <field
                 name="field_id"
                 search="[('model_id.model','=','complex_fixed_asset_removal'),('name','=','manual_number_ok')]"
