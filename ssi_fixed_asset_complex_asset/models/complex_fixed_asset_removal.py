@@ -1,7 +1,8 @@
 # Copyright 2023 OpenSynergy Indonesia
 # Copyright 2023 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from odoo import _, api, fields, models
+from odoo import api, fields, models
+
 from odoo.addons.ssi_decorator import ssi_decorator
 
 
@@ -112,15 +113,17 @@ class ComplexFixedAssetRemoval(models.Model):
         res += policy_field
         return res
 
-    @ssi_decorator.post_cancel_action
+    @ssi_decorator.post_cancel_action()
     def _10_revert_parent_asset(self):
-        self.env['fixed.asset.asset'].write({'parent_id': self.parent_asset_id.id})
+        for record in self:
+            record.asset_id.write({"parent_id": record.parent_asset_id.id})
 
-    @ssi_decorator.post_done_action
+    @ssi_decorator.post_done_action()
     def _10_remove_parent_asset(self):
-        self.env['fixed.asset.asset'].write({'parent_id': False})
+        for record in self:
+            record.asset_id.write({"parent_id": False})
 
-    @api.onchange('asset_id')
+    @api.onchange("asset_id")
     def onchange_parent_asset_id(self):
         self.parent_asset_id = False
         if self.asset_id:
