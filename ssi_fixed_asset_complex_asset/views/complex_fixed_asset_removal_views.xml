@@ -49,12 +49,12 @@
                 <xpath expr="//field[@name='user_id']" position="after">
                     <field
                         name="asset_id"
-                        domain="[('type', '=', 'normal'), ('state', '=', 'open')]"
+                        domain="[('type', '=', 'normal'), ('state', '=', 'open'),('parent_id','!=',False)]"
                     />
                     <field
                         name="parent_asset_id"
                         force_save="1"
-                        domain="[('type', '=', 'view')]"
+                        domain="[('type', '=', 'view'),('state', '=', 'open')]"
                     />
                 </xpath>
                 <xpath expr="//group[@name='header_right']" position="inside">

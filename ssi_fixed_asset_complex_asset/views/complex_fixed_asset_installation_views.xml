@@ -47,8 +47,14 @@
         <field name="arch" type="xml">
             <data>
                 <xpath expr="//field[@name='user_id']" position="after">
-                    <field name="asset_id" />
-                    <field name="parent_asset_id" />
+                    <field
+                        name="asset_id"
+                        domain="[('state','=','open'),('type','=','normal'),('parent_id','=',False)]"
+                    />
+                    <field
+                        name="parent_asset_id"
+                        domain="[('state','=','open'),('type','=','view')]"
+                    />
                 </xpath>
                 <xpath expr="//group[@name='header_right']" position="inside">
                     <field name="date" />

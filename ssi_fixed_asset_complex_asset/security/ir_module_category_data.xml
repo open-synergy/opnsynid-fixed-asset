@@ -8,7 +8,7 @@
         id="complex_fixed_asset_installation_workflow_module_category"
         model="ir.module.category"
     >
-        <field name="name">Complex Fixed Asset Installation - Workflow</field>
+        <field name="name">Complex Fixed Asset Installation</field>
         <field
             name="parent_id"
             ref="ssi_financial_accounting.financial_accounting_module_category"
@@ -20,7 +20,7 @@
         id="complex_fixed_asset_installation_data_ownership_module_category"
         model="ir.module.category"
     >
-        <field name="name">Complex Fixed Asset Installation - Data Ownership</field>
+        <field name="name">Complex Fixed Asset Installation</field>
         <field
             name="parent_id"
             ref="ssi_financial_accounting.financial_accounting_data_ownership_module_category"
@@ -32,7 +32,7 @@
         id="complex_fixed_asset_removal_workflow_module_category"
         model="ir.module.category"
     >
-        <field name="name">Complex Fixed Asset Removal - Workflow</field>
+        <field name="name">Complex Fixed Asset Removal</field>
         <field
             name="parent_id"
             ref="ssi_financial_accounting.financial_accounting_module_category"
@@ -44,7 +44,7 @@
         id="complex_fixed_asset_removal_data_ownership_module_category"
         model="ir.module.category"
     >
-        <field name="name">Complex Fixed Asset Removal - Data Ownership</field>
+        <field name="name">Complex Fixed Asset Removal</field>
         <field
             name="parent_id"
             ref="ssi_financial_accounting.financial_accounting_data_ownership_module_category"
