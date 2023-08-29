@@ -452,7 +452,9 @@ class FixedAssetDisposal(models.Model):
 
     def _create_disposal_acc_move(self):
         self.ensure_one()
-        return self.env["account.move"].create(self._prepare_disposal_acc_move())
+        move = self.env["account.move"].create(self._prepare_disposal_acc_move())
+        move.action_post()
+        return move
 
     def _prepare_depreciation_line(self):
         self.ensure_one()
