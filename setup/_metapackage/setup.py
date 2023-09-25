@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo14-addon-ssi_fixed_asset',
+        'odoo14-addon-ssi_fixed_asset_complex_asset',
         'odoo14-addon-ssi_fixed_asset_disposal',
         'odoo14-addon-ssi_fixed_asset_in_progress',
         'odoo14-addon-ssi_fixed_asset_qrcode',
