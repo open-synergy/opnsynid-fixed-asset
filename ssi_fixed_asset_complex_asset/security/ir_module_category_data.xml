@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License AGPL-4.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Workflow INSTALLATION -->
+    <record
+        id="complex_fixed_asset_installation_workflow_module_category"
+        model="ir.module.category"
+    >
+        <field name="name">Complex Fixed Asset Installation</field>
+        <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_module_category"
+        />
+    </record>
+
+    <!-- Data Ownership INSTALLATION -->
+    <record
+        id="complex_fixed_asset_installation_data_ownership_module_category"
+        model="ir.module.category"
+    >
+        <field name="name">Complex Fixed Asset Installation</field>
+        <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_data_ownership_module_category"
+        />
+    </record>
+
+    <!-- Workflow REMOVAL -->
+    <record
+        id="complex_fixed_asset_removal_workflow_module_category"
+        model="ir.module.category"
+    >
+        <field name="name">Complex Fixed Asset Removal</field>
+        <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_module_category"
+        />
+    </record>
+
+    <!-- Data Ownership REMOVAL -->
+    <record
+        id="complex_fixed_asset_removal_data_ownership_module_category"
+        model="ir.module.category"
+    >
+        <field name="name">Complex Fixed Asset Removal</field>
+        <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_data_ownership_module_category"
+        />
+    </record>
+</odoo>

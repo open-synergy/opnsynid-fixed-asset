@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="complex_fixed_asset_removal_view_tree" model="ir.ui.view">
+        <field name="name">complex_fixed_asset_removal - Tree</field>
+        <field name="model">complex_fixed_asset_removal</field>
+        <field name="mode">primary</field>
+        <field
+            name="inherit_id"
+            ref="ssi_transaction_mixin.mixin_transaction_view_tree"
+        />
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="asset_id" />
+                    <field name="parent_asset_id" />
+                    <field name="date" />
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <record id="complex_fixed_asset_removal_view_search" model="ir.ui.view">
+        <field name="name">complex_fixed_asset_removal - Search</field>
+        <field name="model">complex_fixed_asset_removal</field>
+        <field
+            name="inherit_id"
+            ref="ssi_transaction_mixin.mixin_transaction_view_search"
+        />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <data />
+        </field>
+    </record>
+
+
+    <record id="complex_fixed_asset_removal_view_form" model="ir.ui.view">
+        <field name="name">complex_fixed_asset_removal - Form</field>
+        <field name="model">complex_fixed_asset_removal</field>
+        <field name="mode">primary</field>
+        <field
+            name="inherit_id"
+            ref="ssi_transaction_mixin.mixin_transaction_view_form"
+        />
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field
+                        name="asset_id"
+                        domain="[('type', '=', 'normal'), ('state', '=', 'open'),('parent_id','!=',False)]"
+                    />
+                    <field
+                        name="parent_asset_id"
+                        force_save="1"
+                        domain="[('type', '=', 'view'),('state', '=', 'open')]"
+                    />
+                </xpath>
+                <xpath expr="//group[@name='header_right']" position="inside">
+                    <field name="date" />
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <record id="complex_fixed_asset_removal_action" model="ir.actions.act_window">
+        <field name="name">Complex Fixed Asset Removals</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">complex_fixed_asset_removal</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="complex_fixed_asset_removal_menu"
+        name="Complex Fixed Asset Removals"
+        parent="ssi_financial_accounting.menu_fixed_asset"
+        groups="complex_fixed_asset_removal_viewer_group"
+        action="complex_fixed_asset_removal_action"
+        sequence="60"
+    />
+</odoo>

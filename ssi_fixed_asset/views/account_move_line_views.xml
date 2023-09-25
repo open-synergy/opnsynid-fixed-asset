@@ -33,12 +33,12 @@
                 <filter
                         name="dom_fixed_asset_2b_create"
                         string="Fixed Asset to Be Create"
-                        domain="[('account_id.fixed_asset_category_id','!=',False),('fixed_asset_id','=',False)]"
+                        domain="[('account_id.fixed_asset_category_id','!=',False),('fixed_asset_ids','=',False)]"
                     />
                 <filter
                         name="dom_fixed_asset"
                         string="Fixed Asset"
-                        domain="[('fixed_asset_id','!=',False)]"
+                        domain="[('fixed_asset_ids','!=',False)]"
                     />
             </xpath>
         </data>
