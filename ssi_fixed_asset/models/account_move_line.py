@@ -16,10 +16,20 @@ class AccountMoveLine(models.Model):
         copy=False,
         readonly=True,
     )
+    fixed_asset_ids = fields.One2many(
+        string="Fixed Assets",
+        comodel_name="fixed.asset.asset",
+        inverse_name="asset_acquisition_move_line_id",
+    )
 
     def action_create_fixed_asset(self):
         for record in self.sudo():
-            record._create_fixed_asset()
+            if record.quantity > 0.0:
+                num_of_asset = int(record.quantity)
+            else:
+                num_of_asset = 1
+            for _asset_acount in range(0, num_of_asset):
+                record._create_fixed_asset()
 
     def _create_fixed_asset(self):
         self.ensure_one()
@@ -49,19 +59,18 @@ class AccountMoveLine(models.Model):
         asset_cache.onchange_type_salvage_value()
         asset_cache.onchange_type_code()
         asset_cache.onchange_type_depreciation_line_ids()
-        asset = FixedAsset.create(asset_cache._convert_to_write(asset_cache._cache))
-        self.write(
-            {
-                "fixed_asset_id": asset.id,
-            }
-        )
+        FixedAsset.create(asset_cache._convert_to_write(asset_cache._cache))
 
     def _prepare_create_fixed_asset(self):
         fixed_asset_category = self._get_fixed_asset_category()
+        if self.quantity > 0.0:
+            num_of_asset = int(self.quantity)
+        else:
+            num_of_asset = 1
         return {
             "name": self.name,
             "category_id": fixed_asset_category.id,
-            "purchase_value": self.balance,
+            "purchase_value": self.balance / float(num_of_asset),
             "partner_id": self.partner_id and self.partner_id.id or False,
             "date_start": fields.Date.to_string(self.date),
             "account_analytic_id": self.analytic_account_id
