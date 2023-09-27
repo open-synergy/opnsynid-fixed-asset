@@ -91,7 +91,7 @@ class FixedAssetDisposal(models.Model):
         },
     )
     date_disposition = fields.Date(
-        string="Disposition Date",
+        string="Disposal Date",
         required=True,
         readonly=True,
         states={
@@ -125,7 +125,7 @@ class FixedAssetDisposal(models.Model):
         },
     )
     disposition_price = fields.Monetary(
-        string="Disposition Price",
+        string="Disposal Price",
         required=True,
         default=0.0,
         readonly=True,
@@ -380,9 +380,10 @@ class FixedAssetDisposal(models.Model):
         move_lines = (
             self._prepare_disposal_accum_depr_move_line()
             + self._prepare_disposal_asset_move_line()
-            + self._prepare_disposal_exchange_move_line()
             + self._prepare_disposal_gain_loss_move_line()
         )
+        if self.disposition_price > 0.0:
+            move_lines += self._prepare_disposal_exchange_move_line()
         return self._prepare_acc_move(journal, move_lines)
 
     def _prepare_disposal_accum_depr_move_line(self):
