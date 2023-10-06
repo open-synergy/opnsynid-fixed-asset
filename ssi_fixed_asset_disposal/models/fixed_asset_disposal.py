@@ -494,5 +494,5 @@ class FixedAssetDisposal(models.Model):
     def _disposition_price_validity(self):
         for rec in self:
             if rec.disposition_price < 0:
-                raise ValidationError(_('Disposition price can not negative.'))
+                raise ValidationError(_('Disposal price can not negative.'))
 
