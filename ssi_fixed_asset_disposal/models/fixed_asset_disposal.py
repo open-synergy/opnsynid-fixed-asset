@@ -2,6 +2,7 @@
 # Copyright 2022 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class FixedAssetDisposal(models.Model):
@@ -488,3 +489,10 @@ class FixedAssetDisposal(models.Model):
             ("line_date", ">", self.date_disposition),
         ]
         obj_line.search(criteria).unlink()
+
+    @api.constrains('disposition_price')
+    def _disposition_price_validity(self):
+        for rec in self.sudo():
+            if rec.disposition_price < 0:
+                raise ValidationError(_('Disposal price can not negative.'))
+
