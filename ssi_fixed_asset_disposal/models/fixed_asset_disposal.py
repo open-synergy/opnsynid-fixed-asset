@@ -492,7 +492,7 @@ class FixedAssetDisposal(models.Model):
 
     @api.constrains('disposition_price')
     def _disposition_price_validity(self):
-        for rec in self:
+        for rec in self.sudo():
             if rec.disposition_price < 0:
                 raise ValidationError(_('Disposal price can not negative.'))
 
