@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record
+        id="fixed_asset_improvement_view_tree"
+        model="ir.ui.view"
+    >
+        <field name="name">fixed_asset_improvement - Tree</field>
+        <field name="model">fixed_asset_improvement</field>
+        <field name="mode">primary</field>
+        <field
+            name="inherit_id"
+            ref="ssi_transaction_mixin.mixin_transaction_view_tree"
+        />
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="field[@name='company_id']" position="after">
+                    <field name="company_currency_id" invisible="1" />
+                    <field name="asset_id" />
+                    <field name="type_id" />
+                    <field name="date" />
+                    <field name="improvement_amount" />
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <record
+        id="fixed_asset_improvement_view_search"
+        model="ir.ui.view"
+    >
+        <field name="name">fixed_asset_improvement - Search</field>
+        <field name="model">fixed_asset_improvement</field>
+        <field name="mode">primary</field>
+        <field
+            name="inherit_id"
+            ref="ssi_transaction_mixin.mixin_transaction_view_search"
+        />
+        <field name="arch" type="xml">
+            <data />
+        </field>
+    </record>
+
+    <record
+        id="fixed_asset_improvement_view_form"
+        model="ir.ui.view"
+    >
+        <field name="name">fixed_asset_improvement - Form</field>
+        <field name="model">fixed_asset_improvement</field>
+        <field name="mode">primary</field>
+        <field
+            name="inherit_id"
+            ref="ssi_transaction_mixin.mixin_transaction_view_form"
+        />
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="company_currency_id"/>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="type_id" />
+                    <field
+                        name="allowed_asset_ids"
+                        widget="many2many_tags"
+                        invisible="1"
+                    />
+                    <field
+                        name="asset_id"
+                         domain="[('id', 'in', allowed_asset_ids), ('state', '=', 'open')]"
+                    />
+                </xpath>
+                <xpath expr="//group[@name='header_right']" position="inside">
+                    <field name="date" />
+                    <!--
+                    <field name="journal_id"/>
+                    <field name="exchange_account_id"/>
+                    <field name="accumulated_depreciation_account_id"/>
+                    <field name="asset_value_history_id" invisible="1" />
+                    <field name="depreciation_history_id" invisible="1" />
+                    -->
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <record
+        id="fixed_asset_improvement_action"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Fixed Asset Improvement</field>
+        <field name="res_model">fixed_asset_improvement</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new document
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="fixed_asset_improvement_menu"
+        name="Fixed Asset Improvement"
+        parent="ssi_financial_accounting.menu_fixed_asset"
+        groups="fixed_asset_improvement_viewer_group"
+        action="fixed_asset_improvement_action"
+        sequence="40"
+    />
+</odoo>

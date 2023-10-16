@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record
+        id="fixed_asset_improvement_type_view_tree"
+        model="ir.ui.view"
+    >
+        <field name="name">fixed_asset_improvement_type - Tree</field>
+        <field name="model">fixed_asset_improvement_type</field>
+        <field
+            name="inherit_id"
+            ref="ssi_master_data_mixin.mixin_master_data_view_tree"
+        />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <data/>
+        </field>
+    </record>
+
+    <record
+        id="fixed_asset_improvement_type_view_search"
+        model="ir.ui.view"
+    >
+        <field name="name">fixed_asset_improvement_type - Search</field>
+        <field name="model">fixed_asset_improvement_type</field>
+        <field
+            name="inherit_id"
+            ref="ssi_master_data_mixin.mixin_master_data_view_search"
+        />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <data />
+        </field>
+    </record>
+
+    <record
+        id="fixed_asset_improvement_type_view_form"
+        model="ir.ui.view"
+    >
+        <field name="name">fixed_asset_improvement_type - Form</field>
+        <field name="model">fixed_asset_improvement_type</field>
+        <field
+            name="inherit_id"
+            ref="ssi_master_data_mixin.mixin_master_data_view_form"
+        />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//page[1]" position="before">
+                    <page name="asset" string="Asset">
+                        <group name="asset_1" colspan="4" col="2">
+                            <field name="exchange_account_id"/>
+                            <field name="asset_selection_method"/>
+                            <field name="asset_ids" attrs="{'invisible':[('asset_selection_method','!=','manual')]}"/>
+                            <field name="asset_domain" widget="domain" option="{'model': 'fixed.asset.asset', 'in_dialog': True}" attrs="{'invisible':[('asset_selection_method','!=','domain')]}" />
+                            <field name="asset_python_code" attrs="{'invisible':[('asset_selection_method','!=','code')]}" />
+                        </group>
+                    </page>
+                    <page name="accounting" string="Accounting">
+                        <group name="accounting_1" colspan="4" col="2">
+                            <field name="journal_id"/>
+                            <field name="account_selection_method"/>
+                            <field name="account_ids" attrs="{'invisible':[('account_selection_method','!=','manual')]}"/>
+                            <field name="asset_domain" widget="domain" option="{'model': 'account.account', 'in_dialog': True}" attrs="{'invisible':[('account_selection_method','!=','domain')]}" />
+                            <field name="asset_python_code" attrs="{'invisible':[('account_selection_method','!=','code')]}" />
+                        </group>
+                    </page>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <record
+        id="fixed_asset_improvement_type_action"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Fixed Asset Improvement Types</field>
+        <field name="res_model">fixed_asset_improvement_type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new document
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="fixed_asset_improvement_type_menu"
+        name="Improvement Types"
+        parent="ssi_financial_accounting.menu_fixed_asset_configuration"
+        groups="fixed_asset_improvement_type_group"
+        action="fixed_asset_improvement_type_action"
+        sequence="40"
+    />
+</odoo>
