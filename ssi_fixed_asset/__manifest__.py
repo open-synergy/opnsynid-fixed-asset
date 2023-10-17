@@ -44,11 +44,7 @@
         "views/fixed_asset_asset.xml",
         "views/account_move_line_views.xml",
     ],
-    "demo": [
-        "demo/account_journal_demo.xml",
-        "demo/account_account_demo.xml",
-        "demo/fixed_asset_category_demo.xml",
-    ],
+    "demo": [],
     "images": [
         "static/description/banner.png",
     ],
