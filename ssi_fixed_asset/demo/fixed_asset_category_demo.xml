@@ -7,10 +7,7 @@
 <record id="demo_asset_category1" model="fixed.asset.category">
     <field name="name">Equipment</field>
     <field name="code">X001</field>
-    <field
-                name="journal_id"
-                ref="ssi_fixed_asset.demo_journal_fixed_asset_depreciation"
-            />
+    <field name="journal_id" ref="demo_journal1" />
     <field name="account_asset_id" ref="ssi_fixed_asset.demo_account1" />
     <field name="account_depreciation_id" ref="ssi_fixed_asset.demo_account3" />
     <field name="account_expense_depreciation_id" ref="ssi_fixed_asset.demo_account5" />
@@ -25,10 +22,7 @@
 <record id="demo_asset_category2" model="fixed.asset.category">
     <field name="name">Vehicle</field>
     <field name="code">X002</field>
-    <field
-                name="journal_id"
-                ref="ssi_fixed_asset.demo_journal_fixed_asset_depreciation"
-            />
+    <field name="journal_id" ref="demo_journal1" />
     <field name="account_asset_id" ref="ssi_fixed_asset.demo_account2" />
     <field name="account_depreciation_id" ref="ssi_fixed_asset.demo_account4" />
     <field name="account_expense_depreciation_id" ref="ssi_fixed_asset.demo_account6" />
