@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<record id="demo_journal1" model="account.journal">
+    <field name="name">Fixed Asset Depreciation - (test)</field>
+    <field name="code">FAD</field>
+    <field name="type">general</field>
+</record>
+</odoo>

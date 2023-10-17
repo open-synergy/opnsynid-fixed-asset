@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<record id="demo_account1" model="account.account">
+    <field name="name">Equipment At Cost - (test)</field>
+    <field name="code">XFA001</field>
+    <field name="user_type_id" ref="account.data_account_type_non_current_assets" />
+    <field name="internal_type">other</field>
+    <field name="reconcile" eval="0" />
+</record>
+
+<record id="demo_account2" model="account.account">
+    <field name="name">Vehicle At Cost - (test)</field>
+    <field name="code">XFA002</field>
+    <field name="user_type_id" ref="account.data_account_type_non_current_assets" />
+    <field name="internal_type">other</field>
+    <field name="reconcile" eval="0" />
+</record>
+
+<record id="demo_account3" model="account.account">
+    <field name="name">Equipment Accum. Depr. - (test)</field>
+    <field name="code">XFA003</field>
+    <field name="user_type_id" ref="account.data_account_type_non_current_assets" />
+    <field name="internal_type">other</field>
+    <field name="reconcile" eval="0" />
+</record>
+
+<record id="demo_account4" model="account.account">
+    <field name="name">Vehicle Accum. Depr. - (test)</field>
+    <field name="code">XFA004</field>
+    <field name="user_type_id" ref="account.data_account_type_non_current_assets" />
+    <field name="internal_type">other</field>
+    <field name="reconcile" eval="0" />
+</record>
+
+<record id="demo_account5" model="account.account">
+    <field name="name">Equipment Depr. Expense - (test)</field>
+    <field name="code">XFA005</field>
+    <field name="user_type_id" ref="account.data_account_type_expenses" />
+    <field name="internal_type">other</field>
+    <field name="reconcile" eval="0" />
+</record>
+
+<record id="demo_account6" model="account.account">
+    <field name="name">Vehicle Depr. Expense - (test)</field>
+    <field name="code">XFA006</field>
+    <field name="user_type_id" ref="account.data_account_type_expenses" />
+    <field name="internal_type">other</field>
+    <field name="reconcile" eval="0" />
+</record>
+</odoo>
