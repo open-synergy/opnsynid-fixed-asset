@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright 2022 OpenSynergy Indonesia
-     Copyright 2022 PT. Simetri Sinergi Indonesia
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
 <data>
@@ -8,9 +8,9 @@
     <field name="name">Equipment</field>
     <field name="code">X001</field>
     <field name="journal_id" ref="demo_journal1" />
-    <field name="account_asset_id" ref="ssi_fixed_asset.demo_account1" />
-    <field name="account_depreciation_id" ref="ssi_fixed_asset.demo_account3" />
-    <field name="account_expense_depreciation_id" ref="ssi_fixed_asset.demo_account5" />
+    <field name="account_asset_id" ref="demo_account1" />
+    <field name="account_depreciation_id" ref="demo_account3" />
+    <field name="account_expense_depreciation_id" ref="demo_account5" />
     <field name="method_time">year</field>
     <field name="method_number" eval="4" />
     <field name="method_period">month</field>
@@ -23,9 +23,9 @@
     <field name="name">Vehicle</field>
     <field name="code">X002</field>
     <field name="journal_id" ref="demo_journal1" />
-    <field name="account_asset_id" ref="ssi_fixed_asset.demo_account2" />
-    <field name="account_depreciation_id" ref="ssi_fixed_asset.demo_account4" />
-    <field name="account_expense_depreciation_id" ref="ssi_fixed_asset.demo_account6" />
+    <field name="account_asset_id" ref="demo_account2" />
+    <field name="account_depreciation_id" ref="demo_account4" />
+    <field name="account_expense_depreciation_id" ref="demo_account6" />
     <field name="method_time">year</field>
     <field name="method_number" eval="8" />
     <field name="method_period">month</field>
