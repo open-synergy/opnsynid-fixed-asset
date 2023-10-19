@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License AGPL-4.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Configurator -->
+    <record
+        id="fixed_asset_improvement_configurator_module_category"
+        model="ir.module.category"
+    >
+        <field name="name">Fixed Asset Improvement - Configurator</field>
+        <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_configurator_module_category"
+        />
+    </record>
+
+    <!-- Workflow -->
+    <record
+        id="fixed_asset_improvement_workflow_module_category"
+        model="ir.module.category"
+    >
+        <field name="name">Fixed Asset Improvement</field>
+        <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_module_category"
+        />
+        <field name="sequence">6</field>
+    </record>
+
+    <!-- Data Ownership -->
+    <record
+        id="fixed_asset_improvement_data_ownership_module_category"
+        model="ir.module.category"
+    >
+        <field name="name">Fixed Asset Improvement</field>
+        <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_data_ownership_module_category"
+        />
+        <field name="sequence">6</field>
+    </record>
+
+</odoo>

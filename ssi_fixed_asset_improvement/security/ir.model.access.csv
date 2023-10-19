@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fixed_asset_improvement_all,fixed_asset_improvement - all,model_fixed_asset_improvement,,1,0,0,0
+access_fixed_asset_improvement_viewer,fixed_asset_improvement - viewer,model_fixed_asset_improvement,fixed_asset_improvement_viewer_group,1,0,0,0
+access_fixed_asset_improvement_user,fixed_asset_improvement - user,model_fixed_asset_improvement,fixed_asset_improvement_user_group,1,1,1,1
+access_fixed_asset_improvement_type_all,fixed_asset_improvement_type - all,model_fixed_asset_improvement_type,,1,0,0,0
+access_fixed_asset_improvement_type_configurator,fixed_asset_improvement_type - configurator,model_fixed_asset_improvement_type,fixed_asset_improvement_type_group,1,1,1,1
