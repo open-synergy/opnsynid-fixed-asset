@@ -10,4 +10,13 @@
             ref="ssi_financial_accounting.financial_accounting_module_category"
         />
 </record>
+
+<record id="fixed_asset_data_ownership_module_category" model="ir.module.category">
+    <field name="name">Fixed Asset</field>
+    <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_data_ownership_module_category"
+        />
+    <field name="sequence">4</field>
+</record>
 </odoo>
