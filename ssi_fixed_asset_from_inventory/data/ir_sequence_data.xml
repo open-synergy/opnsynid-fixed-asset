@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+<data noupdate="1">
+<record id="fixed_asset_from_inventory_sequence" model="ir.sequence">
+    <field name="name">Fixed Asset From Inventory</field>
+    <field name="code">fixed_asset_from_inventory</field>
+    <field name="prefix">FAI/%(range_year)s/</field>
+    <field eval="1" name="number_next" />
+    <field eval="1" name="number_increment" />
+    <field name="padding" eval="6" />
+    <field name="use_date_range" eval="1" />
+    <field eval="False" name="company_id" />
+</record>
+</data>
+</odoo>
