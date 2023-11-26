@@ -22,6 +22,7 @@ addon | version | maintainers | summary
 [ssi_fixed_asset_complex_asset](ssi_fixed_asset_complex_asset/) | 14.0.1.1.0 |  | Complex Fixed Asset
 [ssi_fixed_asset_demo](ssi_fixed_asset_demo/) | 14.0.1.0.0 |  | Fixed Asset
 [ssi_fixed_asset_disposal](ssi_fixed_asset_disposal/) | 14.0.1.4.1 |  | Fixed Asset Disposal
+[ssi_fixed_asset_from_inventory](ssi_fixed_asset_from_inventory/) | 14.0.1.0.0 |  | Fixed Asset From Inventory
 [ssi_fixed_asset_in_progress](ssi_fixed_asset_in_progress/) | 14.0.1.2.0 |  | Fixed Asset In Progress
 [ssi_fixed_asset_qrcode](ssi_fixed_asset_qrcode/) | 14.0.1.1.0 |  | Fixed Asset QR Code
 [ssi_fixed_asset_report](ssi_fixed_asset_report/) | 14.0.1.3.0 |  | Fixed Asset Report
