@@ -1,0 +1,2 @@
+git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_accounting_entry_mixin
+git+https://github.com/open-synergy/ssi-stock@14.0#subdirectory=setup/ssi_stock_fixed_asset

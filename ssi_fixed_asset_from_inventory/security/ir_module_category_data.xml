@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-4.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Workflow -->
+<record
+        id="fixed_asset_from_inventory_workflow_module_category"
+        model="ir.module.category"
+    >
+    <field name="name">Fixed Asset From Inventory</field>
+    <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_module_category"
+        />
+</record>
+
+<!-- Data Ownership -->
+<record
+        id="fixed_asset_from_inventory_data_ownership_module_category"
+        model="ir.module.category"
+    >
+    <field name="name">Fixed Asset From Inventory</field>
+    <field
+            name="parent_id"
+            ref="ssi_financial_accounting.financial_accounting_data_ownership_module_category"
+        />
+</record>
+
+</odoo>
