@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo14-addon-ssi_fixed_asset_complex_asset',
         'odoo14-addon-ssi_fixed_asset_demo',
         'odoo14-addon-ssi_fixed_asset_disposal',
+        'odoo14-addon-ssi_fixed_asset_from_inventory',
         'odoo14-addon-ssi_fixed_asset_in_progress',
         'odoo14-addon-ssi_fixed_asset_qrcode',
         'odoo14-addon-ssi_fixed_asset_report',
