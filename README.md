@@ -21,7 +21,7 @@ addon | version | maintainers | summary
 [ssi_fixed_asset](ssi_fixed_asset/) | 14.0.1.11.0 |  | Fixed Asset
 [ssi_fixed_asset_complex_asset](ssi_fixed_asset_complex_asset/) | 14.0.1.1.0 |  | Complex Fixed Asset
 [ssi_fixed_asset_demo](ssi_fixed_asset_demo/) | 14.0.1.0.0 |  | Fixed Asset
-[ssi_fixed_asset_disposal](ssi_fixed_asset_disposal/) | 14.0.1.5.0 |  | Fixed Asset Disposal
+[ssi_fixed_asset_disposal](ssi_fixed_asset_disposal/) | 14.0.1.6.0 |  | Fixed Asset Disposal
 [ssi_fixed_asset_disposal_work_log](ssi_fixed_asset_disposal_work_log/) | 14.0.1.0.0 |  | Fixed Asset Disposal - Work Log Integration
 [ssi_fixed_asset_from_inventory](ssi_fixed_asset_from_inventory/) | 14.0.1.0.0 |  | Fixed Asset From Inventory
 [ssi_fixed_asset_in_progress](ssi_fixed_asset_in_progress/) | 14.0.1.2.0 |  | Fixed Asset In Progress
