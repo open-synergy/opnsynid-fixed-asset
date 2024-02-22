@@ -106,7 +106,7 @@ class FixedAssetDisposal(models.Model):
         string="Asset",
         comodel_name="fixed.asset.asset",
         required=True,
-        domain=[("type", "=", "normal"), ("state", "in", ["open", "removed"])],
+        domain=[("type", "=", "normal"), ("state", "in", ["open", "close"])],
         readonly=True,
         states={
             "draft": [
