@@ -106,7 +106,7 @@ class FixedAssetDisposal(models.Model):
         string="Asset",
         comodel_name="fixed.asset.asset",
         required=True,
-        domain=[("type", "=", "normal"), ("state", "=", "open")],
+        domain=[("type", "=", "normal"), ("state", "in", ["open", "removed"])],
         readonly=True,
         states={
             "draft": [
@@ -490,9 +490,8 @@ class FixedAssetDisposal(models.Model):
         ]
         obj_line.search(criteria).unlink()
 
-    @api.constrains('disposition_price')
+    @api.constrains("disposition_price")
     def _disposition_price_validity(self):
         for rec in self.sudo():
             if rec.disposition_price < 0:
-                raise ValidationError(_('Disposal price can not negative.'))
-
+                raise ValidationError(_("Disposal price can not negative."))
