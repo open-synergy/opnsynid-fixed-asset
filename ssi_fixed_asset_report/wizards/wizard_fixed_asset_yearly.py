@@ -142,7 +142,7 @@ class WizardFixedAssetYearly(models.TransientModel):
 
     def _get_nbv_previous_year(self, asset):
         # date_end = date(int(self.year), 12, 31)
-        date_end = self.fiscal_year_id.date_end + relativedelta(months=-1, day=31)
+        date_end = self.fiscal_year_id.date_start + relativedelta(months=-1, day=31)
         filtered = asset.depreciation_line_ids.filtered(
             lambda x: x.line_date <= date_end and (x.init_entry or x.move_check)
         )
@@ -155,7 +155,7 @@ class WizardFixedAssetYearly(models.TransientModel):
 
     def _get_dpr_previous_year(self, asset):
         # date_end = date(int(self.year), 12, 31)
-        date_end = self.fiscal_year_id.date_end + relativedelta(months=-1, day=31)
+        date_end = self.fiscal_year_id.date_start + relativedelta(months=-1, day=31)
         filtered = asset.depreciation_line_ids.filtered(
             lambda x: x.line_date <= date_end and (x.init_entry or x.move_check)
         )
