@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 <template id="report_fixed_asset_yearly">
     <t t-call="web.html_container">
@@ -12,10 +12,10 @@
             <div class="page">
                 <div class="row">
                     <h4
-                        class="mt0"
-                        t-esc="title or 'Odoo Report'"
-                        style="text-align: center;"
-                    />
+                            class="mt0"
+                            t-esc="title or 'Odoo Report'"
+                            style="text-align: center;"
+                        />
                 </div>
                 <div class="act_as_table data_table" style="width: 100%;">
                     <div class="act_as_row labels">
@@ -33,7 +33,10 @@
                 </div>
                 <t t-foreach="fixed_asset_yearly" t-as="asset_categ">
                     <div class="page_break">
-                        <div class="act_as_table list_table" style="margin-top: 10px;" />
+                        <div
+                                class="act_as_table list_table"
+                                style="margin-top: 10px;"
+                            />
                         <div class="act_as_caption account_title" style="width: 100%">
                             <span t-esc="asset_categ['category_name']" />
                         </div>
@@ -48,8 +51,8 @@
                                     <div class="act_as_cell">START DATE</div>
                                     <div class="act_as_cell">AGE (YEAR)</div>
                                     <div class="act_as_cell">SALVAGE VALUE</div>
-                                    <div class="act_as_cell">ACCUMULATED DEPR</div>
                                     <div class="act_as_cell">NBV PREVIOUS YEAR</div>
+                                    <div class="act_as_cell">ACCUMULATED DEPR</div>
                                     <div class="act_as_cell">I</div>
                                     <div class="act_as_cell">II</div>
                                     <div class="act_as_cell">III</div>
@@ -69,152 +72,150 @@
                             <t t-foreach="asset_categ['assets']" t-as="asset">
                                 <div class="act_as_row lines">
                                     <div class="act_as_cell">
-                                        <t t-esc="asset['no']"/>
+                                        <t t-esc="asset['no']" />
                                     </div>
                                     <div class="act_as_cell left">
                                         <span
-                                            t-att-res-id="asset['res_id']"
-                                            res-model="fixed.asset.asset"
-                                            view-type="form"
-                                        >
+                                                t-att-res-id="asset['res_id']"
+                                                res-model="fixed.asset.asset"
+                                                view-type="form"
+                                            >
                                             <t t-raw="asset['code']" />
                                         </span>
                                     </div>
                                     <div class="act_as_cell left">
                                         <span
-                                            t-att-res-id="asset['res_id']"
-                                            res-model="fixed.asset.asset"
-                                            view-type="form"
-                                        >
+                                                t-att-res-id="asset['res_id']"
+                                                res-model="fixed.asset.asset"
+                                                view-type="form"
+                                            >
                                             <t t-raw="asset['name']" />
                                         </span>
                                     </div>
                                     <div class="act_as_cell left">
                                         <span
-                                            t-att-res-id="asset['vendor_id']"
-                                            res-model="res.partner"
-                                            view-type="form"
-                                        >
+                                                t-att-res-id="asset['vendor_id']"
+                                                res-model="res.partner"
+                                                view-type="form"
+                                            >
                                             <t t-raw="asset['vendor']" />
                                         </span>
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['acquisition_value']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['acquisition_value']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell left">
                                         <span>
-                                            <t
-                                                t-esc="asset['start_date']"
-                                            />
+                                            <t t-esc="asset['start_date']" />
                                         </span>
                                     </div>
                                     <div class="act_as_cell left">
-                                        <t t-esc="asset['age']"/>
+                                        <t t-esc="asset['age']" />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['salvage_value']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['salvage_value']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['nbv_previous_year']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['nbv_previous_year']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['dpr_previous_year']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['dpr_previous_year']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['depr1']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['depr1']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['depr2']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['depr2']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['depr3']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['depr3']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['depr4']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['depr4']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['depr5']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['depr5']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['depr6']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['depr6']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['depr7']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['depr7']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['depr8']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['depr8']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['depr9']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['depr9']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['depr10']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['depr10']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['depr11']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['depr11']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['depr12']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['depr12']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['dpr_current_year']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['dpr_current_year']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                     <div class="act_as_cell amount">
                                         <span
-                                            t-esc="asset['nbv_current_year']"
-                                            t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
-                                        />
+                                                t-esc="asset['nbv_current_year']"
+                                                t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"
+                                            />
                                     </div>
                                 </div>
                             </t>

@@ -76,7 +76,7 @@ class WizardFixedAssetYearly(models.TransientModel):
         date_end = self.fiscal_year_id.date_end.strftime("%Y-%m-%d")
         criteria = [
             ("date_start", "<=", date_end),
-            ("state", "in", ["open", "close", "removed"]),
+            ("state", "in", ["open", "close"]),
         ]
         for category_id in category_ids:
             assets = []
