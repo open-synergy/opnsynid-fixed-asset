@@ -26,7 +26,7 @@ addon | version | maintainers | summary
 [ssi_fixed_asset_from_inventory](ssi_fixed_asset_from_inventory/) | 14.0.1.0.0 |  | Fixed Asset From Inventory
 [ssi_fixed_asset_in_progress](ssi_fixed_asset_in_progress/) | 14.0.1.2.0 |  | Fixed Asset In Progress
 [ssi_fixed_asset_qrcode](ssi_fixed_asset_qrcode/) | 14.0.1.1.0 |  | Fixed Asset QR Code
-[ssi_fixed_asset_report](ssi_fixed_asset_report/) | 14.0.1.6.0 |  | Fixed Asset Report
+[ssi_fixed_asset_report](ssi_fixed_asset_report/) | 14.0.1.7.0 |  | Fixed Asset Report
 [ssi_fixed_asset_salvage_value_estimation_change](ssi_fixed_asset_salvage_value_estimation_change/) | 14.0.1.1.0 |  | Fixed Asset Salvage Value Estimation Change
 [ssi_fixed_asset_useful_life_estimation_change](ssi_fixed_asset_useful_life_estimation_change/) | 14.0.1.2.0 |  | Fixed Asset Useful Life Estimation Change
 [ssi_fixed_asset_work_log](ssi_fixed_asset_work_log/) | 14.0.1.0.0 |  | Fixed Asset Management - Work Log Integration
