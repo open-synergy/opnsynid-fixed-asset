@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Fixed Asset",
-    "version": "8.0.2.8.1",
+    "version": "8.0.2.8.2",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
@@ -18,11 +18,6 @@
         "base_multiple_approval",
         "base_cancel_reason",
     ],
-    "external_dependencies": {
-        "python": [
-            "ddt",
-        ],
-    },
     "data": [
         "security/account_asset_security.xml",
         "security/ir.model.access.csv",
