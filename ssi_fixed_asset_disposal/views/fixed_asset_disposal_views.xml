@@ -28,6 +28,7 @@
             <xpath expr="//field[@name='user_id']" position="before">
                 <field name="company_currency_id" />
                 <field name="asset_id" />
+                <field name="category_id" optional="hide" />
                 <field name="date_disposition" />
                 <field name="type_id" />
                 <field name="acquisition_price" />
@@ -49,6 +50,7 @@
             <xpath expr="//field[@name='company_id']" position="after">
                 <field name="company_currency_id" />
                 <field name="asset_id" />
+                <field name="category_id" />
             </xpath>
             <xpath expr="//group[@name='header_right']" position="inside">
                 <field name="type_id" />

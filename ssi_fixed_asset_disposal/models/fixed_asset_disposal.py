@@ -114,6 +114,10 @@ class FixedAssetDisposal(models.Model):
             ],
         },
     )
+    category_id = fields.Many2one(
+        related="asset_id.category_id",
+        store=True,
+    )
     type_id = fields.Many2one(
         string="Type",
         comodel_name="fixed_asset.disposal_type",
