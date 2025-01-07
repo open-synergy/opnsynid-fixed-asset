@@ -3,6 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from openerp import _, api, fields, models
+from openerp.exceptions import Warning as UserError
 
 
 class LinkFixedAssetToLot(models.TransientModel):
@@ -69,7 +70,7 @@ class LinkFixedAssetToLotDetail(models.TransientModel):
         self.ensure_one()
         if self.asset_id.asset_relation != "no":
             error_msg = _("Asset is already have relationship with lot")
-            raise error_msg
+            raise UserError(error_msg)
         self.asset_id.write(
             {
                 "lot_id": self.lot_id.id,
