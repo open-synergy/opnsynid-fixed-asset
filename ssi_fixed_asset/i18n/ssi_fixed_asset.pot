@@ -1,0 +1,1537 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ssi_fixed_asset
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__purchase_value
+msgid ""
+"\n"
+"The Asset Value is calculated as follows:\n"
+"Purchase Value - Salvage Value."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model,name:ssi_fixed_asset.model_account_account
+msgid "Account"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_category_view_form
+msgid "Accounting"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Acquisition"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__asset_acquisition_move_id
+msgid "Acquisiton Journal Entry"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__asset_acquisition_move_line_id
+msgid "Acquisiton Journal Item"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_needaction
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__active
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__active
+msgid "Active"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__active_approval_ids
+msgid "Active Approvals"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__active_approver_partner_ids
+msgid "Active Partners"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__active_approver_user_ids
+msgid "Active Users"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__activity_ids
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__activity_exception_decoration
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__activity_state
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__activity_type_icon
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Add an internal note here..."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__method_period_number
+msgid "Age Based On Period Lenght"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__method_period_start_number
+msgid "Age On Asset Value Date"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:res.groups,name:ssi_fixed_asset.fixed_asset_all_group
+msgid "All"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__allowed_policy_template_ids
+msgid "Allowed Policy Templates"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__amount
+msgid "Amount"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__depreciated_value
+msgid "Amount Already Depreciated"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_category_view_form
+msgid "Analytic Information"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__account_analytic_id
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__account_analytic_id
+msgid "Analytic account"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__approval_template_id
+msgid "Approval Configuration"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__approval_template_id
+msgid "Approval Template"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__approval_ids
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Approvals"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Approve data. Are you sure?"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__approve_ok
+msgid ""
+"Approve policy\n"
+"\n"
+"* If active user can see and execute 'Approve' button"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__approved
+msgid "Approved"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_mass_depreciation_view_form
+msgid "Are you sure?"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__asset_id
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_search
+msgid "Asset"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__account_asset_id
+msgid "Asset Account"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__category_id
+msgid "Asset Category"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model,name:ssi_fixed_asset.model_fixed_asset_depreciation_line
+msgid "Asset Depreciation Line"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Asset Line"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Asset Lines"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__name
+msgid "Asset Name"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_depreciation_line__type__remove
+msgid "Asset Removal"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__date_remove
+msgid "Asset Removal Date"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__asset_value
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__asset_value
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_depreciation_line__type__create
+msgid "Asset Value"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_tree
+msgid "Assets"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_attachment_count
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__approve_ok
+msgid "Can Approve"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__cancel_ok
+msgid "Can Cancel"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__done_ok
+msgid "Can Close"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__confirm_ok
+msgid "Can Confirm"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__manual_number_ok
+msgid "Can Input Manual Document Number"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__reject_ok
+msgid "Can Reject"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__restart_ok
+msgid "Can Restart"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__restart_approval_ok
+msgid "Can Restart Approval"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__open_ok
+msgid "Can Start"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_mass_depreciation_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__cancel_reason_id
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__cancel_ok
+msgid ""
+"Cancel policy\n"
+"\n"
+"* If active user can see and execute 'Cancel' button"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_asset__state__cancel
+msgid "Cancelled"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__category_ids
+#: model:ir.ui.menu,name:ssi_fixed_asset.menu_fixed_asset_category
+msgid "Categories"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__name
+msgid "Category"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__open_asset
+msgid ""
+"Check this if you want to automatically confirm the assets of this category "
+"when created by invoices."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__child_ids
+msgid "Child Assets"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__method
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__method
+msgid ""
+"Choose the method to use to compute the amount of depreciation lines.\n"
+"  * Linear: Calculated on basis of: Gross Value / Number of Depreciations\n"
+"  * Degressive: Calculated on basis of: Residual Value * Degressive Factor  * Degressive-Linear (only for Time Method = Year): Degressive becomes linear when the annual linear depreciation exceeds the annual degressive depreciation"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__method_time
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__method_time
+msgid ""
+"Choose the method to use to compute the dates and number of depreciation lines.\n"
+"  * Number of Years: Specify the number of years for the depreciation.\n"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_asset__state__close
+msgid "Close"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__code
+msgid "Code"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Code of Asset..."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__company_id
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__company_id
+#: model:res.groups,name:ssi_fixed_asset.fixed_asset_company_group
+msgid "Company"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__company_currency_id
+msgid "Company Currency"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__company_partner_id
+msgid "Company Partner"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:res.groups,name:ssi_fixed_asset.fixed_asset_company_child_group
+msgid "Company and All Child Companies"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__company_id
+msgid ""
+"Company that own the document\n"
+"\n"
+"* Automatically filled with user's company.\n"
+"  Default company can be changed"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__method
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__method
+msgid "Computation Method"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Compute"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_mass_depreciation_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Confirm data. Are you sure?"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__confirm_ok
+msgid ""
+"Confirm policy\n"
+"\n"
+"* If active user can see and execute 'Confirm' button"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_move_line_view_form
+msgid "Create Fixed Asset"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Create Move"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Create accounting entry. Are you sure?"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__create_uid
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__create_uid
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__create_uid
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__create_uid
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line_subtype__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__create_date
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__create_date
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__create_date
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__create_date
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line_subtype__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__line_date
+msgid "Date"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__date
+msgid "Date Depreciation"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__date_min_prorate
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__date_min_prorate
+msgid "Date Min. to Prorate"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_account_account__fixed_asset_category_id
+msgid ""
+"Default Fixed Asset Category when creating invoice lines with this account."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#, python-format
+msgid "Degressive"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__method_progress_factor
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__method_progress_factor
+msgid "Degressive Factor"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#, python-format
+msgid "Degressive-Linear"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#, python-format
+msgid "Degressive-Linear is only supported for Time Method = Year."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Delete Move"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Delete accounting entry. Are you sure?"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__account_expense_depreciation_id
+msgid "Depr. Expense Account"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__method_period_depreciated_number
+msgid "Depreciated Age"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__value_depreciated
+msgid "Depreciated Value"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_depreciation_line__type__depreciate
+msgid "Depreciation"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__account_depreciation_id
+msgid "Depreciation Account"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Depreciation Board"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_category_view_form
+msgid "Depreciation Dates"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__move_id
+msgid "Depreciation Entry"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model,name:ssi_fixed_asset.model_fixed_asset_depreciation_line_subtype
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line_subtype__name
+msgid "Depreciation Line Subtype"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__depreciation_line_ids
+msgid "Depreciation Lines"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_category_view_form
+msgid "Depreciation Method"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__name
+msgid "Depreciation Name"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_account__display_name
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__display_name
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move__display_name
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__display_name
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__display_name
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__display_name
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line_subtype__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__done_ok
+msgid ""
+"Done policy\n"
+"\n"
+"* If active user can see and execute 'Done' button"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_asset__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__method_end
+msgid "Ending Date"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__account_move_line_ids
+msgid "Entries"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
+#, python-format
+msgid "Error!"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model,name:ssi_fixed_asset.model_fixed_asset_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move_line__fixed_asset_id
+#: model:ir.module.category,name:ssi_fixed_asset.fixed_asset_data_ownership_module_category
+#: model:ir.module.category,name:ssi_fixed_asset.fixed_asset_module_category
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_move_line_view_search
+msgid "Fixed Asset"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.actions.act_window,name:ssi_fixed_asset.fixed_asset_category_action
+msgid "Fixed Asset Categories"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model,name:ssi_fixed_asset.model_fixed_asset_category
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_account__fixed_asset_category_id
+#: model:res.groups,name:ssi_fixed_asset.fixed_asset_category_group
+msgid "Fixed Asset Category"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_move_line_view_search
+msgid "Fixed Asset to Be Create"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.actions.act_window,name:ssi_fixed_asset.fixed_asset_asset_action
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move_line__fixed_asset_ids
+#: model:ir.ui.menu,name:ssi_fixed_asset.menu_fixed_asset_asset
+msgid "Fixed Assets"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_follower_ids
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_channel_ids
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_partner_ids
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__activity_type_icon
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "General"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.actions.server,name:ssi_fixed_asset.generate_asset_from_journal_item
+msgid "Generate Fixed Asset From Journal Item"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__move_line_check
+msgid "Has accounting entries"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Helper"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_account__id
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__id
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move__id
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move_line__id
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__id
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__id
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__id
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line_subtype__id
+msgid "ID"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__activity_exception_icon
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__activity_exception_icon
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__message_needaction
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__message_unread
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__message_needaction
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__message_has_error
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
+#, python-format
+msgid "Illegal value %s in asset.method."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__prorata
+msgid ""
+"Indicates that the first depreciation entry for this asset has to be done "
+"from the depreciation start date instead of the first day of the fiscal "
+"year."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__prorata
+msgid ""
+"Indicates that the first depreciation entry for this asset have to be done "
+"from the depreciation start date instead of the first day of the fiscal "
+"year."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Init"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__init_entry
+msgid "Initial Balance Entry"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_is_follower
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__journal_id
+msgid "Journal"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Journal Entries"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model,name:ssi_fixed_asset.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model,name:ssi_fixed_asset.model_account_move_line
+msgid "Journal Item"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__last_posted_asset_line_id
+msgid "Last Asset Value Depreciation Line"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__last_depreciation_id
+msgid "Last Depreciation History"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_account____last_update
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation____last_update
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move____last_update
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset____last_update
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category____last_update
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line____last_update
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line_subtype____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__last_posted_asset_value_id
+msgid "Last Posted Asset Value History"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__last_posted_depreciation_line_id
+msgid "Last Posted Depreciation Line"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__last_posted_history_id
+msgid "Last Posted History"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__write_uid
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__write_uid
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__write_uid
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__write_uid
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line_subtype__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__write_date
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__write_date
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__write_date
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__write_date
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line_subtype__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#, python-format
+msgid "Linear"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_main_attachment_id
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__manual_number_ok
+msgid ""
+"Manual number assignment policy\n"
+"\n"
+"* If active user can edit document number"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Mark As Init"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Mark as init. Are you sure?"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.actions.act_window,name:ssi_fixed_asset.account_mass_depreciation_action
+#: model:ir.model,name:ssi_fixed_asset.model_account_mass_depreciation
+#: model:ir.ui.menu,name:ssi_fixed_asset.menu_mass_depreciation_action
+#: model:res.groups,name:ssi_fixed_asset.mass_depreciation_group
+msgid "Mass Depreciation"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__active
+msgid ""
+"Master data status\n"
+"\n"
+"* Inactive data can not be selected when creating new transaction\n"
+"* Transaction with inactive master data can still be viewed\n"
+"* Set master data as inactive if master data no longger needed,\n"
+"but master data already used on transaction"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__code
+msgid ""
+"Master data unique identifier.\n"
+"\n"
+"* Fill with '/' if You do not need unique identifier\n"
+"* Click 'Generate Code' button to automatically assign code.\n"
+"  Sequence template mush be set to perform this action\n"
+"  Only master data with '/' code will be assign automatic code"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_has_error
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_ids
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_asset__method_period__month
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_category__method_period__month
+msgid "Month"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__my_activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Name of Asset..."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__need_validation
+msgid "Need Validation"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__activity_summary
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__activity_type_id
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__next_approval_ids
+msgid "Next Approvals"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__remaining_value
+msgid "Next Period Depreciation"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_asset__type__normal
+msgid "Normal"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__note
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__note
+msgid "Note"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_needaction_counter
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#, python-format
+msgid "Number of Months"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__method_number
+msgid "Number of Periods"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__method_number
+#, python-format
+msgid "Number of Years"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_has_error_counter
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__message_needaction_counter
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__message_has_error_counter
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__message_unread_counter
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Other Information"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__parent_id
+msgid "Parent Asset"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__parent_left
+msgid "Parent Left"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__parent_right
+msgid "Parent Right"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__method_period
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__method_period
+msgid "Period Length"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__method_period
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__method_period
+msgid "Period length for the depreciation accounting entries"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Policies"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__policy_template_id
+msgid "Policy Template"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__move_check
+msgid "Posted"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__posted_history_ids
+msgid "Posted Asset Histories"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__posted_asset_value_ids
+msgid "Posted Asset Value Histories"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Posted Asset Values"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__posted_depreciation_ids
+msgid "Posted Depreciation Histories"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__posted_depreciation_line_ids
+msgid "Posted Depreciation Lines"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Posted Depreciations"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Posted Histories"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__previous_id
+msgid "Previous Depreciation Line"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
+#, python-format
+msgid ""
+"Programming Error!\n"
+"The '_compute_year_amount' method is only intended for Time Method 'Number of Years.''"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__prorata
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__prorata
+msgid "Prorata Temporis"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__prorate_by_month
+msgid "Prorate by Month"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__date_start
+msgid "Purchase Date"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__purchase_value
+msgid "Purchase Value"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_asset__method_period__quarter
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_category__method_period__quarter
+msgid "Quarter"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__code
+msgid "Reference"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Reject"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Reject data. Are you sure?"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__reject_ok
+msgid ""
+"Reject policy\n"
+"\n"
+"* If active user can see and execute 'Reject' button"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__rejected
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_asset__state__reject
+msgid "Rejected"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Reload Template Policy"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__method_period_remaining_number
+msgid "Remaining Age"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_asset__state__removed
+msgid "Removed"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__value_residual
+msgid "Residual Value"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__user_id
+msgid "Responsible"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__activity_user_id
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Restart"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Restart Asset. Are you sure?"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__restart_approval_ok
+msgid ""
+"Restart approval policy\n"
+"\n"
+"* If active user can see and execute 'Restart Approval' button"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__restart_ok
+msgid ""
+"Restart policy\n"
+"\n"
+"* If active user can see and execute 'Restart' button"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_asset__state__open
+msgid "Running"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__salvage_value
+msgid "Salvage Value"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_depreciation_line__init_entry
+msgid ""
+"Set this flag for entries of previous fiscal years for which OpenERP has not"
+" generated accounting entries."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__open_asset
+msgid "Skip Draft State"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__open_ok
+msgid ""
+"Start policy\n"
+"\n"
+"* If active user can see and execute 'Start' button"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__parent_state
+msgid "State of Asset"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__state
+msgid "Status"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__activity_state
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__subtype_id
+msgid "Subtype"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
+#, python-format
+msgid ""
+"The duration of the asset conflicts with the posted depreciation table entry"
+" dates."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__salvage_value
+msgid ""
+"The estimated value that an asset will realize upon its sale at the end of its useful life.\n"
+"This value is used to determine the depreciation amounts."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__asset_acquisition_move_id
+msgid "The move of this entry line."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__method_number
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__method_number
+msgid "The number of years needed to depreciate your asset"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__asset_value
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_depreciation_line__asset_value
+msgid "This amount represent the initial value of the asset."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__method_time
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__method_time
+msgid "Time Method"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__name
+msgid ""
+"Transaction/document number\n"
+"\n"
+"* Unique indentifer of transaction\n"
+"* Leave '/' to automatically generate number\n"
+"* Change '/' into any number/identifier to manually assign number.\n"
+"  Manual number assignment can be done in 'Draft' state\n"
+"  Only user with 'Can Manualy Assign Number' policy can manually assign number.\n"
+"* Transaction with number other than '/' can not be deleted."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__type
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__type
+msgid "Type"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__activity_exception_decoration
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Unmark As Init"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Unmark as init. Are you sure?"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__unposted_history_ids
+msgid "Unposted Asset Histories"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "Unposted Histories"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_unread
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_unread_counter
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:res.groups,name:ssi_fixed_asset.fixed_asset_user_group
+msgid "User"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__user_id
+msgid ""
+"User that responsible for document\n"
+"\n"
+"* Create user can be different with responsible user\n"
+"* Automatically filled with user that initiate document creation.\n"
+"  Default responsible can be changed."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__active_approver_user_ids
+msgid "Users that can approve/reject document"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:res.groups,name:ssi_fixed_asset.fixed_asset_validator_group
+msgid "Validator"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_asset__type__view
+msgid "View"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
+msgid "View Move"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:res.groups,name:ssi_fixed_asset.fixed_asset_viewer_group
+msgid "Viewer"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_asset__state__confirm
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__website_message_ids
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__website_message_ids
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__state
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_depreciation_line__parent_state
+msgid ""
+"When an asset is created, the status is 'Draft'.\n"
+"If the asset is confirmed, the status goes in 'Running' and the depreciation lines can be posted to the accounting.\n"
+"If the last depreciation line is posted, the asset goes into the 'Close' status.\n"
+"When the removal entries are generated, the asset goes into the 'Removed' status."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_asset__method_period__year
+#: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_category__method_period__year
+msgid "Year"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
+#, python-format
+msgid ""
+"You are not allowed to remove an accounting entry linked to an asset.\n"
+"You should remove such entries from the asset."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
+#, python-format
+msgid ""
+"You cannot change a depreciation line with an associated accounting entry."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
+#, python-format
+msgid "You cannot change the category of an asset with accounting entries."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
+#, python-format
+msgid ""
+"You cannot delete a depreciation line with an associated accounting entry."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
+#, python-format
+msgid "You cannot remove an asset line of type 'Asset Value'."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
+#, python-format
+msgid ""
+"You cannot set the 'Initial Balance Entry' flag on a depreciation line with "
+"prior posted entries."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__date_start
+msgid ""
+"You should manually add depreciation lines with the depreciations of "
+"previous fiscal years if the Depreciation Start Date is different from the "
+"date for which accounting entries need to be generated."
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_mass_depreciation_view_form
+msgid "or"
+msgstr ""
