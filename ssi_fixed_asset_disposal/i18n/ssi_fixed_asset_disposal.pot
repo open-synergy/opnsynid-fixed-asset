@@ -1,0 +1,759 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ssi_fixed_asset_disposal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__name
+msgid "# Document"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_disposal.fixed_asset_disposal_type_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_disposal.fixed_asset_disposal_view_form
+msgid "Accounting"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__accumulated_depreciation_account_id
+msgid "Accumulated Depreciation Account"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__acquisition_price
+msgid "Acquisition Price"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_needaction
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__active
+msgid "Active"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__active_approval_ids
+msgid "Active Approvals"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__active_approver_partner_ids
+msgid "Active Partners"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__active_approver_user_ids
+msgid "Active Users"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_ids
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_exception_decoration
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_state
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_type_icon
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:res.groups,name:ssi_fixed_asset_disposal.fixed_asset_disposal_all_group
+msgid "All"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__set_disposition_price
+msgid "Allow To Set Disposition Price"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__allowed_policy_template_ids
+msgid "Allowed Policy Templates"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__approval_template_id
+msgid "Approval Configuration"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__approval_template_id
+msgid "Approval Template"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__approval_ids
+msgid "Approvals"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__approve_ok
+msgid ""
+"Approve policy\n"
+"\n"
+"* If active user can see and execute 'Approve' button"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__approved
+msgid "Approved"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__asset_id
+msgid "Asset"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__asset_account_id
+msgid "Asset Account"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__category_id
+msgid "Asset Category"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_attachment_count
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__approve_ok
+msgid "Can Approve"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__cancel_ok
+msgid "Can Cancel"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__confirm_ok
+msgid "Can Confirm"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__done_ok
+msgid "Can Finished"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__manual_number_ok
+msgid "Can Input Manual Document Number"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__reject_ok
+msgid "Can Reject"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__restart_ok
+msgid "Can Restart"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__restart_approval_ok
+msgid "Can Restart Approval"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__open_ok
+msgid "Can Start"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields.selection,name:ssi_fixed_asset_disposal.selection__fixed_asset_disposal__state__cancel
+msgid "Cancel"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__cancel_reason_id
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__cancel_ok
+msgid ""
+"Cancel policy\n"
+"\n"
+"* If active user can see and execute 'Cancel' button"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__code
+msgid "Code"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__company_id
+#: model:res.groups,name:ssi_fixed_asset_disposal.fixed_asset_disposal_company_group
+msgid "Company"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__company_currency_id
+msgid "Company Currency"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__company_partner_id
+msgid "Company Partner"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:res.groups,name:ssi_fixed_asset_disposal.fixed_asset_disposal_company_child_group
+msgid "Company and All Child Companies"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__company_id
+msgid ""
+"Company that own the document\n"
+"\n"
+"* Automatically filled with user's company.\n"
+"  Default company can be changed"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__confirm_ok
+msgid ""
+"Confirm policy\n"
+"\n"
+"* If active user can see and execute 'Confirm' button"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__create_uid
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__create_date
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__depreciated_amount
+msgid "Depreciated Value"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__depreciation_line_id
+msgid "Depreciation Line"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__display_name
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__disposal_acc_move_id
+msgid "Disposal Account Move"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__date_disposition
+msgid "Disposal Date"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__disposal_journal_id
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__disposal_journal_id
+msgid "Disposal Journal"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__disposition_price
+msgid "Disposal Price"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__name
+msgid "Disposal Type"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.ui.menu,name:ssi_fixed_asset_disposal.menu_fixed_asset_disposal_type
+msgid "Disposal Types"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: code:addons/ssi_fixed_asset_disposal/models/fixed_asset_disposal.py:0
+#, python-format
+msgid "Disposal price can not negative."
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.ui.menu,name:ssi_fixed_asset_disposal.fixed_asset_disposal_menu
+msgid "Disposals"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields.selection,name:ssi_fixed_asset_disposal.selection__fixed_asset_disposal__state__done
+msgid "Done"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__done_ok
+msgid ""
+"Done policy\n"
+"\n"
+"* If active user can see and execute 'Done' button"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields.selection,name:ssi_fixed_asset_disposal.selection__fixed_asset_disposal__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__exchange_account_id
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__exchange_account_id
+msgid "Exchange Account"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model,name:ssi_fixed_asset_disposal.model_fixed_asset_disposal
+#: model:ir.module.category,name:ssi_fixed_asset_disposal.fixed_asset_disposal_data_ownership_module_category
+#: model:ir.module.category,name:ssi_fixed_asset_disposal.fixed_asset_disposal_workflow_module_category
+msgid "Fixed Asset Disposal"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:account.account.type,name:ssi_fixed_asset_disposal.data_account_type_fixed_asset_disposal_cross
+msgid "Fixed Asset Disposal Cross Account"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model,name:ssi_fixed_asset_disposal.model_fixed_asset_disposal_type
+#: model:res.groups,name:ssi_fixed_asset_disposal.fixed_asset_disposal_type_configurator_group
+msgid "Fixed Asset Disposal Type"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.actions.act_window,name:ssi_fixed_asset_disposal.fixed_asset_disposal_type_action
+msgid "Fixed Asset Disposal Types"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.actions.act_window,name:ssi_fixed_asset_disposal.fixed_asset_disposal_action
+msgid "Fixed Asset Disposals"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_follower_ids
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_channel_ids
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_partner_ids
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_type_icon
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__gain_account_id
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__gain_account_id
+msgid "Gain Account"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__gain_loss_amount
+msgid "Gain/Loss Amount"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__generate_accounting_entry
+msgid "Generate Accounting Entry"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__id
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__id
+msgid "ID"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_exception_icon
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_exception_icon
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_needaction
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_unread
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_needaction
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_has_error
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_is_follower
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal____last_update
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__write_uid
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__write_date
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__loss_account_id
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__loss_account_id
+msgid "Loss Account"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_main_attachment_id
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__manual_number_ok
+msgid ""
+"Manual number assignment policy\n"
+"\n"
+"* If active user can edit document number"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__active
+msgid ""
+"Master data status\n"
+"\n"
+"* Inactive data can not be selected when creating new transaction\n"
+"* Transaction with inactive master data can still be viewed\n"
+"* Set master data as inactive if master data no longger needed,\n"
+"but master data already used on transaction"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__code
+msgid ""
+"Master data unique identifier.\n"
+"\n"
+"* Fill with '/' if You do not need unique identifier\n"
+"* Click 'Generate Code' button to automatically assign code.\n"
+"  Sequence template mush be set to perform this action\n"
+"  Only master data with '/' code will be assign automatic code"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_has_error
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_ids
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__my_activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__need_validation
+msgid "Need Validation"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_summary
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_type_id
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__next_approval_ids
+msgid "Next Approvals"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__note
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__note
+msgid "Note"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_needaction_counter
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_has_error_counter
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_needaction_counter
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_has_error_counter
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_unread_counter
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields.selection,name:ssi_fixed_asset_disposal.selection__fixed_asset_disposal__state__open
+msgid "On Progress"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__policy_template_id
+msgid "Policy Template"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__reject_ok
+msgid ""
+"Reject policy\n"
+"\n"
+"* If active user can see and execute 'Reject' button"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__rejected
+#: model:ir.model.fields.selection,name:ssi_fixed_asset_disposal.selection__fixed_asset_disposal__state__reject
+msgid "Rejected"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__user_id
+msgid "Responsible"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_user_id
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__restart_approval_ok
+msgid ""
+"Restart approval policy\n"
+"\n"
+"* If active user can see and execute 'Restart Approval' button"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__restart_ok
+msgid ""
+"Restart policy\n"
+"\n"
+"* If active user can see and execute 'Restart' button"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__open_ok
+msgid ""
+"Start policy\n"
+"\n"
+"* If active user can see and execute 'Start' button"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__state
+msgid "State"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_state
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__name
+msgid ""
+"Transaction/document number\n"
+"\n"
+"* Unique indentifer of transaction\n"
+"* Leave '/' to automatically generate number\n"
+"* Change '/' into any number/identifier to manually assign number.\n"
+"  Manual number assignment can be done in 'Draft' state\n"
+"  Only user with 'Can Manualy Assign Number' policy can manually assign number.\n"
+"* Transaction with number other than '/' can not be deleted."
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__type_id
+msgid "Type"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_exception_decoration
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_unread
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_unread_counter
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:res.groups,name:ssi_fixed_asset_disposal.fixed_asset_disposal_user_group
+msgid "User"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__user_id
+msgid ""
+"User that responsible for document\n"
+"\n"
+"* Create user can be different with responsible user\n"
+"* Automatically filled with user that initiate document creation.\n"
+"  Default responsible can be changed."
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__active_approver_user_ids
+msgid "Users that can approve/reject document"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:res.groups,name:ssi_fixed_asset_disposal.fixed_asset_disposal_validator_group
+msgid "Validator"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:res.groups,name:ssi_fixed_asset_disposal.fixed_asset_disposal_viewer_group
+msgid "Viewer"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields.selection,name:ssi_fixed_asset_disposal.selection__fixed_asset_disposal__state__confirm
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__website_message_ids
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__website_message_ids
+#: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__website_message_ids
+msgid "Website communication history"
+msgstr ""
