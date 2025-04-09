@@ -1,0 +1,246 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ssi_fixed_asset_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "ACCUMULATED DEPR"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "ACQUISITION VALUE"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "AGE (YEAR)"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_account_wizard_fixed_asset_yearly__asset_category_ids
+msgid "Asset Category"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "Asset category filter"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "CODE"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.form_account_wizardFixedAssetYearly
+msgid "Cancel"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_account_wizard_fixed_asset_yearly__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_account_wizard_fixed_asset_yearly__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_account_wizard_fixed_asset_yearly__display_name
+#: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_report_a_f_r_report_fixed_asset_yearly_xlsx__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#. openerp-web
+#: code:addons/ssi_fixed_asset_report/static/src/xml/report.xml:0
+#: code:addons/ssi_fixed_asset_report/static/src/xml/report.xml:0
+#, python-format
+msgid "Export"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.form_account_wizardFixedAssetYearly
+msgid "Export PDF"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.form_account_wizardFixedAssetYearly
+msgid "Export XLSX"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model:ir.model,name:ssi_fixed_asset_report.model_report_a_f_r_report_fixed_asset_yearly_xlsx
+msgid "Fixed Asset Yearly XLSX Report"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_account_wizard_fixed_asset_yearly__id
+#: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_report_a_f_r_report_fixed_asset_yearly_xlsx__id
+msgid "ID"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "II"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "III"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "IV"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "IX"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_account_wizard_fixed_asset_yearly____last_update
+#: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_report_a_f_r_report_fixed_asset_yearly_xlsx____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_account_wizard_fixed_asset_yearly__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_account_wizard_fixed_asset_yearly__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "NAME"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "NBV"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "NBV PREVIOUS YEAR"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "NO"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#. openerp-web
+#: code:addons/ssi_fixed_asset_report/static/src/xml/report.xml:0
+#: code:addons/ssi_fixed_asset_report/static/src/xml/report.xml:0
+#, python-format
+msgid "Print"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model:ir.actions.report,name:ssi_fixed_asset_report.action_print_report_fixed_asset_yearly_html
+#: model:ir.actions.report,name:ssi_fixed_asset_report.action_print_report_fixed_asset_yearly_qweb
+#: model:ir.model,name:ssi_fixed_asset_report.model_account_wizard_fixed_asset_yearly
+msgid "Print Yearly Asset Report"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.form_account_wizardFixedAssetYearly
+msgid "Print Yearly Fixed Asset Report"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "SALVAGE VALUE"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "START DATE"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "VENDOR"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "VI"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "VII"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "VIII"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.form_account_wizardFixedAssetYearly
+msgid "View"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "XI"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "XII"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_account_wizard_fixed_asset_yearly__fiscal_year_id
+msgid "Year"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "Year filter"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model:ir.actions.report,name:ssi_fixed_asset_report.action_report_fixed_asset_yearly_xlsx
+msgid "Yearly Asset Report"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
+msgid "Yearly Asset Report -"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model:ir.actions.act_window,name:ssi_fixed_asset_report.waction_account_wizardFixedAssetYearly
+#: model:ir.ui.menu,name:ssi_fixed_asset_report.menu_account_reportFixedAssetYearly
+msgid "Yearly Fixed Asset Report"
+msgstr ""
+
+#. module: ssi_fixed_asset_report
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.form_account_wizardFixedAssetYearly
+msgid "or"
+msgstr ""
