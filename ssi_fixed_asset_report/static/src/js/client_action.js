@@ -30,8 +30,8 @@ odoo.define("ssi_fixed_asset_report.client_action", function (require) {
             const action = {
                 type: "ir.actions.report",
                 report_type: "xlsx",
-                report_name: 'a_f_r.report_fixed_asset_yearly_xlsx',
-                report_file: 'report_fixed_asset_yearly',
+                report_name: "a_f_r.report_fixed_asset_yearly_xlsx",
+                report_file: "report_fixed_asset_yearly",
                 data: this.data,
                 context: this.context,
                 display_name: this.title,
