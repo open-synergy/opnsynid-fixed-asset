@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-04-09 09:35+0000\n"
+"PO-Revision-Date: 2025-04-10 10:25+0000\n"
 "Last-Translator: Michael Viriyananda <viriyananda.michael@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.simetri-sinergi.id/projects/"
 "fixed-asset/opnsynid-fixed-asset-14-0-ssi_fixed_asset/id/>\n"
@@ -33,12 +33,12 @@ msgstr "Akun"
 #. module: ssi_fixed_asset
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_category_view_form
 msgid "Accounting"
-msgstr ""
+msgstr "Akuntansi"
 
 #. module: ssi_fixed_asset
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
 msgid "Acquisition"
-msgstr ""
+msgstr "Perolehan"
 
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__asset_acquisition_move_id
@@ -54,7 +54,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__message_needaction
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Dibutuhkan Tindakan"
 
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__active
@@ -65,7 +65,7 @@ msgstr "Aktif"
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__active_approval_ids
 msgid "Active Approvals"
-msgstr ""
+msgstr "Persetujuan Aktif"
 
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__active_approver_partner_ids
@@ -81,7 +81,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__activity_ids
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Aktivitas"
 
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__activity_exception_decoration
