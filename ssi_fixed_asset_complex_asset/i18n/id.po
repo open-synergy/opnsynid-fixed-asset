@@ -6,25 +6,28 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-04-20 00:20+0000\n"
+"Last-Translator: admin <odoo@simetri-sinergi.id>\n"
+"Language-Team: Indonesian <https://weblate.simetri-sinergi.id/projects/"
+"fixed-asset/opnsynid-fixed-asset-14-0-ssi_fixed_asset_complex_asset/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.18.2\n"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__name
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__name
 msgid "# Document"
-msgstr ""
+msgstr "# Dokumen"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_needaction
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Diperlukan Tindakan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__active_approval_ids
