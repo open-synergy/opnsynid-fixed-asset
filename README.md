@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.com/open-synergy/opnsynid-fixed-asset.svg?branch=14.0)](https://travis-ci.com/open-synergy/opnsynid-fixed-asset)
-![pre-commit](https://github.com/open-synergy/opnsynid-fixed-asset/actions/workflows/pre-commit.yml/badge.svg)
+[![Pre-commit Status](https://github.com/open-synergy/opnsynid-fixed-asset/actions/workflows/pre-commit.yml/badge.svg?branch=14.0)](https://github.com/open-synergy/opnsynid-fixed-asset/actions/workflows/pre-commit.yml?query=branch%3A14.0)
+[![Build Status](https://github.com/open-synergy/opnsynid-fixed-asset/actions/workflows/test.yml/badge.svg?branch=14.0)](https://github.com/open-synergy/opnsynid-fixed-asset/actions/workflows/test.yml?query=branch%3A14.0)
 [![codecov](https://codecov.io/gh/open-synergy/opnsynid-fixed-asset/branch/14.0/graph/badge.svg)](https://codecov.io/gh/open-synergy/opnsynid-fixed-asset)
 
 <!-- /!\ do not modify above this line -->
