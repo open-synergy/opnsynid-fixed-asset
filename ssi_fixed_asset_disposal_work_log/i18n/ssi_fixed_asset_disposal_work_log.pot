@@ -59,6 +59,11 @@ msgid "Work Estimation"
 msgstr ""
 
 #. module: ssi_fixed_asset_disposal_work_log
+#: model:ir.model.fields,field_description:ssi_fixed_asset_disposal_work_log.field_fixed_asset_disposal__work_log_analytic_account_id
+msgid "Work Log Analytic Account"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal_work_log
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal_work_log.field_fixed_asset_disposal__work_log_ids
 msgid "Work Logs"
 msgstr ""
