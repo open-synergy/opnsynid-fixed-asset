@@ -6,21 +6,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-05-03 10:25+0000\n"
-"Last-Translator: Gita Ekapratiwi <gita.ekapratiwi@gmail.com>\n"
+"PO-Revision-Date: 2025-05-08 14:34+0000\n"
+"Last-Translator: Michael Viriyananda <viriyananda.michael@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.simetri-sinergi.id/projects/"
-"fixed-asset/opnsynid-fixed-asset-14-0-ssi_fixed_asset_in_progress/id/>\n"
+"opnsynid-fixed-asset-14-0/"
+"opnsynid-fixed-asset-14-0-ssi_fixed_asset_in_progress/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 5.11.3\n"
 
 #. module: ssi_fixed_asset_in_progress
 #: model:ir.model.fields,field_description:ssi_fixed_asset_in_progress.field_fixed_asset_in_progress__name
 msgid "# Document"
-msgstr ""
+msgstr "# Dokumen"
 
 #. module: ssi_fixed_asset_in_progress
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_in_progress.fixed_asset_in_progress_view_form
