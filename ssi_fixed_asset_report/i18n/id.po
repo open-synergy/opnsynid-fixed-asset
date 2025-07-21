@@ -6,16 +6,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-05-03 09:25+0000\n"
-"Last-Translator: Gita Ekapratiwi <gita.ekapratiwi@gmail.com>\n"
+"PO-Revision-Date: 2025-07-22 09:34+0000\n"
+"Last-Translator: Weblate Admin <weblate@example.com>\n"
 "Language-Team: Indonesian <https://weblate.simetri-sinergi.id/projects/"
-"fixed-asset/opnsynid-fixed-asset-14-0-ssi_fixed_asset_report/id/>\n"
+"opnsynid-fixed-asset-14-0/opnsynid-fixed-asset-14-0-ssi_fixed_asset_report/"
+"id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 5.11.3\n"
 
 #. module: ssi_fixed_asset_report
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
@@ -66,7 +67,7 @@ msgstr "Dibuat Pada"
 #: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_account_wizard_fixed_asset_yearly__display_name
 #: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_report_a_f_r_report_fixed_asset_yearly_xlsx__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nama Tampilan"
 
 #. module: ssi_fixed_asset_report
 #. openerp-web
@@ -121,17 +122,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_account_wizard_fixed_asset_yearly____last_update
 #: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_report_a_f_r_report_fixed_asset_yearly_xlsx____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Terakhir Dimodifikasi pada"
 
 #. module: ssi_fixed_asset_report
 #: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_account_wizard_fixed_asset_yearly__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Terakhir Dimuktahirkan oleh"
 
 #. module: ssi_fixed_asset_report
 #: model:ir.model.fields,field_description:ssi_fixed_asset_report.field_account_wizard_fixed_asset_yearly__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Terakhir Dimuktahirkan pada"
 
 #. module: ssi_fixed_asset_report
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_report.report_fixed_asset_yearly
