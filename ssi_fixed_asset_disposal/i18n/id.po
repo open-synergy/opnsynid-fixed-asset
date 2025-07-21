@@ -6,16 +6,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-04-20 00:48+0000\n"
-"Last-Translator: Andhitia Rama <andhitia.r@gmail.com>\n"
+"PO-Revision-Date: 2025-07-22 08:34+0000\n"
+"Last-Translator: Weblate Admin <weblate@example.com>\n"
 "Language-Team: Indonesian <https://weblate.simetri-sinergi.id/projects/"
-"fixed-asset/opnsynid-fixed-asset-14-0-ssi_fixed_asset_disposal/id/>\n"
+"opnsynid-fixed-asset-14-0/opnsynid-fixed-asset-14-0-ssi_fixed_asset_disposal/"
+"id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 5.11.3\n"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__name
@@ -26,49 +27,49 @@ msgstr "# Dokumen"
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_disposal.fixed_asset_disposal_type_view_form
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_disposal.fixed_asset_disposal_view_form
 msgid "Accounting"
-msgstr ""
+msgstr "Akuntansi"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__accumulated_depreciation_account_id
 msgid "Accumulated Depreciation Account"
-msgstr ""
+msgstr "Akun Akumulasi Penyusutan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__acquisition_price
 msgid "Acquisition Price"
-msgstr ""
+msgstr "Harga Perolehan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_needaction
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Diperlukan Tindakan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__active
 msgid "Active"
-msgstr ""
+msgstr "Aktif"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__active_approval_ids
 msgid "Active Approvals"
-msgstr ""
+msgstr "Persetujuan Aktif"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__active_approver_partner_ids
 msgid "Active Partners"
-msgstr ""
+msgstr "Partner Aktif"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__active_approver_user_ids
 msgid "Active Users"
-msgstr ""
+msgstr "Pengguna Aktif"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_ids
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Aktivitas"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_exception_decoration
@@ -80,7 +81,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_state
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Status Aktivitas"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_type_icon
@@ -91,7 +92,7 @@ msgstr ""
 #. module: ssi_fixed_asset_disposal
 #: model:res.groups,name:ssi_fixed_asset_disposal.fixed_asset_disposal_all_group
 msgid "All"
-msgstr ""
+msgstr "Semua"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__set_disposition_price
@@ -106,7 +107,7 @@ msgstr ""
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__approval_template_id
 msgid "Approval Configuration"
-msgstr ""
+msgstr "Pengaturan Persetujuan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__approval_template_id
@@ -116,7 +117,7 @@ msgstr ""
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__approval_ids
 msgid "Approvals"
-msgstr ""
+msgstr "Persetujuan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__approve_ok
@@ -124,27 +125,27 @@ msgid ""
 "Approve policy\n"
 "\n"
 "* If active user can see and execute 'Approve' button"
-msgstr ""
+msgstr "Kebijakan Persetujuan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__approved
 msgid "Approved"
-msgstr ""
+msgstr "Disetujui"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__asset_id
 msgid "Asset"
-msgstr ""
+msgstr "Aset"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__asset_account_id
 msgid "Asset Account"
-msgstr ""
+msgstr "Jurnal Aset"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__category_id
 msgid "Asset Category"
-msgstr ""
+msgstr "Kategori Aset"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_attachment_count
@@ -155,22 +156,22 @@ msgstr ""
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__approve_ok
 msgid "Can Approve"
-msgstr ""
+msgstr "Dapat Menyetujui"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__cancel_ok
 msgid "Can Cancel"
-msgstr ""
+msgstr "Dapat Membatalkan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__confirm_ok
 msgid "Can Confirm"
-msgstr ""
+msgstr "Dapat Mengkonfirmasi"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__done_ok
 msgid "Can Finished"
-msgstr ""
+msgstr "Dapat Menyelesaikan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__manual_number_ok
@@ -180,32 +181,32 @@ msgstr ""
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__reject_ok
 msgid "Can Reject"
-msgstr ""
+msgstr "Dapat Menolak"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__restart_ok
 msgid "Can Restart"
-msgstr ""
+msgstr "Dapat Memulai Ulang"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__restart_approval_ok
 msgid "Can Restart Approval"
-msgstr ""
+msgstr "Dapat Memulai Ulang Persetujuan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__open_ok
 msgid "Can Start"
-msgstr ""
+msgstr "Dapat Memulai"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_disposal.selection__fixed_asset_disposal__state__cancel
 msgid "Cancel"
-msgstr ""
+msgstr "Membatalkan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__cancel_reason_id
 msgid "Cancel Reason"
-msgstr ""
+msgstr "Alasan Membatalkan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__cancel_ok
@@ -213,33 +214,33 @@ msgid ""
 "Cancel policy\n"
 "\n"
 "* If active user can see and execute 'Cancel' button"
-msgstr ""
+msgstr "Kebijakan Pembatalan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__code
 msgid "Code"
-msgstr ""
+msgstr "Kode"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__company_id
 #: model:res.groups,name:ssi_fixed_asset_disposal.fixed_asset_disposal_company_group
 msgid "Company"
-msgstr ""
+msgstr "Perusahaan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__company_currency_id
 msgid "Company Currency"
-msgstr ""
+msgstr "Mata Uang Perusahaan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__company_partner_id
 msgid "Company Partner"
-msgstr ""
+msgstr "Partner Perusahaan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:res.groups,name:ssi_fixed_asset_disposal.fixed_asset_disposal_company_child_group
 msgid "Company and All Child Companies"
-msgstr ""
+msgstr "Perusahaan dan Semua Anak Perusahaan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__company_id
@@ -262,18 +263,18 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__create_uid
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Dibuat Oleh"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__create_date
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Dibuat Pada"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__depreciated_amount
 msgid "Depreciated Value"
-msgstr ""
+msgstr "Nilai Penyusutan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__depreciation_line_id
@@ -284,7 +285,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__display_name
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nama Tampilan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__disposal_acc_move_id
@@ -294,44 +295,44 @@ msgstr ""
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__date_disposition
 msgid "Disposal Date"
-msgstr ""
+msgstr "Tanggal Pelepasan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__disposal_journal_id
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__disposal_journal_id
 msgid "Disposal Journal"
-msgstr ""
+msgstr "Buku Jurnal Pelepasan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__disposition_price
 msgid "Disposal Price"
-msgstr ""
+msgstr "Harga Pelepasan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__name
 msgid "Disposal Type"
-msgstr ""
+msgstr "Tipe Pelepasan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.ui.menu,name:ssi_fixed_asset_disposal.menu_fixed_asset_disposal_type
 msgid "Disposal Types"
-msgstr ""
+msgstr "Tipe Pelepasan"
 
 #. module: ssi_fixed_asset_disposal
 #: code:addons/ssi_fixed_asset_disposal/models/fixed_asset_disposal.py:0
 #, python-format
 msgid "Disposal price can not negative."
-msgstr ""
+msgstr "Harga Pelepasan Tidak Boleh Negatif"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.ui.menu,name:ssi_fixed_asset_disposal.fixed_asset_disposal_menu
 msgid "Disposals"
-msgstr ""
+msgstr "Pelepasan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_disposal.selection__fixed_asset_disposal__state__done
 msgid "Done"
-msgstr ""
+msgstr "Selesai"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__done_ok
@@ -344,7 +345,7 @@ msgstr ""
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_disposal.selection__fixed_asset_disposal__state__draft
 msgid "Draft"
-msgstr ""
+msgstr "Draf"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__exchange_account_id
@@ -357,7 +358,7 @@ msgstr ""
 #: model:ir.module.category,name:ssi_fixed_asset_disposal.fixed_asset_disposal_data_ownership_module_category
 #: model:ir.module.category,name:ssi_fixed_asset_disposal.fixed_asset_disposal_workflow_module_category
 msgid "Fixed Asset Disposal"
-msgstr ""
+msgstr "Pelepasan Aset Tetap"
 
 #. module: ssi_fixed_asset_disposal
 #: model:account.account.type,name:ssi_fixed_asset_disposal.data_account_type_fixed_asset_disposal_cross
@@ -368,23 +369,23 @@ msgstr ""
 #: model:ir.model,name:ssi_fixed_asset_disposal.model_fixed_asset_disposal_type
 #: model:res.groups,name:ssi_fixed_asset_disposal.fixed_asset_disposal_type_configurator_group
 msgid "Fixed Asset Disposal Type"
-msgstr ""
+msgstr "Tipe Pelepasan Aset Tetap"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.actions.act_window,name:ssi_fixed_asset_disposal.fixed_asset_disposal_type_action
 msgid "Fixed Asset Disposal Types"
-msgstr ""
+msgstr "Tipe Pelepasan Aset tetap"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.actions.act_window,name:ssi_fixed_asset_disposal.fixed_asset_disposal_action
 msgid "Fixed Asset Disposals"
-msgstr ""
+msgstr "Pelepasan Aset Tetap"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_follower_ids
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Pengikut"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_channel_ids
@@ -444,37 +445,37 @@ msgstr ""
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_needaction
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_unread
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Jika diberi centang, pesan baru membutuhkan perhatian anda."
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_has_error
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Jika diberi centang, sebagian pesan memiliki kesalahan pengiriman."
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_is_follower
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Adalah Pengikut"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal____last_update
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Terakhir Dimodifikasi pada"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__write_uid
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Terakhir Dimuktahirkan oleh"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__write_date
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Terakhir Dimuktahirkan pada"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__loss_account_id
@@ -486,7 +487,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_main_attachment_id
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Lampiran Utama"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__manual_number_ok
@@ -522,98 +523,98 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_has_error
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Kesalahan Pengiriman Pesan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_ids
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Pesan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__my_activity_date_deadline
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Tenggat Waktu Aktivitas Saya"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__need_validation
 msgid "Need Validation"
-msgstr ""
+msgstr "Dibutuhkan Validasi"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_date_deadline
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Tenggat Waktu Aktivitas Selanjutnya"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_summary
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Kesimpulan Aktivitas Selanjutnya"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_type_id
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Tipe Aktivitas Selanjutnya"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__next_approval_ids
 msgid "Next Approvals"
-msgstr ""
+msgstr "Persetujuan Selanjutnya"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__note
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__note
 msgid "Note"
-msgstr ""
+msgstr "Catatan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_needaction_counter
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Jumlah Tindakan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_has_error_counter
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Jumlah Kesalahan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_needaction_counter
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Jumlah Pesan yang Membutuhkan Tindakan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_has_error_counter
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Jumlah Pesan dengan Kesalahan Pengiriman"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__message_unread_counter
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Jumlah Pesan yang Belum Dibaca"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_disposal.selection__fixed_asset_disposal__state__open
 msgid "On Progress"
-msgstr ""
+msgstr "Sedang Dalam Proses"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__partner_id
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__policy_template_id
 msgid "Policy Template"
-msgstr ""
+msgstr "Pola Kebijakan"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__reject_ok
@@ -627,12 +628,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__rejected
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_disposal.selection__fixed_asset_disposal__state__reject
 msgid "Rejected"
-msgstr ""
+msgstr "Ditolak"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__user_id
 msgid "Responsible"
-msgstr ""
+msgstr "Penanggung Jawab"
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__activity_user_id
