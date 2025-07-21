@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-05-07 14:20+0000\n"
-"Last-Translator: Michael Viriyananda <viriyananda.michael@gmail.com>\n"
+"PO-Revision-Date: 2025-07-22 08:34+0000\n"
+"Last-Translator: Weblate Admin <weblate@example.com>\n"
 "Language-Team: Indonesian <https://weblate.simetri-sinergi.id/projects/"
 "opnsynid-fixed-asset-14-0/"
 "opnsynid-fixed-asset-14-0-ssi_fixed_asset_useful_life_estimation_change/id/>"
@@ -27,12 +27,12 @@ msgstr "# Dokumen"
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Diperlukan Tindakan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__active_approval_ids
 msgid "Active Approvals"
-msgstr ""
+msgstr "Persetujuan Aktif"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__active_approver_partner_ids
@@ -47,7 +47,7 @@ msgstr "Pengguna Aktif"
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Aktivitas"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__activity_exception_decoration
@@ -57,7 +57,7 @@ msgstr ""
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Status Aktivitas"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__activity_type_icon
@@ -77,7 +77,7 @@ msgstr ""
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,help:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__approval_template_id
 msgid "Approval Configuration"
-msgstr "Konfigurasi Persetujuan"
+msgstr "Pengaturan Persetujuan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__approval_template_id
@@ -95,7 +95,7 @@ msgid ""
 "Approve policy\n"
 "\n"
 "* If active user can see and execute 'Approve' button"
-msgstr ""
+msgstr "Kebijakan Persetujuan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__approved
@@ -130,7 +130,7 @@ msgstr "Dapat Mengkonfirmasi"
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__done_ok
 msgid "Can Finished"
-msgstr ""
+msgstr "Dapat Menyelesaikan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__manual_number_ok
@@ -145,17 +145,17 @@ msgstr "Dapat Menolak"
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__restart_ok
 msgid "Can Restart"
-msgstr "Dapat Mengulang"
+msgstr "Dapat Memulai Ulang"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__restart_approval_ok
 msgid "Can Restart Approval"
-msgstr "Dapat Mengulang Persetujuan"
+msgstr "Dapat Memulai Ulang Persetujuan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__cancel_reason_id
 msgid "Cancel Reason"
-msgstr "Alasan Pembatalan"
+msgstr "Alasan Membatalkan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,help:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__cancel_ok
@@ -163,7 +163,7 @@ msgid ""
 "Cancel policy\n"
 "\n"
 "* If active user can see and execute 'Cancel' button"
-msgstr ""
+msgstr "Kebijakan Pembatalan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_useful_life_estimation_change.selection__fixed_asset_useful_life_estimation_change__state__cancel
@@ -179,7 +179,7 @@ msgstr "Perusahaan"
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__company_partner_id
 msgid "Company Partner"
-msgstr "Lawan Transaksi (Perusahaan)"
+msgstr "Partner Perusahaan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:res.groups,name:ssi_fixed_asset_useful_life_estimation_change.fixed_asset_useful_life_estimation_change_company_child_group
@@ -231,12 +231,12 @@ msgstr ""
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nama Tampilan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_useful_life_estimation_change.selection__fixed_asset_useful_life_estimation_change__state__done
 msgid "Done"
-msgstr ""
+msgstr "Selesai"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,help:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__done_ok
@@ -249,7 +249,7 @@ msgstr ""
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_useful_life_estimation_change.selection__fixed_asset_useful_life_estimation_change__state__draft
 msgid "Draft"
-msgstr ""
+msgstr "Draf"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__asset_id
@@ -272,7 +272,7 @@ msgstr ""
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Pengikut"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_channel_ids
@@ -308,37 +308,37 @@ msgstr ""
 #: model:ir.model.fields,help:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_needaction
 #: model:ir.model.fields,help:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_unread
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Jika diberi centang, pesan baru membutuhkan perhatian anda."
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,help:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Jika diberi centang, sebagian pesan memiliki kesalahan pengiriman."
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Adalah Pengikut"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Terakhir Dimodifikasi pada"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Terakhir Dimuktahirkan oleh"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Terakhir Dimuktahirkan pada"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Lampiran Utama"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,help:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__manual_number_ok
@@ -351,12 +351,12 @@ msgstr ""
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Kesalahan Pengiriman Pesan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Pesan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__method_number
@@ -377,67 +377,67 @@ msgstr ""
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Tenggat Waktu Aktivitas Saya"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__need_validation
 msgid "Need Validation"
-msgstr ""
+msgstr "Dibutuhkan Validasi"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Tenggat Waktu Aktivitas Selanjutnya"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Kesimpulan Aktivitas Selanjutnya"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Tipe Aktivitas Selanjutnya"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__next_approval_ids
 msgid "Next Approvals"
-msgstr ""
+msgstr "Persetujuan Selanjutnya"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__note
 msgid "Note"
-msgstr ""
+msgstr "Catatan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Jumlah Tindakan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Jumlah Kesalahan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,help:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Jumlah Pesan yang Membutuhkan Tindakan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,help:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Jumlah Pesan dengan Kesalahan Pengiriman"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,help:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Jumlah Pesan yang Belum Dibaca"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__policy_template_id
 msgid "Policy Template"
-msgstr ""
+msgstr "Pola Kebijakan"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__previous_method_number
@@ -467,12 +467,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__rejected
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_useful_life_estimation_change.selection__fixed_asset_useful_life_estimation_change__state__reject
 msgid "Rejected"
-msgstr ""
+msgstr "Ditolak"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__user_id
 msgid "Responsible"
-msgstr ""
+msgstr "Penanggung Jawab"
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__activity_user_id
