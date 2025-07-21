@@ -6,16 +6,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-04-20 00:20+0000\n"
-"Last-Translator: admin <odoo@simetri-sinergi.id>\n"
+"PO-Revision-Date: 2025-07-22 08:34+0000\n"
+"Last-Translator: Weblate Admin <weblate@example.com>\n"
 "Language-Team: Indonesian <https://weblate.simetri-sinergi.id/projects/"
-"fixed-asset/opnsynid-fixed-asset-14-0-ssi_fixed_asset_complex_asset/id/>\n"
+"opnsynid-fixed-asset-14-0/"
+"opnsynid-fixed-asset-14-0-ssi_fixed_asset_complex_asset/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 5.11.3\n"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__name
@@ -33,25 +34,25 @@ msgstr "Diperlukan Tindakan"
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__active_approval_ids
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__active_approval_ids
 msgid "Active Approvals"
-msgstr ""
+msgstr "Persetujuan Aktif"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__active_approver_partner_ids
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__active_approver_partner_ids
 msgid "Active Partners"
-msgstr ""
+msgstr "Partner Aktif"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__active_approver_user_ids
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__active_approver_user_ids
 msgid "Active Users"
-msgstr ""
+msgstr "Pengguna Aktif"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__activity_ids
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Aktivitas"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__activity_exception_decoration
@@ -63,7 +64,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__activity_state
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Status Aktivitas"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__activity_type_icon
@@ -75,7 +76,7 @@ msgstr ""
 #: model:res.groups,name:ssi_fixed_asset_complex_asset.complex_fixed_asset_installation_all_group
 #: model:res.groups,name:ssi_fixed_asset_complex_asset.complex_fixed_asset_removal_all_group
 msgid "All"
-msgstr ""
+msgstr "Semua"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__allowed_policy_template_ids
@@ -87,7 +88,7 @@ msgstr ""
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__approval_template_id
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__approval_template_id
 msgid "Approval Configuration"
-msgstr ""
+msgstr "Pengaturan Persetujuan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__approval_template_id
@@ -99,7 +100,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__approval_ids
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__approval_ids
 msgid "Approvals"
-msgstr ""
+msgstr "Persetujuan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__approve_ok
@@ -108,19 +109,19 @@ msgid ""
 "Approve policy\n"
 "\n"
 "* If active user can see and execute 'Approve' button"
-msgstr ""
+msgstr "Kebijakan Persetujuan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__approved
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__approved
 msgid "Approved"
-msgstr ""
+msgstr "Disetujui"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__asset_id
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__asset_id
 msgid "Asset"
-msgstr ""
+msgstr "Aset"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_attachment_count
@@ -132,25 +133,25 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__approve_ok
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__approve_ok
 msgid "Can Approve"
-msgstr ""
+msgstr "Dapat Menyetujui"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__cancel_ok
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__cancel_ok
 msgid "Can Cancel"
-msgstr ""
+msgstr "Dapat Membatalkan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__confirm_ok
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__confirm_ok
 msgid "Can Confirm"
-msgstr ""
+msgstr "Dapat Mengkonfirmasi"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__done_ok
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__done_ok
 msgid "Can Finished"
-msgstr ""
+msgstr "Dapat Menyelesaikan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__manual_number_ok
@@ -162,31 +163,31 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__reject_ok
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__reject_ok
 msgid "Can Reject"
-msgstr ""
+msgstr "Dapat Menolak"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__restart_ok
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__restart_ok
 msgid "Can Restart"
-msgstr ""
+msgstr "Dapat Memulai Ulang"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__restart_approval_ok
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__restart_approval_ok
 msgid "Can Restart Approval"
-msgstr ""
+msgstr "Dapat Memulai Ulang Persetujuan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_complex_asset.selection__complex_fixed_asset_installation__state__cancel
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_complex_asset.selection__complex_fixed_asset_removal__state__cancel
 msgid "Cancel"
-msgstr ""
+msgstr "Membatalkan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__cancel_reason_id
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__cancel_reason_id
 msgid "Cancel Reason"
-msgstr ""
+msgstr "Alasan Membatalkan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__cancel_ok
@@ -195,7 +196,7 @@ msgid ""
 "Cancel policy\n"
 "\n"
 "* If active user can see and execute 'Cancel' button"
-msgstr ""
+msgstr "Kebijakan Pembatalan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__company_id
@@ -203,25 +204,25 @@ msgstr ""
 #: model:res.groups,name:ssi_fixed_asset_complex_asset.complex_fixed_asset_installation_company_group
 #: model:res.groups,name:ssi_fixed_asset_complex_asset.complex_fixed_asset_removal_company_group
 msgid "Company"
-msgstr ""
+msgstr "Perusahaan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__company_currency_id
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__company_currency_id
 msgid "Company Currency"
-msgstr ""
+msgstr "Mata Uang Perusahaan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__company_partner_id
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__company_partner_id
 msgid "Company Partner"
-msgstr ""
+msgstr "Partner Perusahaan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:res.groups,name:ssi_fixed_asset_complex_asset.complex_fixed_asset_installation_company_child_group
 #: model:res.groups,name:ssi_fixed_asset_complex_asset.complex_fixed_asset_removal_company_child_group
 msgid "Company and All Child Companies"
-msgstr ""
+msgstr "Perusahaan dan Semua Anak Perusahaan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__company_id
@@ -272,13 +273,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__create_uid
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Dibuat Oleh"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__create_date
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Dibuat Pada"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__date
@@ -290,13 +291,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__display_name
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nama Tampilan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_complex_asset.selection__complex_fixed_asset_installation__state__done
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_complex_asset.selection__complex_fixed_asset_removal__state__done
 msgid "Done"
-msgstr ""
+msgstr "Selesai"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__done_ok
@@ -311,13 +312,13 @@ msgstr ""
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_complex_asset.selection__complex_fixed_asset_installation__state__draft
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_complex_asset.selection__complex_fixed_asset_removal__state__draft
 msgid "Draft"
-msgstr ""
+msgstr "Draf"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_follower_ids
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Pengikut"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_channel_ids
@@ -361,13 +362,13 @@ msgstr ""
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_needaction
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_unread
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Jika diberi centang, pesan baru membutuhkan perhatian anda."
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_has_error
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Jika diberi centang, sebagian pesan memiliki kesalahan pengiriman."
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__parent_asset_id
@@ -378,31 +379,31 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_is_follower
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Adalah Pengikut"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation____last_update
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Terakhir Dimodifikasi pada"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__write_uid
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Terakhir Dimuktahirkan oleh"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__write_date
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Terakhir Dimuktahirkan pada"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_main_attachment_id
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Lampiran Utama"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__manual_number_ok
@@ -417,91 +418,91 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_has_error
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Kesalahan Pengiriman Pesan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_ids
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Pesan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__my_activity_date_deadline
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Tenggat Waktu Aktivitas Saya"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__need_validation
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__need_validation
 msgid "Need Validation"
-msgstr ""
+msgstr "Dibutuhkan Validasi"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__activity_date_deadline
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Tenggat Waktu Aktivitas Selanjutnya"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__activity_summary
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Kesimpulan Aktivitas Selanjutnya"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__activity_type_id
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Tipe Aktivitas Selanjutnya"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__next_approval_ids
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__next_approval_ids
 msgid "Next Approvals"
-msgstr ""
+msgstr "Persetujuan Selanjutnya"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__note
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__note
 msgid "Note"
-msgstr ""
+msgstr "Catatan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_needaction_counter
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Jumlah Tindakan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_has_error_counter
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Jumlah Kesalahan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_needaction_counter
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Jumlah Pesan yang Membutuhkan Tindakan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_has_error_counter
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Jumlah Pesan dengan Kesalahan Pengiriman"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_unread_counter
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Jumlah Pesan yang Belum Dibaca"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__policy_template_id
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__policy_template_id
 msgid "Policy Template"
-msgstr ""
+msgstr "Pola Kebijakan"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__reject_ok
@@ -518,7 +519,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_complex_asset.selection__complex_fixed_asset_installation__state__reject
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_complex_asset.selection__complex_fixed_asset_removal__state__reject
 msgid "Rejected"
-msgstr ""
+msgstr "Ditolak"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__parent_asset_id
@@ -529,7 +530,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__user_id
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__user_id
 msgid "Responsible"
-msgstr ""
+msgstr "Penanggung Jawab"
 
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__activity_user_id
