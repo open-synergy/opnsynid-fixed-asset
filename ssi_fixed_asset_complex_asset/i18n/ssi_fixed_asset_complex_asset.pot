@@ -552,6 +552,12 @@ msgid ""
 msgstr ""
 
 #. module: ssi_fixed_asset_complex_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__reviewer_id
+#: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__reviewer_id
+msgid "Reviewer"
+msgstr ""
+
+#. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__state
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__state
 msgid "State"
@@ -614,6 +620,15 @@ msgid ""
 "* Create user can be different with responsible user\n"
 "* Automatically filled with user that initiate document creation.\n"
 "  Default responsible can be changed."
+msgstr ""
+
+#. module: ssi_fixed_asset_complex_asset
+#: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__reviewer_id
+#: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__reviewer_id
+msgid ""
+"User that responsible to review document\n"
+"\n"
+"* Unless it configured to approve reviewer does not equal to approver"
 msgstr ""
 
 #. module: ssi_fixed_asset_complex_asset
