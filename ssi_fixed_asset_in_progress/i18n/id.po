@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-05-08 14:34+0000\n"
-"Last-Translator: Michael Viriyananda <viriyananda.michael@gmail.com>\n"
+"PO-Revision-Date: 2025-07-23 08:34+0000\n"
+"Last-Translator: Weblate Admin <weblate@example.com>\n"
 "Language-Team: Indonesian <https://weblate.simetri-sinergi.id/projects/"
 "opnsynid-fixed-asset-14-0/"
 "opnsynid-fixed-asset-14-0-ssi_fixed_asset_in_progress/id/>\n"
@@ -540,7 +540,7 @@ msgstr ""
 #. module: ssi_fixed_asset_in_progress
 #: model:ir.model.fields,field_description:ssi_fixed_asset_in_progress.field_fixed_asset_in_progress__user_id
 msgid "Responsible"
-msgstr ""
+msgstr "Penanggung Jawab"
 
 #. module: ssi_fixed_asset_in_progress
 #: model:ir.model.fields,field_description:ssi_fixed_asset_in_progress.field_fixed_asset_in_progress__activity_user_id
