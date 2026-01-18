@@ -215,11 +215,6 @@ msgid "Asset Line"
 msgstr ""
 
 #. module: ssi_fixed_asset
-#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
-msgid "Asset Lines"
-msgstr ""
-
-#. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__name
 msgid "Asset Name"
 msgstr ""
@@ -239,11 +234,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__asset_value
 #: model:ir.model.fields.selection,name:ssi_fixed_asset.selection__fixed_asset_depreciation_line__type__create
 msgid "Asset Value"
-msgstr ""
-
-#. module: ssi_fixed_asset
-#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_tree
-msgid "Assets"
 msgstr ""
 
 #. module: ssi_fixed_asset
