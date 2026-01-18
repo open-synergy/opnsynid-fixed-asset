@@ -50,7 +50,7 @@ class FixedAssetYearlyXslx(models.AbstractModel):
         worksheet.set_column("D:Z", 20)
         row = 1
         worksheet.merge_range(
-            f"A{row}:X{row}",
+            f"A{row}:X{row}",  # noqa: E231
             f'Fixed Asset Yearly - {data["company_name"]} - {data["currency_name"]}',
             wbf["title_doc"],
         )
@@ -64,7 +64,9 @@ class FixedAssetYearlyXslx(models.AbstractModel):
         row += 3
         for category in data["fixed_asset_yearly"]:
             worksheet.merge_range(
-                f"A{row}:B{row}", category["category_name"], wbf["content_bold"]
+                f"A{row}:B{row}",  # noqa: E231
+                category["category_name"],
+                wbf["content_bold"],
             )
             worksheet.write(row, 2, data["asset_categories"], wbf["content"])
             column_names = self.get_column_names()
