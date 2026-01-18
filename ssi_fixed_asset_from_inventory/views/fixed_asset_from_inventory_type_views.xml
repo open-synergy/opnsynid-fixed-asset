@@ -12,8 +12,7 @@
         />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-
-
+        <data />
     </field>
 </record>
 
@@ -23,8 +22,7 @@
     <field name="inherit_id" ref="ssi_master_data_mixin.mixin_master_data_view_tree" />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-
-
+        <data />
     </field>
 </record>
 
@@ -34,7 +32,7 @@
     <field name="inherit_id" ref="ssi_master_data_mixin.mixin_master_data_view_form" />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-
+        <data>
             <xpath expr="//page[1]" position="before">
                 <page name="accounting" string="Accounting">
                     <group name="accounting_1" colspan="4" col="2">
@@ -44,7 +42,7 @@
                     </group>
                 </page>
             </xpath>
-
+        </data>
     </field>
 </record>
 
