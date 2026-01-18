@@ -527,6 +527,11 @@ msgid "Messages"
 msgstr ""
 
 #. module: ssi_fixed_asset_disposal
+#: model:fixed_asset.disposal_type,name:ssi_fixed_asset_disposal.demo_fixed_asset_disposal_type3
+msgid "Missing - (test)"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__my_activity_date_deadline
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__my_activity_date_deadline
 msgid "My Activity Deadline"
@@ -658,6 +663,11 @@ msgid "Reviewer"
 msgstr ""
 
 #. module: ssi_fixed_asset_disposal
+#: model:fixed_asset.disposal_type,name:ssi_fixed_asset_disposal.demo_fixed_asset_disposal_type1
+msgid "Sale - (test)"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,help:ssi_fixed_asset_disposal.field_fixed_asset_disposal__open_ok
 msgid ""
 "Start policy\n"
@@ -757,6 +767,11 @@ msgstr ""
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields.selection,name:ssi_fixed_asset_disposal.selection__fixed_asset_disposal__state__confirm
 msgid "Waiting for Approval"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model:fixed_asset.disposal_type,name:ssi_fixed_asset_disposal.demo_fixed_asset_disposal_type2
+msgid "Waste - (test)"
 msgstr ""
 
 #. module: ssi_fixed_asset_disposal
