@@ -3,7 +3,7 @@
      Copyright 2023 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-<data>
+
 <record id="demo_asset_category1" model="fixed.asset.category">
     <field name="name">Equipment</field>
     <field name="code">X001</field>
@@ -33,5 +33,5 @@
     <field name="prorata" eval="1" />
     <field name="date_min_prorate" eval="15" />
 </record>
-</data>
+
 </odoo>
