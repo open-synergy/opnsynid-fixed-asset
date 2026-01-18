@@ -8,9 +8,11 @@
           <field name="model">account.account</field>
           <field name="inherit_id" ref="account.view_account_form" />
           <field name="arch" type="xml">
+              <data>
                 <field name="user_type_id" position="after">
                     <field name="fixed_asset_category_id" />
                 </field>
+              </data>
           </field>
     </record>
 </odoo>
