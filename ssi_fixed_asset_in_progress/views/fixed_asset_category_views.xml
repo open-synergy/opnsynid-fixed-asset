@@ -8,12 +8,14 @@
     <field name="model">fixed.asset.category</field>
     <field name="inherit_id" ref="ssi_fixed_asset.fixed_asset_category_view_form" />
     <field name="arch" type="xml">
+        <data>
         <xpath expr="//field[@name='journal_id']" position="after">
             <field name="fixed_asset_in_progress_journal_id" />
         </xpath>
         <xpath expr="//field[@name='account_expense_depreciation_id']" position="after">
             <field name="account_fixed_asset_in_progress_id" />
         </xpath>
+        </data>
     </field>
 </record>
 </odoo>
