@@ -12,13 +12,13 @@
             ref="ssi_transaction_mixin.mixin_transaction_view_tree"
         />
         <field name="arch" type="xml">
-
+            <data>
                 <xpath expr="//field[@name='company_id']" position="after">
                     <field name="asset_id" />
                     <field name="parent_asset_id" />
                     <field name="date" />
                 </xpath>
-
+            </data>
         </field>
     </record>
 
@@ -45,22 +45,22 @@
             ref="ssi_transaction_mixin.mixin_transaction_view_form"
         />
         <field name="arch" type="xml">
-
+            <data>
                 <xpath expr="//field[@name='user_id']" position="after">
                     <field
-                    name="asset_id"
-                    domain="[('type', '=', 'normal'), ('state', '=', 'open'),('parent_id','!=',False)]"
-                />
+                        name="asset_id"
+                        domain="[('type', '=', 'normal'), ('state', '=', 'open'),('parent_id','!=',False)]"
+                    />
                     <field
-                    name="parent_asset_id"
-                    force_save="1"
-                    domain="[('type', '=', 'view'),('state', '=', 'open')]"
-                />
+                        name="parent_asset_id"
+                        force_save="1"
+                        domain="[('type', '=', 'view'),('state', '=', 'open')]"
+                    />
                 </xpath>
                 <xpath expr="//group[@name='header_right']" position="inside">
                     <field name="date" />
                 </xpath>
-
+            </data>
         </field>
     </record>
 
