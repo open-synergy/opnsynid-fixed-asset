@@ -240,7 +240,6 @@
                                 options="{'reload_on_button': true}"
                             >
                         <tree
-                                    string="Asset Lines"
                                     decoration-info="(move_check == False) and (init_entry == False)"
                                     create="false"
                                 >
@@ -421,7 +420,7 @@
       <field name="name">fixed.asset.asset.tree</field>
       <field name="model">fixed.asset.asset</field>
       <field name="arch" type="xml">
-          <tree string="Assets">
+          <tree>
                 <field name="id" />
                 <field name="name" />
                 <field name="type" invisible="1" />
