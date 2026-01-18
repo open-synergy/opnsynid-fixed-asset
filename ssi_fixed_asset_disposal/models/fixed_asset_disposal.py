@@ -117,6 +117,7 @@ class FixedAssetDisposal(models.Model):
     category_id = fields.Many2one(
         related="asset_id.category_id",
         store=True,
+        compute_sudo=True,
     )
     type_id = fields.Many2one(
         string="Type",
@@ -158,6 +159,7 @@ class FixedAssetDisposal(models.Model):
         currency_field="company_currency_id",
         compute="_compute_gain_loss",
         store=True,
+        compute_sudo=True,
     )
     disposal_acc_move_id = fields.Many2one(
         string="Disposal Account Move",

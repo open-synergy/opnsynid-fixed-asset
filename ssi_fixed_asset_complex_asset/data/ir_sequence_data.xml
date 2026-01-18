@@ -2,8 +2,8 @@
 <!-- Copyright 2023 OpenSynergy Indonesia
      Copyright 2023 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-<odoo>
-    <data noupdate="1">
+<odoo noupdate="1">
+
         <!-- INSTALLATION -->
         <record id="complex_fixed_asset_installation_sequence" model="ir.sequence">
             <field name="name">Complex Fixed Asset Installation</field>
@@ -27,5 +27,5 @@
             <field name="use_date_range" eval="1" />
             <field eval="False" name="company_id" />
         </record>
-    </data>
+
 </odoo>

@@ -12,9 +12,7 @@
         />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-        <data>
-
-        </data>
+        <data />
     </field>
 </record>
 

@@ -78,6 +78,7 @@ class FixedAssetAsset(models.Model):
         comodel_name="account.move",
         related="asset_acquisition_move_line_id.move_id",
         readonly=True,
+        compute_sudo=True,
     )
 
     @api.depends(
@@ -92,6 +93,7 @@ class FixedAssetAsset(models.Model):
     move_line_check = fields.Boolean(
         string="Has accounting entries",
         compute="_compute_move_line_check",
+        compute_sudo=True,
     )
 
     def name_get(self):
@@ -210,6 +212,7 @@ class FixedAssetAsset(models.Model):
         string="Asset Value",
         compute=_compute_asset_value,
         store=True,
+        compute_sudo=True,
         help="This amount represent the initial value of the asset.",
     )
 
@@ -265,11 +268,13 @@ class FixedAssetAsset(models.Model):
         string="Residual Value",
         compute=_compute_depreciation,
         store=True,
+        compute_sudo=True,
     )
     value_depreciated = fields.Float(
         string="Depreciated Value",
         compute=_compute_depreciation,
         store=True,
+        compute_sudo=True,
     )
     salvage_value = fields.Float(
         string="Salvage Value",
@@ -458,6 +463,7 @@ class FixedAssetAsset(models.Model):
         string="Company Currency",
         related="company_id.currency_id",
         readonly=True,
+        compute_sudo=True,
     )
     account_analytic_id = fields.Many2one(
         string="Analytic account",
@@ -538,18 +544,22 @@ class FixedAssetAsset(models.Model):
     method_period_number = fields.Integer(
         string="Age Based On Period Lenght",
         compute="_compute_method_period_number",
+        compute_sudo=True,
     )
     method_period_start_number = fields.Integer(
         string="Age On Asset Value Date",
         compute="_compute_method_period_number",
+        compute_sudo=True,
     )
     method_period_depreciated_number = fields.Integer(
         string="Depreciated Age",
         compute="_compute_method_period_number",
+        compute_sudo=True,
     )
     method_period_remaining_number = fields.Integer(
         string="Remaining Age",
         compute="_compute_method_period_number",
+        compute_sudo=True,
     )
 
     def _prepare_valid_lines_domain(self):
@@ -597,11 +607,13 @@ class FixedAssetAsset(models.Model):
         string="Last Posted Depreciation Line",
         comodel_name="fixed.asset.depreciation.line",
         compute="_compute_last_posted_depreciation_line",
+        compute_sudo=True,
     )
     last_posted_asset_line_id = fields.Many2one(
         string="Last Asset Value Depreciation Line",
         comodel_name="fixed.asset.depreciation.line",
         compute="_compute_last_posted_depreciation_line",
+        compute_sudo=True,
     )
 
     def _prepare_posted_lines_domain(self):
@@ -637,6 +649,7 @@ class FixedAssetAsset(models.Model):
         string="Posted Depreciation Lines",
         comodel_name="fixed.asset.depreciation.line",
         compute="_compute_posted_depreciation_line_ids",
+        compute_sudo=True,
     )
 
     def _prepare_posted_asset_value_domain(self):
@@ -737,21 +750,25 @@ class FixedAssetAsset(models.Model):
         string="Posted Asset Value Histories",
         comodel_name="fixed.asset.depreciation.line",
         compute="_compute_asset_histories",
+        compute_sudo=True,
     )
     last_posted_asset_value_id = fields.Many2one(
         string="Last Posted Asset Value History",
         comodel_name="fixed.asset.depreciation.line",
         compute="_compute_asset_histories",
+        compute_sudo=True,
     )
     posted_depreciation_ids = fields.Many2many(
         string="Posted Depreciation Histories",
         comodel_name="fixed.asset.depreciation.line",
         compute="_compute_asset_histories",
+        compute_sudo=True,
     )
     last_depreciation_id = fields.Many2one(
         string="Last Depreciation History",
         comodel_name="fixed.asset.depreciation.line",
         compute="_compute_asset_histories",
+        compute_sudo=True,
     )
     unposted_history_ids = fields.Many2many(
         string="Unposted Asset Histories",

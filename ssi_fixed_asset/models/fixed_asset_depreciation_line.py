@@ -37,10 +37,12 @@ class FixedAssetDepreciationLine(models.Model):
     parent_state = fields.Selection(
         string="State of Asset",
         related="asset_id.state",
+        compute_sudo=True,
     )
     asset_value = fields.Float(
         string="Asset Value",
         related="asset_id.asset_value",
+        compute_sudo=True,
     )
     amount = fields.Float(
         string="Amount",
@@ -77,11 +79,13 @@ class FixedAssetDepreciationLine(models.Model):
         string="Next Period Depreciation",
         compute=_compute,
         store=True,
+        compute_sudo=True,
     )
     depreciated_value = fields.Float(
         string="Amount Already Depreciated",
         compute=_compute,
         store=True,
+        compute_sudo=True,
     )
     line_date = fields.Date(
         string="Date",
@@ -106,6 +110,7 @@ class FixedAssetDepreciationLine(models.Model):
         string="Posted",
         compute=_move_check,
         store=True,
+        compute_sudo=True,
     )
     type = fields.Selection(
         string="Type",

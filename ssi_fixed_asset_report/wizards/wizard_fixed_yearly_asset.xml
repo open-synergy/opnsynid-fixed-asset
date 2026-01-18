@@ -3,7 +3,7 @@
      Copyright 2023 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
 <odoo>
-<data>
+
 
 <record id="form_account_wizardFixedAssetYearly" model="ir.ui.view">
     <field name="name">Yearly Fixed Asset Report</field>
@@ -13,19 +13,19 @@
         <form string="Print Yearly Fixed Asset Report">
             <group col="2" colspan="2">
                 <field
-                            name="fiscal_year_id"
-                            domain="[('type_id','=',%(account_fiscal_year.fiscalyear)d)]"
-                        />
+                        name="fiscal_year_id"
+                        domain="[('type_id','=',%(account_fiscal_year.fiscalyear)d)]"
+                    />
                 <field name="asset_category_ids" widget="many2many_tags" />
             </group>
             <footer>
                 <button
-                            name="button_export_html"
-                            string="View"
-                            type="object"
-                            default_focus="1"
-                            class="oe_highlight"
-                        />
+                        name="button_export_html"
+                        string="View"
+                        type="object"
+                        default_focus="1"
+                        class="oe_highlight"
+                    />
                 or
                 <button name="button_export_pdf" string="Export PDF" type="object" />
                 or
@@ -45,12 +45,12 @@
 </record>
 
 <menuitem
-            id="menu_account_reportFixedAssetYearly"
-            name="Yearly Fixed Asset Report"
-            parent="ssi_financial_accounting.menu_financial_accounting_report"
-            action="waction_account_wizardFixedAssetYearly"
-            sequence="20"
-        />
+        id="menu_account_reportFixedAssetYearly"
+        name="Yearly Fixed Asset Report"
+        parent="ssi_financial_accounting.menu_financial_accounting_report"
+        action="waction_account_wizardFixedAssetYearly"
+        sequence="20"
+    />
 
-</data>
+
 </odoo>

@@ -137,6 +137,7 @@ class FixedAssetFromInventory(models.Model):
     )
     uom_id = fields.Many2one(
         related="product_id.uom_id",
+        compute_sudo=True,
     )
     quantity = fields.Float(
         string="Quantity",
@@ -148,6 +149,7 @@ class FixedAssetFromInventory(models.Model):
         comodel_name="stock.production.lot",
         compute="_compute_allowed_lot_ids",
         store=False,
+        compute_sudo=True,
     )
     lot_id = fields.Many2one(
         string="# Serial Number",
@@ -212,6 +214,7 @@ class FixedAssetFromInventory(models.Model):
         comodel_name="fixed.asset.asset",
         compute="_compute_fixed_asset_id",
         store=True,
+        compute_sudo=True,
     )
 
     @api.model

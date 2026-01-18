@@ -2,12 +2,12 @@
 <!-- Copyright 2023 OpenSynergy Indonesia
      Copyright 2023 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
-<odoo>
-    <data noupdate="1">
+<odoo noupdate="1">
+
         <record
-            id="sequence_fixed_asset_salvage_value_estimation_change"
-            model="ir.sequence"
-        >
+        id="sequence_fixed_asset_salvage_value_estimation_change"
+        model="ir.sequence"
+    >
             <field name="name">Fixed Asset Salvage Value Estimation Change</field>
             <field name="code">fasvec</field>
             <field name="prefix">FASVEC/%(range_y)s/</field>
@@ -17,5 +17,5 @@
             <field name="use_date_range" eval="1" />
             <field eval="False" name="company_id" />
         </record>
-    </data>
+
 </odoo>

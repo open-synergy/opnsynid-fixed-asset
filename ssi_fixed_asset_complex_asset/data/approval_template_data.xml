@@ -2,13 +2,13 @@
 <!-- Copyright 2023 OpenSynergy Indonesia
      Copyright 2023 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-<odoo>
-    <data noupdate="1">
+<odoo noupdate="1">
+
         <!-- INSTALLATION -->
         <record
-            id="complex_fixed_asset_installation_approval_template"
-            model="approval.template"
-        >
+        id="complex_fixed_asset_installation_approval_template"
+        model="approval.template"
+    >
             <field name="name">Standard</field>
             <field name="model_id" ref="model_complex_fixed_asset_installation" />
             <field name="sequence" eval="100" />
@@ -17,25 +17,25 @@
             <field name="validate_sequence" eval="1" />
         </record>
         <record
-            id="complex_fixed_asset_installation_approval_template_detail"
-            model="approval.template_detail"
-        >
+        id="complex_fixed_asset_installation_approval_template_detail"
+        model="approval.template_detail"
+    >
             <field
-                name="template_id"
-                ref="complex_fixed_asset_installation_approval_template"
-            />
+            name="template_id"
+            ref="complex_fixed_asset_installation_approval_template"
+        />
             <field name="approver_selection_method">use_group</field>
             <field
-                name="approver_group_ids"
-                eval="[(6,0,[ref('complex_fixed_asset_installation_validator_group')])]"
-            />
+            name="approver_group_ids"
+            eval="[(6,0,[ref('complex_fixed_asset_installation_validator_group')])]"
+        />
         </record>
 
         <!-- REMOVAL -->
         <record
-            id="complex_fixed_asset_removal_approval_template"
-            model="approval.template"
-        >
+        id="complex_fixed_asset_removal_approval_template"
+        model="approval.template"
+    >
             <field name="name">Standard</field>
             <field name="model_id" ref="model_complex_fixed_asset_removal" />
             <field name="sequence" eval="100" />
@@ -44,18 +44,18 @@
             <field name="validate_sequence" eval="1" />
         </record>
         <record
-            id="complex_fixed_asset_removal_approval_template_detail"
-            model="approval.template_detail"
-        >
+        id="complex_fixed_asset_removal_approval_template_detail"
+        model="approval.template_detail"
+    >
             <field
-                name="template_id"
-                ref="complex_fixed_asset_removal_approval_template"
-            />
+            name="template_id"
+            ref="complex_fixed_asset_removal_approval_template"
+        />
             <field name="approver_selection_method">use_group</field>
             <field
-                name="approver_group_ids"
-                eval="[(6,0,[ref('complex_fixed_asset_removal_validator_group')])]"
-            />
+            name="approver_group_ids"
+            eval="[(6,0,[ref('complex_fixed_asset_removal_validator_group')])]"
+        />
         </record>
-    </data>
+
 </odoo>
