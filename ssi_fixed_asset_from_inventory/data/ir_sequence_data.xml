@@ -2,8 +2,8 @@
 <!-- Copyright 2023 OpenSynergy Indonesia
      Copyright 2023 PT. Simetri Sinergi Indonesia
      License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
-<odoo>
-<data noupdate="1">
+<odoo noupdate="1">
+
 <record id="fixed_asset_from_inventory_sequence" model="ir.sequence">
     <field name="name">Fixed Asset From Inventory</field>
     <field name="code">fixed_asset_from_inventory</field>
@@ -14,5 +14,5 @@
     <field name="use_date_range" eval="1" />
     <field eval="False" name="company_id" />
 </record>
-</data>
+
 </odoo>

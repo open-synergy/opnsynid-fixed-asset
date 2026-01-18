@@ -12,9 +12,9 @@
         />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-        <data>
 
-        </data>
+
+
     </field>
 </record>
 
@@ -24,7 +24,7 @@
     <field name="mode">primary</field>
     <field name="inherit_id" ref="ssi_transaction_mixin.mixin_transaction_view_tree" />
     <field name="arch" type="xml">
-        <data>
+
             <xpath expr="//field[@name='user_id']" position="before">
                 <field name="company_currency_id" invisible="1" />
                 <field name="date" />
@@ -33,7 +33,7 @@
                 <field name="lot_id" />
                 <field name="amount" />
             </xpath>
-        </data>
+
     </field>
 </record>
 
@@ -43,7 +43,7 @@
     <field name="mode">primary</field>
     <field name="inherit_id" ref="ssi_transaction_mixin.mixin_transaction_view_form" />
     <field name="arch" type="xml">
-        <data>
+
             <xpath expr="//field[@name='company_id']" position="after">
                 <field name="company_currency_id" invisible="1" />
                 <field name="date" />
@@ -72,7 +72,7 @@
                     </group>
                 </page>
             </xpath>
-        </data>
+
     </field>
 </record>
 
