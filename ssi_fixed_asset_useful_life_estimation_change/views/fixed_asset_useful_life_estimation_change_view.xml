@@ -12,7 +12,7 @@
         />
         <field name="mode">primary</field>
         <field name="arch" type="xml">
-
+            <data>
                 <xpath expr="field[@name='company_id']" position="after">
                     <field name="asset_id" />
                     <field name="date" />
@@ -21,7 +21,7 @@
                     <field name="method_number" />
                     <field name="method_period" />
                 </xpath>
-
+            </data>
         </field>
     </record>
 
@@ -50,7 +50,7 @@
         />
         <field name="mode">primary</field>
         <field name="arch" type="xml">
-
+            <data>
                 <xpath expr="//field[@name='user_id']" position="after">
                     <field name="asset_id" />
                     <field name="date" />
@@ -63,7 +63,7 @@
                     <field name="asset_value_history_id" invisible="1" />
                     <field name="depreciation_history_id" invisible="1" />
                 </xpath>
-
+            </data>
         </field>
     </record>
 
