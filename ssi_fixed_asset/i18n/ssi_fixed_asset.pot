@@ -184,6 +184,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_mass_depreciation_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_mass_unlink_depreciation_view_form
 msgid "Are you sure?"
 msgstr ""
 
@@ -289,6 +290,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_mass_depreciation_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_mass_unlink_depreciation_view_form
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
 msgid "Cancel"
 msgstr ""
@@ -313,6 +315,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__category_ids
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_unlink_depreciation__category_ids
 #: model:ir.ui.menu,name:ssi_fixed_asset.menu_fixed_asset_category
 msgid "Categories"
 msgstr ""
@@ -410,6 +413,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_mass_depreciation_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_mass_unlink_depreciation_view_form
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
 msgid "Confirm"
 msgstr ""
@@ -444,6 +448,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__create_uid
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_unlink_depreciation__create_uid
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__create_uid
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__create_uid
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__create_uid
@@ -453,6 +458,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__create_date
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_unlink_depreciation__create_date
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__create_date
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__create_date
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__create_date
@@ -467,6 +473,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__date
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_unlink_depreciation__date
 msgid "Date Depreciation"
 msgstr ""
 
@@ -484,6 +491,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
 #, python-format
 msgid "Degressive"
 msgstr ""
@@ -496,12 +504,15 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
 #, python-format
 msgid "Degressive-Linear"
 msgstr ""
 
 #. module: ssi_fixed_asset
 #: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
 #: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
 #, python-format
 msgid "Degressive-Linear is only supported for Time Method = Year."
@@ -583,6 +594,7 @@ msgstr ""
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_account__display_name
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__display_name
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_unlink_depreciation__display_name
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move__display_name
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move_line__display_name
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__display_name
@@ -616,6 +628,7 @@ msgid "Entries"
 msgstr ""
 
 #. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
 #: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
 #, python-format
 msgid "Error!"
@@ -701,6 +714,7 @@ msgstr ""
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_account__id
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__id
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_unlink_depreciation__id
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move__id
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move_line__id
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__id
@@ -737,6 +751,7 @@ msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
 #: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
 #, python-format
 msgid "Illegal value %s in asset.method."
@@ -807,6 +822,7 @@ msgstr ""
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_account____last_update
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation____last_update
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_unlink_depreciation____last_update
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move____last_update
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_move_line____last_update
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset____last_update
@@ -833,6 +849,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__write_uid
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_unlink_depreciation__write_uid
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__write_uid
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__write_uid
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__write_uid
@@ -842,6 +859,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_depreciation__write_date
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_account_mass_unlink_depreciation__write_date
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__write_date
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__write_date
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__write_date
@@ -850,6 +868,7 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
 #: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
 #, python-format
 msgid "Linear"
@@ -885,6 +904,14 @@ msgstr ""
 #: model:ir.ui.menu,name:ssi_fixed_asset.menu_mass_depreciation_action
 #: model:res.groups,name:ssi_fixed_asset.mass_depreciation_group
 msgid "Mass Depreciation"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.actions.act_window,name:ssi_fixed_asset.account_mass_unlink_depreciation_action
+#: model:ir.model,name:ssi_fixed_asset.model_account_mass_unlink_depreciation
+#: model:ir.ui.menu,name:ssi_fixed_asset.menu_mass_unlink_depreciation_action
+#: model:res.groups,name:ssi_fixed_asset.mass_unlink_depreciation_group
+msgid "Mass Unlink Depreciation"
 msgstr ""
 
 #. module: ssi_fixed_asset
@@ -995,6 +1022,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
 #, python-format
 msgid "Number of Months"
 msgstr ""
@@ -1005,6 +1033,7 @@ msgid "Number of Periods"
 msgstr ""
 
 #. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
 #: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__method_number
 #, python-format
@@ -1128,6 +1157,7 @@ msgid "Previous Depreciation Line"
 msgstr ""
 
 #. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
 #: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
 #, python-format
 msgid ""
@@ -1310,6 +1340,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
 #, python-format
 msgid ""
 "The duration of the asset conflicts with the posted depreciation table entry"
@@ -1486,6 +1517,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
 #, python-format
 msgid ""
 "You are not allowed to remove an accounting entry linked to an asset.\n"
@@ -1494,6 +1526,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
 #, python-format
 msgid ""
 "You cannot change a depreciation line with an associated accounting entry."
@@ -1501,11 +1534,13 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_asset.py:0
 #, python-format
 msgid "You cannot change the category of an asset with accounting entries."
 msgstr ""
 
 #. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
 #: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
 #, python-format
 msgid ""
@@ -1514,11 +1549,13 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
 #, python-format
 msgid "You cannot remove an asset line of type 'Asset Value'."
 msgstr ""
 
 #. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
 #: code:addons/ssi_fixed_asset/models/fixed_asset_depreciation_line.py:0
 #, python-format
 msgid ""
@@ -1536,5 +1573,6 @@ msgstr ""
 
 #. module: ssi_fixed_asset
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_mass_depreciation_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.account_mass_unlink_depreciation_view_form
 msgid "or"
 msgstr ""
