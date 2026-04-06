@@ -18,7 +18,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[ssi_fixed_asset](ssi_fixed_asset/) | 14.0.1.12.0 |  | Fixed Asset
+[ssi_fixed_asset](ssi_fixed_asset/) | 14.0.1.13.0 |  | Fixed Asset
 [ssi_fixed_asset_complex_asset](ssi_fixed_asset_complex_asset/) | 14.0.1.2.0 |  | Complex Fixed Asset
 [ssi_fixed_asset_demo](ssi_fixed_asset_demo/) | 14.0.1.1.0 |  | Fixed Asset
 [ssi_fixed_asset_disposal](ssi_fixed_asset_disposal/) | 14.0.1.8.0 |  | Fixed Asset Disposal
