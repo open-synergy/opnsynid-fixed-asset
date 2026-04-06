@@ -75,4 +75,16 @@
         />
 </record>
 
+<record id="mass_unlink_depreciation_group" model="res.groups">
+    <field name="name">Mass Unlink Depreciation</field>
+    <field
+            name="category_id"
+            ref="ssi_financial_accounting.financial_accounting_wizard_module_category"
+        />
+    <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+</record>
+
 </odoo>

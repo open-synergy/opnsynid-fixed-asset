@@ -39,6 +39,7 @@
         "data/ir_server_action_data.xml",
         "data/account_journal_data.xml",
         "wizards/mass_depreciation_views.xml",
+        "wizards/mass_unlink_depreciation_views.xml",
         "views/fixed_asset_category.xml",
         "views/account_account_view.xml",
         "views/fixed_asset_asset.xml",
