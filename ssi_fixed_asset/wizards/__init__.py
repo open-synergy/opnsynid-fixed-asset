@@ -4,4 +4,5 @@
 
 from . import (  # noqa: F401
     mass_depreciation,
+    mass_unlink_depreciation,
 )

@@ -11,3 +11,4 @@ access_fixed_asset_depreciation_line_user,fixed.asset.depreciation.line - user,m
 access_fixed_asset_depreciation_line_viewer,fixed.asset.depreciation.line - viewer,model_fixed_asset_depreciation_line,fixed_asset_viewer_group,1,0,0,0
 access_fixed_asset_depreciation_line_all,fixed.asset.depreciation.line - all,model_fixed_asset_depreciation_line,,1,0,0,0
 access_account_mass_depreciation,account.mass_depreciation,model_account_mass_depreciation,mass_depreciation_group,1,1,1,1
+access_account_mass_unlink_depreciation,account.mass_unlink_depreciation,model_account_mass_unlink_depreciation,mass_unlink_depreciation_group,1,1,1,1
