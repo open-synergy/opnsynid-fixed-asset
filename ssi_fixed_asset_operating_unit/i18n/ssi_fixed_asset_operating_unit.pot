@@ -1,0 +1,41 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ssi_fixed_asset_operating_unit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ssi_fixed_asset_operating_unit
+#: model:ir.model.fields,field_description:ssi_fixed_asset_operating_unit.field_fixed_asset_asset__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ssi_fixed_asset_operating_unit
+#: model:ir.model,name:ssi_fixed_asset_operating_unit.model_fixed_asset_asset
+msgid "Fixed Asset"
+msgstr ""
+
+#. module: ssi_fixed_asset_operating_unit
+#: model:ir.model.fields,field_description:ssi_fixed_asset_operating_unit.field_fixed_asset_asset__id
+msgid "ID"
+msgstr ""
+
+#. module: ssi_fixed_asset_operating_unit
+#: model:ir.model.fields,field_description:ssi_fixed_asset_operating_unit.field_fixed_asset_asset____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ssi_fixed_asset_operating_unit
+#: model:ir.model.fields,field_description:ssi_fixed_asset_operating_unit.field_fixed_asset_asset__operating_unit_id
+#: model:res.groups,name:ssi_fixed_asset_operating_unit.fixed_asset_ou_group
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_operating_unit.fixed_asset_asset_view_search
+msgid "Operating Unit"
+msgstr ""
