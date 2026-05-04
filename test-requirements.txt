@@ -1,3 +1,4 @@
 odoo14-addon-ssi-accounting-entry-mixin
 odoo14-addon-ssi-stock-fixed-asset
 odoo14-addon-ssi-work-log-mixin
+odoo14-addon-ssi-operating-unit-mixin
