@@ -149,7 +149,7 @@ class WizardFixedAssetYearly(models.TransientModel):
         result = 0.0
         if filtered:
             sorteds = filtered.sorted(key=lambda r: (r.type, r.line_date), reverse=True)
-            sorted = sorteds[0]
+            sorted = sorteds[0]  # pylint: disable=W0622
             result = sorted.remaining_value
         return result
 
@@ -162,7 +162,7 @@ class WizardFixedAssetYearly(models.TransientModel):
         result = 0.0
         if filtered:
             sorteds = filtered.sorted(key=lambda r: (r.type, r.line_date), reverse=True)
-            sorted = sorteds[0]
+            sorted = sorteds[0]  # pylint: disable=W0622
             result = sorted.depreciated_value + sorted.amount
         return result
 
@@ -188,7 +188,7 @@ class WizardFixedAssetYearly(models.TransientModel):
         result = 0.0
         if filtered:
             sorteds = filtered.sorted(key=lambda r: (r.type, r.line_date), reverse=True)
-            for sorted in sorteds:
+            for sorted in sorteds:  # pylint: disable=W0622
                 result += sorted.amount
         return result
 
@@ -201,7 +201,7 @@ class WizardFixedAssetYearly(models.TransientModel):
         result = 0.0
         if filtered:
             sorteds = filtered.sorted(key=lambda r: (r.type, r.line_date), reverse=True)
-            sorted = sorteds[0]
+            sorted = sorteds[0]  # pylint: disable=W0622
             result = sorted.depreciated_value + sorted.amount
         return result
 
@@ -214,6 +214,6 @@ class WizardFixedAssetYearly(models.TransientModel):
         result = 0.0
         if filtered:
             sorteds = filtered.sorted(key=lambda r: (r.type, r.line_date), reverse=True)
-            sorted = sorteds[0]
+            sorted = sorteds[0]  # pylint: disable=W0622
             result = sorted.remaining_value
         return result
