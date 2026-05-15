@@ -14,7 +14,13 @@ None
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[fixed_asset](fixed_asset/) | 11.0.2.1.2 |  | Fixed Asset
+[fixed_asset_disposal](fixed_asset_disposal/) | 11.0.1.0.0 |  | Fixed Asset Disposal
+[fixed_asset_queue](fixed_asset_queue/) | 11.0.1.0.0 |  | Fixed Asset + Queue Integration
 
 [//]: # (end addons)
 
