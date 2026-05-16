@@ -1,0 +1,34 @@
+scenarios:
+  - name: "Fixed Asset Report Wizard - Create and Generate Data"
+    steps:
+      - step: "Create date range type"
+        action: "create"
+        model: "date.range.type"
+        save_as: "date_range_type"
+        values:
+          name: "Test Fiscal Year"
+
+      - step: "Create date range (fiscal year)"
+        action: "create"
+        model: "date.range"
+        save_as: "fiscal_year"
+        values:
+          name: "2024"
+          type_id: "EVAL: registry['date_range_type'].id"
+          date_start: 2024-01-01
+          date_end: 2024-12-31
+
+      - step: "Create report wizard"
+        action: "create"
+        model: "account.wizard_fixed_asset_yearly"
+        save_as: "wizard"
+        values:
+          fiscal_year_id: "EVAL: registry['fiscal_year'].id"
+
+      - step: "Assert wizard created"
+        action: "assert"
+        target: "wizard"
+        asserts:
+          fiscal_year_id:
+            type: "value"
+            operator: "is_truthy"
