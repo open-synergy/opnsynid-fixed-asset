@@ -1,0 +1,381 @@
+scenarios:
+  - name: "Complex Fixed Asset Installation - Full Workflow"
+    steps:
+      - step: "Search general journal"
+        action: "search"
+        model: "account.journal"
+        domain:
+          - ["type", "=", "general"]
+        save_as: "journal"
+        limit: 1
+        order: "id asc"
+
+      - step: "Create asset account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_asset"
+        values:
+          name: "CMP Install Asset Account"
+          code: "TCMP1_A01"
+          user_type_id: "REF: account.data_account_type_non_current_assets"
+          internal_type: "other"
+
+      - step: "Create depreciation account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_depr"
+        values:
+          name: "CMP Install Accum Depr"
+          code: "TCMP1_A02"
+          user_type_id: "REF: account.data_account_type_non_current_assets"
+          internal_type: "other"
+
+      - step: "Create expense account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_expense"
+        values:
+          name: "CMP Install Depr Expense"
+          code: "TCMP1_A03"
+          user_type_id: "REF: account.data_account_type_expenses"
+          internal_type: "other"
+
+      - step: "Create category"
+        action: "create"
+        model: "fixed.asset.category"
+        save_as: "category"
+        values:
+          name: "Test Category CMP Install"
+          code: "TCMP1_C1"
+          journal_id: "EVAL: registry['journal'].id"
+          account_asset_id: "EVAL: registry['account_asset'].id"
+          account_depreciation_id: "EVAL: registry['account_depr'].id"
+          account_expense_depreciation_id: "EVAL: registry['account_expense'].id"
+          method_time: "year"
+          method_number: 4
+          method_period: "month"
+          method: "linear"
+          prorata: true
+
+      - step: "Create parent asset"
+        action: "create"
+        model: "fixed.asset.asset"
+        save_as: "parent_asset"
+        as_user: "base.user_admin"
+        values:
+          name: "Test Parent Asset CMP"
+          category_id: "EVAL: registry['category'].id"
+          purchase_value: 50000000.0
+          salvage_value: 0.0
+          date_start: 2024-01-01
+          type: "normal"
+          method: "linear"
+          method_time: "year"
+          method_number: 4
+          method_period: "month"
+          prorata: true
+
+      - step: "Confirm parent asset"
+        action: "call"
+        target: "parent_asset"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after parent confirm"
+        action: "call"
+        target: "parent_asset"
+        method: "invalidate_cache"
+
+      - step: "Approve parent asset"
+        action: "call"
+        target: "parent_asset"
+        method: "action_approve_approval"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after parent approve"
+        action: "call"
+        target: "parent_asset"
+        method: "invalidate_cache"
+
+      - step: "Create child asset"
+        action: "create"
+        model: "fixed.asset.asset"
+        save_as: "child_asset"
+        as_user: "base.user_admin"
+        values:
+          name: "Test Child Asset CMP"
+          category_id: "EVAL: registry['category'].id"
+          purchase_value: 5000000.0
+          salvage_value: 0.0
+          date_start: 2024-01-01
+          type: "normal"
+          method: "linear"
+          method_time: "year"
+          method_number: 4
+          method_period: "month"
+          prorata: true
+
+      - step: "Confirm child asset"
+        action: "call"
+        target: "child_asset"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after child confirm"
+        action: "call"
+        target: "child_asset"
+        method: "invalidate_cache"
+
+      - step: "Approve child asset"
+        action: "call"
+        target: "child_asset"
+        method: "action_approve_approval"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after child approve"
+        action: "call"
+        target: "child_asset"
+        method: "invalidate_cache"
+
+      - step: "Create installation"
+        action: "create"
+        model: "complex_fixed_asset_installation"
+        save_as: "installation"
+        as_user: "base.user_admin"
+        values:
+          asset_id: "EVAL: registry['child_asset'].id"
+          parent_asset_id: "EVAL: registry['parent_asset'].id"
+          date: 2024-03-01
+
+      - step: "Assert installation in draft"
+        action: "assert"
+        target: "installation"
+        asserts:
+          state:
+            type: "value"
+            expected: "draft"
+
+      - step: "Confirm installation"
+        action: "call"
+        target: "installation"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after confirm"
+        action: "call"
+        target: "installation"
+        method: "invalidate_cache"
+
+      - step: "Assert installation confirmed"
+        action: "assert"
+        target: "installation"
+        asserts:
+          state:
+            type: "value"
+            expected: "confirm"
+
+      - step: "Approve installation"
+        action: "call"
+        target: "installation"
+        method: "action_approve_approval"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after approve"
+        action: "call"
+        target: "installation"
+        method: "invalidate_cache"
+
+      - step: "Assert installation done"
+        action: "assert"
+        target: "installation"
+        asserts:
+          state:
+            type: "value"
+            expected: "done"
+
+  - name: "Complex Fixed Asset Removal - Full Workflow"
+    steps:
+      - step: "Search general journal"
+        action: "search"
+        model: "account.journal"
+        domain:
+          - ["type", "=", "general"]
+        save_as: "journal2"
+        limit: 1
+        order: "id asc"
+
+      - step: "Create asset account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_asset2"
+        values:
+          name: "CMP Removal Asset Account"
+          code: "TCMP2_A01"
+          user_type_id: "REF: account.data_account_type_non_current_assets"
+          internal_type: "other"
+
+      - step: "Create depreciation account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_depr2"
+        values:
+          name: "CMP Removal Accum Depr"
+          code: "TCMP2_A02"
+          user_type_id: "REF: account.data_account_type_non_current_assets"
+          internal_type: "other"
+
+      - step: "Create expense account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_expense2"
+        values:
+          name: "CMP Removal Depr Expense"
+          code: "TCMP2_A03"
+          user_type_id: "REF: account.data_account_type_expenses"
+          internal_type: "other"
+
+      - step: "Create category"
+        action: "create"
+        model: "fixed.asset.category"
+        save_as: "category2"
+        values:
+          name: "Test Category CMP Removal"
+          code: "TCMP2_C1"
+          journal_id: "EVAL: registry['journal2'].id"
+          account_asset_id: "EVAL: registry['account_asset2'].id"
+          account_depreciation_id: "EVAL: registry['account_depr2'].id"
+          account_expense_depreciation_id: "EVAL: registry['account_expense2'].id"
+          method_time: "year"
+          method_number: 4
+          method_period: "month"
+          method: "linear"
+          prorata: true
+
+      - step: "Create parent asset for removal"
+        action: "create"
+        model: "fixed.asset.asset"
+        save_as: "parent_asset2"
+        as_user: "base.user_admin"
+        values:
+          name: "Test Parent Asset CMP Removal"
+          category_id: "EVAL: registry['category2'].id"
+          purchase_value: 50000000.0
+          salvage_value: 0.0
+          date_start: 2024-01-01
+          type: "normal"
+          method: "linear"
+          method_time: "year"
+          method_number: 4
+          method_period: "month"
+          prorata: true
+
+      - step: "Confirm parent asset"
+        action: "call"
+        target: "parent_asset2"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after parent confirm"
+        action: "call"
+        target: "parent_asset2"
+        method: "invalidate_cache"
+
+      - step: "Approve parent asset"
+        action: "call"
+        target: "parent_asset2"
+        method: "action_approve_approval"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after parent approve"
+        action: "call"
+        target: "parent_asset2"
+        method: "invalidate_cache"
+
+      - step: "Create child asset for removal"
+        action: "create"
+        model: "fixed.asset.asset"
+        save_as: "child_asset2"
+        as_user: "base.user_admin"
+        values:
+          name: "Test Child Asset CMP Removal"
+          category_id: "EVAL: registry['category2'].id"
+          purchase_value: 5000000.0
+          salvage_value: 0.0
+          date_start: 2024-01-01
+          type: "normal"
+          method: "linear"
+          method_time: "year"
+          method_number: 4
+          method_period: "month"
+          prorata: true
+          parent_id: "EVAL: registry['parent_asset2'].id"
+
+      - step: "Confirm child asset"
+        action: "call"
+        target: "child_asset2"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after child confirm"
+        action: "call"
+        target: "child_asset2"
+        method: "invalidate_cache"
+
+      - step: "Approve child asset"
+        action: "call"
+        target: "child_asset2"
+        method: "action_approve_approval"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after child approve"
+        action: "call"
+        target: "child_asset2"
+        method: "invalidate_cache"
+
+      - step: "Create removal"
+        action: "create"
+        model: "complex_fixed_asset_removal"
+        save_as: "removal"
+        as_user: "base.user_admin"
+        values:
+          asset_id: "EVAL: registry['child_asset2'].id"
+          parent_asset_id: "EVAL: registry['parent_asset2'].id"
+          date: 2024-06-01
+
+      - step: "Assert removal in draft"
+        action: "assert"
+        target: "removal"
+        asserts:
+          state:
+            type: "value"
+            expected: "draft"
+
+      - step: "Confirm removal"
+        action: "call"
+        target: "removal"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after confirm"
+        action: "call"
+        target: "removal"
+        method: "invalidate_cache"
+
+      - step: "Approve removal"
+        action: "call"
+        target: "removal"
+        method: "action_approve_approval"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after approve"
+        action: "call"
+        target: "removal"
+        method: "invalidate_cache"
+
+      - step: "Assert removal done"
+        action: "assert"
+        target: "removal"
+        asserts:
+          state:
+            type: "value"
+            expected: "done"
