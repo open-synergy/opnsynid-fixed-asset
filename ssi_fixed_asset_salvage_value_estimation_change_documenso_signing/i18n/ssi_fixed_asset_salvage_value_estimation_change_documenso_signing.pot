@@ -1,0 +1,112 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__active_approval_ids
+msgid "Active Approvals"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__active_approver_partner_ids
+msgid "Active Partners"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__active_approver_user_ids
+msgid "Active Users"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,help:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__approval_template_id
+msgid "Approval Configuration"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__approval_signature_request_id
+msgid "Approval Signature Request"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__approval_template_id
+msgid "Approval Template"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__approval_ids
+msgid "Approvals"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__approved
+msgid "Approved"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model,name:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.model_fixed_asset_salvage_value_estimation_change
+msgid "Fixed Asset Salvage Value Estimation Change"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__id
+msgid "ID"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__need_validation
+msgid "Need Validation"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__next_approval_ids
+msgid "Next Approvals"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__signature_request_count
+msgid "Num. of Signature Requests"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__rejected
+msgid "Rejected"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__signature_request_ids
+msgid "Signature Requests"
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,help:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__approval_signature_request_id
+msgid ""
+"The specific signature request used to determine approval status. Set "
+"automatically when the approval template uses a Documenso signing template. "
+"Other signature requests on this document are not affected."
+msgstr ""
+
+#. module: ssi_fixed_asset_salvage_value_estimation_change_documenso_signing
+#: model:ir.model.fields,help:ssi_fixed_asset_salvage_value_estimation_change_documenso_signing.field_fixed_asset_salvage_value_estimation_change__active_approver_user_ids
+msgid "Users that can approve/reject document"
+msgstr ""
