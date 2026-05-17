@@ -1,0 +1,40 @@
+scenarios:
+  - name: "Fixed Asset From Inventory With Documenso - Create"
+    steps:
+      - step: "Search general journal"
+        action: "search"
+        model: "account.journal"
+        domain:
+          - ["type", "=", "general"]
+        save_as: "journal"
+        limit: 1
+        order: "id asc"
+
+      - step: "Get fixed asset usage type"
+        action: "ref"
+        xml_id: "ssi_product_usage_account_type.product_usage_type_expense"
+        save_as: "fa_usage"
+
+      - step: "Get inventory usage type"
+        action: "ref"
+        xml_id: "ssi_product_usage_account_type.product_usage_type_income"
+        save_as: "inv_usage"
+
+      - step: "Create from inventory type"
+        action: "create"
+        model: "fixed_asset_from_inventory_type"
+        save_as: "fi_type"
+        values:
+          name: "Test From Inventory Type FINDOC"
+          code: "TFINDOC1"
+          fixed_asset_usage_id: "EVAL: registry['fa_usage'].id"
+          inventory_usage_id: "EVAL: registry['inv_usage'].id"
+          journal_id: "EVAL: registry['journal'].id"
+
+      - step: "Assert type created"
+        action: "assert"
+        target: "fi_type"
+        asserts:
+          name:
+            type: "value"
+            expected: "Test From Inventory Type FINDOC"

@@ -1,0 +1,163 @@
+scenarios:
+  - name: "Fixed Asset Disposal With Work Log - Create"
+    steps:
+      - step: "Search general journal"
+        action: "search"
+        model: "account.journal"
+        domain:
+          - ["type", "=", "general"]
+        save_as: "journal"
+        limit: 1
+        order: "id asc"
+
+      - step: "Create asset account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_asset"
+        values:
+          name: "DWL Asset Account"
+          code: "TDWL1_A01"
+          user_type_id: "REF: account.data_account_type_non_current_assets"
+          internal_type: "other"
+
+      - step: "Create depreciation account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_depr"
+        values:
+          name: "DWL Accum Depr"
+          code: "TDWL1_A02"
+          user_type_id: "REF: account.data_account_type_non_current_assets"
+          internal_type: "other"
+
+      - step: "Create expense account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_expense"
+        values:
+          name: "DWL Depr Expense"
+          code: "TDWL1_A03"
+          user_type_id: "REF: account.data_account_type_expenses"
+          internal_type: "other"
+
+      - step: "Create exchange account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_exchange"
+        values:
+          name: "DWL Exchange Account"
+          code: "TDWL1_A04"
+          user_type_id: "REF: account.data_account_type_non_current_assets"
+          internal_type: "other"
+
+      - step: "Create gain account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_gain"
+        values:
+          name: "DWL Gain Account"
+          code: "TDWL1_A05"
+          user_type_id: "REF: account.data_account_type_other_income"
+          internal_type: "other"
+
+      - step: "Create loss account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_loss"
+        values:
+          name: "DWL Loss Account"
+          code: "TDWL1_A06"
+          user_type_id: "REF: account.data_account_type_expenses"
+          internal_type: "other"
+
+      - step: "Create category"
+        action: "create"
+        model: "fixed.asset.category"
+        save_as: "category"
+        values:
+          name: "Test Category DWL"
+          code: "TDWL1_C1"
+          journal_id: "EVAL: registry['journal'].id"
+          account_asset_id: "EVAL: registry['account_asset'].id"
+          account_depreciation_id: "EVAL: registry['account_depr'].id"
+          account_expense_depreciation_id: "EVAL: registry['account_expense'].id"
+          method_time: "year"
+          method_number: 4
+          method_period: "month"
+          method: "linear"
+          prorata: true
+
+      - step: "Create asset"
+        action: "create"
+        model: "fixed.asset.asset"
+        save_as: "asset"
+        as_user: "base.user_admin"
+        values:
+          name: "Test Asset DWL"
+          category_id: "EVAL: registry['category'].id"
+          purchase_value: 5000000.0
+          salvage_value: 0.0
+          date_start: 2024-01-01
+          type: "normal"
+          method: "linear"
+          method_time: "year"
+          method_number: 4
+          method_period: "month"
+          prorata: true
+
+      - step: "Confirm asset"
+        action: "call"
+        target: "asset"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after confirm"
+        action: "call"
+        target: "asset"
+        method: "invalidate_cache"
+
+      - step: "Approve asset"
+        action: "call"
+        target: "asset"
+        method: "action_approve_approval"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after approve"
+        action: "call"
+        target: "asset"
+        method: "invalidate_cache"
+
+      - step: "Create disposal type"
+        action: "create"
+        model: "fixed_asset.disposal_type"
+        save_as: "disposal_type"
+        values:
+          name: "Test Disposal Type DWL"
+          code: "TDWL1_T1"
+
+      - step: "Create disposal"
+        action: "create"
+        model: "fixed_asset.disposal"
+        save_as: "disposal"
+        as_user: "base.user_admin"
+        values:
+          date_disposition: 2024-06-30
+          asset_id: "EVAL: registry['asset'].id"
+          type_id: "EVAL: registry['disposal_type'].id"
+          disposition_price: 0.0
+          acquisition_price: 5000000.0
+          disposal_journal_id: "EVAL: registry['journal'].id"
+          asset_account_id: "EVAL: registry['account_asset'].id"
+          exchange_account_id: "EVAL: registry['account_exchange'].id"
+          gain_account_id: "EVAL: registry['account_gain'].id"
+          loss_account_id: "EVAL: registry['account_loss'].id"
+          accumulated_depreciation_account_id: "EVAL: registry['account_depr'].id"
+          generate_accounting_entry: false
+
+      - step: "Assert disposal created"
+        action: "assert"
+        target: "disposal"
+        asserts:
+          state:
+            type: "value"
+            expected: "draft"

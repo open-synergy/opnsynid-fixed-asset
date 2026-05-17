@@ -1,0 +1,156 @@
+scenarios:
+  - name: "Complex Fixed Asset With Documenso - Create"
+    steps:
+      - step: "Search general journal"
+        action: "search"
+        model: "account.journal"
+        domain:
+          - ["type", "=", "general"]
+        save_as: "journal"
+        limit: 1
+        order: "id asc"
+
+      - step: "Create asset account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_asset"
+        values:
+          name: "CMPDOC Asset Account"
+          code: "TCMPDOC1_A01"
+          user_type_id: "REF: account.data_account_type_non_current_assets"
+          internal_type: "other"
+
+      - step: "Create depreciation account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_depr"
+        values:
+          name: "CMPDOC Accum Depr"
+          code: "TCMPDOC1_A02"
+          user_type_id: "REF: account.data_account_type_non_current_assets"
+          internal_type: "other"
+
+      - step: "Create expense account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_expense"
+        values:
+          name: "CMPDOC Depr Expense"
+          code: "TCMPDOC1_A03"
+          user_type_id: "REF: account.data_account_type_expenses"
+          internal_type: "other"
+
+      - step: "Create category"
+        action: "create"
+        model: "fixed.asset.category"
+        save_as: "category"
+        values:
+          name: "Test Category CMPDOC"
+          code: "TCMPDOC1_C1"
+          journal_id: "EVAL: registry['journal'].id"
+          account_asset_id: "EVAL: registry['account_asset'].id"
+          account_depreciation_id: "EVAL: registry['account_depr'].id"
+          account_expense_depreciation_id: "EVAL: registry['account_expense'].id"
+          method_time: "year"
+          method_number: 4
+          method_period: "month"
+          method: "linear"
+          prorata: true
+
+      - step: "Create parent asset"
+        action: "create"
+        model: "fixed.asset.asset"
+        save_as: "parent_asset"
+        as_user: "base.user_admin"
+        values:
+          name: "Parent Asset CMPDOC"
+          category_id: "EVAL: registry['category'].id"
+          purchase_value: 20000000.0
+          salvage_value: 0.0
+          date_start: 2024-01-01
+          type: "normal"
+          method: "linear"
+          method_time: "year"
+          method_number: 4
+          method_period: "month"
+          prorata: true
+
+      - step: "Confirm parent asset"
+        action: "call"
+        target: "parent_asset"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after parent confirm"
+        action: "call"
+        target: "parent_asset"
+        method: "invalidate_cache"
+
+      - step: "Approve parent asset"
+        action: "call"
+        target: "parent_asset"
+        method: "action_approve_approval"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after parent approve"
+        action: "call"
+        target: "parent_asset"
+        method: "invalidate_cache"
+
+      - step: "Create child asset"
+        action: "create"
+        model: "fixed.asset.asset"
+        save_as: "child_asset"
+        as_user: "base.user_admin"
+        values:
+          name: "Child Asset CMPDOC"
+          category_id: "EVAL: registry['category'].id"
+          purchase_value: 2000000.0
+          salvage_value: 0.0
+          date_start: 2024-01-01
+          type: "normal"
+          method: "linear"
+          method_time: "year"
+          method_number: 4
+          method_period: "month"
+          prorata: true
+
+      - step: "Confirm child asset"
+        action: "call"
+        target: "child_asset"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after child confirm"
+        action: "call"
+        target: "child_asset"
+        method: "invalidate_cache"
+
+      - step: "Approve child asset"
+        action: "call"
+        target: "child_asset"
+        method: "action_approve_approval"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after child approve"
+        action: "call"
+        target: "child_asset"
+        method: "invalidate_cache"
+
+      - step: "Create installation"
+        action: "create"
+        model: "complex_fixed_asset_installation"
+        save_as: "installation"
+        as_user: "base.user_admin"
+        values:
+          asset_id: "EVAL: registry['child_asset'].id"
+          parent_asset_id: "EVAL: registry['parent_asset'].id"
+          date: 2024-03-01
+
+      - step: "Assert installation created"
+        action: "assert"
+        target: "installation"
+        asserts:
+          state:
+            type: "value"
+            expected: "draft"
