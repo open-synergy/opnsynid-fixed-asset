@@ -33,7 +33,7 @@ addon | version | maintainers | summary
 [ssi_fixed_asset_in_progress_documenso_signing](ssi_fixed_asset_in_progress_documenso_signing/) | 14.0.1.1.0 |  | Fixed Asset In Progress - Documenso Signing Integration
 [ssi_fixed_asset_operating_unit](ssi_fixed_asset_operating_unit/) | 14.0.1.1.0 |  | Fixed Asset Management - Operating Unit Integration
 [ssi_fixed_asset_qrcode](ssi_fixed_asset_qrcode/) | 14.0.1.3.0 |  | Fixed Asset QR Code
-[ssi_fixed_asset_report](ssi_fixed_asset_report/) | 14.0.1.9.0 |  | Fixed Asset Report
+[ssi_fixed_asset_report](ssi_fixed_asset_report/) | 14.0.1.10.0 |  | Fixed Asset Report
 [ssi_fixed_asset_salvage_value_estimation_change](ssi_fixed_asset_salvage_value_estimation_change/) | 14.0.1.3.0 |  | Fixed Asset Salvage Value Estimation Change
 [ssi_fixed_asset_salvage_value_estimation_change_documenso_signing](ssi_fixed_asset_salvage_value_estimation_change_documenso_signing/) | 14.0.1.1.0 |  | Fixed Asset Salvage Value Estimation Change - Documenso Signing Integration
 [ssi_fixed_asset_useful_life_estimation_change](ssi_fixed_asset_useful_life_estimation_change/) | 14.0.1.4.0 |  | Fixed Asset Useful Life Estimation Change
