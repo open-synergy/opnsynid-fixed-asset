@@ -32,3 +32,59 @@ scenarios:
           fiscal_year_id:
             type: "value"
             operator: "is_truthy"
+
+  - name: "Yearly Fixed Asset Report Group - Exists and Has Correct Category"
+    steps:
+      - step: "Get yearly fixed asset report group"
+        action: "ref"
+        xml_id: "ssi_fixed_asset_report.wizard_fixed_asset_yearly_group"
+        save_as: "report_group"
+
+      - step: "Assert group name"
+        action: "assert"
+        target: "report_group"
+        asserts:
+          name:
+            type: "value"
+            expected: "Yearly Fixed Asset Report"
+          category_id:
+            type: "value"
+            operator: "is_truthy"
+
+  - name: "Yearly Fixed Asset Report Group - Admin Can Create Wizard"
+    steps:
+      - step: "Create date range type"
+        action: "create"
+        model: "date.range.type"
+        save_as: "date_range_type"
+        values:
+          name: "Test Fiscal Year Admin"
+
+      - step: "Create date range (fiscal year)"
+        action: "create"
+        model: "date.range"
+        save_as: "fiscal_year"
+        values:
+          name: "2025"
+          type_id: "EVAL: registry['date_range_type'].id"
+          date_start: 2025-01-01
+          date_end: 2025-12-31
+
+      - step: "Create report wizard as admin user"
+        action: "create"
+        model: "account.wizard_fixed_asset_yearly"
+        save_as: "wizard"
+        as_user: "base.user_admin"
+        values:
+          fiscal_year_id: "EVAL: registry['fiscal_year'].id"
+
+      - step: "Assert wizard created successfully"
+        action: "assert"
+        target: "wizard"
+        asserts:
+          id:
+            type: "value"
+            operator: "is_truthy"
+          fiscal_year_id:
+            type: "value"
+            operator: "is_truthy"
