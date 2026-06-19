@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_account_wizard_fixed_asset_yearly_viewer,account_wizard_fixed_asset_yearly - viewer,model_account_wizard_fixed_asset_yearly,,1,1,1,1
+access_account_wizard_fixed_asset_yearly_viewer,account_wizard_fixed_asset_yearly - all,model_account_wizard_fixed_asset_yearly,,1,0,0,0
+access_account_wizard_fixed_asset_yearly_user,account_wizard_fixed_asset_yearly - user,model_account_wizard_fixed_asset_yearly,wizard_fixed_asset_yearly_group,1,1,1,1

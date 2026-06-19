@@ -50,6 +50,7 @@
         parent="ssi_financial_accounting.menu_financial_accounting_report"
         action="waction_account_wizardFixedAssetYearly"
         sequence="20"
+        groups="wizard_fixed_asset_yearly_group"
     />
 
 

@@ -18,6 +18,7 @@
     ],
     "external_dependencies": {},
     "data": [
+        "security/res_groups/wizard_fixed_asset_yearly.xml",
         "security/ir.model.access.csv",
         "wizards/wizard_fixed_yearly_asset.xml",
         "reports.xml",
