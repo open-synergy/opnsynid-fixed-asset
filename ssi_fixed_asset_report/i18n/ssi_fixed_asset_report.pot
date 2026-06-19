@@ -237,6 +237,7 @@ msgstr ""
 #. module: ssi_fixed_asset_report
 #: model:ir.actions.act_window,name:ssi_fixed_asset_report.waction_account_wizardFixedAssetYearly
 #: model:ir.ui.menu,name:ssi_fixed_asset_report.menu_account_reportFixedAssetYearly
+#: model:res.groups,name:ssi_fixed_asset_report.wizard_fixed_asset_yearly_group
 msgid "Yearly Fixed Asset Report"
 msgstr ""
 
