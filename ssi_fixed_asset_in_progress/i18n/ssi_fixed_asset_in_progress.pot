@@ -206,6 +206,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset_in_progress
 #: model:ir.model.fields,field_description:ssi_fixed_asset_in_progress.field_fixed_asset_in_progress__category_id
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_in_progress.fixed_asset_in_progress_view_search
 msgid "Category"
 msgstr ""
 
@@ -294,8 +295,14 @@ msgid "Draft"
 msgstr ""
 
 #. module: ssi_fixed_asset_in_progress
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_in_progress.fixed_asset_in_progress_view_search
+msgid "End Date"
+msgstr ""
+
+#. module: ssi_fixed_asset_in_progress
 #: model:ir.model,name:ssi_fixed_asset_in_progress.model_fixed_asset_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_in_progress.field_fixed_asset_in_progress__fixed_asset_id
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_in_progress.fixed_asset_in_progress_view_search
 msgid "Fixed Asset"
 msgstr ""
 
@@ -561,6 +568,11 @@ msgstr ""
 #. module: ssi_fixed_asset_in_progress
 #: model:ir.model.fields,field_description:ssi_fixed_asset_in_progress.field_fixed_asset_in_progress__reviewer_id
 msgid "Reviewer"
+msgstr ""
+
+#. module: ssi_fixed_asset_in_progress
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_in_progress.fixed_asset_in_progress_view_search
+msgid "Start Date"
 msgstr ""
 
 #. module: ssi_fixed_asset_in_progress
