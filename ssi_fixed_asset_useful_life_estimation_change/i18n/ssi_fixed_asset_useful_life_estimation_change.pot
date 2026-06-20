@@ -97,6 +97,11 @@ msgid "Approved"
 msgstr ""
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_useful_life_estimation_change.fixed_asset_useful_life_estimation_change_view_search
+msgid "Asset"
+msgstr ""
+
+#. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__asset_value_history_id
 msgid "Asset Value History"
 msgstr ""
@@ -214,6 +219,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset_useful_life_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_useful_life_estimation_change.field_fixed_asset_useful_life_estimation_change__date
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_useful_life_estimation_change.fixed_asset_useful_life_estimation_change_view_search
 msgid "Date"
 msgstr ""
 
