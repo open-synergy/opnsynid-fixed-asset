@@ -129,6 +129,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal__asset_id
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_disposal.fixed_asset_disposal_view_search
 msgid "Asset"
 msgstr ""
 
@@ -209,6 +210,11 @@ msgid ""
 "Cancel policy\n"
 "\n"
 "* If active user can see and execute 'Cancel' button"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_disposal.fixed_asset_disposal_view_search
+msgid "Category"
 msgstr ""
 
 #. module: ssi_fixed_asset_disposal
@@ -305,6 +311,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset_disposal
 #: model:ir.model.fields,field_description:ssi_fixed_asset_disposal.field_fixed_asset_disposal_type__name
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_disposal.fixed_asset_disposal_view_search
 msgid "Disposal Type"
 msgstr ""
 
@@ -322,6 +329,11 @@ msgstr ""
 #. module: ssi_fixed_asset_disposal
 #: model:ir.ui.menu,name:ssi_fixed_asset_disposal.fixed_asset_disposal_menu
 msgid "Disposals"
+msgstr ""
+
+#. module: ssi_fixed_asset_disposal
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_disposal.fixed_asset_disposal_view_search
+msgid "Disposition Date"
 msgstr ""
 
 #. module: ssi_fixed_asset_disposal
