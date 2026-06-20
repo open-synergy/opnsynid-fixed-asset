@@ -98,6 +98,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset_salvage_value_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change.field_fixed_asset_salvage_value_estimation_change__asset_id
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_salvage_value_estimation_change.fixed_asset_salvage_value_estimation_change_view_search
 msgid "Asset"
 msgstr ""
 
@@ -224,6 +225,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset_salvage_value_estimation_change
 #: model:ir.model.fields,field_description:ssi_fixed_asset_salvage_value_estimation_change.field_fixed_asset_salvage_value_estimation_change__date
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_salvage_value_estimation_change.fixed_asset_salvage_value_estimation_change_view_search
 msgid "Date"
 msgstr ""
 
