@@ -31,7 +31,30 @@
         />
         <field name="mode">primary</field>
         <field name="arch" type="xml">
-            <data />
+            <data>
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="asset_id" />
+                    <field name="parent_asset_id" />
+                    <field name="date" />
+                </xpath>
+                <xpath expr="//filter[@name='grp_state']" position="after">
+                    <filter
+                        name="grp_asset"
+                        string="Asset"
+                        context="{'group_by': 'asset_id'}"
+                    />
+                    <filter
+                        name="grp_parent_asset"
+                        string="Parent Asset"
+                        context="{'group_by': 'parent_asset_id'}"
+                    />
+                    <filter
+                        name="grp_date"
+                        string="Date"
+                        context="{'group_by': 'date:month'}"
+                    />
+                </xpath>
+            </data>
         </field>
     </record>
 

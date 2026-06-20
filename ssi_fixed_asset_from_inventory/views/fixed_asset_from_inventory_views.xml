@@ -12,7 +12,23 @@
         />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-      <data />
+      <data>
+        <xpath expr="//field[@name='user_id']" position="after">
+          <field name="type_id" />
+          <field name="product_id" />
+          <field name="lot_id" />
+          <field name="date" />
+        </xpath>
+        <xpath expr="//filter[@name='grp_state']" position="after">
+          <filter name="grp_type" string="Type" context="{'group_by': 'type_id'}" />
+          <filter
+                        name="grp_product"
+                        string="Product"
+                        context="{'group_by': 'product_id'}"
+                    />
+          <filter name="grp_date" string="Date" context="{'group_by': 'date:month'}" />
+        </xpath>
+      </data>
     </field>
 </record>
 

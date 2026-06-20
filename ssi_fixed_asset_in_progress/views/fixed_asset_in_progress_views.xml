@@ -12,7 +12,36 @@
         />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-      <data />
+      <data>
+        <xpath expr="//field[@name='user_id']" position="after">
+          <field name="category_id" />
+          <field name="fixed_asset_id" />
+          <field name="date_start" />
+          <field name="date_end" />
+        </xpath>
+        <xpath expr="//filter[@name='grp_state']" position="after">
+          <filter
+                        name="grp_category"
+                        string="Category"
+                        context="{'group_by': 'category_id'}"
+                    />
+          <filter
+                        name="grp_fixed_asset"
+                        string="Fixed Asset"
+                        context="{'group_by': 'fixed_asset_id'}"
+                    />
+          <filter
+                        name="grp_date_start"
+                        string="Start Date"
+                        context="{'group_by': 'date_start:month'}"
+                    />
+          <filter
+                        name="grp_date_end"
+                        string="End Date"
+                        context="{'group_by': 'date_end:month'}"
+                    />
+        </xpath>
+      </data>
     </field>
 </record>
 
