@@ -115,6 +115,8 @@ msgstr ""
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__asset_id
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__asset_id
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_complex_asset.complex_fixed_asset_installation_view_search
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_complex_asset.complex_fixed_asset_removal_view_search
 msgid "Asset"
 msgstr ""
 
@@ -279,6 +281,8 @@ msgstr ""
 #. module: ssi_fixed_asset_complex_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__date
 #: model:ir.model.fields,field_description:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__date
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_complex_asset.complex_fixed_asset_installation_view_search
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_complex_asset.complex_fixed_asset_removal_view_search
 msgid "Date"
 msgstr ""
 
@@ -491,6 +495,12 @@ msgstr ""
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_installation__message_unread_counter
 #: model:ir.model.fields,help:ssi_fixed_asset_complex_asset.field_complex_fixed_asset_removal__message_unread_counter
 msgid "Number of unread messages"
+msgstr ""
+
+#. module: ssi_fixed_asset_complex_asset
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_complex_asset.complex_fixed_asset_installation_view_search
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_complex_asset.complex_fixed_asset_removal_view_search
+msgid "Parent Asset"
 msgstr ""
 
 #. module: ssi_fixed_asset_complex_asset
