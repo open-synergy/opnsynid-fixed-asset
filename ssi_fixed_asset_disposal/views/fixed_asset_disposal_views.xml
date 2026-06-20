@@ -12,7 +12,36 @@
         />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-        <data />
+        <data>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="asset_id" />
+                <field name="category_id" />
+                <field name="type_id" />
+                <field name="date_disposition" />
+            </xpath>
+            <xpath expr="//filter[@name='grp_state']" position="after">
+                <filter
+                        name="grp_asset"
+                        string="Asset"
+                        context="{'group_by': 'asset_id'}"
+                    />
+                <filter
+                        name="grp_category"
+                        string="Category"
+                        context="{'group_by': 'category_id'}"
+                    />
+                <filter
+                        name="grp_type"
+                        string="Disposal Type"
+                        context="{'group_by': 'type_id'}"
+                    />
+                <filter
+                        name="grp_date_disposition"
+                        string="Disposition Date"
+                        context="{'group_by': 'date_disposition:month'}"
+                    />
+            </xpath>
+        </data>
     </field>
 </record>
 
