@@ -258,6 +258,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset_from_inventory
 #: model:ir.model.fields,field_description:ssi_fixed_asset_from_inventory.field_fixed_asset_from_inventory__date
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_from_inventory.fixed_asset_from_inventory_view_search
 msgid "Date"
 msgstr ""
 
@@ -549,6 +550,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset_from_inventory
 #: model:ir.model.fields,field_description:ssi_fixed_asset_from_inventory.field_fixed_asset_from_inventory__product_id
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_from_inventory.fixed_asset_from_inventory_view_search
 msgid "Product"
 msgstr ""
 
@@ -632,6 +634,7 @@ msgstr ""
 
 #. module: ssi_fixed_asset_from_inventory
 #: model:ir.model.fields,field_description:ssi_fixed_asset_from_inventory.field_fixed_asset_from_inventory__type_id
+#: model_terms:ir.ui.view,arch_db:ssi_fixed_asset_from_inventory.fixed_asset_from_inventory_view_search
 msgid "Type"
 msgstr ""
 
