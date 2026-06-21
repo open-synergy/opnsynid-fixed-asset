@@ -58,22 +58,26 @@ class FixedAssetCategory(models.Model):
     account_depreciation_id = fields.Many2one(
         string="Depreciation Account",
         comodel_name="account.account",
-        required=True,
         domain=[("internal_type", "=", "other")],
     )
     account_expense_depreciation_id = fields.Many2one(
         string="Depr. Expense Account",
         comodel_name="account.account",
-        required=True,
         domain=[("internal_type", "=", "other")],
     )
     journal_id = fields.Many2one(
         string="Journal",
         comodel_name="account.journal",
-        required=True,
         domain=[
             ("type", "=", "general"),
         ],
+    )
+    no_depreciation = fields.Boolean(
+        string="No Depreciation",
+        default=False,
+        help="Check this if the asset category does not require depreciation "
+        "(e.g. land). When enabled, depreciation accounts and journal "
+        "are not required.",
     )
     method = fields.Selection(
         string="Computation Method",
@@ -135,6 +139,34 @@ class FixedAssetCategory(models.Model):
         string="Date Min. to Prorate",
         default=15,
     )
+
+    @api.constrains(
+        "no_depreciation",
+        "journal_id",
+        "account_depreciation_id",
+        "account_expense_depreciation_id",
+    )
+    def _check_depreciation_accounts(self):
+        for rec in self:
+            if not rec.no_depreciation:
+                if not rec.journal_id:
+                    raise UserError(
+                        _("Journal is required for depreciable asset categories.")
+                    )
+                if not rec.account_depreciation_id:
+                    raise UserError(
+                        _(
+                            "Depreciation Account is required "
+                            "for depreciable asset categories."
+                        )
+                    )
+                if not rec.account_expense_depreciation_id:
+                    raise UserError(
+                        _(
+                            "Depr. Expense Account is required "
+                            "for depreciable asset categories."
+                        )
+                    )
 
     @api.constrains(
         "method",

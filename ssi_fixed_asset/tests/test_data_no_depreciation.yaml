@@ -1,0 +1,235 @@
+scenarios:
+  - name: "No Depreciation Category - Create tanpa akun depresiasi"
+    steps:
+      - step: "Create asset account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_asset"
+        values:
+          name: "Test Asset Account ND1"
+          code: "TND1_A01"
+          user_type_id: "REF: account.data_account_type_non_current_assets"
+          internal_type: "other"
+
+      - step: "Create no_depreciation category"
+        action: "create"
+        model: "fixed.asset.category"
+        save_as: "category"
+        values:
+          name: "Land Category ND1"
+          code: "TND1_C01"
+          no_depreciation: true
+          account_asset_id: "EVAL: registry['account_asset'].id"
+
+      - step: "Assert no_depreciation category berhasil dibuat"
+        action: "assert"
+        target: "category"
+        asserts:
+          no_depreciation:
+            type: "value"
+            expected: true
+          id:
+            type: "value"
+            operator: "is_truthy"
+
+  - name: "No Depreciation Asset - Field no_depreciation ter-propagate dari kategori"
+    steps:
+      - step: "Create asset account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_asset"
+        values:
+          name: "Test Asset Account ND2"
+          code: "TND2_A01"
+          user_type_id: "REF: account.data_account_type_non_current_assets"
+          internal_type: "other"
+
+      - step: "Create no_depreciation category"
+        action: "create"
+        model: "fixed.asset.category"
+        save_as: "category"
+        values:
+          name: "Land Category ND2"
+          code: "TND2_C01"
+          no_depreciation: true
+          account_asset_id: "EVAL: registry['account_asset'].id"
+
+      - step: "Create aset tanah"
+        action: "create"
+        model: "fixed.asset.asset"
+        save_as: "asset"
+        as_user: "base.user_admin"
+        values:
+          name: "Test Land Asset ND2"
+          category_id: "EVAL: registry['category'].id"
+          purchase_value: 5000000000.0
+          date_start: 2024-01-01
+          type: "normal"
+          method: "linear"
+          method_time: "year"
+          method_number: 0
+          method_period: "year"
+
+      - step: "Assert no_depreciation ter-set pada aset"
+        action: "assert"
+        target: "asset"
+        asserts:
+          no_depreciation:
+            type: "value"
+            expected: true
+
+  - name:
+      "No Depreciation Asset - compute_depreciation_board tidak menghasilkan baris
+      depresiasi"
+    steps:
+      - step: "Create asset account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_asset"
+        values:
+          name: "Test Asset Account ND3"
+          code: "TND3_A01"
+          user_type_id: "REF: account.data_account_type_non_current_assets"
+          internal_type: "other"
+
+      - step: "Create no_depreciation category"
+        action: "create"
+        model: "fixed.asset.category"
+        save_as: "category"
+        values:
+          name: "Land Category ND3"
+          code: "TND3_C01"
+          no_depreciation: true
+          account_asset_id: "EVAL: registry['account_asset'].id"
+
+      - step: "Create aset tanah"
+        action: "create"
+        model: "fixed.asset.asset"
+        save_as: "asset"
+        as_user: "base.user_admin"
+        values:
+          name: "Test Land Asset ND3"
+          category_id: "EVAL: registry['category'].id"
+          purchase_value: 5000000000.0
+          date_start: 2024-01-01
+          type: "normal"
+          method: "linear"
+          method_time: "year"
+          method_number: 0
+          method_period: "year"
+
+      - step: "Panggil compute_depreciation_board"
+        action: "call"
+        target: "asset"
+        method: "compute_depreciation_board"
+        as_user: "base.user_admin"
+
+      - step: "Assert hanya ada 1 baris (type=create, bukan depreciate)"
+        action: "assert"
+        target: "asset"
+        asserts:
+          depreciation_line_ids:
+            type: "o2m"
+            check: "count"
+            expected_count: 1
+
+  - name: "No Depreciation Asset - Full workflow draft to open tanpa error"
+    steps:
+      - step: "Create asset account"
+        action: "create"
+        model: "account.account"
+        save_as: "account_asset"
+        values:
+          name: "Test Asset Account ND4"
+          code: "TND4_A01"
+          user_type_id: "REF: account.data_account_type_non_current_assets"
+          internal_type: "other"
+
+      - step: "Create no_depreciation category"
+        action: "create"
+        model: "fixed.asset.category"
+        save_as: "category"
+        values:
+          name: "Land Category ND4"
+          code: "TND4_C01"
+          no_depreciation: true
+          account_asset_id: "EVAL: registry['account_asset'].id"
+
+      - step: "Create aset tanah"
+        action: "create"
+        model: "fixed.asset.asset"
+        save_as: "asset"
+        as_user: "base.user_admin"
+        values:
+          name: "Test Land Asset ND4"
+          category_id: "EVAL: registry['category'].id"
+          purchase_value: 5000000000.0
+          date_start: 2024-01-01
+          type: "normal"
+          method: "linear"
+          method_time: "year"
+          method_number: 0
+          method_period: "year"
+
+      - step: "Assert state awal = draft"
+        action: "assert"
+        target: "asset"
+        asserts:
+          state:
+            type: "value"
+            expected: "draft"
+
+      - step: "Confirm aset"
+        action: "call"
+        target: "asset"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache setelah confirm"
+        action: "call"
+        target: "asset"
+        method: "invalidate_cache"
+
+      - step: "Assert state = confirm"
+        action: "assert"
+        target: "asset"
+        asserts:
+          state:
+            type: "value"
+            expected: "confirm"
+
+      - step: "Approve aset"
+        action: "call"
+        target: "asset"
+        method: "action_approve_approval"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache setelah approve"
+        action: "call"
+        target: "asset"
+        method: "invalidate_cache"
+
+      - step: "Assert state = open"
+        action: "assert"
+        target: "asset"
+        asserts:
+          state:
+            type: "value"
+            expected: "open"
+
+      - step: "Assert no_depreciation masih true setelah open"
+        action: "assert"
+        target: "asset"
+        asserts:
+          no_depreciation:
+            type: "value"
+            expected: true
+
+      - step: "Assert tetap hanya ada 1 depreciation line (type=create)"
+        action: "assert"
+        target: "asset"
+        asserts:
+          depreciation_line_ids:
+            type: "o2m"
+            check: "count"
+            expected_count: 1

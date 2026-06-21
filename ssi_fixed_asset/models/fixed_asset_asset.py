@@ -469,6 +469,13 @@ class FixedAssetAsset(models.Model):
         string="Analytic account",
         comodel_name="account.analytic.account",
     )
+    no_depreciation = fields.Boolean(
+        string="No Depreciation",
+        related="category_id.no_depreciation",
+        store=True,
+        compute_sudo=True,
+        help="Indicates that this asset does not require depreciation.",
+    )
 
     def _get_method_time_coefficient(self):
         self.ensure_one()
@@ -1080,8 +1087,14 @@ class FixedAssetAsset(models.Model):
         table = table[: i_max + 1]
         return table
 
+    def _should_skip_compute_depreciation_board(self):
+        self.ensure_one()
+        return self.no_depreciation
+
     def compute_depreciation_board(self):
         for asset in self.sudo():
+            if asset._should_skip_compute_depreciation_board():
+                continue
             if asset.value_residual == 0.0:
                 continue
             asset._delete_unposted_history()
@@ -1505,15 +1518,25 @@ class FixedAssetAsset(models.Model):
         obj_asset_category = self.env["fixed.asset.category"]
         if self.category_id:
             category = obj_asset_category.browse(self.category_id.id)
-            self.method = category.method
-            self.method_number = category.method_number
-            self.method_time = category.method_time
-            self.method_period = category.method_period
-            self.method_progress_factor = category.method_progress_factor
-            self.prorata = category.prorata
             self.account_analytic_id = category.account_analytic_id.id
-            self.date_min_prorate = category.date_min_prorate
-            self.prorate_by_month = True
+            if category.no_depreciation:
+                self.method = "linear"
+                self.method_number = 0
+                self.method_time = "year"
+                self.method_period = "year"
+                self.method_progress_factor = 0.3
+                self.prorata = False
+                self.date_min_prorate = 15
+                self.prorate_by_month = True
+            else:
+                self.method = category.method
+                self.method_number = category.method_number
+                self.method_time = category.method_time
+                self.method_period = category.method_period
+                self.method_progress_factor = category.method_progress_factor
+                self.prorata = category.prorata
+                self.date_min_prorate = category.date_min_prorate
+                self.prorate_by_month = True
 
     @api.onchange(
         "category_id",
