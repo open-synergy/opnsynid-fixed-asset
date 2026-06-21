@@ -326,6 +326,13 @@ msgid "Category"
 msgstr ""
 
 #. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__no_depreciation
+msgid ""
+"Check this if the asset category does not require depreciation (e.g. land). "
+"When enabled, depreciation accounts and journal are not required."
+msgstr ""
+
+#. module: ssi_fixed_asset
 #: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_category__open_asset
 msgid ""
 "Check this if you want to automatically confirm the assets of this category "
@@ -534,6 +541,13 @@ msgid "Depr. Expense Account"
 msgstr ""
 
 #. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#, python-format
+msgid "Depr. Expense Account is required for depreciable asset categories."
+msgstr ""
+
+#. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__method_period_depreciated_number
 msgid "Depreciated Age"
 msgstr ""
@@ -551,6 +565,13 @@ msgstr ""
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__account_depreciation_id
 msgid "Depreciation Account"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#, python-format
+msgid "Depreciation Account is required for depreciable asset categories."
 msgstr ""
 
 #. module: ssi_fixed_asset
@@ -774,6 +795,11 @@ msgid ""
 msgstr ""
 
 #. module: ssi_fixed_asset
+#: model:ir.model.fields,help:ssi_fixed_asset.field_fixed_asset_asset__no_depreciation
+msgid "Indicates that this asset does not require depreciation."
+msgstr ""
+
+#. module: ssi_fixed_asset
 #: model_terms:ir.ui.view,arch_db:ssi_fixed_asset.fixed_asset_asset_view_form
 msgid "Init"
 msgstr ""
@@ -807,6 +833,13 @@ msgstr ""
 #. module: ssi_fixed_asset
 #: model:ir.model,name:ssi_fixed_asset.model_account_move_line
 msgid "Journal Item"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#: code:addons/ssi_fixed_asset/models/fixed_asset_category.py:0
+#, python-format
+msgid "Journal is required for depreciable asset categories."
 msgstr ""
 
 #. module: ssi_fixed_asset
@@ -996,6 +1029,12 @@ msgstr ""
 #. module: ssi_fixed_asset
 #: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_depreciation_line__remaining_value
 msgid "Next Period Depreciation"
+msgstr ""
+
+#. module: ssi_fixed_asset
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_asset__no_depreciation
+#: model:ir.model.fields,field_description:ssi_fixed_asset.field_fixed_asset_category__no_depreciation
+msgid "No Depreciation"
 msgstr ""
 
 #. module: ssi_fixed_asset
