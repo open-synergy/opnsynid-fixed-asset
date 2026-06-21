@@ -18,7 +18,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[ssi_fixed_asset](ssi_fixed_asset/) | 14.0.1.14.0 |  | Fixed Asset
+[ssi_fixed_asset](ssi_fixed_asset/) | 14.0.1.15.0 |  | Fixed Asset
 [ssi_fixed_asset_complex_asset](ssi_fixed_asset_complex_asset/) | 14.0.1.4.0 |  | Complex Fixed Asset
 [ssi_fixed_asset_complex_asset_documenso_signing](ssi_fixed_asset_complex_asset_documenso_signing/) | 14.0.1.1.0 |  | Complex Fixed Asset - Documenso Signing Integration
 [ssi_fixed_asset_demo](ssi_fixed_asset_demo/) | 14.0.1.1.0 |  | Fixed Asset
