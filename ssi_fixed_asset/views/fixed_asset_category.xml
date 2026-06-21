@@ -31,6 +31,7 @@
         <field name="arch" type="xml">
             <data>
                 <xpath expr="//field[@name='name']" position="after">
+                    <field name="no_depreciation" />
                     <field name="journal_id" />
                     <field name="method" />
                     <field name="method_time" />
@@ -55,10 +56,29 @@
                 <xpath expr="//notebook" position="inside">
                     <page name="accounting" string="Accounting">
                         <group name="accounting_1" colspan="4" col="2">
-                            <field name="journal_id" />
+                            <field name="no_depreciation" />
+                            <field
+                                name="journal_id"
+                                attrs="{
+                                    'invisible': [('no_depreciation', '=', True)],
+                                    'required': [('no_depreciation', '=', False)]
+                                }"
+                            />
                             <field name="account_asset_id" />
-                            <field name="account_depreciation_id" />
-                            <field name="account_expense_depreciation_id" />
+                            <field
+                                name="account_depreciation_id"
+                                attrs="{
+                                    'invisible': [('no_depreciation', '=', True)],
+                                    'required': [('no_depreciation', '=', False)]
+                                }"
+                            />
+                            <field
+                                name="account_expense_depreciation_id"
+                                attrs="{
+                                    'invisible': [('no_depreciation', '=', True)],
+                                    'required': [('no_depreciation', '=', False)]
+                                }"
+                            />
                         </group>
                         <group
                             name="accounting_2"
@@ -68,7 +88,11 @@
                             <field name="account_analytic_id" />
                         </group>
                     </page>
-                    <page name="depreciation_date" string="Depreciation Dates">
+                    <page
+                        name="depreciation_date"
+                        string="Depreciation Dates"
+                        attrs="{'invisible': [('no_depreciation', '=', True)]}"
+                    >
                         <group name="depreciation_date_1" colspan="4" col="2">
                             <field name="method_time" />
                             <field
@@ -78,7 +102,11 @@
                             <field name="method_period" />
                         </group>
                     </page>
-                    <page name="depreciation_method" string="Depreciation Method">
+                    <page
+                        name="depreciation_method"
+                        string="Depreciation Method"
+                        attrs="{'invisible': [('no_depreciation', '=', True)]}"
+                    >
                         <group name="depreciation_method_1" colspan="4" col="2">
                             <field name="method" />
                             <field
